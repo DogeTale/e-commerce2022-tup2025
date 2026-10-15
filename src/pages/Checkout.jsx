@@ -7,7 +7,7 @@ import StepperBuyProcess from "../components/checkout/StepperBuyProcess";
 function Checkout() {
   return (
     <>
-      <title>Checkout</title>
+      <title>Carrito</title>
 
       <Header />
 

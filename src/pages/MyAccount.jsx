@@ -7,7 +7,7 @@ import MyAccountMain from "../components/myaccount/MyAccountMain";
 function MyAccount() {
   return (
     <>
-      <title>My Account</title>
+      <title>Mi Perfil</title>
 
       <Header />
 

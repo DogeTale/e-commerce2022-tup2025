@@ -10,7 +10,7 @@ import MonthlyAssemblies from "../components/home/MonthlyAssemblies.jsx";
 function HomePage() {
   return (
     <>
-      <title>ZeroLag Home</title>
+      <title>ZeroLag</title>
       {/*
       SECCIÓN GENERAL: HEADER PRINCIPAL
       Incluye la barra de anuncios superior, el buscador, logo y menú de navegación.
