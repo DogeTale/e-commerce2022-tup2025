@@ -54,13 +54,13 @@ function Header() {
       {/* Subsección: Barra central (Logo, Buscador, Cotización USD y Acciones de Usuario) */}
       <div className="border-b border-surface-variant">
         <div className="max-w-[1320px] mx-auto px-margin-desktop h-20 flex items-center gap-space-lg">
-          <div className="flex items-center gap-space-sm shrink-0">
+          <a href="/" className="flex items-center gap-space-sm shrink-0">
             <img
               alt="ZeroLag Logo"
               className="h-12 w-auto object-contain"
               src={ZeroLagLogo}
             />
-          </div>
+          </a>
           <div className="flex-1 max-w-2xl">
             <form action="#" className="flex w-full" method="GET">
               <input

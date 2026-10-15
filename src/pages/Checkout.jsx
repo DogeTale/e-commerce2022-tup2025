@@ -7,6 +7,8 @@ import StepperBuyProcess from "../components/checkout/StepperBuyProcess";
 function Checkout() {
   return (
     <>
+      <title>Checkout</title>
+
       <Header />
 
       <main className="w-full pt-[156px] bg-surface min-h-[calc(100vh-156px)]">
