@@ -97,7 +97,7 @@ function Header() {
             <a
               className="flex items-center gap-space-xs text-left group"
               data-path="login"
-              href="#"
+              href="/orders"
             >
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0">
                 <span className="material-symbols-outlined text-on-primary text-[18px]">
