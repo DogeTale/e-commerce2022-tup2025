@@ -1,0 +1,2137 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+        filter: none !important;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#303031",
+              "on-tertiary-fixed": "#002204",
+              "on-primary": "#ffffff",
+              "on-primary-fixed": "#410003",
+              error: "#ba1a1a",
+              "on-tertiary-container": "#d8ffd0",
+              "inverse-on-surface": "#f2f0f0",
+              outline: "#8f6f6c",
+              tertiary: "#11651d",
+              "inverse-primary": "#ffb3ac",
+              secondary: "#5f5e5e",
+              surface: "#fbf9f8",
+              "on-secondary-container": "#656464",
+              "surface-container-lowest": "#ffffff",
+              "on-error-container": "#93000a",
+              "tertiary-container": "#307f34",
+              "on-error": "#ffffff",
+              "primary-fixed-dim": "#ffb3ac",
+              "surface-dim": "#dbdad9",
+              "surface-container-high": "#e9e8e7",
+              "on-background": "#1b1c1c",
+              "on-surface-variant": "#5b403d",
+              background: "#fbf9f8",
+              "primary-container": "#d32f2f",
+              "on-primary-fixed-variant": "#930010",
+              "secondary-fixed": "#e5e2e1",
+              "outline-variant": "#e4beba",
+              "surface-tint": "#ba1a20",
+              "on-surface": "#1b1c1c",
+              "on-primary-container": "#fff2f0",
+              "tertiary-fixed": "#a3f69c",
+              "tertiary-fixed-dim": "#88d982",
+              "on-secondary-fixed-variant": "#474646",
+              "primary-fixed": "#ffdad6",
+              "error-container": "#ffdad6",
+              "secondary-container": "#e5e2e1",
+              "surface-container": "#efeded",
+              "secondary-fixed-dim": "#c8c6c5",
+              "surface-variant": "#e4e2e2",
+              "on-tertiary-fixed-variant": "#005312",
+              "on-tertiary": "#ffffff",
+              "surface-container-highest": "#e4e2e2",
+              "surface-bright": "#fbf9f8",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed": "#1c1b1b",
+              primary: "#af101a",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "space-xl": "2rem",
+              gutter: "1rem",
+              "margin-desktop": "2rem",
+              margin: "1rem",
+              "space-xs": "0.25rem",
+              "gutter-tablet": "1.25rem",
+              "space-md": "1rem",
+              "margin-tablet": "1.5rem",
+              "gutter-desktop": "1.5rem",
+              "space-sm": "0.5rem",
+              "space-lg": "1.5rem",
+              "space-2xl": "3rem",
+            },
+            fontFamily: {
+              "label-sm": ["Inter"],
+              "headline-sm": ["Inter"],
+              "headline-lg-mobile": ["Inter"],
+              "headline-xl": ["Inter"],
+              "headline-xl-mobile": ["Inter"],
+              "body-md": ["Inter"],
+              "body-lg": ["Inter"],
+              "label-md": ["Inter"],
+              "label-lg": ["Inter"],
+              "headline-lg": ["Inter"],
+              "headline-md": ["Inter"],
+              "body-sm": ["Inter"],
+            },
+            fontSize: {
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-sm": [
+                "18px",
+                {
+                  lineHeight: "24px",
+                  letterSpacing: "-0.005em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg-mobile": [
+                "24px",
+                {
+                  lineHeight: "32px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-xl": [
+                "40px",
+                {
+                  lineHeight: "48px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "headline-xl-mobile": [
+                "30px",
+                {
+                  lineHeight: "36px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "800",
+                },
+              ],
+              "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "18px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": [
+                "22px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-surface font-body-md text-on-surface antialiased">
+    <header
+      class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-surface-variant"
+    >
+      <div class="bg-surface-container border-b border-surface-variant">
+        <div
+          class="max-w-[1320px] mx-auto px-margin-desktop h-8 flex items-center justify-between font-label-sm text-label-sm"
+        >
+          <div class="flex items-center gap-space-xs text-secondary truncate">
+            <span class="material-symbols-outlined text-[14px] text-tertiary"
+              >local_shipping</span
+            ><span
+              >Envíos a todo el país vía Andreani y Correo Argentino | Hasta 12
+              cuotas sin interés | Local en Belgrano, CABA</span
+            >
+          </div>
+          <div class="hidden lg:flex items-center gap-space-md text-secondary">
+            <a
+              class="hover:text-primary transition-colors"
+              data-path="arma-tu-pc"
+              href="#"
+              >Armá tu PC</a
+            ><span class="text-surface-variant">|</span
+            ><a
+              class="hover:text-primary transition-colors"
+              data-path="garantias-y-rma"
+              href="#"
+              >Garantías y RMA</a
+            ><span class="text-surface-variant">|</span
+            ><a
+              class="hover:text-primary transition-colors"
+              data-path="ayuda-faq"
+              href="#"
+              >Ayuda / FAQ</a
+            ><span class="text-surface-variant">|</span
+            ><a
+              class="hover:text-primary transition-colors"
+              data-path="venta-corporativa"
+              href="#"
+              >Venta Corporativa</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="border-b border-surface-variant">
+        <div
+          class="max-w-[1320px] mx-auto px-margin-desktop h-20 flex items-center gap-space-lg"
+        >
+          <div class="flex items-center gap-space-sm shrink-0">
+            <img
+              alt="ZeroLag Logo"
+              class="h-8 w-auto object-contain"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1Wt_esEXmOhcAK74Hfmge3dK9jQ86GoHsQBgEnZ_n3bvojcJ6yJlEuQ8ccu-7QscR76ggR_AYYtqC7JfTTw4gRM42_Rz-KLJzAWCMkz7doQ4YYkNsl7L8zev9pl6Mo-Ksk06bs5ccdbYKnSR6WFdYDdM50r2eHMuOZNM1fYFvh-1KU3ULAXNr2UOD_Q3m-RJlRvVOERXEDy1454rrmEDVMmD6NHGGtF3U3rjJTXsOf3-WAZ5qEQ-wy_s9U"
+            />
+            <div class="flex flex-col">
+              <span
+                class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface leading-none"
+                >ZeroLag</span
+              ><span
+                class="font-label-sm text-[9px] uppercase tracking-widest text-primary font-bold leading-none mt-1"
+                >Hardware &amp; Gaming</span
+              >
+            </div>
+          </div>
+          <div class="flex-1 max-w-2xl">
+            <form action="#" class="flex w-full" method="GET">
+              <input
+                class="w-full h-10 px-space-md bg-surface-container-low border border-surface-variant border-r-0 rounded-l-lg text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
+                placeholder="Buscar placas de video, procesadores, periféricos, notebooks..."
+                type="text"
+              /><button
+                class="h-10 px-space-lg bg-primary-container text-on-primary font-label-lg text-label-lg rounded-r-lg flex items-center gap-space-xs shrink-0 hover:bg-primary transition-colors"
+                type="submit"
+              >
+                <span class="material-symbols-outlined text-[18px]">search</span
+                ><span>Buscar</span>
+              </button>
+            </form>
+          </div>
+          <div
+            class="hidden xl:flex items-center gap-space-xs border border-surface-variant bg-surface-container-low px-space-sm py-1 rounded-lg shrink-0"
+          >
+            <span class="material-symbols-outlined text-tertiary text-[20px]"
+              >currency_exchange</span
+            >
+            <div class="flex flex-col">
+              <div class="flex items-center gap-1 font-label-sm text-label-sm">
+                <span class="text-secondary">USD BNA:</span
+                ><span class="font-bold text-on-surface">$1.085</span>
+              </div>
+              <span
+                class="text-[10px] leading-tight font-bold text-tertiary uppercase"
+                >Transferencia -15% OFF</span
+              >
+            </div>
+          </div>
+          <div class="flex items-center gap-space-md shrink-0 ml-auto">
+            <a
+              class="flex items-center gap-space-xs text-left group"
+              data-path="login"
+              href="#"
+              ><div
+                class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-on-primary text-[18px]"
+                  >person</span
+                >
+              </div>
+              <div class="hidden md:flex flex-col">
+                <span
+                  class="font-label-sm text-[10px] text-secondary leading-tight"
+                  >Hola, Gamer!</span
+                ><span
+                  class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors leading-tight"
+                  >Ingresar / Registro</span
+                >
+              </div></a
+            >
+            <div class="h-8 w-px bg-surface-variant hidden md:block"></div>
+            <a
+              class="flex items-center gap-space-xs border border-surface-variant bg-surface-container-lowest px-space-sm h-10 rounded-lg hover:border-on-surface transition-colors relative"
+              data-path="carrito"
+              href="#"
+              ><span
+                class="material-symbols-outlined text-[20px] text-on-surface"
+                >shopping_cart</span
+              ><span
+                class="hidden md:inline font-label-md text-label-md text-on-surface"
+                >Mi Carrito</span
+              ><span
+                class="bg-primary text-on-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded-sm"
+                >2</span
+              ></a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="bg-surface-container-lowest">
+        <div
+          class="max-w-[1320px] mx-auto px-margin-desktop h-11 flex items-center justify-between"
+        >
+          <nav
+            class="flex items-center gap-space-md overflow-x-auto h-full"
+            data-active-classes="text-primary font-bold border-b-2 border-primary"
+          >
+            <a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
+              data-path="notebooks-laptops"
+              href="#"
+              >Notebooks &amp; Laptops</a
+            ><a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
+              data-path="pc-armadas-gaming"
+              href="#"
+              >PC Armadas Gaming</a
+            ><a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
+              data-path="placas-de-video-gpu"
+              href="#"
+              >Placas de Video (GPU)</a
+            ><a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
+              data-path="procesadores-cpu"
+              href="#"
+              >Procesadores (CPU)</a
+            ><a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
+              data-path="monitores"
+              href="#"
+              >Monitores</a
+            ><a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
+              data-path="perifericos"
+              href="#"
+              >Periféricos</a
+            ><a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
+              data-path="componentes"
+              href="#"
+              >Componentes</a
+            ><a
+              class="text-primary hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors uppercase font-bold"
+              data-path="ofertas-relampago"
+              href="#"
+              >Ofertas Relámpago</a
+            >
+          </nav>
+          <div
+            class="hidden md:flex items-center pl-space-md shrink-0 border-l border-surface-variant h-6"
+          >
+            <a
+              class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors flex items-center gap-1 uppercase tracking-wider"
+              data-path="admin-dashboard"
+              href="#"
+              ><span class="material-symbols-outlined text-[16px]">tune</span
+              ><span>Panel Admin</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-[156px] bg-surface min-h-[calc(100vh-156px)]">
+      <div class="flex flex-col w-full">
+        <!-- 1. HERO BANNER PRINCIPAL FLAT -->
+        <section class="w-full border-b border-surface-variant bg-surface">
+          <div class="max-w-[1320px] mx-auto px-margin-desktop py-space-lg">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+              <!-- Main Hero Card (8 Cols) -->
+              <div
+                class="lg:col-span-8 border border-surface-variant bg-surface-container-lowest p-space-xl flex flex-col justify-between relative"
+              >
+                <div class="flex flex-col gap-space-sm z-10 max-w-xl">
+                  <div
+                    class="inline-flex items-center gap-space-xs self-start bg-surface-container px-2 py-1 rounded"
+                  >
+                    <span
+                      class="w-2 h-2 rounded-full bg-primary inline-block"
+                    ></span>
+                    <span
+                      class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface"
+                      >Lanzamiento Hardware 2025</span
+                    >
+                  </div>
+                  <h1
+                    class="font-headline-xl text-headline-xl text-on-surface uppercase tracking-tight"
+                  >
+                    Especial NVIDIA GeForce
+                    <span class="text-primary-container"
+                      >RTX Serie 40 SUPER</span
+                    >
+                    &amp; AMD Ryzen 7000
+                  </h1>
+                  <p class="font-body-lg text-body-lg text-secondary">
+                    Rendimiento extremo sin cuello de botella. Tasa de cuadros
+                    ultra alta en 1440p y 4K con trazado de rayos completo y
+                    DLSS 3.5 con garantía directa oficial.
+                  </p>
+                </div>
+                <div
+                  class="mt-space-xl pt-space-lg border-t border-surface-variant flex flex-wrap items-center justify-between gap-space-md z-10"
+                >
+                  <div class="flex flex-col">
+                    <span
+                      class="font-label-sm text-label-sm text-secondary uppercase"
+                      >Disponibilidad Inmediata</span
+                    >
+                    <span
+                      class="font-headline-sm text-headline-sm text-on-surface"
+                      >Stock Certificado CABA</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-space-sm">
+                    <a
+                      class="inline-flex items-center justify-center h-10 px-space-xl bg-primary-container text-on-primary font-label-lg text-label-lg rounded hover:bg-primary transition-colors"
+                      data-path="placas-de-video-gpu"
+                      href="#"
+                    >
+                      Ver Placas de Video
+                    </a>
+                    <a
+                      class="inline-flex items-center justify-center h-10 px-space-lg bg-surface-container border border-surface-variant text-on-surface font-label-lg text-label-lg rounded hover:bg-surface-variant transition-colors"
+                      data-path="procesadores-cpu"
+                      href="#"
+                    >
+                      Ver Procesadores
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Side Banners (4 Cols) -->
+              <div class="lg:col-span-4 flex flex-col gap-space-md">
+                <!-- Side 1: Ensamblados -->
+                <div
+                  class="flex-1 border border-surface-variant bg-surface-container-low p-space-lg flex flex-col justify-between"
+                >
+                  <div class="flex flex-col gap-space-xs">
+                    <div
+                      class="flex items-center justify-between text-secondary"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[20px] text-tertiary"
+                        >verified_user</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm uppercase font-bold text-tertiary"
+                        >3 Años de Cobertura</span
+                      >
+                    </div>
+                    <h2
+                      class="font-headline-sm text-headline-sm text-on-surface uppercase mt-2"
+                    >
+                      Ensamblados ZeroLag Pro
+                    </h2>
+                    <p class="font-body-md text-body-md text-secondary">
+                      PCs de alto rendimiento testeadas bajo estrés con
+                      Cinebench y FurMark. Ensambladas por técnicos
+                      especializados.
+                    </p>
+                  </div>
+                  <div
+                    class="mt-space-md pt-space-sm border-t border-surface-variant flex items-center justify-between"
+                  >
+                    <span class="font-label-md text-label-md text-on-surface"
+                      >Armadas listas para jugar</span
+                    >
+                    <a
+                      class="inline-flex items-center text-primary font-label-lg text-label-lg hover:underline gap-1"
+                      data-path="pc-armadas-gaming"
+                      href="#"
+                    >
+                      <span>Configurar</span>
+                      <span class="material-symbols-outlined text-[16px]"
+                        >arrow_forward</span
+                      >
+                    </a>
+                  </div>
+                </div>
+                <!-- Side 2: Notebooks -->
+                <div
+                  class="flex-1 border border-surface-variant bg-surface-container-low p-space-lg flex flex-col justify-between"
+                >
+                  <div class="flex flex-col gap-space-xs">
+                    <div
+                      class="flex items-center justify-between text-secondary"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[20px] text-primary"
+                        >laptop_chromebook</span
+                      >
+                      <span
+                        class="font-label-sm text-label-sm uppercase font-bold text-primary"
+                        >Financiación Exclusiva</span
+                      >
+                    </div>
+                    <h2
+                      class="font-headline-sm text-headline-sm text-on-surface uppercase mt-2"
+                    >
+                      Notebooks ASUS ROG &amp; Legion
+                    </h2>
+                    <p class="font-body-md text-body-md text-secondary">
+                      Modelos 2024/2025 con pantallas OLED y RTX Serie 40.
+                      Disponibles en 6 y 12 cuotas fijas sin interés.
+                    </p>
+                  </div>
+                  <div
+                    class="mt-space-md pt-space-sm border-t border-surface-variant flex items-center justify-between"
+                  >
+                    <span class="font-label-md text-label-md text-on-surface"
+                      >Hasta 12 Cuotas</span
+                    >
+                    <a
+                      class="inline-flex items-center text-primary font-label-lg text-label-lg hover:underline gap-1"
+                      data-path="notebooks-laptops"
+                      href="#"
+                    >
+                      <span>Explorar</span>
+                      <span class="material-symbols-outlined text-[16px]"
+                        >arrow_forward</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 2. BARRA DE BENEFICIOS LOCALES EN ARGENTINA -->
+        <section
+          class="w-full border-b border-surface-variant bg-surface-container-lowest"
+        >
+          <div class="max-w-[1320px] mx-auto px-margin-desktop py-space-md">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md"
+            >
+              <!-- Beneficio 1 -->
+              <div
+                class="border border-surface-variant p-space-md flex items-start gap-space-sm bg-surface"
+              >
+                <div
+                  class="w-10 h-10 shrink-0 bg-surface-container flex items-center justify-center rounded"
+                >
+                  <span
+                    class="material-symbols-outlined text-on-surface text-[22px]"
+                    >local_shipping</span
+                  >
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-lg text-label-lg text-on-surface font-bold"
+                    >Envíos Seguros a Todo el País</span
+                  >
+                  <span class="font-body-sm text-body-sm text-secondary mt-1"
+                    >Andreani, Correo Argentino y Moto Express en CABA/GBA en el
+                    día.</span
+                  >
+                </div>
+              </div>
+              <!-- Beneficio 2 -->
+              <div
+                class="border border-surface-variant p-space-md flex items-start gap-space-sm bg-surface"
+              >
+                <div
+                  class="w-10 h-10 shrink-0 bg-tertiary-container flex items-center justify-center rounded"
+                >
+                  <span
+                    class="material-symbols-outlined text-on-tertiary text-[22px]"
+                    >payments</span
+                  >
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-lg text-label-lg text-tertiary font-bold"
+                    >15% OFF Transferencia Directa</span
+                  >
+                  <span class="font-body-sm text-body-sm text-secondary mt-1"
+                    >Acreditación instantánea vía CBU/CVU con precio final
+                    bonificado.</span
+                  >
+                </div>
+              </div>
+              <!-- Beneficio 3 -->
+              <div
+                class="border border-surface-variant p-space-md flex items-start gap-space-sm bg-surface"
+              >
+                <div
+                  class="w-10 h-10 shrink-0 bg-surface-container flex items-center justify-center rounded"
+                >
+                  <span
+                    class="material-symbols-outlined text-on-surface text-[22px]"
+                    >format_image_left</span
+                  >
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-lg text-label-lg text-on-surface font-bold"
+                    >Garantía y RMA Express</span
+                  >
+                  <span class="font-body-sm text-body-sm text-secondary mt-1"
+                    >Cambio directo durante los primeros 30 días en nuestro
+                    local de Belgrano.</span
+                  >
+                </div>
+              </div>
+              <!-- Beneficio 4 -->
+              <div
+                class="border border-surface-variant p-space-md flex items-start gap-space-sm bg-surface"
+              >
+                <div
+                  class="w-10 h-10 shrink-0 bg-surface-container flex items-center justify-center rounded"
+                >
+                  <span
+                    class="material-symbols-outlined text-on-surface text-[22px]"
+                    >support_agent</span
+                  >
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-lg text-label-lg text-on-surface font-bold"
+                    >Soporte por Especialistas</span
+                  >
+                  <span class="font-body-sm text-body-sm text-secondary mt-1"
+                    >Asesoría técnica en compatibilidad de componentes vía
+                    WhatsApp.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 3. CATEGORÍAS RÁPIDAS -->
+        <section class="w-full border-b border-surface-variant bg-surface">
+          <div class="max-w-[1320px] mx-auto px-margin-desktop py-space-xl">
+            <div
+              class="flex items-center justify-between mb-space-md pb-space-xs border-b border-surface-variant"
+            >
+              <h2
+                class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-primary text-[24px]"
+                  >grid_view</span
+                >
+                Hardware por Categoría
+              </h2>
+              <span class="font-label-sm text-label-sm text-secondary uppercase"
+                >Explorar catálogo integral</span
+              >
+            </div>
+            <div
+              class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-space-sm"
+            >
+              <a
+                class="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col items-center text-center group hover:border-primary-container transition-colors rounded"
+                data-path="notebooks-laptops"
+                href="#"
+              >
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-surface-container-low text-on-surface group-hover:bg-primary-container group-hover:text-on-primary transition-colors rounded mb-2"
+                >
+                  <span class="material-symbols-outlined text-[26px]"
+                    >laptop_mac</span
+                  >
+                </div>
+                <span
+                  class="font-label-md text-label-md text-on-surface font-bold leading-tight"
+                  >Notebooks</span
+                >
+                <span class="font-body-sm text-body-sm text-secondary mt-1"
+                  >Portátiles</span
+                >
+              </a>
+              <a
+                class="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col items-center text-center group hover:border-primary-container transition-colors rounded"
+                data-path="placas-de-video-gpu"
+                href="#"
+              >
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-surface-container-low text-on-surface group-hover:bg-primary-container group-hover:text-on-primary transition-colors rounded mb-2"
+                >
+                  <span class="material-symbols-outlined text-[26px]"
+                    >developer_board</span
+                  >
+                </div>
+                <span
+                  class="font-label-md text-label-md text-on-surface font-bold leading-tight"
+                  >Placas GPU</span
+                >
+                <span class="font-body-sm text-body-sm text-secondary mt-1"
+                  >GeForce / AMD</span
+                >
+              </a>
+              <a
+                class="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col items-center text-center group hover:border-primary-container transition-colors rounded"
+                data-path="procesadores-cpu"
+                href="#"
+              >
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-surface-container-low text-on-surface group-hover:bg-primary-container group-hover:text-on-primary transition-colors rounded mb-2"
+                >
+                  <span class="material-symbols-outlined text-[26px]"
+                    >memory</span
+                  >
+                </div>
+                <span
+                  class="font-label-md text-label-md text-on-surface font-bold leading-tight"
+                  >Procesadores</span
+                >
+                <span class="font-body-sm text-body-sm text-secondary mt-1"
+                  >Intel &amp; Ryzen</span
+                >
+              </a>
+              <a
+                class="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col items-center text-center group hover:border-primary-container transition-colors rounded"
+                data-path="monitores"
+                href="#"
+              >
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-surface-container-low text-on-surface group-hover:bg-primary-container group-hover:text-on-primary transition-colors rounded mb-2"
+                >
+                  <span class="material-symbols-outlined text-[26px]"
+                    >monitor</span
+                  >
+                </div>
+                <span
+                  class="font-label-md text-label-md text-on-surface font-bold leading-tight"
+                  >Monitores</span
+                >
+                <span class="font-body-sm text-body-sm text-secondary mt-1"
+                  >144Hz / 240Hz</span
+                >
+              </a>
+              <a
+                class="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col items-center text-center group hover:border-primary-container transition-colors rounded"
+                data-path="perifericos"
+                href="#"
+              >
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-surface-container-low text-on-surface group-hover:bg-primary-container group-hover:text-on-primary transition-colors rounded mb-2"
+                >
+                  <span class="material-symbols-outlined text-[26px]"
+                    >keyboard</span
+                  >
+                </div>
+                <span
+                  class="font-label-md text-label-md text-on-surface font-bold leading-tight"
+                  >Periféricos</span
+                >
+                <span class="font-body-sm text-body-sm text-secondary mt-1"
+                  >Mouse &amp; Teclados</span
+                >
+              </a>
+              <a
+                class="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col items-center text-center group hover:border-primary-container transition-colors rounded"
+                data-path="componentes"
+                href="#"
+              >
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-surface-container-low text-on-surface group-hover:bg-primary-container group-hover:text-on-primary transition-colors rounded mb-2"
+                >
+                  <span class="material-symbols-outlined text-[26px]"
+                    >save</span
+                  >
+                </div>
+                <span
+                  class="font-label-md text-label-md text-on-surface font-bold leading-tight"
+                  >Almacenamiento</span
+                >
+                <span class="font-body-sm text-body-sm text-secondary mt-1"
+                  >SSD M.2 NVMe</span
+                >
+              </a>
+              <a
+                class="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col items-center text-center group hover:border-primary-container transition-colors rounded"
+                data-path="componentes"
+                href="#"
+              >
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-surface-container-low text-on-surface group-hover:bg-primary-container group-hover:text-on-primary transition-colors rounded mb-2"
+                >
+                  <span class="material-symbols-outlined text-[26px]"
+                    >power</span
+                  >
+                </div>
+                <span
+                  class="font-label-md text-label-md text-on-surface font-bold leading-tight"
+                  >Fuentes 80+</span
+                >
+                <span class="font-body-sm text-body-sm text-secondary mt-1"
+                  >Gold &amp; Platinum</span
+                >
+              </a>
+              <a
+                class="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col items-center text-center group hover:border-primary-container transition-colors rounded"
+                data-path="componentes"
+                href="#"
+              >
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-surface-container-low text-on-surface group-hover:bg-primary-container group-hover:text-on-primary transition-colors rounded mb-2"
+                >
+                  <span class="material-symbols-outlined text-[26px]"
+                    >mode_fan</span
+                  >
+                </div>
+                <span
+                  class="font-label-md text-label-md text-on-surface font-bold leading-tight"
+                  >Gabinetes &amp; Cool</span
+                >
+                <span class="font-body-sm text-body-sm text-secondary mt-1"
+                  >Watercooling</span
+                >
+              </a>
+            </div>
+          </div>
+        </section>
+        <!-- 4. ENSAMBLADOS DEL MES -->
+        <section
+          class="w-full border-b border-surface-variant bg-surface-container-low"
+        >
+          <div class="max-w-[1320px] mx-auto px-margin-desktop py-space-2xl">
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-space-sm"
+            >
+              <div>
+                <div
+                  class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm uppercase font-bold tracking-wider"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >precision_manufacturing</span
+                  >
+                  <span>Taller Oficial ZeroLag</span>
+                </div>
+                <h2
+                  class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight mt-1"
+                >
+                  Ensamblados del Mes
+                </h2>
+                <p class="font-body-md text-body-md text-secondary">
+                  Equipos armados, testeados con perfil XMP/EXPO activo, Windows
+                  11 Trial instalado y curva de ventilación optimizada.
+                </p>
+              </div>
+              <a
+                class="inline-flex items-center gap-1 font-label-lg text-label-lg text-primary hover:underline"
+                data-path="pc-armadas-gaming"
+                href="#"
+              >
+                <span>Ver todas las PC Armadas</span>
+                <span class="material-symbols-outlined text-[18px]"
+                  >chevron_right</span
+                >
+              </a>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+              <!-- PC 1: Starter V1 -->
+              <div
+                class="border border-surface-variant bg-surface-container-lowest flex flex-col justify-between"
+              >
+                <div
+                  class="p-space-md border-b border-surface-variant flex items-center justify-between bg-surface"
+                >
+                  <span
+                    class="font-label-sm text-label-sm text-secondary uppercase tracking-wider"
+                    >Gama Media 1080p Ultra</span
+                  >
+                  <span
+                    class="inline-flex items-center gap-1 bg-tertiary text-on-tertiary px-2 py-0.5 rounded font-label-sm text-label-sm"
+                  >
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"
+                    ></span>
+                    En Stock Inmediato
+                  </span>
+                </div>
+                <div class="p-space-lg flex flex-col flex-1">
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">
+                    ZeroLag Starter V1
+                  </h3>
+                  <span class="font-body-sm text-body-sm text-secondary mt-1"
+                    >Ideal Esports competitivo y streaming inicial</span
+                  >
+                  <!-- Specs Table Flat -->
+                  <div
+                    class="mt-space-md border border-surface-variant divide-y divide-surface-variant text-body-sm font-body-sm"
+                  >
+                    <div
+                      class="p-2 flex justify-between bg-surface-container-low"
+                    >
+                      <span class="font-bold text-secondary">CPU</span>
+                      <span class="text-on-surface font-semibold text-right"
+                        >Intel Core i5 13400F</span
+                      >
+                    </div>
+                    <div
+                      class="p-2 flex justify-between bg-surface-container-lowest"
+                    >
+                      <span class="font-bold text-secondary">GPU</span>
+                      <span class="text-on-surface font-semibold text-right"
+                        >GeForce RTX 4060 8GB</span
+                      >
+                    </div>
+                    <div
+                      class="p-2 flex justify-between bg-surface-container-low"
+                    >
+                      <span class="font-bold text-secondary">RAM</span>
+                      <span class="text-on-surface font-semibold text-right"
+                        >16GB (2x8GB) DDR5 5200MHz</span
+                      >
+                    </div>
+                    <div
+                      class="p-2 flex justify-between bg-surface-container-lowest"
+                    >
+                      <span class="font-bold text-secondary">SSD</span>
+                      <span class="text-on-surface font-semibold text-right"
+                        >1TB NVMe PCIe 4.0 M.2</span
+                      >
+                    </div>
+                    <div
+                      class="p-2 flex justify-between bg-surface-container-low"
+                    >
+                      <span class="font-bold text-secondary">Fuente</span>
+                      <span class="text-on-surface font-semibold text-right"
+                        >650W 80 Plus Bronze</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Price Block -->
+                  <div
+                    class="mt-space-lg pt-space-md border-t border-surface-variant"
+                  >
+                    <div class="flex flex-col">
+                      <span
+                        class="font-label-sm text-label-sm text-tertiary uppercase font-bold"
+                        >Precio Especial Transferencia</span
+                      >
+                      <span
+                        class="font-headline-md text-headline-md text-primary-container leading-none my-1"
+                        >$1.249.990
+                        <span class="font-label-md text-label-md text-secondary"
+                          >ARS</span
+                        ></span
+                      >
+                      <span class="font-body-sm text-body-sm text-secondary"
+                        >o 12 cuotas fijas de
+                        <strong class="text-on-surface"
+                          >$138.500 ARS</strong
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="p-space-md border-t border-surface-variant bg-surface flex items-center gap-space-sm"
+                >
+                  <a
+                    class="w-full h-10 bg-primary-container text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-1 hover:bg-primary transition-colors"
+                    data-path="pc-armadas-gaming"
+                    href="#"
+                  >
+                    <span>Ver Configuración</span>
+                    <span class="material-symbols-outlined text-[18px]"
+                      >build</span
+                    >
+                  </a>
+                </div>
+              </div>
+              <!-- PC 2: Pro Gamer V3 (Highlighted) -->
+              <div
+                class="border-2 border-primary bg-surface-container-lowest flex flex-col justify-between relative"
+              >
+                <div
+                  class="p-space-md border-b border-surface-variant flex items-center justify-between bg-surface-container"
+                >
+                  <span
+                    class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-bold"
+                    >Más Vendido 1440p High-FPS</span
+                  >
+                  <span
+                    class="inline-flex items-center gap-1 bg-tertiary text-on-tertiary px-2 py-0.5 rounded font-label-sm text-label-sm"
+                  >
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"
+                    ></span>
+                    En Stock Inmediato
+                  </span>
+                </div>
+                <div class="p-space-lg flex flex-col flex-1">
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">
+                    ZeroLag Pro Gamer V3
+                  </h3>
+                  <span class="font-body-sm text-body-sm text-secondary mt-1"
+                    >Configuración líder en benchmarks con arquitectura 3D
+                    V-Cache</span
+                  >
+                  <!-- Specs Table Flat -->
+                  <div
+                    class="mt-space-md border border-surface-variant divide-y divide-surface-variant text-body-sm font-body-sm"
+                  >
+                    <div
+                      class="p-2 flex justify-between bg-surface-container-low"
+                    >
+                      <span class="font-bold text-secondary">CPU</span>
+                      <span class="text-on-surface font-semibold text-right"
+                        >AMD Ryzen 7 7800X3D</span
+                      >
+                    </div>
+                    <div
+                      class="p-2 flex justify-between bg-surface-container-lowest"
+                    >
+                      <span class="font-bold text-secondary">GPU</span>
+                      <span class="text-on-surface font-semibold text-right"
+                        >GeForce RTX 4070 Ti SUPER 16GB</span
+                      >
+                    </div>
+                    <div
+                      class="p-2 flex justify-between bg-surface-container-low"
+                    >
+                      <span class="font-bold text-secondary">RAM</span>
+                      <span class="text-on-surface font-semibold text-right"
+                        >32GB (2x16GB) DDR5 6000MHz CL30</span
+                      >
+                    </div>
+                    <div
+                      class="p-2 flex justify-between bg-surface-container-lowest"
+                    >
+                      <span class="font-bold text-secondary">Cooling</span>
+                      <span class="text-on-surface font-semibold text-right"
+                        >Watercooling AIO 240mm ARGB</span
+                      >
+                    </div>
+                    <div
+                      class="p-2 flex justify-between bg-surface-container-low"
+                    >
+                      <span class="font-bold text-secondary">Fuente</span>
+                      <span class="text-on-surface font-semibold text-right"
+                        >850W 80 Plus Gold Modular</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Price Block -->
+                  <div
+                    class="mt-space-lg pt-space-md border-t border-surface-variant"
+                  >
+                    <div class="flex flex-col">
+                      <span
+                        class="font-label-sm text-label-sm text-tertiary uppercase font-bold"
+                        >Precio Especial Transferencia</span
+                      >
+                      <span
+                        class="font-headline-md text-headline-md text-primary-container leading-none my-1"
+                        >$2.890.000
+                        <span class="font-label-md text-label-md text-secondary"
+                          >ARS</span
+                        ></span
+                      >
+                      <span class="font-body-sm text-body-sm text-secondary"
+                        >o 12 cuotas fijas de
+                        <strong class="text-on-surface"
+                          >$320.200 ARS</strong
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="p-space-md border-t border-surface-variant bg-surface flex items-center gap-space-sm"
+                >
+                  <a
+                    class="w-full h-10 bg-primary-container text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-1 hover:bg-primary transition-colors"
+                    data-path="pc-armadas-gaming"
+                    href="#"
+                  >
+                    <span>Ver Configuración</span>
+                    <span class="material-symbols-outlined text-[18px]"
+                      >build</span
+                    >
+                  </a>
+                </div>
+              </div>
+              <!-- PC 3: Master Streamer -->
+              <div
+                class="border border-surface-variant bg-surface-container-lowest flex flex-col justify-between"
+              >
+                <div
+                  class="p-space-md border-b border-surface-variant flex items-center justify-between bg-surface"
+                >
+                  <span
+                    class="font-label-sm text-label-sm text-secondary uppercase tracking-wider"
+                    >Workstation &amp; 4K Ultra</span
+                  >
+                  <span
+                    class="inline-flex items-center gap-1 bg-tertiary text-on-tertiary px-2 py-0.5 rounded font-label-sm text-label-sm"
+                  >
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"
+                    ></span>
+                    En Stock Inmediato
+                  </span>
+                </div>
+                <div class="p-space-lg flex flex-col flex-1">
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">
+                    ZeroLag Master Streamer
+                  </h3>
+                  <span class="font-body-sm text-body-sm text-secondary mt-1"
+                    >Renderizado 3D pesado, edición 4K y gaming competitivo sin
+                    concesiones</span
+                  >
+                  <!-- Specs Table Flat -->
+                  <div
+                    class="mt-space-md border border-surface-variant divide-y divide-surface-variant text-body-sm font-body-sm"
+                  >
+                    <div
+                      class="p-2 flex justify-between bg-surface-container-low"
+                    >
+                      <span class="font-bold text-secondary">CPU</span>
+                      <span class="text-on-surface font-semibold text-right"
+                        >Intel Core i9 14900KF</span
+                      >
+                    </div>
+                    <div
+                      class="p-2 flex justify-between bg-surface-container-lowest"
+                    >
+                      <span class="font-bold text-secondary">GPU</span>
+                      <span class="text-on-surface font-semibold text-right"
+                        >GeForce RTX 4080 SUPER 16GB</span
+                      >
+                    </div>
+                    <div
+                      class="p-2 flex justify-between bg-surface-container-low"
+                    >
+                      <span class="font-bold text-secondary">RAM</span>
+                      <span class="text-on-surface font-semibold text-right"
+                        >64GB (2x32GB) DDR5 6400MHz</span
+                      >
+                    </div>
+                    <div
+                      class="p-2 flex justify-between bg-surface-container-lowest"
+                    >
+                      <span class="font-bold text-secondary">SSD</span>
+                      <span class="text-on-surface font-semibold text-right"
+                        >2TB NVMe PCIe Gen4 (7400 MB/s)</span
+                      >
+                    </div>
+                    <div
+                      class="p-2 flex justify-between bg-surface-container-low"
+                    >
+                      <span class="font-bold text-secondary">Fuente</span>
+                      <span class="text-on-surface font-semibold text-right"
+                        >1000W ATX 3.0 PCIe 5.0 Gold</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Price Block -->
+                  <div
+                    class="mt-space-lg pt-space-md border-t border-surface-variant"
+                  >
+                    <div class="flex flex-col">
+                      <span
+                        class="font-label-sm text-label-sm text-tertiary uppercase font-bold"
+                        >Precio Especial Transferencia</span
+                      >
+                      <span
+                        class="font-headline-md text-headline-md text-primary-container leading-none my-1"
+                        >$4.150.000
+                        <span class="font-label-md text-label-md text-secondary"
+                          >ARS</span
+                        ></span
+                      >
+                      <span class="font-body-sm text-body-sm text-secondary"
+                        >o 12 cuotas fijas de
+                        <strong class="text-on-surface"
+                          >$459.800 ARS</strong
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="p-space-md border-t border-surface-variant bg-surface flex items-center gap-space-sm"
+                >
+                  <a
+                    class="w-full h-10 bg-primary-container text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-1 hover:bg-primary transition-colors"
+                    data-path="pc-armadas-gaming"
+                    href="#"
+                  >
+                    <span>Ver Configuración</span>
+                    <span class="material-symbols-outlined text-[18px]"
+                      >build</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 5. OFERTAS RELÁMPAGO Y DESTACADOS -->
+        <section class="w-full border-b border-surface-variant bg-surface">
+          <div class="max-w-[1320px] mx-auto px-margin-desktop py-space-2xl">
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg pb-space-xs border-b border-surface-variant gap-space-sm"
+            >
+              <div>
+                <div class="flex items-center gap-2">
+                  <span
+                    class="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded font-bold uppercase tracking-wider"
+                    >Flash Sale</span
+                  >
+                  <span
+                    class="text-secondary font-body-sm text-body-sm flex items-center gap-1"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[16px] text-primary"
+                      >timer</span
+                    >
+                    Precios válidos hasta agotar stock asignado
+                  </span>
+                </div>
+                <h2
+                  class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight mt-1"
+                >
+                  Ofertas Relámpago y Hardware Destacado
+                </h2>
+              </div>
+              <div
+                class="flex items-center gap-space-sm font-label-sm text-label-sm"
+              >
+                <span class="text-secondary"
+                  >Moneda: ARS (Pesos Argentinos)</span
+                >
+                <span class="text-surface-variant">|</span>
+                <span class="text-tertiary font-bold"
+                  >IVA Incluido Factura A y B</span
+                >
+              </div>
+            </div>
+            <!-- Grid de 6 Productos -->
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-md"
+            >
+              <!-- Producto 1: GPU ASUS TUF 4070 SUPER -->
+              <div
+                class="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col justify-between rounded"
+              >
+                <div class="flex flex-col">
+                  <div class="flex items-center justify-between mb-2">
+                    <span
+                      class="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded uppercase font-bold"
+                      >-18% OFF</span
+                    >
+                    <span class="font-label-sm text-label-sm text-secondary"
+                      >SKU: GPU-AT4070S</span
+                    >
+                  </div>
+                  <!-- Product Image Flat Box -->
+                  <div
+                    class="w-full h-44 bg-surface-container-low border border-surface-variant flex items-center justify-center p-2 mb-space-md relative"
+                  >
+                    <img
+                      class="w-full h-full object-contain"
+                      data-alt="Placa de video ASUS TUF Gaming GeForce RTX 4070 Super en fondo blanco neutral de estudio técnico, con disipador triple fan de metal cepillado e iluminación sutil, vista frontal nítida de producto de computación de alta gama."
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMtBrFAizEAmrp4QLKEjUi_zMJLHRQneSVvSWf7tsAquyZqpUA6ppdmicOqHlhpAXkoRI95v6N51rpRFWWF4SlmlRap40nPGFCWOQmSZBKiLTJWTmB_6bAidzej82ywkNPdfksSLnSRF6WNpeA5Ph4QmuTei2KBws8aeMu-WvcJo4vEe4uKS7NFVCbgbNptTVYQ9OZvF7dU4CPgw1Wv3PI8UcDuYy5VBwjksT5yhes1sYA2QQjTZ9U"
+                    />
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm text-secondary uppercase font-bold"
+                    >ASUS TUF Gaming</span
+                  >
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface line-clamp-2 mt-1"
+                  >
+                    GeForce RTX 4070 Super 12GB GDDR6X
+                  </h3>
+                  <!-- Stock Progress Indicator Flat -->
+                  <div
+                    class="mt-space-md bg-surface-container p-2 border border-surface-variant"
+                  >
+                    <div
+                      class="flex justify-between font-label-sm text-label-sm mb-1"
+                    >
+                      <span class="text-secondary">Stock para oferta:</span>
+                      <span class="font-bold text-primary"
+                        >Quedan 4 unidades</span
+                      >
+                    </div>
+                    <div
+                      class="w-full bg-surface-container-highest h-1.5 rounded"
+                    >
+                      <div
+                        class="bg-primary h-1.5 rounded"
+                        style="width: 25%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="mt-space-md">
+                    <span
+                      class="font-body-sm text-body-sm text-secondary line-through"
+                      >$1.195.000 ARS</span
+                    >
+                    <div
+                      class="font-headline-md text-headline-md text-primary-container leading-none font-bold"
+                    >
+                      $980.000
+                      <span class="font-label-md text-label-md text-secondary"
+                        >ARS</span
+                      >
+                    </div>
+                    <span
+                      class="font-body-sm text-body-sm text-tertiary mt-1 block font-semibold"
+                      >Envío gratis vía Andreani</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="mt-space-lg pt-space-sm border-t border-surface-variant flex items-center gap-space-xs"
+                >
+                  <button
+                    class="flex-1 h-10 bg-primary-container text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-1 hover:bg-primary transition-colors"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >add_shopping_cart</span
+                    >
+                    <span>Comprar</span>
+                  </button>
+                  <button
+                    aria-label="Ver detalles técnicos"
+                    class="w-10 h-10 border border-surface-variant bg-surface flex items-center justify-center rounded hover:bg-surface-variant text-on-surface"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >info</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <!-- Producto 2: Monitor Samsung Odyssey G4 -->
+              <div
+                class="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col justify-between rounded"
+              >
+                <div class="flex flex-col">
+                  <div class="flex items-center justify-between mb-2">
+                    <span
+                      class="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded uppercase font-bold"
+                      >-22% OFF</span
+                    >
+                    <span class="font-label-sm text-label-sm text-secondary"
+                      >SKU: MON-SAMG427</span
+                    >
+                  </div>
+                  <div
+                    class="w-full h-44 bg-surface-container-low border border-surface-variant flex items-center justify-center p-2 mb-space-md relative"
+                  >
+                    <img
+                      class="w-full h-full object-contain"
+                      data-alt="Monitor gamer Samsung Odyssey G4 de 27 pulgadas panel IPS 240Hz, vista frontal con biseles ultrafinos y soporte ergonómico sobre fondo gris claro técnico de estudio fotográfico sin reflejos."
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcQdp9mGa0CpsmQHT8JHDgRjDd2xeEDsRUdl2S0XgKi17T-wzJRd0LDalAvv2QBqt4HH-C13GukUWbCwyVlaKXRStxl5ZlCF3gJrSjduAifLxjlKFopNQ7bxayvcWFJCgykzJ9hHFrFiFCUP8DhG_zKa-v5MBqVBWWdJaslsVFE00UPaEqEcW7GjFmbP-ieDcxg6aVCaI3menoo_ILIVfQZXKcDZ-OUwk9yg_XbbEa3TzrCYY6jBD8"
+                    />
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm text-secondary uppercase font-bold"
+                    >Samsung Odyssey</span
+                  >
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface line-clamp-2 mt-1"
+                  >
+                    Odyssey G4 27" 240Hz IPS 1ms G-Sync
+                  </h3>
+                  <div
+                    class="mt-space-md bg-surface-container p-2 border border-surface-variant"
+                  >
+                    <div
+                      class="flex justify-between font-label-sm text-label-sm mb-1"
+                    >
+                      <span class="text-secondary">Stock para oferta:</span>
+                      <span class="font-bold text-tertiary"
+                        >Quedan 8 unidades</span
+                      >
+                    </div>
+                    <div
+                      class="w-full bg-surface-container-highest h-1.5 rounded"
+                    >
+                      <div
+                        class="bg-tertiary h-1.5 rounded"
+                        style="width: 60%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="mt-space-md">
+                    <span
+                      class="font-body-sm text-body-sm text-secondary line-through"
+                      >$551.000 ARS</span
+                    >
+                    <div
+                      class="font-headline-md text-headline-md text-primary-container leading-none font-bold"
+                    >
+                      $430.000
+                      <span class="font-label-md text-label-md text-secondary"
+                        >ARS</span
+                      >
+                    </div>
+                    <span
+                      class="font-body-sm text-body-sm text-secondary mt-1 block"
+                      >6 cuotas sin interés de $71.666</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="mt-space-lg pt-space-sm border-t border-surface-variant flex items-center gap-space-xs"
+                >
+                  <button
+                    class="flex-1 h-10 bg-primary-container text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-1 hover:bg-primary transition-colors"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >add_shopping_cart</span
+                    >
+                    <span>Comprar</span>
+                  </button>
+                  <button
+                    aria-label="Ver detalles técnicos"
+                    class="w-10 h-10 border border-surface-variant bg-surface flex items-center justify-center rounded hover:bg-surface-variant text-on-surface"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >info</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <!-- Producto 3: Redragon Yama K550 -->
+              <div
+                class="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col justify-between rounded"
+              >
+                <div class="flex flex-col">
+                  <div class="flex items-center justify-between mb-2">
+                    <span
+                      class="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded uppercase font-bold"
+                      >-15% OFF</span
+                    >
+                    <span class="font-label-sm text-label-sm text-secondary"
+                      >SKU: PER-K550-RD</span
+                    >
+                  </div>
+                  <div
+                    class="w-full h-44 bg-surface-container-low border border-surface-variant flex items-center justify-center p-2 mb-space-md relative"
+                  >
+                    <img
+                      class="w-full h-full object-contain"
+                      data-alt="Teclado mecánico para gaming Redragon Yama K550 con chasis de aluminio, teclas macro dedicadas y rueda de volumen en fondo neutro de alta fidelidad, iluminación roja profesional controlada."
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBewl4HXG_05d5RxxVQiqyuwK5WecVhNBEHubS5fkFyv4wRyE8m1-bLR9_ZmzV5-zsbFfTEmBfKRLofrjQPw_3EwHrm2ZnAV50lq_TebYMtqAauR1baWk9s0yhBBuwGgBaHKs1NLr9lMy2FAQBD-aoPspSfgFidyZZACyLhTC8VFAmn24ZP-z8euWjp_JO7UC62iG6P7N3UEAhLKHO3L4nzF20X5awZP580s52Tmway8Os2J2duIxZr"
+                    />
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm text-secondary uppercase font-bold"
+                    >Redragon</span
+                  >
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface line-clamp-2 mt-1"
+                  >
+                    Teclado Yama K550 RGB Outemu Red Mecánico
+                  </h3>
+                  <div
+                    class="mt-space-md bg-surface-container p-2 border border-surface-variant"
+                  >
+                    <div
+                      class="flex justify-between font-label-sm text-label-sm mb-1"
+                    >
+                      <span class="text-secondary">Stock para oferta:</span>
+                      <span class="font-bold text-tertiary"
+                        >Quedan 12 unidades</span
+                      >
+                    </div>
+                    <div
+                      class="w-full bg-surface-container-highest h-1.5 rounded"
+                    >
+                      <div
+                        class="bg-tertiary h-1.5 rounded"
+                        style="width: 80%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="mt-space-md">
+                    <span
+                      class="font-body-sm text-body-sm text-secondary line-through"
+                      >$112.000 ARS</span
+                    >
+                    <div
+                      class="font-headline-md text-headline-md text-primary-container leading-none font-bold"
+                    >
+                      $95.000
+                      <span class="font-label-md text-label-md text-secondary"
+                        >ARS</span
+                      >
+                    </div>
+                    <span
+                      class="font-body-sm text-body-sm text-tertiary mt-1 block font-semibold"
+                      >Retiro inmediato en Belgrano</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="mt-space-lg pt-space-sm border-t border-surface-variant flex items-center gap-space-xs"
+                >
+                  <button
+                    class="flex-1 h-10 bg-primary-container text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-1 hover:bg-primary transition-colors"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >add_shopping_cart</span
+                    >
+                    <span>Comprar</span>
+                  </button>
+                  <button
+                    aria-label="Ver detalles técnicos"
+                    class="w-10 h-10 border border-surface-variant bg-surface flex items-center justify-center rounded hover:bg-surface-variant text-on-surface"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >info</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <!-- Producto 4: Logitech G PRO X Superlight 2 -->
+              <div
+                class="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col justify-between rounded"
+              >
+                <div class="flex flex-col">
+                  <div class="flex items-center justify-between mb-2">
+                    <span
+                      class="bg-surface-container text-on-surface border border-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded uppercase font-bold"
+                      >Top Esports</span
+                    >
+                    <span class="font-label-sm text-label-sm text-secondary"
+                      >SKU: MOU-LOG-SL2</span
+                    >
+                  </div>
+                  <div
+                    class="w-full h-44 bg-surface-container-low border border-surface-variant flex items-center justify-center p-2 mb-space-md relative"
+                  >
+                    <img
+                      class="w-full h-full object-contain"
+                      data-alt="Mouse inalámbrico para esports Logitech G PRO X Superlight 2 en color negro mate, perfil ultraligero de 60 gramos, fotografiado en estudio minimalista con iluminación uniforme."
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuC673Y4_gyduSDsJqbvqR1CgdXdJ7xlnqL9JgmwmpYgEFH4LIlt1I7Dnq0d0dvG8HcAHLTdqpVpI2keXE0Xo_k7VHKD8m9u_JJsx_62zFukm_cJuHxW2d39A6qV-IO2ZqzHqLAB6PLpwzqQeyZq8Ybj7uayranQ2vmfm4NRm4wUN8K6B947HeNRoF-uf8ngt105zvndV-s1pddmRupSGxN117tvGKrAHSBbPa4v6nfcJo1A5a9ufA4U"
+                    />
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm text-secondary uppercase font-bold"
+                    >Logitech G</span
+                  >
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface line-clamp-2 mt-1"
+                  >
+                    G PRO X Superlight 2 Wireless 32K DPI
+                  </h3>
+                  <div
+                    class="mt-space-md bg-surface-container p-2 border border-surface-variant"
+                  >
+                    <div
+                      class="flex justify-between font-label-sm text-label-sm mb-1"
+                    >
+                      <span class="text-secondary">Stock para oferta:</span>
+                      <span class="font-bold text-primary"
+                        >Quedan 3 unidades</span
+                      >
+                    </div>
+                    <div
+                      class="w-full bg-surface-container-highest h-1.5 rounded"
+                    >
+                      <div
+                        class="bg-primary h-1.5 rounded"
+                        style="width: 20%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="mt-space-md">
+                    <span
+                      class="font-body-sm text-body-sm text-secondary line-through"
+                      >$198.000 ARS</span
+                    >
+                    <div
+                      class="font-headline-md text-headline-md text-primary-container leading-none font-bold"
+                    >
+                      $175.000
+                      <span class="font-label-md text-label-md text-secondary"
+                        >ARS</span
+                      >
+                    </div>
+                    <span
+                      class="font-body-sm text-body-sm text-tertiary mt-1 block font-semibold"
+                      >Envío gratis CABA y GBA</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="mt-space-lg pt-space-sm border-t border-surface-variant flex items-center gap-space-xs"
+                >
+                  <button
+                    class="flex-1 h-10 bg-primary-container text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-1 hover:bg-primary transition-colors"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >add_shopping_cart</span
+                    >
+                    <span>Comprar</span>
+                  </button>
+                  <button
+                    aria-label="Ver detalles técnicos"
+                    class="w-10 h-10 border border-surface-variant bg-surface flex items-center justify-center rounded hover:bg-surface-variant text-on-surface"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >info</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <!-- Producto 5: Corsair Vengeance DDR5 32GB -->
+              <div
+                class="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col justify-between rounded"
+              >
+                <div class="flex flex-col">
+                  <div class="flex items-center justify-between mb-2">
+                    <span
+                      class="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded uppercase font-bold"
+                      >-12% OFF</span
+                    >
+                    <span class="font-label-sm text-label-sm text-secondary"
+                      >SKU: RAM-COR-32G5</span
+                    >
+                  </div>
+                  <div
+                    class="w-full h-44 bg-surface-container-low border border-surface-variant flex items-center justify-center p-2 mb-space-md relative"
+                  >
+                    <img
+                      class="w-full h-full object-contain"
+                      data-alt="Kit de dos módulos de memoria RAM Corsair Vengeance RGB DDR5 con disipador de aluminio negro anodizado y barra difusora de luz, iluminación controlada, fondo claro neutral de estudio técnico."
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY7rhUp2Wg6g32MxWsV7sjxifvC2TvVHzptmWLOhAWaELzG2JI1FOdqzj2qlOa92eJ5kkN_vRr1Gcb6FgAoyL0jaHD2oZz8bDuoQyfwVv11SfrzZAd_ZUt2lVDiqnObYeu56XOV8njlAxPQmZI35Z4FbN1GLv5X7pD5X9LMOjtnD64e7QRNdsDzUSTyHscLpg_7_hz0QJOZV_sdEM3FLVHX9IS2jT7MlJZ3pIP5EOHPYzWjs2I95oN"
+                    />
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm text-secondary uppercase font-bold"
+                    >Corsair</span
+                  >
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface line-clamp-2 mt-1"
+                  >
+                    Vengeance RGB 32GB (2x16GB) DDR5 6000MHz
+                  </h3>
+                  <div
+                    class="mt-space-md bg-surface-container p-2 border border-surface-variant"
+                  >
+                    <div
+                      class="flex justify-between font-label-sm text-label-sm mb-1"
+                    >
+                      <span class="text-secondary">Stock para oferta:</span>
+                      <span class="font-bold text-tertiary"
+                        >Quedan 9 unidades</span
+                      >
+                    </div>
+                    <div
+                      class="w-full bg-surface-container-highest h-1.5 rounded"
+                    >
+                      <div
+                        class="bg-tertiary h-1.5 rounded"
+                        style="width: 70%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="mt-space-md">
+                    <span
+                      class="font-body-sm text-body-sm text-secondary line-through"
+                      >$210.000 ARS</span
+                    >
+                    <div
+                      class="font-headline-md text-headline-md text-primary-container leading-none font-bold"
+                    >
+                      $185.000
+                      <span class="font-label-md text-label-md text-secondary"
+                        >ARS</span
+                      >
+                    </div>
+                    <span
+                      class="font-body-sm text-body-sm text-secondary mt-1 block"
+                      >Perfil Intel XMP 3.0 &amp; AMD EXPO</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="mt-space-lg pt-space-sm border-t border-surface-variant flex items-center gap-space-xs"
+                >
+                  <button
+                    class="flex-1 h-10 bg-primary-container text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-1 hover:bg-primary transition-colors"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >add_shopping_cart</span
+                    >
+                    <span>Comprar</span>
+                  </button>
+                  <button
+                    aria-label="Ver detalles técnicos"
+                    class="w-10 h-10 border border-surface-variant bg-surface flex items-center justify-center rounded hover:bg-surface-variant text-on-surface"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >info</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <!-- Producto 6: AMD Ryzen 5 7600X -->
+              <div
+                class="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col justify-between rounded"
+              >
+                <div class="flex flex-col">
+                  <div class="flex items-center justify-between mb-2">
+                    <span
+                      class="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded uppercase font-bold"
+                      >-10% OFF</span
+                    >
+                    <span class="font-label-sm text-label-sm text-secondary"
+                      >SKU: CPU-AMD-7600X</span
+                    >
+                  </div>
+                  <div
+                    class="w-full h-44 bg-surface-container-low border border-surface-variant flex items-center justify-center p-2 mb-space-md relative"
+                  >
+                    <img
+                      class="w-full h-full object-contain"
+                      data-alt="Caja y procesador AMD Ryzen 5 7600X socket AM5 con heatspreader metálico grabado con láser, toma de producto de precisión para hardware de computación en fondo gris limpio."
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2F-Rc6610mKjuhAOVU3Umsxi4uX-MNGt2d3w6Daq4W77ZKQHJDOgXmxQgYG4qm6ZgN7jm8GQwYj1i4ppHR8C7ltemxeKGu9vAKSAXM_c2Ph7M4rHtTiFhNUDgFU3PKTGK0Cu11CeCg3JDMFvQxATlHjrj4YZnLLJ5XC51KaTC1L7Gl7RsddgshmomzUF9V47Dfy24bcl4Jg0HXOl6goWlb0v1rdGCt2KQXAK6KCu4o5p9kwnsPDcm"
+                    />
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm text-secondary uppercase font-bold"
+                    >AMD Ryzen</span
+                  >
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface line-clamp-2 mt-1"
+                  >
+                    Ryzen 5 7600X 5.3GHz Turbo Socket AM5
+                  </h3>
+                  <div
+                    class="mt-space-md bg-surface-container p-2 border border-surface-variant"
+                  >
+                    <div
+                      class="flex justify-between font-label-sm text-label-sm mb-1"
+                    >
+                      <span class="text-secondary">Stock para oferta:</span>
+                      <span class="font-bold text-tertiary"
+                        >Quedan 6 unidades</span
+                      >
+                    </div>
+                    <div
+                      class="w-full bg-surface-container-highest h-1.5 rounded"
+                    >
+                      <div
+                        class="bg-tertiary h-1.5 rounded"
+                        style="width: 50%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="mt-space-md">
+                    <span
+                      class="font-body-sm text-body-sm text-secondary line-through"
+                      >$345.000 ARS</span
+                    >
+                    <div
+                      class="font-headline-md text-headline-md text-primary-container leading-none font-bold"
+                    >
+                      $310.000
+                      <span class="font-label-md text-label-md text-secondary"
+                        >ARS</span
+                      >
+                    </div>
+                    <span
+                      class="font-body-sm text-body-sm text-tertiary mt-1 block font-semibold"
+                      >Garantía oficial directa 3 años</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="mt-space-lg pt-space-sm border-t border-surface-variant flex items-center gap-space-xs"
+                >
+                  <button
+                    class="flex-1 h-10 bg-primary-container text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-1 hover:bg-primary transition-colors"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >add_shopping_cart</span
+                    >
+                    <span>Comprar</span>
+                  </button>
+                  <button
+                    aria-label="Ver detalles técnicos"
+                    class="w-10 h-10 border border-surface-variant bg-surface flex items-center justify-center rounded hover:bg-surface-variant text-on-surface"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >info</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 6. BANNER CONFIGURADOR ARMA TU PC -->
+        <section
+          class="w-full bg-inverse-surface text-inverse-on-surface border-b border-surface-variant"
+        >
+          <div class="max-w-[1320px] mx-auto px-margin-desktop py-space-2xl">
+            <div
+              class="border border-secondary p-space-xl bg-surface-container-highest/10 flex flex-col lg:flex-row items-center justify-between gap-space-xl"
+            >
+              <div class="flex flex-col gap-space-sm max-w-2xl">
+                <div
+                  class="inline-flex items-center gap-space-xs bg-inverse-surface border border-secondary px-2.5 py-1 rounded self-start"
+                >
+                  <span
+                    class="material-symbols-outlined text-tertiary-fixed text-[18px]"
+                    >rule</span
+                  >
+                  <span
+                    class="font-label-sm text-label-sm uppercase tracking-wider text-inverse-on-surface font-bold"
+                    >Algoritmo de Compatibilidad 100% Validado</span
+                  >
+                </div>
+                <h2
+                  class="font-headline-lg text-headline-lg text-inverse-on-surface uppercase tracking-tight"
+                >
+                  Configurador Digital "Armá Tu PC"
+                </h2>
+                <p
+                  class="font-body-lg text-body-lg text-secondary-fixed leading-relaxed"
+                >
+                  Nuestra herramienta técnica comprueba en tiempo real el socket
+                  del procesador con el chipset del motherboard, la longitud
+                  máxima de placa de video dentro del gabinete seleccionado y
+                  los watts reales requeridos de tu fuente certificada. Evitá
+                  incompatibilidades físicas y eléctricas.
+                </p>
+                <div
+                  class="grid grid-cols-1 sm:grid-cols-3 gap-space-md pt-space-sm"
+                >
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="material-symbols-outlined text-tertiary-fixed text-[20px]"
+                      >check_circle</span
+                    >
+                    <span class="font-label-md text-label-md"
+                      >Socket CPU &amp; VRM</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="material-symbols-outlined text-tertiary-fixed text-[20px]"
+                      >check_circle</span
+                    >
+                    <span class="font-label-md text-label-md"
+                      >Cálculo TDP Fuente 80+</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="material-symbols-outlined text-tertiary-fixed text-[20px]"
+                      >check_circle</span
+                    >
+                    <span class="font-label-md text-label-md"
+                      >Espacio para Radiadores</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="shrink-0 flex flex-col items-center sm:items-end gap-space-sm w-full lg:w-auto"
+              >
+                <a
+                  class="w-full sm:w-auto inline-flex items-center justify-center h-12 px-space-2xl bg-primary-container text-on-primary font-headline-sm text-headline-sm rounded hover:bg-primary transition-colors gap-space-xs text-center"
+                  data-path="arma-tu-pc"
+                  href="#"
+                >
+                  <span class="material-symbols-outlined text-[22px]"
+                    >tune</span
+                  >
+                  <span>Comenzar a Armar mi PC</span>
+                </a>
+                <span class="font-body-sm text-body-sm text-secondary-fixed"
+                  >Ensamble sin cargo extra en compras completas</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <script>
+        // Script para interactividad ligera de agregar al carrito sin recargar
+        document.querySelectorAll("button").forEach((btn) => {
+          if (btn.textContent.includes("Comprar")) {
+            btn.addEventListener("click", (e) => {
+              e.preventDefault();
+              const originalContent = btn.innerHTML;
+              btn.disabled = true;
+              btn.innerHTML =
+                '<span class="material-symbols-outlined text-[18px]">done</span><span>Agregado!</span>';
+              setTimeout(() => {
+                btn.innerHTML = originalContent;
+                btn.disabled = false;
+              }, 1400);
+            });
+          }
+        });
+      </script>
+    </main>
+    <footer
+      class="w-full bg-surface-container-low border-t border-surface-variant"
+    >
+      <div class="max-w-[1320px] mx-auto px-margin-desktop py-space-2xl">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl"
+        >
+          <div class="flex flex-col gap-space-sm">
+            <div class="flex items-center gap-space-xs">
+              <img
+                alt="ZeroLag Logo"
+                class="h-7 w-auto object-contain"
+                src="https://lh3.googleusercontent.com/aida/AEtjO1Wt_esEXmOhcAK74Hfmge3dK9jQ86GoHsQBgEnZ_n3bvojcJ6yJlEuQ8ccu-7QscR76ggR_AYYtqC7JfTTw4gRM42_Rz-KLJzAWCMkz7doQ4YYkNsl7L8zev9pl6Mo-Ksk06bs5ccdbYKnSR6WFdYDdM50r2eHMuOZNM1fYFvh-1KU3ULAXNr2UOD_Q3m-RJlRvVOERXEDy1454rrmEDVMmD6NHGGtF3U3rjJTXsOf3-WAZ5qEQ-wy_s9U"
+              /><span
+                class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface"
+                >ZeroLag</span
+              >
+            </div>
+            <p class="font-body-md text-body-md text-secondary leading-relaxed">
+              Especialistas en hardware de alto rendimiento, workstations y
+              ensamble gamer para toda la República Argentina. Garantía oficial
+              directa.
+            </p>
+            <div
+              class="flex flex-col gap-1 font-body-sm text-body-sm text-secondary"
+            >
+              <span class="font-bold text-on-surface"
+                >Showroom Belgrano, CABA</span
+              ><span>Av. Cabildo 2450, Piso 3</span
+              ><span>Lunes a Viernes de 10:00 a 19:00 hs</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-space-sm">
+            <h4
+              class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-bold border-b border-surface-variant pb-2"
+            >
+              Categorías Populares
+            </h4>
+            <ul
+              class="flex flex-col gap-2 font-body-md text-body-md text-secondary"
+            >
+              <li class="hover:text-primary transition-colors">
+                <a data-path="placas-de-video-gpu" href="#"
+                  >Placas de Video GeForce RTX &amp; Radeon</a
+                >
+              </li>
+              <li class="hover:text-primary transition-colors">
+                <a data-path="procesadores-cpu" href="#"
+                  >Procesadores Intel Core &amp; AMD Ryzen</a
+                >
+              </li>
+              <li class="hover:text-primary transition-colors">
+                <a data-path="pc-armadas-gaming" href="#"
+                  >PC Gamers Ensambladas</a
+                >
+              </li>
+              <li class="hover:text-primary transition-colors">
+                <a data-path="monitores" href="#"
+                  >Monitores Gaming 144Hz / 240Hz</a
+                >
+              </li>
+              <li class="hover:text-primary transition-colors">
+                <a data-path="notebooks-laptops" href="#"
+                  >Notebooks Gamers &amp; Creadores</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-space-sm">
+            <h4
+              class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-bold border-b border-surface-variant pb-2"
+            >
+              Soporte y Garantía
+            </h4>
+            <ul
+              class="flex flex-col gap-2 font-body-md text-body-md text-secondary"
+            >
+              <li class="hover:text-primary transition-colors">
+                <a data-path="garantias-y-rma" href="#"
+                  >Gestión de Garantías y RMA</a
+                >
+              </li>
+              <li class="hover:text-primary transition-colors">
+                <a data-path="ayuda-faq" href="#">Preguntas Frecuentes</a>
+              </li>
+              <li class="hover:text-primary transition-colors">
+                <a data-path="arma-tu-pc" href="#"
+                  >Simulador de Compatibilidad</a
+                >
+              </li>
+              <li class="hover:text-primary transition-colors">
+                <a data-path="venta-corporativa" href="#"
+                  >Venta Mayorista y Factura A</a
+                >
+              </li>
+              <li class="hover:text-primary transition-colors">
+                <a data-path="terminos-condiciones" href="#"
+                  >Términos, Condiciones y Defensa al Consumidor</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-space-sm">
+            <h4
+              class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-bold border-b border-surface-variant pb-2"
+            >
+              Pagos y Logística
+            </h4>
+            <div class="flex flex-col gap-space-sm">
+              <p class="font-body-sm text-body-sm text-secondary">
+                Aceptamos Mercado Pago, MODO, Transferencia Directa (15% OFF) y
+                todas las tarjetas de crédito bancarias.
+              </p>
+              <div class="grid grid-cols-2 gap-2">
+                <div
+                  class="border border-surface-variant bg-surface-container-lowest p-2 rounded text-center font-label-sm text-label-sm text-on-surface"
+                >
+                  Andreani Oficial
+                </div>
+                <div
+                  class="border border-surface-variant bg-surface-container-lowest p-2 rounded text-center font-label-sm text-label-sm text-on-surface"
+                >
+                  Correo Argentino
+                </div>
+                <div
+                  class="border border-surface-variant bg-surface-container-lowest p-2 rounded text-center font-label-sm text-label-sm text-on-surface"
+                >
+                  Mercado Pago
+                </div>
+                <div
+                  class="border border-surface-variant bg-surface-container-lowest p-2 rounded text-center font-label-sm text-label-sm text-on-surface"
+                >
+                  Transferencia BNA
+                </div>
+              </div>
+              <div
+                class="border border-surface-variant bg-surface-container-lowest p-2 rounded flex items-center justify-between text-secondary"
+              >
+                <span class="font-label-sm text-[10px]"
+                  >DATA FISCAL AFIP 960/D</span
+                ><span
+                  class="material-symbols-outlined text-[20px] text-tertiary"
+                  >verified</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-surface-variant mt-space-2xl pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-secondary"
+        >
+          <div>
+            © 2025 ZeroLag Hardware Argentina S.R.L. - CUIT 30-71829304-8. Todos
+            los derechos reservados.
+          </div>
+          <div class="flex items-center gap-space-md">
+            <a class="hover:text-on-surface transition-colors" href="#"
+              >Privacidad</a
+            ><a class="hover:text-on-surface transition-colors" href="#"
+              >Seguridad y SSL</a
+            ><a class="hover:text-on-surface transition-colors" href="#"
+              >Botón de Arrepentimiento</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
