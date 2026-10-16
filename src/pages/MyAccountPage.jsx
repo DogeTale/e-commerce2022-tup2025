@@ -1,3 +1,4 @@
+import { Outlet } from "react-router";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Alerts from "./myaccount/Alerts";
@@ -7,6 +8,7 @@ import MyAccountMain from "./myaccount/MyAccountMain";
 function MyAccount() {
   return (
     <>
+      <link rel="icon" type="image/svg+xml" href="/orders-favicon.svg" />
       <title>Mi Perfil</title>
 
       <Header />

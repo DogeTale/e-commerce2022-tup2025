@@ -10,6 +10,7 @@ import MonthlyAssemblies from "./home/MonthlyAssemblies.jsx";
 function HomePage() {
   return (
     <>
+      <link rel="icon" type="image/svg+xml" href="/home-favicon.svg" />
       <title>ZeroLag</title>
       {/*
       SECCIÓN GENERAL: HEADER PRINCIPAL

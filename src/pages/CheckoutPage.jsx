@@ -7,6 +7,7 @@ import StepperBuyProcess from "./checkout/StepperBuyProcess";
 function Checkout() {
   return (
     <>
+      <link rel="icon" type="image/svg+xml" href="/cart-favicon.svg" />
       <title>Carrito</title>
 
       <Header />

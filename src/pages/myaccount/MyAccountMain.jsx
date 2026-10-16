@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 function MyAccountMain() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
@@ -195,15 +197,15 @@ function MyAccountMain() {
                   <span className="bg-[#1976D2] text-on-primary px-2 py-1 font-label-sm text-label-sm font-bold">
                     En tránsito a Belgrano, CABA
                   </span>
-                  <a
+                  <Link
                     className="h-8 px-3 bg-surface border border-surface-variant font-label-sm text-label-sm text-on-surface hover:bg-surface-container flex items-center gap-1 font-bold"
-                    href="#"
+                    to="tracking"
                   >
                     <span className="material-symbols-outlined text-[14px]">
                       open_in_new
                     </span>
                     <span>Trazabilidad</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
