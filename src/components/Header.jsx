@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 import ZeroLagLogo from "../assets/zerolag-logo.svg";
 
 function Header() {
@@ -54,13 +56,13 @@ function Header() {
       {/* Subsección: Barra central (Logo, Buscador, Cotización USD y Acciones de Usuario) */}
       <div className="border-b border-surface-variant">
         <div className="max-w-[1320px] mx-auto px-margin-desktop h-20 flex items-center gap-space-lg">
-          <a href="/" className="flex items-center gap-space-sm shrink-0">
+          <Link to="/" className="flex items-center gap-space-sm shrink-0">
             <img
               alt="ZeroLag Logo"
               className="h-12 w-auto object-contain"
               src={ZeroLagLogo}
             />
-          </a>
+          </Link>
           <div className="flex-1 max-w-2xl">
             <form action="#" className="flex w-full" method="GET">
               <input
@@ -94,10 +96,10 @@ function Header() {
             </div>
           </div>
           <div className="flex items-center gap-space-md shrink-0 ml-auto">
-            <a
+            <Link
               className="flex items-center gap-space-xs text-left group"
               data-path="login"
-              href="/orders"
+              to="/orders"
             >
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0">
                 <span className="material-symbols-outlined text-on-primary text-[18px]">
@@ -112,12 +114,12 @@ function Header() {
                   Ingresar / Registro
                 </span>
               </div>
-            </a>
+            </Link>
             <div className="h-8 w-px bg-surface-variant hidden md:block"></div>
-            <a
+            <Link
               className="flex items-center gap-space-xs border border-surface-variant bg-surface-container-lowest px-space-sm h-10 rounded-lg hover:border-on-surface transition-colors relative"
               data-path="carrito"
-              href="/checkout"
+              to="/checkout"
             >
               <span className="material-symbols-outlined text-[20px] text-on-surface">
                 shopping_cart
@@ -128,7 +130,7 @@ function Header() {
               <span className="bg-primary text-on-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded-sm">
                 2
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
