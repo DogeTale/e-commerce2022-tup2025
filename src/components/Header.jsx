@@ -1,8 +1,13 @@
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 import ZeroLagLogo from "../assets/zerolag-logo.svg";
 
 function Header() {
+  const isCartActive = ({ isActive }) =>
+    isActive
+      ? "flex items-center gap-space-xs border border-primary-container bg-surface-container-lowest px-space-sm h-10 rounded-lg hover:border-on-surface transition-colors relative"
+      : "flex items-center gap-space-xs border border-surface-variant bg-surface-container-lowest px-space-sm h-10 rounded-lg hover:border-on-surface transition-colors relative";
+
   return (
     <header className="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-surface-variant">
       {/* Subsección: Barra de anuncios y enlaces rápidos institucionales */}
@@ -56,13 +61,13 @@ function Header() {
       {/* Subsección: Barra central (Logo, Buscador, Cotización USD y Acciones de Usuario) */}
       <div className="border-b border-surface-variant">
         <div className="max-w-[1320px] mx-auto px-margin-desktop h-20 flex items-center gap-space-lg">
-          <Link to="/" className="flex items-center gap-space-sm shrink-0">
+          <NavLink to="/" className="flex items-center gap-space-sm shrink-0">
             <img
               alt="ZeroLag Logo"
               className="h-12 w-auto object-contain"
               src={ZeroLagLogo}
             />
-          </Link>
+          </NavLink>
           <div className="flex-1 max-w-2xl">
             <form action="#" className="flex w-full" method="GET">
               <input
@@ -96,7 +101,7 @@ function Header() {
             </div>
           </div>
           <div className="flex items-center gap-space-md shrink-0 ml-auto">
-            <Link
+            <NavLink
               className="flex items-center gap-space-xs text-left group"
               data-path="login"
               to="/orders"
@@ -114,10 +119,10 @@ function Header() {
                   Ingresar / Registro
                 </span>
               </div>
-            </Link>
+            </NavLink>
             <div className="h-8 w-px bg-surface-variant hidden md:block"></div>
-            <Link
-              className="flex items-center gap-space-xs border border-surface-variant bg-surface-container-lowest px-space-sm h-10 rounded-lg hover:border-on-surface transition-colors relative"
+            <NavLink
+              className={isCartActive}
               data-path="carrito"
               to="/checkout"
             >
@@ -130,7 +135,7 @@ function Header() {
               <span className="bg-primary text-on-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded-sm">
                 2
               </span>
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>
