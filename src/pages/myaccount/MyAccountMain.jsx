@@ -608,7 +608,7 @@ function MyAccountMain() {
                 </p>
               </div>
               <div className="flex items-center gap-space-xs mt-space-md pt-space-sm border-t border-surface-variant">
-                <button className="font-label-sm text-label-sm text-primary font-bold hover:underline">
+                <button className="font-label-sm text-label-sm text-primary font-bold hover:text-primary-container transition-colors">
                   Editar
                 </button>
               </div>
@@ -636,7 +636,7 @@ function MyAccountMain() {
                 </p>
               </div>
               <div className="flex items-center gap-space-xs mt-space-md pt-space-sm border-t border-surface-variant">
-                <button className="font-label-sm text-label-sm text-primary font-bold hover:underline">
+                <button className="font-label-sm text-label-sm text-primary font-bold hover:text-primary-container transition-colors">
                   Editar
                 </button>
               </div>

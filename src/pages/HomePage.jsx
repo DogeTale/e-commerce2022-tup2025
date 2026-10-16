@@ -1,11 +1,11 @@
 import Footer from "../components/Footer.jsx";
 import Header from "../components/Header.jsx";
-import BuildYourPCBanner from "../components/home/BuildYourPCBanner.jsx";
-import FlashOffersAndFeatured from "../components/home/FlashOffersAndFeatured.jsx";
-import HardwareCategoriesBanner from "../components/home/HardwareCategoriesBanner.jsx";
-import HeroBannerMain from "../components/home/HeroBannerMain.jsx";
-import LocalBenefits from "../components/home/LocalBenefits.jsx";
-import MonthlyAssemblies from "../components/home/MonthlyAssemblies.jsx";
+import BuildYourPCBanner from "./home/BuildYourPCBanner.jsx";
+import FlashOffersAndFeatured from "./home/FlashOffersAndFeatured.jsx";
+import HardwareCategoriesBanner from "./home/HardwareCategoriesBanner.jsx";
+import HeroBannerMain from "./home/HeroBannerMain.jsx";
+import LocalBenefits from "./home/LocalBenefits.jsx";
+import MonthlyAssemblies from "./home/MonthlyAssemblies.jsx";
 
 function HomePage() {
   return (

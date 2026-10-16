@@ -76,7 +76,7 @@ function HeroBannerMain() {
                   Armadas listas para jugar
                 </span>
                 <a
-                  className="inline-flex items-center text-primary font-label-lg text-label-lg hover:underline gap-1"
+                  className="inline-flex items-center text-primary font-label-lg text-label-lg hover:text-primary-container transition-colors gap-1"
                   data-path="pc-armadas-gaming"
                   href="#"
                 >
@@ -111,7 +111,7 @@ function HeroBannerMain() {
                   Hasta 12 Cuotas
                 </span>
                 <a
-                  className="inline-flex items-center text-primary font-label-lg text-label-lg hover:underline gap-1"
+                  className="inline-flex items-center text-primary font-label-lg text-label-lg hover:text-primary-container transition-colors gap-1"
                   data-path="notebooks-laptops"
                   href="#"
                 >

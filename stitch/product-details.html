@@ -1,677 +1,2061 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}*{box-shadow:none!important;text-shadow:none!important;filter:none!important;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"inverse-surface":"#303031","on-tertiary-fixed":"#002204","on-primary":"#ffffff","on-primary-fixed":"#410003","error":"#ba1a1a","on-tertiary-container":"#d8ffd0","inverse-on-surface":"#f2f0f0","outline":"#8f6f6c","tertiary":"#11651d","inverse-primary":"#ffb3ac","secondary":"#5f5e5e","surface":"#fbf9f8","on-secondary-container":"#656464","surface-container-lowest":"#ffffff","on-error-container":"#93000a","tertiary-container":"#307f34","on-error":"#ffffff","primary-fixed-dim":"#ffb3ac","surface-dim":"#dbdad9","surface-container-high":"#e9e8e7","on-background":"#1b1c1c","on-surface-variant":"#5b403d","background":"#fbf9f8","primary-container":"#d32f2f","on-primary-fixed-variant":"#930010","secondary-fixed":"#e5e2e1","outline-variant":"#e4beba","surface-tint":"#ba1a20","on-surface":"#1b1c1c","on-primary-container":"#fff2f0","tertiary-fixed":"#a3f69c","tertiary-fixed-dim":"#88d982","on-secondary-fixed-variant":"#474646","primary-fixed":"#ffdad6","error-container":"#ffdad6","secondary-container":"#e5e2e1","surface-container":"#efeded","secondary-fixed-dim":"#c8c6c5","surface-variant":"#e4e2e2","on-tertiary-fixed-variant":"#005312","on-tertiary":"#ffffff","surface-container-highest":"#e4e2e2","surface-bright":"#fbf9f8","on-secondary":"#ffffff","on-secondary-fixed":"#1c1b1b","primary":"#af101a"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-xl":"2rem","gutter":"1rem","margin-desktop":"2rem","margin":"1rem","space-xs":"0.25rem","gutter-tablet":"1.25rem","space-md":"1rem","margin-tablet":"1.5rem","gutter-desktop":"1.5rem","space-sm":"0.5rem","space-lg":"1.5rem","space-2xl":"3rem"},"fontFamily":{"label-sm":["Inter"],"headline-sm":["Inter"],"headline-lg-mobile":["Inter"],"headline-xl":["Inter"],"headline-xl-mobile":["Inter"],"body-md":["Inter"],"body-lg":["Inter"],"label-md":["Inter"],"label-lg":["Inter"],"headline-lg":["Inter"],"headline-md":["Inter"],"body-sm":["Inter"]},"fontSize":{"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"800"}],"headline-xl-mobile":["30px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"800"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-surface-variant"><div class="bg-surface-container border-b border-surface-variant"><div class="max-w-[1320px] mx-auto px-margin-desktop h-8 flex items-center justify-between font-label-sm text-label-sm"><div class="flex items-center gap-space-xs text-secondary truncate"><span class="material-symbols-outlined text-[14px] text-tertiary">local_shipping</span><span>Envíos a todo el país vía Andreani y Correo Argentino | Hasta 12 cuotas sin interés | Local en Belgrano, CABA</span></div><div class="hidden lg:flex items-center gap-space-md text-secondary"><a class="hover:text-primary transition-colors" data-path="arma-tu-pc" href="#">Armá tu PC</a><span class="text-surface-variant">|</span><a class="hover:text-primary transition-colors" data-path="garantias-y-rma" href="#">Garantías y RMA</a><span class="text-surface-variant">|</span><a class="hover:text-primary transition-colors" data-path="ayuda-faq" href="#">Ayuda / FAQ</a><span class="text-surface-variant">|</span><a class="hover:text-primary transition-colors" data-path="venta-corporativa" href="#">Venta Corporativa</a></div></div></div><div class="border-b border-surface-variant"><div class="max-w-[1320px] mx-auto px-margin-desktop h-20 flex items-center gap-space-lg"><div class="flex items-center gap-space-sm shrink-0"><img alt="ZeroLag Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wt_esEXmOhcAK74Hfmge3dK9jQ86GoHsQBgEnZ_n3bvojcJ6yJlEuQ8ccu-7QscR76ggR_AYYtqC7JfTTw4gRM42_Rz-KLJzAWCMkz7doQ4YYkNsl7L8zev9pl6Mo-Ksk06bs5ccdbYKnSR6WFdYDdM50r2eHMuOZNM1fYFvh-1KU3ULAXNr2UOD_Q3m-RJlRvVOERXEDy1454rrmEDVMmD6NHGGtF3U3rjJTXsOf3-WAZ5qEQ-wy_s9U"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface leading-none">ZeroLag</span><span class="font-label-sm text-[9px] uppercase tracking-widest text-primary font-bold leading-none mt-1">Hardware &amp; Gaming</span></div></div><div class="flex-1 max-w-2xl"><form action="#" class="flex w-full" method="GET"><input class="w-full h-10 px-space-md bg-surface-container-low border border-surface-variant border-r-0 rounded-l-lg text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container" placeholder="Buscar placas de video, procesadores, periféricos, notebooks..." type="text"><button class="h-10 px-space-lg bg-primary-container text-on-primary font-label-lg text-label-lg rounded-r-lg flex items-center gap-space-xs shrink-0 hover:bg-primary transition-colors" type="submit"><span class="material-symbols-outlined text-[18px]">search</span><span>Buscar</span></button></form></div><div class="hidden xl:flex items-center gap-space-xs border border-surface-variant bg-surface-container-low px-space-sm py-1 rounded-lg shrink-0"><span class="material-symbols-outlined text-tertiary text-[20px]">currency_exchange</span><div class="flex flex-col"><div class="flex items-center gap-1 font-label-sm text-label-sm"><span class="text-secondary">USD BNA:</span><span class="font-bold text-on-surface">$1.085</span></div><span class="text-[10px] leading-tight font-bold text-tertiary uppercase">Transferencia -15% OFF</span></div></div><div class="flex items-center gap-space-md shrink-0 ml-auto"><a class="flex items-center gap-space-xs text-left group" data-path="login" href="#"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col"><span class="font-label-sm text-[10px] text-secondary leading-tight">Hola, Gamer!</span><span class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors leading-tight">Ingresar / Registro</span></div></a><div class="h-8 w-px bg-surface-variant hidden md:block"></div><a class="flex items-center gap-space-xs border border-surface-variant bg-surface-container-lowest px-space-sm h-10 rounded-lg hover:border-on-surface transition-colors relative" data-path="carrito" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface">shopping_cart</span><span class="hidden md:inline font-label-md text-label-md text-on-surface">Mi Carrito</span><span class="bg-primary text-on-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded-sm">2</span></a></div></div></div><div class="bg-surface-container-lowest"><div class="max-w-[1320px] mx-auto px-margin-desktop h-11 flex items-center justify-between"><nav class="flex items-center gap-space-md overflow-x-auto h-full" data-active-classes="text-primary font-bold border-b-2 border-primary"><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors" data-path="notebooks-laptops" href="#">Notebooks &amp; Laptops</a><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors" data-path="pc-armadas-gaming" href="#">PC Armadas Gaming</a><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors" data-path="placas-de-video-gpu" href="#">Placas de Video (GPU)</a><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors" data-path="procesadores-cpu" href="#">Procesadores (CPU)</a><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors" data-path="monitores" href="#">Monitores</a><a aria-current="page" class="whitespace-nowrap h-full flex items-center transition-colors text-primary font-bold border-b-2 border-primary" data-path="perifericos" href="#">Periféricos</a><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors" data-path="componentes" href="#">Componentes</a><a class="text-primary hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors uppercase font-bold" data-path="ofertas-relampago" href="#">Ofertas Relámpago</a></nav><div class="hidden md:flex items-center pl-space-md shrink-0 border-l border-surface-variant h-6"><a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors flex items-center gap-1 uppercase tracking-wider" data-path="admin-dashboard" href="#"><span class="material-symbols-outlined text-[16px]">tune</span><span>Panel Admin</span></a></div></div></div></header><main class="w-full pt-[156px] bg-surface min-h-[calc(100vh-156px)]"><div class="flex flex-col w-full">
-<div class="max-w-[1320px] mx-auto px-margin-desktop py-space-md w-full">
-<!-- 1. Breadcrumbs Nav -->
-<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs text-secondary font-label-md text-label-md mb-space-lg flex-wrap">
-<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
-<span class="material-symbols-outlined text-[16px]">home</span>
-<span>Inicio</span>
-</a>
-<span class="text-surface-variant font-bold">/</span>
-<a class="hover:text-primary transition-colors" href="#">Periféricos</a>
-<span class="text-surface-variant font-bold">/</span>
-<a class="hover:text-primary transition-colors" href="#">Teclados Mecánicos</a>
-<span class="text-surface-variant font-bold">/</span>
-<span class="text-on-surface font-semibold truncate max-w-xs md:max-w-md">Logitech G PRO X TKL LIGHTSPEED Wireless</span>
-</nav>
-<!-- Main Grid: Left Gallery + Right Purchase Specs -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
-<!-- 2. Columna Izquierda: Galería de Imágenes Flat -->
-<div class="lg:col-span-7 flex flex-col gap-space-md">
-<!-- Main Image Stage -->
-<div class="relative bg-surface-container-lowest border border-surface-variant rounded-none p-space-lg flex items-center justify-center min-h-[460px]">
-<div class="absolute top-space-md left-space-md flex flex-col gap-1 z-10">
-<span class="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-1 tracking-wider uppercase font-bold">
-              15% OFF TRANSFERENCIA
-            </span>
-<span class="bg-tertiary text-on-tertiary font-label-sm text-label-sm px-2 py-1 tracking-wider uppercase font-bold">
-              ENVÍO GRATIS ANDREANI
-            </span>
-</div>
-<button class="absolute top-space-md right-space-md w-9 h-9 border border-surface-variant bg-surface-container-lowest text-secondary hover:text-primary hover:border-primary flex items-center justify-center transition-colors" type="button">
-<span class="material-symbols-outlined text-[20px]">favorite_border</span>
-</button>
-<img alt="Logitech G PRO X TKL LIGHTSPEED Wireless RGB" class="max-h-[380px] w-auto object-contain select-none" data-alt="Studio technical shot of Logitech G PRO X TKL wireless mechanical gaming keyboard with crisp white PBT double shot keycaps and glowing RGB backlighting against a clean light neutral architectural background, sharp high precision industrial tech aesthetic, zero shadow flat layout" id="main-product-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7yKlKdCR2rLP4zKKNQEmkxHsEX3JEf_aOlMkaSrUTpvAlULo9fkhkme-UAQ3zYYkx4IhVxk78ZXRCYcsCngP4FnkAQ-NhVn3NKNBEM4_gQc5pH6YYnoaDuZ3zJPThioQWmn35fqFLtQwaz6WGXflthZORmdAYB-E3Dk5Bp9wXkO8L6MU_6OZGHMuEzByYPqdzXKvTgSr3GoO0W0DKUgnLvfFB-S9WxLcJ6lRAduxsDViiStm3GLIr">
-</div>
-<!-- Thumbnails Row -->
-<div class="grid grid-cols-5 gap-space-sm" id="thumb-gallery">
-<button class="thumb-btn border-2 border-primary bg-surface-container-lowest p-1 aspect-video flex items-center justify-center transition-all" onclick="switchImage(this, 'main-view')" type="button">
-<img alt="Vista Superior" class="h-full w-full object-contain" data-alt="Logitech G PRO X TKL top view centered showing compact tenkeyless footprint and layout on pristine flat surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnOYpzu5tPO3GD-hgpQdwcqHfS9y7U6NWJSnOLtPD2rzca72BigB_KLsdmAzkjC0N6HMvB0MMnfD_pV0F1Kh4ErvxEsKn4uwbaFvB3_revQho66XfY0una6mppfBy1opKaqq1mnCdKmjHBG3D896J1pPBgRqQV9PS0AfsP4gor5BiJCP5_hIRgoOoD5H-IRANyKufhzNF28Ng73hwxwzPbr-IdkbGhVXn3FKmbf3uqqWpELN01iXfP">
-</button>
-<button class="thumb-btn border border-surface-variant bg-surface-container-lowest p-1 aspect-video flex items-center justify-center hover:border-on-surface transition-all" onclick="switchImage(this, 'side-view')" type="button">
-<img alt="Perfil Lateral" class="h-full w-full object-contain" data-alt="Logitech G PRO X TKL mechanical keyboard low angle profile showing dual height feet adjustment and USB-C port" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf0b0TGwhB1rsQhcjNGX9jIYpvG87SieGcLua1jsQM7rSPldehQDQw8HvK0GJuWZvhNyBGiCk_jA3ckqelkNTuDZ0dUFQcxr2XRPSOvsfHY_llgbgXtBBfw9QziNcaOdxMvegFTybFNoxb9RXEd2bNH3rzEtWhVEfSpv3oBrsq9500FSnWr9lU9d_A0BaYSGuqjN3IElCeYIvvFSCbJz-ggKcyxO4pRnHlcGh7kgatEXLy0UszsLHS">
-</button>
-<button class="thumb-btn border border-surface-variant bg-surface-container-lowest p-1 aspect-video flex items-center justify-center hover:border-on-surface transition-all" onclick="switchImage(this, 'switches-view')" type="button">
-<img alt="Switches Mecánicos" class="h-full w-full object-contain" data-alt="Close up macro detail of GX Brown tactile mechanical switches and high durability PBT double shot keycap stem" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw5jgIS7rCJiSaVriTVnAUfGvGW9ds4UwAxxUeTtocCCfPXwx7uBrL3yPsR2e5GgtvQnGxtsME3I2l0QC4JQfg9YE-6SRMpa2A-gVAprdLGfXC5ezqidZK5a3TmRVyNsvw6MdVhUvEK0mNpmyJgFIYPqC4PdJp22TmKDILA_aGnIjpaw-MX7v99kAcAzqUW9-RJ7EYYMu8ohakxN_C1gsv0tkXPFCykWEozp3e7QdMsF0F08JOukOc">
-</button>
-<button class="thumb-btn border border-surface-variant bg-surface-container-lowest p-1 aspect-video flex items-center justify-center hover:border-on-surface transition-all" onclick="switchImage(this, 'box-view')" type="button">
-<img alt="Packaging y Funda" class="h-full w-full object-contain" data-alt="Retail packaging and included accessories case for Logitech G PRO X TKL Lightspeed wireless gaming gear" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD4Op8zwJleweArNHl8VcGrnXaJmekkpW-BE8AtsB2A8Qx_roxYSaTNooOcrnTFz9N-AFkmJyrndE7FAlMhsvq7041mvmavGV9xWaApJF6NRiUvjYIINMTfdfFG5wVusYjYP6mhvf0gBlF56_1QPZIjkgNB9kstMACAnEsEh_nlLPs2KRXjhWLRUwJIk_gD9y9bfMzbUoFGkyiHjJd5ZuFrq36JLkmCf1cq5wCqTCqkzMtZsRffBmx">
-</button>
-<button class="thumb-btn border border-surface-variant bg-surface-container-lowest p-1 aspect-video flex items-center justify-center hover:border-on-surface transition-all" onclick="switchImage(this, 'rgb-view')" type="button">
-<img alt="Iluminación RGB" class="h-full w-full object-contain" data-alt="Logitech G PRO X TKL fully illuminated with custom per key Lightsync RGB spectrum in technical gaming battlestation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRNfinYawPfc74r-tPTtRdnqKL0rjGmWLKIEhbsyFP9-v4m2XMqvaMEFYWMjo_4B4jDpAJZgQAA7uMPKq2T7VnfQAnM0GgsjQY6HLU-8Uug23LZNmw-gb5KSN6Sx2qmZ88QIClXRlo3FmhmXhnMuHKZW_bzDVy-j57btGCxR0jcOWbA92rtG9EwPKchUsjVruFWQrm-RQH1YjV_4VlbWOffueqp1w-UauE0L0cZoLaHcNjcI4GUVH4">
-</button>
-</div>
-<!-- Badges & Official Warranty Strip -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm mt-space-xs">
-<div class="border border-surface-variant bg-surface-container-low p-space-sm flex items-center gap-space-sm">
-<div class="w-10 h-10 bg-surface-container-lowest border border-surface-variant flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-primary text-[22px]">verified_user</span>
-</div>
-<div class="flex flex-col">
-<span class="font-label-md text-label-md font-bold text-on-surface uppercase leading-tight">Garantía Oficial Logitech</span>
-<span class="font-body-sm text-body-sm text-secondary">24 Meses con soporte directo y factura A/B</span>
-</div>
-</div>
-<div class="border border-surface-variant bg-surface-container-low p-space-sm flex items-center gap-space-sm">
-<div class="w-10 h-10 bg-surface-container-lowest border border-surface-variant flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-tertiary text-[22px]">local_shipping</span>
-</div>
-<div class="flex flex-col">
-<span class="font-label-md text-label-md font-bold text-on-surface uppercase leading-tight">Envío Prioritario Andreani</span>
-<span class="font-body-sm text-body-sm text-secondary">Despacho en el día con seguro 100% cubierto</span>
-</div>
-</div>
-</div>
-</div>
-<!-- 3. Columna Derecha: Panel de Compra y Especificaciones Rápidas -->
-<div class="lg:col-span-5 flex flex-col border border-surface-variant bg-surface-container-lowest p-space-lg gap-space-md">
-<!-- Top Metadata & Rating -->
-<div class="flex flex-col gap-1 border-b border-surface-variant pb-space-sm">
-<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary uppercase flex-wrap gap-2">
-<span>SKU: <strong class="text-on-surface font-semibold">920-012134</strong></span>
-<span>EAN: <strong class="text-on-surface font-semibold">097855191564</strong></span>
-<span class="text-tertiary flex items-center gap-1 font-bold">
-<span class="w-2 h-2 rounded-full bg-tertiary inline-block"></span>
-              En Stock (14 un.)
-            </span>
-</div>
-<h1 class="font-headline-md text-headline-md text-on-surface mt-1 leading-tight tracking-tight">
-            Teclado Mecánico Gamer Logitech G PRO X TKL LIGHTSPEED Wireless RGB Lightsync
-          </h1>
-<div class="flex items-center gap-space-sm mt-1">
-<div class="flex items-center text-primary">
-<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star_half</span>
-</div>
-<span class="font-label-md text-label-md text-on-surface font-bold">4.9 / 5.0</span>
-<span class="text-surface-variant">|</span>
-<a class="font-body-sm text-body-sm text-secondary hover:text-primary underline" href="#tab-opiniones">38 opiniones verificadas</a>
-</div>
-</div>
-<!-- Variant Selector Section -->
-<div class="flex flex-col gap-space-md border-b border-surface-variant pb-space-md">
-<!-- 1. Switch Selection -->
-<div class="flex flex-col gap-1.5">
-<div class="flex justify-between items-center">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Switch Mecánico:</span>
-<span class="font-label-sm text-label-sm font-bold text-on-surface" id="switch-name-label">GX Brown Táctil (Silencioso &amp; Preciso)</span>
-</div>
-<div class="grid grid-cols-3 gap-2" id="switch-selector">
-<button class="variant-pill border border-primary bg-primary text-on-primary font-label-sm text-label-sm py-2 px-1 text-center transition-colors" onclick="selectVariant(this, 'switch-name-label', 'GX Brown Táctil (Silencioso &amp; Preciso)')" type="button">
-                GX Brown Táctil
-              </button>
-<button class="variant-pill border border-surface-variant bg-surface-container-low text-on-surface hover:border-on-surface font-label-sm text-label-sm py-2 px-1 text-center transition-colors" onclick="selectVariant(this, 'switch-name-label', 'GX Red Lineal (Rápido y Fluido)')" type="button">
-                GX Red Lineal
-              </button>
-<button class="variant-pill border border-surface-variant bg-surface-container-low text-on-surface hover:border-on-surface font-label-sm text-label-sm py-2 px-1 text-center transition-colors" onclick="selectVariant(this, 'switch-name-label', 'GX Blue Clicky (Respuesta Sonora)')" type="button">
-                GX Blue Clicky
-              </button>
-</div>
-</div>
-<!-- 2. Color Selection -->
-<div class="flex flex-col gap-1.5">
-<div class="flex justify-between items-center">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Color de Chasis:</span>
-<span class="font-label-sm text-label-sm font-bold text-on-surface" id="color-name-label">Negro Mate</span>
-</div>
-<div class="grid grid-cols-3 gap-2" id="color-selector">
-<button class="color-btn border border-primary bg-surface-container-low py-2 px-2 flex items-center justify-center gap-2 transition-colors" onclick="selectColor(this, 'Negro Mate')" type="button">
-<span class="w-3.5 h-3.5 bg-inverse-surface border border-outline inline-block"></span>
-<span class="font-label-sm text-label-sm font-bold text-on-surface">Negro</span>
-</button>
-<button class="color-btn border border-surface-variant bg-surface-container-low hover:border-on-surface py-2 px-2 flex items-center justify-center gap-2 transition-colors" onclick="selectColor(this, 'Blanco Puro')" type="button">
-<span class="w-3.5 h-3.5 bg-surface-container-lowest border border-surface-variant inline-block"></span>
-<span class="font-label-sm text-label-sm text-secondary">Blanco</span>
-</button>
-<button class="color-btn border border-surface-variant bg-surface-container-low hover:border-on-surface py-2 px-2 flex items-center justify-center gap-2 transition-colors" onclick="selectColor(this, 'Magenta Gaming')" type="button">
-<span class="w-3.5 h-3.5 bg-[#d81b60] border border-outline inline-block"></span>
-<span class="font-label-sm text-label-sm text-secondary">Magenta</span>
-</button>
-</div>
-</div>
-<!-- 3. Layout Distribution -->
-<div class="flex flex-col gap-1.5">
-<div class="flex justify-between items-center">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Distribución de Teclas:</span>
-<span class="font-label-sm text-label-sm font-bold text-on-surface" id="layout-name-label">Español Latinoamericano (ISO - Tecla Enter Grande con Ñ)</span>
-</div>
-<div class="grid grid-cols-2 gap-2">
-<button class="layout-btn border border-primary bg-primary text-on-primary font-label-sm text-label-sm py-2 px-2 text-center transition-colors" onclick="selectLayout(this, 'Español Latinoamericano (ISO - Tecla Enter Grande con Ñ)')" type="button">
-                ISO Español (con Ñ)
-              </button>
-<button class="layout-btn border border-surface-variant bg-surface-container-low text-on-surface hover:border-on-surface font-label-sm text-label-sm py-2 px-2 text-center transition-colors" onclick="selectLayout(this, 'Inglés US (ANSI - Tecla Enter Recta)')" type="button">
-                ANSI US (Inglés)
-              </button>
-</div>
-</div>
-</div>
-<!-- Pricing Card Container -->
-<div class="bg-surface-container-low border border-surface-variant p-space-md flex flex-col gap-space-sm">
-<div class="flex flex-col">
-<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Precio Especial Transferencia / Depósito Directo:</span>
-<div class="flex items-baseline gap-2">
-<span class="font-headline-xl text-headline-xl text-primary font-extrabold tracking-tight">$249.990</span>
-<span class="font-label-sm text-label-sm text-secondary line-through">$345.880</span>
-</div>
-<span class="font-body-sm text-body-sm text-secondary mt-0.5">IVA incluido • Emitimos Factura A o B automáticamente</span>
-</div>
-<div class="border-t border-surface-variant pt-space-xs flex flex-col gap-1">
-<div class="flex justify-between items-center">
-<span class="font-label-md text-label-md text-on-surface font-semibold">Precio de Lista: $294.100</span>
-<span class="font-label-sm text-label-sm bg-tertiary-container text-on-tertiary-container px-1.5 py-0.5 font-bold">12 Cuotas Fijas</span>
-</div>
-<div class="font-body-md text-body-md text-on-surface">
-              Hasta <strong>12 cuotas fijas de $24.508</strong> con tarjetas bancarias seleccionadas
-            </div>
-</div>
-<!-- Cuotas Modal Trigger / Mini Calculator -->
-<div class="border border-surface-variant bg-surface-container-lowest p-space-sm flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold flex items-center gap-1">
-<span class="material-symbols-outlined text-[16px] text-tertiary">credit_card</span>
-                Simulador de Financiación
-              </span>
-<span class="font-label-sm text-[10px] text-primary font-bold cursor-pointer hover:underline" onclick="toggleCuotasDetail()">Ver detalle de bancos</span>
-</div>
-<select class="w-full h-9 bg-surface-container-low border border-surface-variant text-body-sm font-body-sm px-2 text-on-surface focus:outline-none focus:border-primary" id="bank-select" onchange="calculateCuotas(this.value)">
-<option value="galicia">Banco Galicia (Visa / Mastercard) - Hasta 12 Sin Interés</option>
-<option value="santander">Banco Santander (Visa) - 6 Cuotas Sin Interés</option>
-<option value="bbva">BBVA Francés - 3 y 6 Cuotas Sin Interés</option>
-<option value="mercadopago">Mercado Pago (Tarjetas de Débito / Crédito)</option>
-<option value="naranja">Tarjeta Naranja X - Plan Z (3 Cuotas Cero Interés)</option>
-</select>
-<div class="font-label-sm text-label-sm text-tertiary font-bold" id="cuota-result-box">
-              ✓ 12 pagos de $24.508,33 sin interés (CFT: 0,00%)
-            </div>
-</div>
-</div>
-<!-- Quantity & Buy Action Row -->
-<div class="flex flex-col gap-space-sm pt-space-xs">
-<div class="flex items-center gap-space-sm">
-<!-- Counter -->
-<div class="flex items-center border border-surface-variant bg-surface-container-lowest h-11 shrink-0">
-<button class="w-10 h-full flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors" onclick="modifyQty(-1)" type="button">
-<span class="material-symbols-outlined text-[18px]">remove</span>
-</button>
-<input class="w-12 text-center font-label-md text-label-md font-bold text-on-surface bg-transparent border-none focus:outline-none" id="purchase-qty" max="14" min="1" readonly="" type="number" value="1">
-<button class="w-10 h-full flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors" onclick="modifyQty(1)" type="button">
-<span class="material-symbols-outlined text-[18px]">add</span>
-</button>
-</div>
-<!-- Add to Cart CTA -->
-<button class="flex-1 h-11 bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 hover:bg-[#8f0d15] active:scale-[0.99] transition-all" onclick="showCartNotification()" type="button">
-<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
-<span>AGREGAR AL CARRITO</span>
-</button>
-</div>
-<button class="w-full h-11 border border-on-surface bg-on-surface text-surface-container-lowest font-label-lg text-label-lg font-bold hover:bg-inverse-surface active:scale-[0.99] transition-all" type="button">
-            COMPRAR AHORA DIRECTO
-          </button>
-</div>
-<!-- Shipping Calculator by Postal Code -->
-<div class="border-t border-surface-variant pt-space-md flex flex-col gap-2">
-<div class="flex items-center gap-1 font-label-sm text-label-sm text-secondary uppercase font-semibold">
-<span class="material-symbols-outlined text-[16px] text-tertiary">local_shipping</span>
-<span>Calcular Costo y Plazo de Entrega</span>
-</div>
-<div class="flex gap-2">
-<div class="relative flex-1">
-<input class="w-full h-10 px-space-md bg-surface-container-low border border-surface-variant text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary" id="postal-code" maxlength="8" placeholder="Ingresá tu Código Postal (ej. 1428)" type="text">
-</div>
-<button class="h-10 px-space-lg border border-on-surface bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors shrink-0" onclick="checkShipping()" type="button">
-              Calcular
-            </button>
-</div>
-<div class="hidden flex flex-col gap-1.5 p-space-sm bg-surface-container-low border border-surface-variant text-body-sm font-body-sm" id="shipping-result">
-<div class="flex items-center justify-between text-on-surface">
-<span class="font-bold">Andreani Envío Express</span>
-<span class="text-tertiary font-bold">¡GRATIS!</span>
-</div>
-<span class="text-secondary text-[11px]">Llega en 24 a 48 hs hábiles a tu domicilio</span>
-<div class="border-t border-surface-variant pt-1 mt-1 flex items-center justify-between text-on-surface">
-<span class="font-bold">Retiro en Showroom Belgrano (CABA)</span>
-<span class="text-tertiary font-bold">Inmediato / Gratis</span>
-</div>
-<span class="text-secondary text-[11px]">Av. Cabildo 2450 Piso 3 - Listo para retirar en 1 hora</span>
-</div>
-</div>
-</div>
-</div>
-<!-- 4. Sección Inferior: Ficha de Especificaciones Técnicas y Compatibilidad -->
-<div class="mt-space-2xl flex flex-col gap-space-md">
-<!-- Navigation Tabs -->
-<div class="flex border-b border-surface-variant overflow-x-auto">
-<button class="tab-button px-space-lg py-space-sm font-label-lg text-label-lg font-bold border-b-2 border-primary text-primary transition-colors whitespace-nowrap" onclick="openTab(this, 'tab-specs')" type="button">
-          Especificaciones Técnicas Completas
-        </button>
-<button class="tab-button px-space-lg py-space-sm font-label-lg text-label-lg font-semibold border-b-2 border-transparent text-secondary hover:text-on-surface transition-colors whitespace-nowrap" onclick="openTab(this, 'tab-compatibilidad')" type="button">
-          Compatibilidad y Requisitos
-        </button>
-<button class="tab-button px-space-lg py-space-sm font-label-lg text-label-lg font-semibold border-b-2 border-transparent text-secondary hover:text-on-surface transition-colors whitespace-nowrap" onclick="openTab(this, 'tab-garantia')" type="button">
-          Garantía y RMA Oficial
-        </button>
-<button class="tab-button px-space-lg py-space-sm font-label-lg text-label-lg font-semibold border-b-2 border-transparent text-secondary hover:text-on-surface transition-colors whitespace-nowrap flex items-center gap-1.5" onclick="openTab(this, 'tab-opiniones')" type="button">
-<span>Opiniones de Clientes</span>
-<span class="bg-surface-variant text-on-surface font-label-sm text-[10px] px-1.5 py-0.2 rounded-sm">38</span>
-</button>
-</div>
-<!-- Tab Content 1: Especificaciones Técnicas -->
-<div class="tab-panel flex flex-col gap-space-lg" id="tab-specs">
-<div class="border border-surface-variant bg-surface-container-lowest">
-<table class="w-full text-left font-body-md text-body-md border-collapse">
-<tbody>
-<tr class="border-b border-surface-variant bg-surface-container-low">
-<th class="p-space-sm font-label-sm text-label-sm uppercase tracking-wider text-secondary" colspan="2">
-                  Arquitectura y Desempeño
-                </th>
-</tr>
-<tr class="border-b border-surface-variant">
-<td class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest">Tecnología de Switch</td>
-<td class="p-space-sm text-secondary">Logitech GX Brown Tactile (Distancia de actuación: 1.9 mm | Fuerza de actuación: 50 g | Recorrido total: 4.0 mm)</td>
-</tr>
-<tr class="border-b border-surface-variant">
-<td class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest">Conectividad Triple Modo</td>
-<td class="p-space-sm text-secondary">Tecnología inalámbrica LIGHTSPEED de 1 ms grado profesional, Bluetooth 5.0 Low Latency, y cable desmontable USB-C</td>
-</tr>
-<tr class="border-b border-surface-variant">
-<td class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest">Autonomía de Batería</td>
-<td class="p-space-sm text-secondary">Hasta 50 horas continuas de juego con iluminación RGB completa. Carga rápida mediante puerto USB Tipo-C</td>
-</tr>
-<tr class="border-b border-surface-variant">
-<td class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest">Keycaps (Teclas)</td>
-<td class="p-space-sm text-secondary">PBT de doble inyección (Double-shot) resistentes a brillo y desgaste por fricción extrema</td>
-</tr>
-<tr class="border-b border-surface-variant bg-surface-container-low">
-<th class="p-space-sm font-label-sm text-label-sm uppercase tracking-wider text-secondary" colspan="2">
-                  Dimensiones, Materiales y Construcción
-                </th>
-</tr>
-<tr class="border-b border-surface-variant">
-<td class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest">Factor de Forma</td>
-<td class="p-space-sm text-secondary">Tenkeyless (TKL - 80% sin teclado numérico) para máximo espacio de barrido de mouse</td>
-</tr>
-<tr class="border-b border-surface-variant">
-<td class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest">Dimensiones Físicas</td>
-<td class="p-space-sm text-secondary">34 mm (Altura) x 352 mm (Ancho) x 150 mm (Profundidad)</td>
-</tr>
-<tr class="border-b border-surface-variant">
-<td class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest">Peso Total</td>
-<td class="p-space-sm text-secondary">960 g (con placa de refuerzo de aluminio anodizado serie 5052)</td>
-</tr>
-<tr class="border-b border-surface-variant">
-<td class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest">Memoria Onboard</td>
-<td class="p-space-sm text-secondary">Capacidad para almacenar hasta 3 perfiles personalizados de iluminación y macros sin necesidad de software activo</td>
-</tr>
-<tr>
-<td class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest">Contenido de la Caja</td>
-<td class="p-space-sm text-secondary">Teclado G PRO X TKL, receptor LIGHTSPEED USB, extensor de adaptador, cable de carga/datos USB-A a USB-C, estuche rígido de transporte con cierre zipper, documentación oficial.</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<!-- Tab Content 2: Compatibilidad -->
-<div class="tab-panel hidden flex flex-col gap-space-md" id="tab-compatibilidad">
-<div class="border border-surface-variant bg-surface-container-lowest p-space-lg flex flex-col gap-space-md">
-<div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-tertiary text-[28px]">verified</span>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">Compatibilidad Certificada Multiplataforma</h3>
-<p class="font-body-md text-body-md text-secondary">Verificado y testeado en el laboratorio técnico ZeroLag Hardware.</p>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
-<div class="border border-surface-variant bg-surface-container-low p-space-md flex flex-col gap-1">
-<span class="font-label-md text-label-md font-bold text-on-surface">Windows OS</span>
-<p class="font-body-sm text-body-sm text-secondary">Windows 10, Windows 11 (64-bit). Compatibilidad total con Logitech G HUB y LIGHTSYNC RGB.</p>
-</div>
-<div class="border border-surface-variant bg-surface-container-low p-space-md flex flex-col gap-1">
-<span class="font-label-md text-label-md font-bold text-on-surface">macOS Apple</span>
-<p class="font-body-sm text-body-sm text-secondary">macOS 10.15 Catalina o posterior. Control de macros y perfiles básicos vía Logitech G HUB for Mac.</p>
-</div>
-<div class="border border-surface-variant bg-surface-container-low p-space-md flex flex-col gap-1">
-<span class="font-label-md text-label-md font-bold text-on-surface">Consolas y Móviles</span>
-<p class="font-body-sm text-body-sm text-secondary">PlayStation 5, Xbox Series X/S (vía conexión por cable o dongle USB) e iPadOS/Android por Bluetooth 5.0.</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Tab Content 3: Garantía y RMA -->
-<div class="tab-panel hidden flex flex-col gap-space-md" id="tab-garantia">
-<div class="border border-surface-variant bg-surface-container-lowest p-space-lg flex flex-col gap-space-md">
-<div class="flex items-start gap-space-md">
-<div class="w-12 h-12 bg-surface-container-low border border-surface-variant flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-primary text-[28px]">shield</span>
-</div>
-<div class="flex flex-col gap-1">
-<h3 class="font-headline-sm text-headline-sm text-on-surface">Política de Garantía Oficial ZeroLag &amp; Logitech Argentina</h3>
-<p class="font-body-md text-body-md text-secondary">
-                Todos nuestros productos son 100% nuevos, sellados en origen de fábrica y cuentan con número de serie único registrado en el sistema oficial de Logitech Argentina.
-              </p>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm mt-space-sm">
-<div class="border border-surface-variant p-space-sm bg-surface-container-low">
-<span class="font-label-sm text-label-sm font-bold text-on-surface uppercase">Primeros 30 Días (Cambio Directo ZeroLag):</span>
-<p class="font-body-sm text-body-sm text-secondary mt-1">Si el producto presenta falla de fábrica o defecto técnico, realizamos recambio directo por unidad nueva en nuestro local de Belgrano o mediante retiro a domicilio sin cargo.</p>
-</div>
-<div class="border border-surface-variant p-space-sm bg-surface-container-low">
-<span class="font-label-sm text-label-sm font-bold text-on-surface uppercase">Mes 2 al 24 (Soporte Oficial Logitech):</span>
-<p class="font-body-sm text-body-sm text-secondary mt-1">Asistencia con el Centro de Servicios Oficial de Logitech. Reemplazo o reparación inmediata en territorio argentino sin demoras aduaneras.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Tab Content 4: Opiniones -->
-<div class="tab-panel hidden flex flex-col gap-space-md" id="tab-opiniones">
-<div class="border border-surface-variant bg-surface-container-lowest p-space-lg flex flex-col gap-space-md">
-<div class="flex flex-col md:flex-row items-center gap-space-lg border-b border-surface-variant pb-space-lg">
-<div class="flex flex-col items-center justify-center text-center p-space-md border border-surface-variant bg-surface-container-low w-full md:w-56 shrink-0">
-<span class="font-headline-xl text-headline-xl text-on-surface font-extrabold">4.9</span>
-<div class="flex items-center text-primary mt-1">
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<span class="font-label-sm text-label-sm text-secondary mt-1">Basado en 38 valoraciones</span>
-</div>
-<div class="flex-1 flex flex-col gap-1.5 w-full">
-<div class="flex items-center gap-space-sm font-label-sm text-label-sm">
-<span class="w-14 text-secondary">5 estrellas</span>
-<div class="flex-1 bg-surface-container-high h-2.5">
-<div class="bg-primary h-2.5 w-[92%]"></div>
-</div>
-<span class="w-8 text-right font-bold text-on-surface">35</span>
-</div>
-<div class="flex items-center gap-space-sm font-label-sm text-label-sm">
-<span class="w-14 text-secondary">4 estrellas</span>
-<div class="flex-1 bg-surface-container-high h-2.5">
-<div class="bg-primary h-2.5 w-[8%]"></div>
-</div>
-<span class="w-8 text-right font-bold text-on-surface">3</span>
-</div>
-<div class="flex items-center gap-space-sm font-label-sm text-label-sm">
-<span class="w-14 text-secondary">3 estrellas</span>
-<div class="flex-1 bg-surface-container-high h-2.5">
-<div class="bg-primary h-2.5 w-[0%]"></div>
-</div>
-<span class="w-8 text-right font-bold text-on-surface">0</span>
-</div>
-<div class="flex items-center gap-space-sm font-label-sm text-label-sm">
-<span class="w-14 text-secondary">2 estrellas</span>
-<div class="flex-1 bg-surface-container-high h-2.5">
-<div class="bg-primary h-2.5 w-[0%]"></div>
-</div>
-<span class="w-8 text-right font-bold text-on-surface">0</span>
-</div>
-</div>
-</div>
-<!-- Customer Review Cards -->
-<div class="flex flex-col gap-space-md">
-<div class="border border-surface-variant p-space-md bg-surface-container-low flex flex-col gap-1.5">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-2">
-<span class="font-label-md text-label-md font-bold text-on-surface">Agustín M.</span>
-<span class="bg-tertiary-container text-on-tertiary-container font-label-sm text-[10px] px-1 py-0.2">Comprador Verificado</span>
-</div>
-<span class="font-body-sm text-body-sm text-secondary">Hace 4 días</span>
-</div>
-<div class="flex text-primary">
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface mt-1">
-                La respuesta inalámbrica con LIGHTSPEED es indistinguible de un cable. El sonido de los switches Brown es perfecto: táctil para escribir y jugar sin molestar en llamadas de Discord. Los keycaps PBT se sienten premium. El envío a Rosario llegó al día siguiente.
-              </p>
-</div>
-<div class="border border-surface-variant p-space-md bg-surface-container-low flex flex-col gap-1.5">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-2">
-<span class="font-label-md text-label-md font-bold text-on-surface">Franco D.</span>
-<span class="bg-tertiary-container text-on-tertiary-container font-label-sm text-[10px] px-1 py-0.2">Comprador Verificado</span>
-</div>
-<span class="font-body-sm text-body-sm text-secondary">Hace 2 semanas</span>
-</div>
-<div class="flex text-primary">
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface mt-1">
-                Excelente teclado para esports. Muy compacto, los controles de volumen dedicados son súper cómodos y el estuche que trae para transportar a torneos es un lujo. 100% recomendado ZeroLag.
-              </p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- 5. Widget de Compatibilidad Cruzada de Hardware y Recomendados -->
-<div class="mt-space-2xl border border-surface-variant bg-surface-container-lowest p-space-lg flex flex-col gap-space-lg">
-<div class="flex flex-col md:flex-row md:items-center justify-between border-b border-surface-variant pb-space-md gap-2">
-<div class="flex items-center gap-space-sm">
-<div class="w-8 h-8 bg-tertiary text-on-tertiary flex items-center justify-center font-bold">
-<span class="material-symbols-outlined text-[20px]">lightbulb</span>
-</div>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">Compatibilidad Cruzada de Setup &amp; Ecosystem</h3>
-<p class="font-body-sm text-body-sm text-secondary">Equipamiento verificado para sincronización unificada con Logitech G HUB y rendimiento esports</p>
-</div>
-</div>
-<span class="font-label-sm text-label-sm bg-surface-container text-on-surface px-2.5 py-1 uppercase font-bold border border-surface-variant shrink-0">
-          ZeroLag Validated Hardware
-        </span>
-</div>
-<!-- Cross-Selling Cards -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
-<!-- Cross Product 1 -->
-<div class="border border-surface-variant bg-surface-container-low p-space-md flex flex-col sm:flex-row gap-space-md items-center">
-<div class="w-28 h-28 bg-surface-container-lowest border border-surface-variant p-2 shrink-0 flex items-center justify-center">
-<img alt="Mousepad ZeroLag Speed XXL" class="max-h-full max-w-full object-contain" data-alt="ZeroLag Speed XXL heavy duty gaming mousepad textured micro-weave surface in stealth black with red reinforced stitch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWY6ulfv49g3vfKqpZJIigqZ7gSXp3odcnkvcJv_5hC6DoztOwNQkZdkk_naeOlQxAd3bI6dp1_3uSo-3dxQIrFTp3RHH5BRLPVO5vUo9xi45WpdI_JNBvxhT9pPedNODv8G0WvlYU2Zill3ypZ0TzjENXSGQwv3VaBLdAd2Sp1SL8McXRcdbzTmOjw04WmiTuALeBkvA8qG0n7lsZa4gjhP7S8CtPF0aJ6WU_RippH7aMgEhMUCT0">
-</div>
-<div class="flex flex-col gap-1 flex-1 text-center sm:text-left">
-<span class="font-label-sm text-label-sm text-tertiary font-bold uppercase tracking-wider">Complemento Recomendado</span>
-<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Mousepad Gamer ZeroLag Speed XXL (900x400x4mm)</h4>
-<p class="font-body-sm text-body-sm text-secondary">Base de caucho natural antideslizante con costura perimetral reforzada.</p>
-<div class="flex items-baseline gap-2 mt-1 justify-center sm:justify-start">
-<span class="font-headline-sm text-headline-sm text-primary font-bold">$24.990</span>
-<span class="font-body-sm text-body-sm text-secondary">Transferencia</span>
-</div>
-<button class="mt-2 h-9 px-space-md bg-surface-container-lowest border border-on-surface hover:bg-on-surface hover:text-surface-container-lowest font-label-md text-label-md transition-colors flex items-center justify-center gap-1" type="button">
-<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
-<span>Añadir al Setup</span>
-</button>
-</div>
-</div>
-<!-- Cross Product 2 -->
-<div class="border border-surface-variant bg-surface-container-low p-space-md flex flex-col sm:flex-row gap-space-md items-center">
-<div class="w-28 h-28 bg-surface-container-lowest border border-surface-variant p-2 shrink-0 flex items-center justify-center">
-<img alt="Mouse G PRO X Superlight 2" class="max-h-full max-w-full object-contain" data-alt="Logitech G PRO X Superlight Wireless gaming mouse in sleek matte black on pure white studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACuStpGBjw2NvHu64lk4AgHCQh8PfT1vQMZkfR3hYR9eOKtnsJjfENHV-BHMMOAtM32QcWWYl-VE1Vt1uGH9C4Jw_qiAgm-5gDujeWlBuiXURR1TDNHLwQI7_pRZ-RwyROtW33xISqJEwGHL_XvoHp6SaOgNWY4yODdiq_ur67z0abEJsRkCQmIo91VHKdFgG37giO8iHwu6YvplSDY21o_Ff_7J7M6qgjrx-4AaFPEFmIevs4RYWZ">
-</div>
-<div class="flex flex-col gap-1 flex-1 text-center sm:text-left">
-<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">Mismo Ecosistema G HUB</span>
-<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Mouse Logitech G PRO X Superlight 2 Wireless 60g</h4>
-<p class="font-body-sm text-body-sm text-secondary">Sensor HERO 2 con 32.000 DPI y switches óptico-mecánicos híbridos.</p>
-<div class="flex items-baseline gap-2 mt-1 justify-center sm:justify-start">
-<span class="font-headline-sm text-headline-sm text-primary font-bold">$175.000</span>
-<span class="font-body-sm text-body-sm text-secondary">Transferencia</span>
-</div>
-<button class="mt-2 h-9 px-space-md bg-primary text-on-primary hover:bg-[#8f0d15] font-label-md text-label-md transition-colors flex items-center justify-center gap-1 font-bold" type="button">
-<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
-<span>Añadir al Setup</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Cart Toast / Notification Bar -->
-<div class="fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface border border-surface-variant p-space-md max-w-md hidden items-center gap-space-md" id="cart-toast">
-<div class="w-8 h-8 bg-tertiary text-on-tertiary flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[20px]">check</span>
-</div>
-<div class="flex flex-col flex-1">
-<span class="font-label-md text-label-md font-bold">¡Producto agregado al carrito!</span>
-<span class="font-body-sm text-body-sm text-secondary-fixed">Logitech G PRO X TKL LIGHTSPEED Wireless</span>
-</div>
-<a class="font-label-sm text-label-sm bg-primary text-on-primary px-3 py-1.5 font-bold uppercase hover:bg-[#8f0d15] transition-colors shrink-0" data-path="carrito" href="#">
-      Ver Carrito
-    </a>
-</div>
-</div>
-<script>
-  function switchImage(buttonElement, viewType) {
-    var buttons = document.querySelectorAll('#thumb-gallery .thumb-btn');
-    buttons.forEach(function(btn) {
-      btn.classList.remove('border-2', 'border-primary');
-      btn.classList.add('border', 'border-surface-variant');
-    });
-    buttonElement.classList.remove('border-surface-variant');
-    buttonElement.classList.add('border-2', 'border-primary');
-
-    var thumbImg = buttonElement.querySelector('img');
-    var mainImg = document.getElementById('main-product-image');
-    if (thumbImg && mainImg) {
-      mainImg.src = thumbImg.src;
-      mainImg.setAttribute('data-alt', thumbImg.getAttribute('data-alt') || '');
-    }
-  }
-
-  function selectVariant(button, labelId, labelText) {
-    var container = button.parentElement;
-    var buttons = container.querySelectorAll('.variant-pill');
-    buttons.forEach(function(btn) {
-      btn.classList.remove('border-primary', 'bg-primary', 'text-on-primary');
-      btn.classList.add('border-surface-variant', 'bg-surface-container-low', 'text-on-surface');
-    });
-    button.classList.remove('border-surface-variant', 'bg-surface-container-low', 'text-on-surface');
-    button.classList.add('border-primary', 'bg-primary', 'text-on-primary');
-    
-    var label = document.getElementById(labelId);
-    if (label) {
-      label.textContent = labelText;
-    }
-  }
-
-  function selectColor(button, colorName) {
-    var buttons = document.querySelectorAll('#color-selector .color-btn');
-    buttons.forEach(function(btn) {
-      btn.classList.remove('border-primary');
-      btn.classList.add('border-surface-variant');
-      var spanText = btn.querySelector('span:nth-child(2)');
-      if (spanText) {
-        spanText.classList.remove('font-bold', 'text-on-surface');
-        spanText.classList.add('text-secondary');
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
       }
-    });
-    button.classList.remove('border-surface-variant');
-    button.classList.add('border-primary');
-    var currentText = button.querySelector('span:nth-child(2)');
-    if (currentText) {
-      currentText.classList.remove('text-secondary');
-      currentText.classList.add('font-bold', 'text-on-surface');
-    }
-    var label = document.getElementById('color-name-label');
-    if (label) label.textContent = colorName;
-  }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+        filter: none !important;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#303031",
+              "on-tertiary-fixed": "#002204",
+              "on-primary": "#ffffff",
+              "on-primary-fixed": "#410003",
+              error: "#ba1a1a",
+              "on-tertiary-container": "#d8ffd0",
+              "inverse-on-surface": "#f2f0f0",
+              outline: "#8f6f6c",
+              tertiary: "#11651d",
+              "inverse-primary": "#ffb3ac",
+              secondary: "#5f5e5e",
+              surface: "#fbf9f8",
+              "on-secondary-container": "#656464",
+              "surface-container-lowest": "#ffffff",
+              "on-error-container": "#93000a",
+              "tertiary-container": "#307f34",
+              "on-error": "#ffffff",
+              "primary-fixed-dim": "#ffb3ac",
+              "surface-dim": "#dbdad9",
+              "surface-container-high": "#e9e8e7",
+              "on-background": "#1b1c1c",
+              "on-surface-variant": "#5b403d",
+              background: "#fbf9f8",
+              "primary-container": "#d32f2f",
+              "on-primary-fixed-variant": "#930010",
+              "secondary-fixed": "#e5e2e1",
+              "outline-variant": "#e4beba",
+              "surface-tint": "#ba1a20",
+              "on-surface": "#1b1c1c",
+              "on-primary-container": "#fff2f0",
+              "tertiary-fixed": "#a3f69c",
+              "tertiary-fixed-dim": "#88d982",
+              "on-secondary-fixed-variant": "#474646",
+              "primary-fixed": "#ffdad6",
+              "error-container": "#ffdad6",
+              "secondary-container": "#e5e2e1",
+              "surface-container": "#efeded",
+              "secondary-fixed-dim": "#c8c6c5",
+              "surface-variant": "#e4e2e2",
+              "on-tertiary-fixed-variant": "#005312",
+              "on-tertiary": "#ffffff",
+              "surface-container-highest": "#e4e2e2",
+              "surface-bright": "#fbf9f8",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed": "#1c1b1b",
+              primary: "#af101a",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "space-xl": "2rem",
+              gutter: "1rem",
+              "margin-desktop": "2rem",
+              margin: "1rem",
+              "space-xs": "0.25rem",
+              "gutter-tablet": "1.25rem",
+              "space-md": "1rem",
+              "margin-tablet": "1.5rem",
+              "gutter-desktop": "1.5rem",
+              "space-sm": "0.5rem",
+              "space-lg": "1.5rem",
+              "space-2xl": "3rem",
+            },
+            fontFamily: {
+              "label-sm": ["Inter"],
+              "headline-sm": ["Inter"],
+              "headline-lg-mobile": ["Inter"],
+              "headline-xl": ["Inter"],
+              "headline-xl-mobile": ["Inter"],
+              "body-md": ["Inter"],
+              "body-lg": ["Inter"],
+              "label-md": ["Inter"],
+              "label-lg": ["Inter"],
+              "headline-lg": ["Inter"],
+              "headline-md": ["Inter"],
+              "body-sm": ["Inter"],
+            },
+            fontSize: {
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-sm": [
+                "18px",
+                {
+                  lineHeight: "24px",
+                  letterSpacing: "-0.005em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg-mobile": [
+                "24px",
+                {
+                  lineHeight: "32px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-xl": [
+                "40px",
+                {
+                  lineHeight: "48px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "headline-xl-mobile": [
+                "30px",
+                {
+                  lineHeight: "36px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "800",
+                },
+              ],
+              "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "18px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": [
+                "22px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-surface font-body-md text-on-surface antialiased">
+    <header
+      class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-surface-variant"
+    >
+      <div class="bg-surface-container border-b border-surface-variant">
+        <div
+          class="max-w-[1320px] mx-auto px-margin-desktop h-8 flex items-center justify-between font-label-sm text-label-sm"
+        >
+          <div class="flex items-center gap-space-xs text-secondary truncate">
+            <span class="material-symbols-outlined text-[14px] text-tertiary"
+              >local_shipping</span
+            ><span
+              >Envíos a todo el país vía Andreani y Correo Argentino | Hasta 12
+              cuotas sin interés | Local en Belgrano, CABA</span
+            >
+          </div>
+          <div class="hidden lg:flex items-center gap-space-md text-secondary">
+            <a
+              class="hover:text-primary transition-colors"
+              data-path="arma-tu-pc"
+              href="#"
+              >Armá tu PC</a
+            ><span class="text-surface-variant">|</span
+            ><a
+              class="hover:text-primary transition-colors"
+              data-path="garantias-y-rma"
+              href="#"
+              >Garantías y RMA</a
+            ><span class="text-surface-variant">|</span
+            ><a
+              class="hover:text-primary transition-colors"
+              data-path="ayuda-faq"
+              href="#"
+              >Ayuda / FAQ</a
+            ><span class="text-surface-variant">|</span
+            ><a
+              class="hover:text-primary transition-colors"
+              data-path="venta-corporativa"
+              href="#"
+              >Venta Corporativa</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="border-b border-surface-variant">
+        <div
+          class="max-w-[1320px] mx-auto px-margin-desktop h-20 flex items-center gap-space-lg"
+        >
+          <div class="flex items-center gap-space-sm shrink-0">
+            <img
+              alt="ZeroLag Logo"
+              class="h-8 w-auto object-contain"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1Wt_esEXmOhcAK74Hfmge3dK9jQ86GoHsQBgEnZ_n3bvojcJ6yJlEuQ8ccu-7QscR76ggR_AYYtqC7JfTTw4gRM42_Rz-KLJzAWCMkz7doQ4YYkNsl7L8zev9pl6Mo-Ksk06bs5ccdbYKnSR6WFdYDdM50r2eHMuOZNM1fYFvh-1KU3ULAXNr2UOD_Q3m-RJlRvVOERXEDy1454rrmEDVMmD6NHGGtF3U3rjJTXsOf3-WAZ5qEQ-wy_s9U"
+            />
+            <div class="flex flex-col">
+              <span
+                class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface leading-none"
+                >ZeroLag</span
+              ><span
+                class="font-label-sm text-[9px] uppercase tracking-widest text-primary font-bold leading-none mt-1"
+                >Hardware &amp; Gaming</span
+              >
+            </div>
+          </div>
+          <div class="flex-1 max-w-2xl">
+            <form action="#" class="flex w-full" method="GET">
+              <input
+                class="w-full h-10 px-space-md bg-surface-container-low border border-surface-variant border-r-0 rounded-l-lg text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
+                placeholder="Buscar placas de video, procesadores, periféricos, notebooks..."
+                type="text"
+              /><button
+                class="h-10 px-space-lg bg-primary-container text-on-primary font-label-lg text-label-lg rounded-r-lg flex items-center gap-space-xs shrink-0 hover:bg-primary transition-colors"
+                type="submit"
+              >
+                <span class="material-symbols-outlined text-[18px]">search</span
+                ><span>Buscar</span>
+              </button>
+            </form>
+          </div>
+          <div
+            class="hidden xl:flex items-center gap-space-xs border border-surface-variant bg-surface-container-low px-space-sm py-1 rounded-lg shrink-0"
+          >
+            <span class="material-symbols-outlined text-tertiary text-[20px]"
+              >currency_exchange</span
+            >
+            <div class="flex flex-col">
+              <div class="flex items-center gap-1 font-label-sm text-label-sm">
+                <span class="text-secondary">USD BNA:</span
+                ><span class="font-bold text-on-surface">$1.085</span>
+              </div>
+              <span
+                class="text-[10px] leading-tight font-bold text-tertiary uppercase"
+                >Transferencia -15% OFF</span
+              >
+            </div>
+          </div>
+          <div class="flex items-center gap-space-md shrink-0 ml-auto">
+            <a
+              class="flex items-center gap-space-xs text-left group"
+              data-path="login"
+              href="#"
+              ><div
+                class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-on-primary text-[18px]"
+                  >person</span
+                >
+              </div>
+              <div class="hidden md:flex flex-col">
+                <span
+                  class="font-label-sm text-[10px] text-secondary leading-tight"
+                  >Hola, Gamer!</span
+                ><span
+                  class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors leading-tight"
+                  >Ingresar / Registro</span
+                >
+              </div></a
+            >
+            <div class="h-8 w-px bg-surface-variant hidden md:block"></div>
+            <a
+              class="flex items-center gap-space-xs border border-surface-variant bg-surface-container-lowest px-space-sm h-10 rounded-lg hover:border-on-surface transition-colors relative"
+              data-path="carrito"
+              href="#"
+              ><span
+                class="material-symbols-outlined text-[20px] text-on-surface"
+                >shopping_cart</span
+              ><span
+                class="hidden md:inline font-label-md text-label-md text-on-surface"
+                >Mi Carrito</span
+              ><span
+                class="bg-primary text-on-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded-sm"
+                >2</span
+              ></a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="bg-surface-container-lowest">
+        <div
+          class="max-w-[1320px] mx-auto px-margin-desktop h-11 flex items-center justify-between"
+        >
+          <nav
+            class="flex items-center gap-space-md overflow-x-auto h-full"
+            data-active-classes="text-primary font-bold border-b-2 border-primary"
+          >
+            <a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
+              data-path="notebooks-laptops"
+              href="#"
+              >Notebooks &amp; Laptops</a
+            ><a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
+              data-path="pc-armadas-gaming"
+              href="#"
+              >PC Armadas Gaming</a
+            ><a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
+              data-path="placas-de-video-gpu"
+              href="#"
+              >Placas de Video (GPU)</a
+            ><a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
+              data-path="procesadores-cpu"
+              href="#"
+              >Procesadores (CPU)</a
+            ><a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
+              data-path="monitores"
+              href="#"
+              >Monitores</a
+            ><a
+              aria-current="page"
+              class="whitespace-nowrap h-full flex items-center transition-colors text-primary font-bold border-b-2 border-primary"
+              data-path="perifericos"
+              href="#"
+              >Periféricos</a
+            ><a
+              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
+              data-path="componentes"
+              href="#"
+              >Componentes</a
+            ><a
+              class="text-primary hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors uppercase font-bold"
+              data-path="ofertas-relampago"
+              href="#"
+              >Ofertas Relámpago</a
+            >
+          </nav>
+          <div
+            class="hidden md:flex items-center pl-space-md shrink-0 border-l border-surface-variant h-6"
+          >
+            <a
+              class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors flex items-center gap-1 uppercase tracking-wider"
+              data-path="admin-dashboard"
+              href="#"
+              ><span class="material-symbols-outlined text-[16px]">tune</span
+              ><span>Panel Admin</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-[156px] bg-surface min-h-[calc(100vh-156px)]">
+      <div class="flex flex-col w-full">
+        <div
+          class="max-w-[1320px] mx-auto px-margin-desktop py-space-md w-full"
+        >
+          <!-- 1. Breadcrumbs Nav -->
+          <nav
+            aria-label="Breadcrumb"
+            class="flex items-center gap-space-xs text-secondary font-label-md text-label-md mb-space-lg flex-wrap"
+          >
+            <a
+              class="hover:text-primary transition-colors flex items-center gap-1"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[16px]">home</span>
+              <span>Inicio</span>
+            </a>
+            <span class="text-surface-variant font-bold">/</span>
+            <a class="hover:text-primary transition-colors" href="#"
+              >Periféricos</a
+            >
+            <span class="text-surface-variant font-bold">/</span>
+            <a class="hover:text-primary transition-colors" href="#"
+              >Teclados Mecánicos</a
+            >
+            <span class="text-surface-variant font-bold">/</span>
+            <span
+              class="text-on-surface font-semibold truncate max-w-xs md:max-w-md"
+              >Logitech G PRO X TKL LIGHTSPEED Wireless</span
+            >
+          </nav>
+          <!-- Main Grid: Left Gallery + Right Purchase Specs -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start"
+          >
+            <!-- 2. Columna Izquierda: Galería de Imágenes Flat -->
+            <div class="lg:col-span-7 flex flex-col gap-space-md">
+              <!-- Main Image Stage -->
+              <div
+                class="relative bg-surface-container-lowest border border-surface-variant rounded-none p-space-lg flex items-center justify-center min-h-[460px]"
+              >
+                <div
+                  class="absolute top-space-md left-space-md flex flex-col gap-1 z-10"
+                >
+                  <span
+                    class="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-1 tracking-wider uppercase font-bold"
+                  >
+                    15% OFF TRANSFERENCIA
+                  </span>
+                  <span
+                    class="bg-tertiary text-on-tertiary font-label-sm text-label-sm px-2 py-1 tracking-wider uppercase font-bold"
+                  >
+                    ENVÍO GRATIS ANDREANI
+                  </span>
+                </div>
+                <button
+                  class="absolute top-space-md right-space-md w-9 h-9 border border-surface-variant bg-surface-container-lowest text-secondary hover:text-primary hover:border-primary flex items-center justify-center transition-colors"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >favorite_border</span
+                  >
+                </button>
+                <img
+                  alt="Logitech G PRO X TKL LIGHTSPEED Wireless RGB"
+                  class="max-h-[380px] w-auto object-contain select-none"
+                  data-alt="Studio technical shot of Logitech G PRO X TKL wireless mechanical gaming keyboard with crisp white PBT double shot keycaps and glowing RGB backlighting against a clean light neutral architectural background, sharp high precision industrial tech aesthetic, zero shadow flat layout"
+                  id="main-product-image"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7yKlKdCR2rLP4zKKNQEmkxHsEX3JEf_aOlMkaSrUTpvAlULo9fkhkme-UAQ3zYYkx4IhVxk78ZXRCYcsCngP4FnkAQ-NhVn3NKNBEM4_gQc5pH6YYnoaDuZ3zJPThioQWmn35fqFLtQwaz6WGXflthZORmdAYB-E3Dk5Bp9wXkO8L6MU_6OZGHMuEzByYPqdzXKvTgSr3GoO0W0DKUgnLvfFB-S9WxLcJ6lRAduxsDViiStm3GLIr"
+                />
+              </div>
+              <!-- Thumbnails Row -->
+              <div class="grid grid-cols-5 gap-space-sm" id="thumb-gallery">
+                <button
+                  class="thumb-btn border-2 border-primary bg-surface-container-lowest p-1 aspect-video flex items-center justify-center transition-all"
+                  onclick="switchImage(this, 'main-view')"
+                  type="button"
+                >
+                  <img
+                    alt="Vista Superior"
+                    class="h-full w-full object-contain"
+                    data-alt="Logitech G PRO X TKL top view centered showing compact tenkeyless footprint and layout on pristine flat surface"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnOYpzu5tPO3GD-hgpQdwcqHfS9y7U6NWJSnOLtPD2rzca72BigB_KLsdmAzkjC0N6HMvB0MMnfD_pV0F1Kh4ErvxEsKn4uwbaFvB3_revQho66XfY0una6mppfBy1opKaqq1mnCdKmjHBG3D896J1pPBgRqQV9PS0AfsP4gor5BiJCP5_hIRgoOoD5H-IRANyKufhzNF28Ng73hwxwzPbr-IdkbGhVXn3FKmbf3uqqWpELN01iXfP"
+                  />
+                </button>
+                <button
+                  class="thumb-btn border border-surface-variant bg-surface-container-lowest p-1 aspect-video flex items-center justify-center hover:border-on-surface transition-all"
+                  onclick="switchImage(this, 'side-view')"
+                  type="button"
+                >
+                  <img
+                    alt="Perfil Lateral"
+                    class="h-full w-full object-contain"
+                    data-alt="Logitech G PRO X TKL mechanical keyboard low angle profile showing dual height feet adjustment and USB-C port"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf0b0TGwhB1rsQhcjNGX9jIYpvG87SieGcLua1jsQM7rSPldehQDQw8HvK0GJuWZvhNyBGiCk_jA3ckqelkNTuDZ0dUFQcxr2XRPSOvsfHY_llgbgXtBBfw9QziNcaOdxMvegFTybFNoxb9RXEd2bNH3rzEtWhVEfSpv3oBrsq9500FSnWr9lU9d_A0BaYSGuqjN3IElCeYIvvFSCbJz-ggKcyxO4pRnHlcGh7kgatEXLy0UszsLHS"
+                  />
+                </button>
+                <button
+                  class="thumb-btn border border-surface-variant bg-surface-container-lowest p-1 aspect-video flex items-center justify-center hover:border-on-surface transition-all"
+                  onclick="switchImage(this, 'switches-view')"
+                  type="button"
+                >
+                  <img
+                    alt="Switches Mecánicos"
+                    class="h-full w-full object-contain"
+                    data-alt="Close up macro detail of GX Brown tactile mechanical switches and high durability PBT double shot keycap stem"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw5jgIS7rCJiSaVriTVnAUfGvGW9ds4UwAxxUeTtocCCfPXwx7uBrL3yPsR2e5GgtvQnGxtsME3I2l0QC4JQfg9YE-6SRMpa2A-gVAprdLGfXC5ezqidZK5a3TmRVyNsvw6MdVhUvEK0mNpmyJgFIYPqC4PdJp22TmKDILA_aGnIjpaw-MX7v99kAcAzqUW9-RJ7EYYMu8ohakxN_C1gsv0tkXPFCykWEozp3e7QdMsF0F08JOukOc"
+                  />
+                </button>
+                <button
+                  class="thumb-btn border border-surface-variant bg-surface-container-lowest p-1 aspect-video flex items-center justify-center hover:border-on-surface transition-all"
+                  onclick="switchImage(this, 'box-view')"
+                  type="button"
+                >
+                  <img
+                    alt="Packaging y Funda"
+                    class="h-full w-full object-contain"
+                    data-alt="Retail packaging and included accessories case for Logitech G PRO X TKL Lightspeed wireless gaming gear"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD4Op8zwJleweArNHl8VcGrnXaJmekkpW-BE8AtsB2A8Qx_roxYSaTNooOcrnTFz9N-AFkmJyrndE7FAlMhsvq7041mvmavGV9xWaApJF6NRiUvjYIINMTfdfFG5wVusYjYP6mhvf0gBlF56_1QPZIjkgNB9kstMACAnEsEh_nlLPs2KRXjhWLRUwJIk_gD9y9bfMzbUoFGkyiHjJd5ZuFrq36JLkmCf1cq5wCqTCqkzMtZsRffBmx"
+                  />
+                </button>
+                <button
+                  class="thumb-btn border border-surface-variant bg-surface-container-lowest p-1 aspect-video flex items-center justify-center hover:border-on-surface transition-all"
+                  onclick="switchImage(this, 'rgb-view')"
+                  type="button"
+                >
+                  <img
+                    alt="Iluminación RGB"
+                    class="h-full w-full object-contain"
+                    data-alt="Logitech G PRO X TKL fully illuminated with custom per key Lightsync RGB spectrum in technical gaming battlestation"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRNfinYawPfc74r-tPTtRdnqKL0rjGmWLKIEhbsyFP9-v4m2XMqvaMEFYWMjo_4B4jDpAJZgQAA7uMPKq2T7VnfQAnM0GgsjQY6HLU-8Uug23LZNmw-gb5KSN6Sx2qmZ88QIClXRlo3FmhmXhnMuHKZW_bzDVy-j57btGCxR0jcOWbA92rtG9EwPKchUsjVruFWQrm-RQH1YjV_4VlbWOffueqp1w-UauE0L0cZoLaHcNjcI4GUVH4"
+                  />
+                </button>
+              </div>
+              <!-- Badges & Official Warranty Strip -->
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-space-sm mt-space-xs"
+              >
+                <div
+                  class="border border-surface-variant bg-surface-container-low p-space-sm flex items-center gap-space-sm"
+                >
+                  <div
+                    class="w-10 h-10 bg-surface-container-lowest border border-surface-variant flex items-center justify-center shrink-0"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-[22px]"
+                      >verified_user</span
+                    >
+                  </div>
+                  <div class="flex flex-col">
+                    <span
+                      class="font-label-md text-label-md font-bold text-on-surface uppercase leading-tight"
+                      >Garantía Oficial Logitech</span
+                    >
+                    <span class="font-body-sm text-body-sm text-secondary"
+                      >24 Meses con soporte directo y factura A/B</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="border border-surface-variant bg-surface-container-low p-space-sm flex items-center gap-space-sm"
+                >
+                  <div
+                    class="w-10 h-10 bg-surface-container-lowest border border-surface-variant flex items-center justify-center shrink-0"
+                  >
+                    <span
+                      class="material-symbols-outlined text-tertiary text-[22px]"
+                      >local_shipping</span
+                    >
+                  </div>
+                  <div class="flex flex-col">
+                    <span
+                      class="font-label-md text-label-md font-bold text-on-surface uppercase leading-tight"
+                      >Envío Prioritario Andreani</span
+                    >
+                    <span class="font-body-sm text-body-sm text-secondary"
+                      >Despacho en el día con seguro 100% cubierto</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 3. Columna Derecha: Panel de Compra y Especificaciones Rápidas -->
+            <div
+              class="lg:col-span-5 flex flex-col border border-surface-variant bg-surface-container-lowest p-space-lg gap-space-md"
+            >
+              <!-- Top Metadata & Rating -->
+              <div
+                class="flex flex-col gap-1 border-b border-surface-variant pb-space-sm"
+              >
+                <div
+                  class="flex items-center justify-between font-label-sm text-label-sm text-secondary uppercase flex-wrap gap-2"
+                >
+                  <span
+                    >SKU:
+                    <strong class="text-on-surface font-semibold"
+                      >920-012134</strong
+                    ></span
+                  >
+                  <span
+                    >EAN:
+                    <strong class="text-on-surface font-semibold"
+                      >097855191564</strong
+                    ></span
+                  >
+                  <span class="text-tertiary flex items-center gap-1 font-bold">
+                    <span
+                      class="w-2 h-2 rounded-full bg-tertiary inline-block"
+                    ></span>
+                    En Stock (14 un.)
+                  </span>
+                </div>
+                <h1
+                  class="font-headline-md text-headline-md text-on-surface mt-1 leading-tight tracking-tight"
+                >
+                  Teclado Mecánico Gamer Logitech G PRO X TKL LIGHTSPEED
+                  Wireless RGB Lightsync
+                </h1>
+                <div class="flex items-center gap-space-sm mt-1">
+                  <div class="flex items-center text-primary">
+                    <span
+                      class="material-symbols-outlined text-[18px]"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >star</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-[18px]"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >star</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-[18px]"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >star</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-[18px]"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >star</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-[18px]"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >star_half</span
+                    >
+                  </div>
+                  <span
+                    class="font-label-md text-label-md text-on-surface font-bold"
+                    >4.9 / 5.0</span
+                  >
+                  <span class="text-surface-variant">|</span>
+                  <a
+                    class="font-body-sm text-body-sm text-secondary hover:text-primary underline"
+                    href="#tab-opiniones"
+                    >38 opiniones verificadas</a
+                  >
+                </div>
+              </div>
+              <!-- Variant Selector Section -->
+              <div
+                class="flex flex-col gap-space-md border-b border-surface-variant pb-space-md"
+              >
+                <!-- 1. Switch Selection -->
+                <div class="flex flex-col gap-1.5">
+                  <div class="flex justify-between items-center">
+                    <span
+                      class="font-label-sm text-label-sm uppercase tracking-wider text-secondary"
+                      >Switch Mecánico:</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm font-bold text-on-surface"
+                      id="switch-name-label"
+                      >GX Brown Táctil (Silencioso &amp; Preciso)</span
+                    >
+                  </div>
+                  <div class="grid grid-cols-3 gap-2" id="switch-selector">
+                    <button
+                      class="variant-pill border border-primary bg-primary text-on-primary font-label-sm text-label-sm py-2 px-1 text-center transition-colors"
+                      onclick="
+                        selectVariant(
+                          this,
+                          'switch-name-label',
+                          'GX Brown Táctil (Silencioso &amp; Preciso)',
+                        )
+                      "
+                      type="button"
+                    >
+                      GX Brown Táctil
+                    </button>
+                    <button
+                      class="variant-pill border border-surface-variant bg-surface-container-low text-on-surface hover:border-on-surface font-label-sm text-label-sm py-2 px-1 text-center transition-colors"
+                      onclick="
+                        selectVariant(
+                          this,
+                          'switch-name-label',
+                          'GX Red Lineal (Rápido y Fluido)',
+                        )
+                      "
+                      type="button"
+                    >
+                      GX Red Lineal
+                    </button>
+                    <button
+                      class="variant-pill border border-surface-variant bg-surface-container-low text-on-surface hover:border-on-surface font-label-sm text-label-sm py-2 px-1 text-center transition-colors"
+                      onclick="
+                        selectVariant(
+                          this,
+                          'switch-name-label',
+                          'GX Blue Clicky (Respuesta Sonora)',
+                        )
+                      "
+                      type="button"
+                    >
+                      GX Blue Clicky
+                    </button>
+                  </div>
+                </div>
+                <!-- 2. Color Selection -->
+                <div class="flex flex-col gap-1.5">
+                  <div class="flex justify-between items-center">
+                    <span
+                      class="font-label-sm text-label-sm uppercase tracking-wider text-secondary"
+                      >Color de Chasis:</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm font-bold text-on-surface"
+                      id="color-name-label"
+                      >Negro Mate</span
+                    >
+                  </div>
+                  <div class="grid grid-cols-3 gap-2" id="color-selector">
+                    <button
+                      class="color-btn border border-primary bg-surface-container-low py-2 px-2 flex items-center justify-center gap-2 transition-colors"
+                      onclick="selectColor(this, 'Negro Mate')"
+                      type="button"
+                    >
+                      <span
+                        class="w-3.5 h-3.5 bg-inverse-surface border border-outline inline-block"
+                      ></span>
+                      <span
+                        class="font-label-sm text-label-sm font-bold text-on-surface"
+                        >Negro</span
+                      >
+                    </button>
+                    <button
+                      class="color-btn border border-surface-variant bg-surface-container-low hover:border-on-surface py-2 px-2 flex items-center justify-center gap-2 transition-colors"
+                      onclick="selectColor(this, 'Blanco Puro')"
+                      type="button"
+                    >
+                      <span
+                        class="w-3.5 h-3.5 bg-surface-container-lowest border border-surface-variant inline-block"
+                      ></span>
+                      <span class="font-label-sm text-label-sm text-secondary"
+                        >Blanco</span
+                      >
+                    </button>
+                    <button
+                      class="color-btn border border-surface-variant bg-surface-container-low hover:border-on-surface py-2 px-2 flex items-center justify-center gap-2 transition-colors"
+                      onclick="selectColor(this, 'Magenta Gaming')"
+                      type="button"
+                    >
+                      <span
+                        class="w-3.5 h-3.5 bg-[#d81b60] border border-outline inline-block"
+                      ></span>
+                      <span class="font-label-sm text-label-sm text-secondary"
+                        >Magenta</span
+                      >
+                    </button>
+                  </div>
+                </div>
+                <!-- 3. Layout Distribution -->
+                <div class="flex flex-col gap-1.5">
+                  <div class="flex justify-between items-center">
+                    <span
+                      class="font-label-sm text-label-sm uppercase tracking-wider text-secondary"
+                      >Distribución de Teclas:</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm font-bold text-on-surface"
+                      id="layout-name-label"
+                      >Español Latinoamericano (ISO - Tecla Enter Grande con
+                      Ñ)</span
+                    >
+                  </div>
+                  <div class="grid grid-cols-2 gap-2">
+                    <button
+                      class="layout-btn border border-primary bg-primary text-on-primary font-label-sm text-label-sm py-2 px-2 text-center transition-colors"
+                      onclick="
+                        selectLayout(
+                          this,
+                          'Español Latinoamericano (ISO - Tecla Enter Grande con Ñ)',
+                        )
+                      "
+                      type="button"
+                    >
+                      ISO Español (con Ñ)
+                    </button>
+                    <button
+                      class="layout-btn border border-surface-variant bg-surface-container-low text-on-surface hover:border-on-surface font-label-sm text-label-sm py-2 px-2 text-center transition-colors"
+                      onclick="
+                        selectLayout(
+                          this,
+                          'Inglés US (ANSI - Tecla Enter Recta)',
+                        )
+                      "
+                      type="button"
+                    >
+                      ANSI US (Inglés)
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Pricing Card Container -->
+              <div
+                class="bg-surface-container-low border border-surface-variant p-space-md flex flex-col gap-space-sm"
+              >
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider"
+                    >Precio Especial Transferencia / Depósito Directo:</span
+                  >
+                  <div class="flex items-baseline gap-2">
+                    <span
+                      class="font-headline-xl text-headline-xl text-primary font-extrabold tracking-tight"
+                      >$249.990</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-secondary line-through"
+                      >$345.880</span
+                    >
+                  </div>
+                  <span class="font-body-sm text-body-sm text-secondary mt-0.5"
+                    >IVA incluido • Emitimos Factura A o B automáticamente</span
+                  >
+                </div>
+                <div
+                  class="border-t border-surface-variant pt-space-xs flex flex-col gap-1"
+                >
+                  <div class="flex justify-between items-center">
+                    <span
+                      class="font-label-md text-label-md text-on-surface font-semibold"
+                      >Precio de Lista: $294.100</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-tertiary-container text-on-tertiary-container px-1.5 py-0.5 font-bold"
+                      >12 Cuotas Fijas</span
+                    >
+                  </div>
+                  <div class="font-body-md text-body-md text-on-surface">
+                    Hasta <strong>12 cuotas fijas de $24.508</strong> con
+                    tarjetas bancarias seleccionadas
+                  </div>
+                </div>
+                <!-- Cuotas Modal Trigger / Mini Calculator -->
+                <div
+                  class="border border-surface-variant bg-surface-container-lowest p-space-sm flex flex-col gap-2"
+                >
+                  <div class="flex items-center justify-between">
+                    <span
+                      class="font-label-sm text-label-sm text-secondary uppercase font-semibold flex items-center gap-1"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[16px] text-tertiary"
+                        >credit_card</span
+                      >
+                      Simulador de Financiación
+                    </span>
+                    <span
+                      class="font-label-sm text-[10px] text-primary font-bold cursor-pointer hover:text-primary"
+                      onclick="toggleCuotasDetail()"
+                      >Ver detalle de bancos</span
+                    >
+                  </div>
+                  <select
+                    class="w-full h-9 bg-surface-container-low border border-surface-variant text-body-sm font-body-sm px-2 text-on-surface focus:outline-none focus:border-primary"
+                    id="bank-select"
+                    onchange="calculateCuotas(this.value)"
+                  >
+                    <option value="galicia">
+                      Banco Galicia (Visa / Mastercard) - Hasta 12 Sin Interés
+                    </option>
+                    <option value="santander">
+                      Banco Santander (Visa) - 6 Cuotas Sin Interés
+                    </option>
+                    <option value="bbva">
+                      BBVA Francés - 3 y 6 Cuotas Sin Interés
+                    </option>
+                    <option value="mercadopago">
+                      Mercado Pago (Tarjetas de Débito / Crédito)
+                    </option>
+                    <option value="naranja">
+                      Tarjeta Naranja X - Plan Z (3 Cuotas Cero Interés)
+                    </option>
+                  </select>
+                  <div
+                    class="font-label-sm text-label-sm text-tertiary font-bold"
+                    id="cuota-result-box"
+                  >
+                    ✓ 12 pagos de $24.508,33 sin interés (CFT: 0,00%)
+                  </div>
+                </div>
+              </div>
+              <!-- Quantity & Buy Action Row -->
+              <div class="flex flex-col gap-space-sm pt-space-xs">
+                <div class="flex items-center gap-space-sm">
+                  <!-- Counter -->
+                  <div
+                    class="flex items-center border border-surface-variant bg-surface-container-lowest h-11 shrink-0"
+                  >
+                    <button
+                      class="w-10 h-full flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors"
+                      onclick="modifyQty(-1)"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >remove</span
+                      >
+                    </button>
+                    <input
+                      class="w-12 text-center font-label-md text-label-md font-bold text-on-surface bg-transparent border-none focus:outline-none"
+                      id="purchase-qty"
+                      max="14"
+                      min="1"
+                      readonly=""
+                      type="number"
+                      value="1"
+                    />
+                    <button
+                      class="w-10 h-full flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors"
+                      onclick="modifyQty(1)"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >add</span
+                      >
+                    </button>
+                  </div>
+                  <!-- Add to Cart CTA -->
+                  <button
+                    class="flex-1 h-11 bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 hover:bg-[#8f0d15] active:scale-[0.99] transition-all"
+                    onclick="showCartNotification()"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >shopping_cart</span
+                    >
+                    <span>AGREGAR AL CARRITO</span>
+                  </button>
+                </div>
+                <button
+                  class="w-full h-11 border border-on-surface bg-on-surface text-surface-container-lowest font-label-lg text-label-lg font-bold hover:bg-inverse-surface active:scale-[0.99] transition-all"
+                  type="button"
+                >
+                  COMPRAR AHORA DIRECTO
+                </button>
+              </div>
+              <!-- Shipping Calculator by Postal Code -->
+              <div
+                class="border-t border-surface-variant pt-space-md flex flex-col gap-2"
+              >
+                <div
+                  class="flex items-center gap-1 font-label-sm text-label-sm text-secondary uppercase font-semibold"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-tertiary"
+                    >local_shipping</span
+                  >
+                  <span>Calcular Costo y Plazo de Entrega</span>
+                </div>
+                <div class="flex gap-2">
+                  <div class="relative flex-1">
+                    <input
+                      class="w-full h-10 px-space-md bg-surface-container-low border border-surface-variant text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary"
+                      id="postal-code"
+                      maxlength="8"
+                      placeholder="Ingresá tu Código Postal (ej. 1428)"
+                      type="text"
+                    />
+                  </div>
+                  <button
+                    class="h-10 px-space-lg border border-on-surface bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors shrink-0"
+                    onclick="checkShipping()"
+                    type="button"
+                  >
+                    Calcular
+                  </button>
+                </div>
+                <div
+                  class="hidden flex flex-col gap-1.5 p-space-sm bg-surface-container-low border border-surface-variant text-body-sm font-body-sm"
+                  id="shipping-result"
+                >
+                  <div
+                    class="flex items-center justify-between text-on-surface"
+                  >
+                    <span class="font-bold">Andreani Envío Express</span>
+                    <span class="text-tertiary font-bold">¡GRATIS!</span>
+                  </div>
+                  <span class="text-secondary text-[11px]"
+                    >Llega en 24 a 48 hs hábiles a tu domicilio</span
+                  >
+                  <div
+                    class="border-t border-surface-variant pt-1 mt-1 flex items-center justify-between text-on-surface"
+                  >
+                    <span class="font-bold"
+                      >Retiro en Showroom Belgrano (CABA)</span
+                    >
+                    <span class="text-tertiary font-bold"
+                      >Inmediato / Gratis</span
+                    >
+                  </div>
+                  <span class="text-secondary text-[11px]"
+                    >Av. Cabildo 2450 Piso 3 - Listo para retirar en 1
+                    hora</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 4. Sección Inferior: Ficha de Especificaciones Técnicas y Compatibilidad -->
+          <div class="mt-space-2xl flex flex-col gap-space-md">
+            <!-- Navigation Tabs -->
+            <div class="flex border-b border-surface-variant overflow-x-auto">
+              <button
+                class="tab-button px-space-lg py-space-sm font-label-lg text-label-lg font-bold border-b-2 border-primary text-primary transition-colors whitespace-nowrap"
+                onclick="openTab(this, 'tab-specs')"
+                type="button"
+              >
+                Especificaciones Técnicas Completas
+              </button>
+              <button
+                class="tab-button px-space-lg py-space-sm font-label-lg text-label-lg font-semibold border-b-2 border-transparent text-secondary hover:text-on-surface transition-colors whitespace-nowrap"
+                onclick="openTab(this, 'tab-compatibilidad')"
+                type="button"
+              >
+                Compatibilidad y Requisitos
+              </button>
+              <button
+                class="tab-button px-space-lg py-space-sm font-label-lg text-label-lg font-semibold border-b-2 border-transparent text-secondary hover:text-on-surface transition-colors whitespace-nowrap"
+                onclick="openTab(this, 'tab-garantia')"
+                type="button"
+              >
+                Garantía y RMA Oficial
+              </button>
+              <button
+                class="tab-button px-space-lg py-space-sm font-label-lg text-label-lg font-semibold border-b-2 border-transparent text-secondary hover:text-on-surface transition-colors whitespace-nowrap flex items-center gap-1.5"
+                onclick="openTab(this, 'tab-opiniones')"
+                type="button"
+              >
+                <span>Opiniones de Clientes</span>
+                <span
+                  class="bg-surface-variant text-on-surface font-label-sm text-[10px] px-1.5 py-0.2 rounded-sm"
+                  >38</span
+                >
+              </button>
+            </div>
+            <!-- Tab Content 1: Especificaciones Técnicas -->
+            <div class="tab-panel flex flex-col gap-space-lg" id="tab-specs">
+              <div
+                class="border border-surface-variant bg-surface-container-lowest"
+              >
+                <table
+                  class="w-full text-left font-body-md text-body-md border-collapse"
+                >
+                  <tbody>
+                    <tr
+                      class="border-b border-surface-variant bg-surface-container-low"
+                    >
+                      <th
+                        class="p-space-sm font-label-sm text-label-sm uppercase tracking-wider text-secondary"
+                        colspan="2"
+                      >
+                        Arquitectura y Desempeño
+                      </th>
+                    </tr>
+                    <tr class="border-b border-surface-variant">
+                      <td
+                        class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest"
+                      >
+                        Tecnología de Switch
+                      </td>
+                      <td class="p-space-sm text-secondary">
+                        Logitech GX Brown Tactile (Distancia de actuación: 1.9
+                        mm | Fuerza de actuación: 50 g | Recorrido total: 4.0
+                        mm)
+                      </td>
+                    </tr>
+                    <tr class="border-b border-surface-variant">
+                      <td
+                        class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest"
+                      >
+                        Conectividad Triple Modo
+                      </td>
+                      <td class="p-space-sm text-secondary">
+                        Tecnología inalámbrica LIGHTSPEED de 1 ms grado
+                        profesional, Bluetooth 5.0 Low Latency, y cable
+                        desmontable USB-C
+                      </td>
+                    </tr>
+                    <tr class="border-b border-surface-variant">
+                      <td
+                        class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest"
+                      >
+                        Autonomía de Batería
+                      </td>
+                      <td class="p-space-sm text-secondary">
+                        Hasta 50 horas continuas de juego con iluminación RGB
+                        completa. Carga rápida mediante puerto USB Tipo-C
+                      </td>
+                    </tr>
+                    <tr class="border-b border-surface-variant">
+                      <td
+                        class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest"
+                      >
+                        Keycaps (Teclas)
+                      </td>
+                      <td class="p-space-sm text-secondary">
+                        PBT de doble inyección (Double-shot) resistentes a
+                        brillo y desgaste por fricción extrema
+                      </td>
+                    </tr>
+                    <tr
+                      class="border-b border-surface-variant bg-surface-container-low"
+                    >
+                      <th
+                        class="p-space-sm font-label-sm text-label-sm uppercase tracking-wider text-secondary"
+                        colspan="2"
+                      >
+                        Dimensiones, Materiales y Construcción
+                      </th>
+                    </tr>
+                    <tr class="border-b border-surface-variant">
+                      <td
+                        class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest"
+                      >
+                        Factor de Forma
+                      </td>
+                      <td class="p-space-sm text-secondary">
+                        Tenkeyless (TKL - 80% sin teclado numérico) para máximo
+                        espacio de barrido de mouse
+                      </td>
+                    </tr>
+                    <tr class="border-b border-surface-variant">
+                      <td
+                        class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest"
+                      >
+                        Dimensiones Físicas
+                      </td>
+                      <td class="p-space-sm text-secondary">
+                        34 mm (Altura) x 352 mm (Ancho) x 150 mm (Profundidad)
+                      </td>
+                    </tr>
+                    <tr class="border-b border-surface-variant">
+                      <td
+                        class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest"
+                      >
+                        Peso Total
+                      </td>
+                      <td class="p-space-sm text-secondary">
+                        960 g (con placa de refuerzo de aluminio anodizado serie
+                        5052)
+                      </td>
+                    </tr>
+                    <tr class="border-b border-surface-variant">
+                      <td
+                        class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest"
+                      >
+                        Memoria Onboard
+                      </td>
+                      <td class="p-space-sm text-secondary">
+                        Capacidad para almacenar hasta 3 perfiles personalizados
+                        de iluminación y macros sin necesidad de software activo
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        class="p-space-sm font-bold text-on-surface w-1/3 bg-surface-container-lowest"
+                      >
+                        Contenido de la Caja
+                      </td>
+                      <td class="p-space-sm text-secondary">
+                        Teclado G PRO X TKL, receptor LIGHTSPEED USB, extensor
+                        de adaptador, cable de carga/datos USB-A a USB-C,
+                        estuche rígido de transporte con cierre zipper,
+                        documentación oficial.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- Tab Content 2: Compatibilidad -->
+            <div
+              class="tab-panel hidden flex flex-col gap-space-md"
+              id="tab-compatibilidad"
+            >
+              <div
+                class="border border-surface-variant bg-surface-container-lowest p-space-lg flex flex-col gap-space-md"
+              >
+                <div class="flex items-center gap-space-sm">
+                  <span
+                    class="material-symbols-outlined text-tertiary text-[28px]"
+                    >verified</span
+                  >
+                  <div>
+                    <h3
+                      class="font-headline-sm text-headline-sm text-on-surface"
+                    >
+                      Compatibilidad Certificada Multiplataforma
+                    </h3>
+                    <p class="font-body-md text-body-md text-secondary">
+                      Verificado y testeado en el laboratorio técnico ZeroLag
+                      Hardware.
+                    </p>
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+                  <div
+                    class="border border-surface-variant bg-surface-container-low p-space-md flex flex-col gap-1"
+                  >
+                    <span
+                      class="font-label-md text-label-md font-bold text-on-surface"
+                      >Windows OS</span
+                    >
+                    <p class="font-body-sm text-body-sm text-secondary">
+                      Windows 10, Windows 11 (64-bit). Compatibilidad total con
+                      Logitech G HUB y LIGHTSYNC RGB.
+                    </p>
+                  </div>
+                  <div
+                    class="border border-surface-variant bg-surface-container-low p-space-md flex flex-col gap-1"
+                  >
+                    <span
+                      class="font-label-md text-label-md font-bold text-on-surface"
+                      >macOS Apple</span
+                    >
+                    <p class="font-body-sm text-body-sm text-secondary">
+                      macOS 10.15 Catalina o posterior. Control de macros y
+                      perfiles básicos vía Logitech G HUB for Mac.
+                    </p>
+                  </div>
+                  <div
+                    class="border border-surface-variant bg-surface-container-low p-space-md flex flex-col gap-1"
+                  >
+                    <span
+                      class="font-label-md text-label-md font-bold text-on-surface"
+                      >Consolas y Móviles</span
+                    >
+                    <p class="font-body-sm text-body-sm text-secondary">
+                      PlayStation 5, Xbox Series X/S (vía conexión por cable o
+                      dongle USB) e iPadOS/Android por Bluetooth 5.0.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Tab Content 3: Garantía y RMA -->
+            <div
+              class="tab-panel hidden flex flex-col gap-space-md"
+              id="tab-garantia"
+            >
+              <div
+                class="border border-surface-variant bg-surface-container-lowest p-space-lg flex flex-col gap-space-md"
+              >
+                <div class="flex items-start gap-space-md">
+                  <div
+                    class="w-12 h-12 bg-surface-container-low border border-surface-variant flex items-center justify-center shrink-0"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-[28px]"
+                      >shield</span
+                    >
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h3
+                      class="font-headline-sm text-headline-sm text-on-surface"
+                    >
+                      Política de Garantía Oficial ZeroLag &amp; Logitech
+                      Argentina
+                    </h3>
+                    <p class="font-body-md text-body-md text-secondary">
+                      Todos nuestros productos son 100% nuevos, sellados en
+                      origen de fábrica y cuentan con número de serie único
+                      registrado en el sistema oficial de Logitech Argentina.
+                    </p>
+                    <div
+                      class="grid grid-cols-1 md:grid-cols-2 gap-space-sm mt-space-sm"
+                    >
+                      <div
+                        class="border border-surface-variant p-space-sm bg-surface-container-low"
+                      >
+                        <span
+                          class="font-label-sm text-label-sm font-bold text-on-surface uppercase"
+                          >Primeros 30 Días (Cambio Directo ZeroLag):</span
+                        >
+                        <p
+                          class="font-body-sm text-body-sm text-secondary mt-1"
+                        >
+                          Si el producto presenta falla de fábrica o defecto
+                          técnico, realizamos recambio directo por unidad nueva
+                          en nuestro local de Belgrano o mediante retiro a
+                          domicilio sin cargo.
+                        </p>
+                      </div>
+                      <div
+                        class="border border-surface-variant p-space-sm bg-surface-container-low"
+                      >
+                        <span
+                          class="font-label-sm text-label-sm font-bold text-on-surface uppercase"
+                          >Mes 2 al 24 (Soporte Oficial Logitech):</span
+                        >
+                        <p
+                          class="font-body-sm text-body-sm text-secondary mt-1"
+                        >
+                          Asistencia con el Centro de Servicios Oficial de
+                          Logitech. Reemplazo o reparación inmediata en
+                          territorio argentino sin demoras aduaneras.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Tab Content 4: Opiniones -->
+            <div
+              class="tab-panel hidden flex flex-col gap-space-md"
+              id="tab-opiniones"
+            >
+              <div
+                class="border border-surface-variant bg-surface-container-lowest p-space-lg flex flex-col gap-space-md"
+              >
+                <div
+                  class="flex flex-col md:flex-row items-center gap-space-lg border-b border-surface-variant pb-space-lg"
+                >
+                  <div
+                    class="flex flex-col items-center justify-center text-center p-space-md border border-surface-variant bg-surface-container-low w-full md:w-56 shrink-0"
+                  >
+                    <span
+                      class="font-headline-xl text-headline-xl text-on-surface font-extrabold"
+                      >4.9</span
+                    >
+                    <div class="flex items-center text-primary mt-1">
+                      <span
+                        class="material-symbols-outlined text-[20px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >star</span
+                      >
+                      <span
+                        class="material-symbols-outlined text-[20px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >star</span
+                      >
+                      <span
+                        class="material-symbols-outlined text-[20px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >star</span
+                      >
+                      <span
+                        class="material-symbols-outlined text-[20px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >star</span
+                      >
+                      <span
+                        class="material-symbols-outlined text-[20px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >star</span
+                      >
+                    </div>
+                    <span
+                      class="font-label-sm text-label-sm text-secondary mt-1"
+                      >Basado en 38 valoraciones</span
+                    >
+                  </div>
+                  <div class="flex-1 flex flex-col gap-1.5 w-full">
+                    <div
+                      class="flex items-center gap-space-sm font-label-sm text-label-sm"
+                    >
+                      <span class="w-14 text-secondary">5 estrellas</span>
+                      <div class="flex-1 bg-surface-container-high h-2.5">
+                        <div class="bg-primary h-2.5 w-[92%]"></div>
+                      </div>
+                      <span class="w-8 text-right font-bold text-on-surface"
+                        >35</span
+                      >
+                    </div>
+                    <div
+                      class="flex items-center gap-space-sm font-label-sm text-label-sm"
+                    >
+                      <span class="w-14 text-secondary">4 estrellas</span>
+                      <div class="flex-1 bg-surface-container-high h-2.5">
+                        <div class="bg-primary h-2.5 w-[8%]"></div>
+                      </div>
+                      <span class="w-8 text-right font-bold text-on-surface"
+                        >3</span
+                      >
+                    </div>
+                    <div
+                      class="flex items-center gap-space-sm font-label-sm text-label-sm"
+                    >
+                      <span class="w-14 text-secondary">3 estrellas</span>
+                      <div class="flex-1 bg-surface-container-high h-2.5">
+                        <div class="bg-primary h-2.5 w-[0%]"></div>
+                      </div>
+                      <span class="w-8 text-right font-bold text-on-surface"
+                        >0</span
+                      >
+                    </div>
+                    <div
+                      class="flex items-center gap-space-sm font-label-sm text-label-sm"
+                    >
+                      <span class="w-14 text-secondary">2 estrellas</span>
+                      <div class="flex-1 bg-surface-container-high h-2.5">
+                        <div class="bg-primary h-2.5 w-[0%]"></div>
+                      </div>
+                      <span class="w-8 text-right font-bold text-on-surface"
+                        >0</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- Customer Review Cards -->
+                <div class="flex flex-col gap-space-md">
+                  <div
+                    class="border border-surface-variant p-space-md bg-surface-container-low flex flex-col gap-1.5"
+                  >
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="font-label-md text-label-md font-bold text-on-surface"
+                          >Agustín M.</span
+                        >
+                        <span
+                          class="bg-tertiary-container text-on-tertiary-container font-label-sm text-[10px] px-1 py-0.2"
+                          >Comprador Verificado</span
+                        >
+                      </div>
+                      <span class="font-body-sm text-body-sm text-secondary"
+                        >Hace 4 días</span
+                      >
+                    </div>
+                    <div class="flex text-primary">
+                      <span
+                        class="material-symbols-outlined text-[16px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >star</span
+                      >
+                      <span
+                        class="material-symbols-outlined text-[16px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >star</span
+                      >
+                      <span
+                        class="material-symbols-outlined text-[16px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >star</span
+                      >
+                      <span
+                        class="material-symbols-outlined text-[16px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >star</span
+                      >
+                      <span
+                        class="material-symbols-outlined text-[16px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >star</span
+                      >
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface mt-1">
+                      La respuesta inalámbrica con LIGHTSPEED es indistinguible
+                      de un cable. El sonido de los switches Brown es perfecto:
+                      táctil para escribir y jugar sin molestar en llamadas de
+                      Discord. Los keycaps PBT se sienten premium. El envío a
+                      Rosario llegó al día siguiente.
+                    </p>
+                  </div>
+                  <div
+                    class="border border-surface-variant p-space-md bg-surface-container-low flex flex-col gap-1.5"
+                  >
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="font-label-md text-label-md font-bold text-on-surface"
+                          >Franco D.</span
+                        >
+                        <span
+                          class="bg-tertiary-container text-on-tertiary-container font-label-sm text-[10px] px-1 py-0.2"
+                          >Comprador Verificado</span
+                        >
+                      </div>
+                      <span class="font-body-sm text-body-sm text-secondary"
+                        >Hace 2 semanas</span
+                      >
+                    </div>
+                    <div class="flex text-primary">
+                      <span
+                        class="material-symbols-outlined text-[16px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >star</span
+                      >
+                      <span
+                        class="material-symbols-outlined text-[16px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >star</span
+                      >
+                      <span
+                        class="material-symbols-outlined text-[16px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >star</span
+                      >
+                      <span
+                        class="material-symbols-outlined text-[16px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >star</span
+                      >
+                      <span
+                        class="material-symbols-outlined text-[16px]"
+                        style="font-variation-settings: &quot;FILL&quot; 1"
+                        >star</span
+                      >
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface mt-1">
+                      Excelente teclado para esports. Muy compacto, los
+                      controles de volumen dedicados son súper cómodos y el
+                      estuche que trae para transportar a torneos es un lujo.
+                      100% recomendado ZeroLag.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 5. Widget de Compatibilidad Cruzada de Hardware y Recomendados -->
+          <div
+            class="mt-space-2xl border border-surface-variant bg-surface-container-lowest p-space-lg flex flex-col gap-space-lg"
+          >
+            <div
+              class="flex flex-col md:flex-row md:items-center justify-between border-b border-surface-variant pb-space-md gap-2"
+            >
+              <div class="flex items-center gap-space-sm">
+                <div
+                  class="w-8 h-8 bg-tertiary text-on-tertiary flex items-center justify-center font-bold"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >lightbulb</span
+                  >
+                </div>
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">
+                    Compatibilidad Cruzada de Setup &amp; Ecosystem
+                  </h3>
+                  <p class="font-body-sm text-body-sm text-secondary">
+                    Equipamiento verificado para sincronización unificada con
+                    Logitech G HUB y rendimiento esports
+                  </p>
+                </div>
+              </div>
+              <span
+                class="font-label-sm text-label-sm bg-surface-container text-on-surface px-2.5 py-1 uppercase font-bold border border-surface-variant shrink-0"
+              >
+                ZeroLag Validated Hardware
+              </span>
+            </div>
+            <!-- Cross-Selling Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+              <!-- Cross Product 1 -->
+              <div
+                class="border border-surface-variant bg-surface-container-low p-space-md flex flex-col sm:flex-row gap-space-md items-center"
+              >
+                <div
+                  class="w-28 h-28 bg-surface-container-lowest border border-surface-variant p-2 shrink-0 flex items-center justify-center"
+                >
+                  <img
+                    alt="Mousepad ZeroLag Speed XXL"
+                    class="max-h-full max-w-full object-contain"
+                    data-alt="ZeroLag Speed XXL heavy duty gaming mousepad textured micro-weave surface in stealth black with red reinforced stitch"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWY6ulfv49g3vfKqpZJIigqZ7gSXp3odcnkvcJv_5hC6DoztOwNQkZdkk_naeOlQxAd3bI6dp1_3uSo-3dxQIrFTp3RHH5BRLPVO5vUo9xi45WpdI_JNBvxhT9pPedNODv8G0WvlYU2Zill3ypZ0TzjENXSGQwv3VaBLdAd2Sp1SL8McXRcdbzTmOjw04WmiTuALeBkvA8qG0n7lsZa4gjhP7S8CtPF0aJ6WU_RippH7aMgEhMUCT0"
+                  />
+                </div>
+                <div
+                  class="flex flex-col gap-1 flex-1 text-center sm:text-left"
+                >
+                  <span
+                    class="font-label-sm text-label-sm text-tertiary font-bold uppercase tracking-wider"
+                    >Complemento Recomendado</span
+                  >
+                  <h4
+                    class="font-label-lg text-label-lg font-bold text-on-surface"
+                  >
+                    Mousepad Gamer ZeroLag Speed XXL (900x400x4mm)
+                  </h4>
+                  <p class="font-body-sm text-body-sm text-secondary">
+                    Base de caucho natural antideslizante con costura perimetral
+                    reforzada.
+                  </p>
+                  <div
+                    class="flex items-baseline gap-2 mt-1 justify-center sm:justify-start"
+                  >
+                    <span
+                      class="font-headline-sm text-headline-sm text-primary font-bold"
+                      >$24.990</span
+                    >
+                    <span class="font-body-sm text-body-sm text-secondary"
+                      >Transferencia</span
+                    >
+                  </div>
+                  <button
+                    class="mt-2 h-9 px-space-md bg-surface-container-lowest border border-on-surface hover:bg-on-surface hover:text-surface-container-lowest font-label-md text-label-md transition-colors flex items-center justify-center gap-1"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[16px]"
+                      >add_shopping_cart</span
+                    >
+                    <span>Añadir al Setup</span>
+                  </button>
+                </div>
+              </div>
+              <!-- Cross Product 2 -->
+              <div
+                class="border border-surface-variant bg-surface-container-low p-space-md flex flex-col sm:flex-row gap-space-md items-center"
+              >
+                <div
+                  class="w-28 h-28 bg-surface-container-lowest border border-surface-variant p-2 shrink-0 flex items-center justify-center"
+                >
+                  <img
+                    alt="Mouse G PRO X Superlight 2"
+                    class="max-h-full max-w-full object-contain"
+                    data-alt="Logitech G PRO X Superlight Wireless gaming mouse in sleek matte black on pure white studio background"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuACuStpGBjw2NvHu64lk4AgHCQh8PfT1vQMZkfR3hYR9eOKtnsJjfENHV-BHMMOAtM32QcWWYl-VE1Vt1uGH9C4Jw_qiAgm-5gDujeWlBuiXURR1TDNHLwQI7_pRZ-RwyROtW33xISqJEwGHL_XvoHp6SaOgNWY4yODdiq_ur67z0abEJsRkCQmIo91VHKdFgG37giO8iHwu6YvplSDY21o_Ff_7J7M6qgjrx-4AaFPEFmIevs4RYWZ"
+                  />
+                </div>
+                <div
+                  class="flex flex-col gap-1 flex-1 text-center sm:text-left"
+                >
+                  <span
+                    class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider"
+                    >Mismo Ecosistema G HUB</span
+                  >
+                  <h4
+                    class="font-label-lg text-label-lg font-bold text-on-surface"
+                  >
+                    Mouse Logitech G PRO X Superlight 2 Wireless 60g
+                  </h4>
+                  <p class="font-body-sm text-body-sm text-secondary">
+                    Sensor HERO 2 con 32.000 DPI y switches óptico-mecánicos
+                    híbridos.
+                  </p>
+                  <div
+                    class="flex items-baseline gap-2 mt-1 justify-center sm:justify-start"
+                  >
+                    <span
+                      class="font-headline-sm text-headline-sm text-primary font-bold"
+                      >$175.000</span
+                    >
+                    <span class="font-body-sm text-body-sm text-secondary"
+                      >Transferencia</span
+                    >
+                  </div>
+                  <button
+                    class="mt-2 h-9 px-space-md bg-primary text-on-primary hover:bg-[#8f0d15] font-label-md text-label-md transition-colors flex items-center justify-center gap-1 font-bold"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[16px]"
+                      >add_shopping_cart</span
+                    >
+                    <span>Añadir al Setup</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Cart Toast / Notification Bar -->
+        <div
+          class="fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface border border-surface-variant p-space-md max-w-md hidden items-center gap-space-md"
+          id="cart-toast"
+        >
+          <div
+            class="w-8 h-8 bg-tertiary text-on-tertiary flex items-center justify-center shrink-0"
+          >
+            <span class="material-symbols-outlined text-[20px]">check</span>
+          </div>
+          <div class="flex flex-col flex-1">
+            <span class="font-label-md text-label-md font-bold"
+              >¡Producto agregado al carrito!</span
+            >
+            <span class="font-body-sm text-body-sm text-secondary-fixed"
+              >Logitech G PRO X TKL LIGHTSPEED Wireless</span
+            >
+          </div>
+          <a
+            class="font-label-sm text-label-sm bg-primary text-on-primary px-3 py-1.5 font-bold uppercase hover:bg-[#8f0d15] transition-colors shrink-0"
+            data-path="carrito"
+            href="#"
+          >
+            Ver Carrito
+          </a>
+        </div>
+      </div>
+      <script>
+        function switchImage(buttonElement, viewType) {
+          var buttons = document.querySelectorAll("#thumb-gallery .thumb-btn");
+          buttons.forEach(function (btn) {
+            btn.classList.remove("border-2", "border-primary");
+            btn.classList.add("border", "border-surface-variant");
+          });
+          buttonElement.classList.remove("border-surface-variant");
+          buttonElement.classList.add("border-2", "border-primary");
 
-  function selectLayout(button, layoutText) {
-    var buttons = button.parentElement.querySelectorAll('.layout-btn');
-    buttons.forEach(function(btn) {
-      btn.classList.remove('border-primary', 'bg-primary', 'text-on-primary');
-      btn.classList.add('border-surface-variant', 'bg-surface-container-low', 'text-on-surface');
-    });
-    button.classList.remove('border-surface-variant', 'bg-surface-container-low', 'text-on-surface');
-    button.classList.add('border-primary', 'bg-primary', 'text-on-primary');
-    var label = document.getElementById('layout-name-label');
-    if (label) label.textContent = layoutText;
-  }
+          var thumbImg = buttonElement.querySelector("img");
+          var mainImg = document.getElementById("main-product-image");
+          if (thumbImg && mainImg) {
+            mainImg.src = thumbImg.src;
+            mainImg.setAttribute(
+              "data-alt",
+              thumbImg.getAttribute("data-alt") || "",
+            );
+          }
+        }
 
-  function modifyQty(delta) {
-    var input = document.getElementById('purchase-qty');
-    var current = parseInt(input.value, 10) || 1;
-    var next = current + delta;
-    if (next >= 1 && next <= 14) {
-      input.value = next;
-    }
-  }
+        function selectVariant(button, labelId, labelText) {
+          var container = button.parentElement;
+          var buttons = container.querySelectorAll(".variant-pill");
+          buttons.forEach(function (btn) {
+            btn.classList.remove(
+              "border-primary",
+              "bg-primary",
+              "text-on-primary",
+            );
+            btn.classList.add(
+              "border-surface-variant",
+              "bg-surface-container-low",
+              "text-on-surface",
+            );
+          });
+          button.classList.remove(
+            "border-surface-variant",
+            "bg-surface-container-low",
+            "text-on-surface",
+          );
+          button.classList.add(
+            "border-primary",
+            "bg-primary",
+            "text-on-primary",
+          );
 
-  function calculateCuotas(bank) {
-    var result = document.getElementById('cuota-result-box');
-    if (bank === 'galicia') {
-      result.textContent = '✓ 12 pagos de $24.508,33 sin interés (CFT: 0,00%)';
-    } else if (bank === 'santander') {
-      result.textContent = '✓ 6 pagos de $49.016,66 sin interés con Visa Santander';
-    } else if (bank === 'bbva') {
-      result.textContent = '✓ 3 pagos de $98.033,33 o 6 pagos de $49.016,66 sin interés';
-    } else if (bank === 'naranja') {
-      result.textContent = '✓ Plan Z: 3 pagos sin interés de $98.033,33 con Naranja X';
-    } else {
-      result.textContent = '✓ Disponible en hasta 12 cuotas fijas vía Mercado Pago';
-    }
-  }
+          var label = document.getElementById(labelId);
+          if (label) {
+            label.textContent = labelText;
+          }
+        }
 
-  function checkShipping() {
-    var cpInput = document.getElementById('postal-code');
-    var resultBox = document.getElementById('shipping-result');
-    if (cpInput.value.trim().length >= 4) {
-      resultBox.classList.remove('hidden');
-    } else {
-      alert('Por favor ingresá un código postal válido (4 dígitos)');
-    }
-  }
+        function selectColor(button, colorName) {
+          var buttons = document.querySelectorAll("#color-selector .color-btn");
+          buttons.forEach(function (btn) {
+            btn.classList.remove("border-primary");
+            btn.classList.add("border-surface-variant");
+            var spanText = btn.querySelector("span:nth-child(2)");
+            if (spanText) {
+              spanText.classList.remove("font-bold", "text-on-surface");
+              spanText.classList.add("text-secondary");
+            }
+          });
+          button.classList.remove("border-surface-variant");
+          button.classList.add("border-primary");
+          var currentText = button.querySelector("span:nth-child(2)");
+          if (currentText) {
+            currentText.classList.remove("text-secondary");
+            currentText.classList.add("font-bold", "text-on-surface");
+          }
+          var label = document.getElementById("color-name-label");
+          if (label) label.textContent = colorName;
+        }
 
-  function openTab(button, tabId) {
-    var buttons = document.querySelectorAll('.tab-button');
-    buttons.forEach(function(btn) {
-      btn.classList.remove('border-primary', 'text-primary');
-      btn.classList.add('border-transparent', 'text-secondary');
-    });
-    button.classList.remove('border-transparent', 'text-secondary');
-    button.classList.add('border-primary', 'text-primary');
+        function selectLayout(button, layoutText) {
+          var buttons = button.parentElement.querySelectorAll(".layout-btn");
+          buttons.forEach(function (btn) {
+            btn.classList.remove(
+              "border-primary",
+              "bg-primary",
+              "text-on-primary",
+            );
+            btn.classList.add(
+              "border-surface-variant",
+              "bg-surface-container-low",
+              "text-on-surface",
+            );
+          });
+          button.classList.remove(
+            "border-surface-variant",
+            "bg-surface-container-low",
+            "text-on-surface",
+          );
+          button.classList.add(
+            "border-primary",
+            "bg-primary",
+            "text-on-primary",
+          );
+          var label = document.getElementById("layout-name-label");
+          if (label) label.textContent = layoutText;
+        }
 
-    var panels = document.querySelectorAll('.tab-panel');
-    panels.forEach(function(panel) {
-      panel.classList.add('hidden');
-    });
-    var target = document.getElementById(tabId);
-    if (target) {
-      target.classList.remove('hidden');
-    }
-  }
+        function modifyQty(delta) {
+          var input = document.getElementById("purchase-qty");
+          var current = parseInt(input.value, 10) || 1;
+          var next = current + delta;
+          if (next >= 1 && next <= 14) {
+            input.value = next;
+          }
+        }
 
-  function showCartNotification() {
-    var toast = document.getElementById('cart-toast');
-    toast.classList.remove('hidden');
-    toast.classList.add('flex');
-    setTimeout(function() {
-      toast.classList.add('hidden');
-      toast.classList.remove('flex');
-    }, 4500);
-  }
+        function calculateCuotas(bank) {
+          var result = document.getElementById("cuota-result-box");
+          if (bank === "galicia") {
+            result.textContent =
+              "✓ 12 pagos de $24.508,33 sin interés (CFT: 0,00%)";
+          } else if (bank === "santander") {
+            result.textContent =
+              "✓ 6 pagos de $49.016,66 sin interés con Visa Santander";
+          } else if (bank === "bbva") {
+            result.textContent =
+              "✓ 3 pagos de $98.033,33 o 6 pagos de $49.016,66 sin interés";
+          } else if (bank === "naranja") {
+            result.textContent =
+              "✓ Plan Z: 3 pagos sin interés de $98.033,33 con Naranja X";
+          } else {
+            result.textContent =
+              "✓ Disponible en hasta 12 cuotas fijas vía Mercado Pago";
+          }
+        }
 
-  function toggleCuotasDetail() {
-    var select = document.getElementById('bank-select');
-    select.focus();
-  }
-</script></main><footer class="w-full bg-surface-container-low border-t border-surface-variant"><div class="max-w-[1320px] mx-auto px-margin-desktop py-space-2xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl"><div class="flex flex-col gap-space-sm"><div class="flex items-center gap-space-xs"><img alt="ZeroLag Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wt_esEXmOhcAK74Hfmge3dK9jQ86GoHsQBgEnZ_n3bvojcJ6yJlEuQ8ccu-7QscR76ggR_AYYtqC7JfTTw4gRM42_Rz-KLJzAWCMkz7doQ4YYkNsl7L8zev9pl6Mo-Ksk06bs5ccdbYKnSR6WFdYDdM50r2eHMuOZNM1fYFvh-1KU3ULAXNr2UOD_Q3m-RJlRvVOERXEDy1454rrmEDVMmD6NHGGtF3U3rjJTXsOf3-WAZ5qEQ-wy_s9U"><span class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface">ZeroLag</span></div><p class="font-body-md text-body-md text-secondary leading-relaxed">Especialistas en hardware de alto rendimiento, workstations y ensamble gamer para toda la República Argentina. Garantía oficial directa.</p><div class="flex flex-col gap-1 font-body-sm text-body-sm text-secondary"><span class="font-bold text-on-surface">Showroom Belgrano, CABA</span><span>Av. Cabildo 2450, Piso 3</span><span>Lunes a Viernes de 10:00 a 19:00 hs</span></div></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-bold border-b border-surface-variant pb-2">Categorías Populares</h4><ul class="flex flex-col gap-2 font-body-md text-body-md text-secondary"><li class="hover:text-primary transition-colors"><a data-path="placas-de-video-gpu" href="#">Placas de Video GeForce RTX &amp; Radeon</a></li><li class="hover:text-primary transition-colors"><a data-path="procesadores-cpu" href="#">Procesadores Intel Core &amp; AMD Ryzen</a></li><li class="hover:text-primary transition-colors"><a data-path="pc-armadas-gaming" href="#">PC Gamers Ensambladas</a></li><li class="hover:text-primary transition-colors"><a data-path="monitores" href="#">Monitores Gaming 144Hz / 240Hz</a></li><li class="hover:text-primary transition-colors"><a data-path="notebooks-laptops" href="#">Notebooks Gamers &amp; Creadores</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-bold border-b border-surface-variant pb-2">Soporte y Garantía</h4><ul class="flex flex-col gap-2 font-body-md text-body-md text-secondary"><li class="hover:text-primary transition-colors"><a data-path="garantias-y-rma" href="#">Gestión de Garantías y RMA</a></li><li class="hover:text-primary transition-colors"><a data-path="ayuda-faq" href="#">Preguntas Frecuentes</a></li><li class="hover:text-primary transition-colors"><a data-path="arma-tu-pc" href="#">Simulador de Compatibilidad</a></li><li class="hover:text-primary transition-colors"><a data-path="venta-corporativa" href="#">Venta Mayorista y Factura A</a></li><li class="hover:text-primary transition-colors"><a data-path="terminos-condiciones" href="#">Términos, Condiciones y Defensa al Consumidor</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-bold border-b border-surface-variant pb-2">Pagos y Logística</h4><div class="flex flex-col gap-space-sm"><p class="font-body-sm text-body-sm text-secondary">Aceptamos Mercado Pago, MODO, Transferencia Directa (15% OFF) y todas las tarjetas de crédito bancarias.</p><div class="grid grid-cols-2 gap-2"><div class="border border-surface-variant bg-surface-container-lowest p-2 rounded text-center font-label-sm text-label-sm text-on-surface">Andreani Oficial</div><div class="border border-surface-variant bg-surface-container-lowest p-2 rounded text-center font-label-sm text-label-sm text-on-surface">Correo Argentino</div><div class="border border-surface-variant bg-surface-container-lowest p-2 rounded text-center font-label-sm text-label-sm text-on-surface">Mercado Pago</div><div class="border border-surface-variant bg-surface-container-lowest p-2 rounded text-center font-label-sm text-label-sm text-on-surface">Transferencia BNA</div></div><div class="border border-surface-variant bg-surface-container-lowest p-2 rounded flex items-center justify-between text-secondary"><span class="font-label-sm text-[10px]">DATA FISCAL AFIP 960/D</span><span class="material-symbols-outlined text-[20px] text-tertiary">verified</span></div></div></div></div><div class="border-t border-surface-variant mt-space-2xl pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-secondary"><div>© 2025 ZeroLag Hardware Argentina S.R.L. - CUIT 30-71829304-8. Todos los derechos reservados.</div><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Privacidad</a><a class="hover:text-on-surface transition-colors" href="#">Seguridad y SSL</a><a class="hover:text-on-surface transition-colors" href="#">Botón de Arrepentimiento</a></div></div></div></footer></body></html>
+        function checkShipping() {
+          var cpInput = document.getElementById("postal-code");
+          var resultBox = document.getElementById("shipping-result");
+          if (cpInput.value.trim().length >= 4) {
+            resultBox.classList.remove("hidden");
+          } else {
+            alert("Por favor ingresá un código postal válido (4 dígitos)");
+          }
+        }
+
+        function openTab(button, tabId) {
+          var buttons = document.querySelectorAll(".tab-button");
+          buttons.forEach(function (btn) {
+            btn.classList.remove("border-primary", "text-primary");
+            btn.classList.add("border-transparent", "text-secondary");
+          });
+          button.classList.remove("border-transparent", "text-secondary");
+          button.classList.add("border-primary", "text-primary");
+
+          var panels = document.querySelectorAll(".tab-panel");
+          panels.forEach(function (panel) {
+            panel.classList.add("hidden");
+          });
+          var target = document.getElementById(tabId);
+          if (target) {
+            target.classList.remove("hidden");
+          }
+        }
+
+        function showCartNotification() {
+          var toast = document.getElementById("cart-toast");
+          toast.classList.remove("hidden");
+          toast.classList.add("flex");
+          setTimeout(function () {
+            toast.classList.add("hidden");
+            toast.classList.remove("flex");
+          }, 4500);
+        }
+
+        function toggleCuotasDetail() {
+          var select = document.getElementById("bank-select");
+          select.focus();
+        }
+      </script>
+    </main>
+    <footer
+      class="w-full bg-surface-container-low border-t border-surface-variant"
+    >
+      <div class="max-w-[1320px] mx-auto px-margin-desktop py-space-2xl">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl"
+        >
+          <div class="flex flex-col gap-space-sm">
+            <div class="flex items-center gap-space-xs">
+              <img
+                alt="ZeroLag Logo"
+                class="h-7 w-auto object-contain"
+                src="https://lh3.googleusercontent.com/aida/AEtjO1Wt_esEXmOhcAK74Hfmge3dK9jQ86GoHsQBgEnZ_n3bvojcJ6yJlEuQ8ccu-7QscR76ggR_AYYtqC7JfTTw4gRM42_Rz-KLJzAWCMkz7doQ4YYkNsl7L8zev9pl6Mo-Ksk06bs5ccdbYKnSR6WFdYDdM50r2eHMuOZNM1fYFvh-1KU3ULAXNr2UOD_Q3m-RJlRvVOERXEDy1454rrmEDVMmD6NHGGtF3U3rjJTXsOf3-WAZ5qEQ-wy_s9U"
+              /><span
+                class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface"
+                >ZeroLag</span
+              >
+            </div>
+            <p class="font-body-md text-body-md text-secondary leading-relaxed">
+              Especialistas en hardware de alto rendimiento, workstations y
+              ensamble gamer para toda la República Argentina. Garantía oficial
+              directa.
+            </p>
+            <div
+              class="flex flex-col gap-1 font-body-sm text-body-sm text-secondary"
+            >
+              <span class="font-bold text-on-surface"
+                >Showroom Belgrano, CABA</span
+              ><span>Av. Cabildo 2450, Piso 3</span
+              ><span>Lunes a Viernes de 10:00 a 19:00 hs</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-space-sm">
+            <h4
+              class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-bold border-b border-surface-variant pb-2"
+            >
+              Categorías Populares
+            </h4>
+            <ul
+              class="flex flex-col gap-2 font-body-md text-body-md text-secondary"
+            >
+              <li class="hover:text-primary transition-colors">
+                <a data-path="placas-de-video-gpu" href="#"
+                  >Placas de Video GeForce RTX &amp; Radeon</a
+                >
+              </li>
+              <li class="hover:text-primary transition-colors">
+                <a data-path="procesadores-cpu" href="#"
+                  >Procesadores Intel Core &amp; AMD Ryzen</a
+                >
+              </li>
+              <li class="hover:text-primary transition-colors">
+                <a data-path="pc-armadas-gaming" href="#"
+                  >PC Gamers Ensambladas</a
+                >
+              </li>
+              <li class="hover:text-primary transition-colors">
+                <a data-path="monitores" href="#"
+                  >Monitores Gaming 144Hz / 240Hz</a
+                >
+              </li>
+              <li class="hover:text-primary transition-colors">
+                <a data-path="notebooks-laptops" href="#"
+                  >Notebooks Gamers &amp; Creadores</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-space-sm">
+            <h4
+              class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-bold border-b border-surface-variant pb-2"
+            >
+              Soporte y Garantía
+            </h4>
+            <ul
+              class="flex flex-col gap-2 font-body-md text-body-md text-secondary"
+            >
+              <li class="hover:text-primary transition-colors">
+                <a data-path="garantias-y-rma" href="#"
+                  >Gestión de Garantías y RMA</a
+                >
+              </li>
+              <li class="hover:text-primary transition-colors">
+                <a data-path="ayuda-faq" href="#">Preguntas Frecuentes</a>
+              </li>
+              <li class="hover:text-primary transition-colors">
+                <a data-path="arma-tu-pc" href="#"
+                  >Simulador de Compatibilidad</a
+                >
+              </li>
+              <li class="hover:text-primary transition-colors">
+                <a data-path="venta-corporativa" href="#"
+                  >Venta Mayorista y Factura A</a
+                >
+              </li>
+              <li class="hover:text-primary transition-colors">
+                <a data-path="terminos-condiciones" href="#"
+                  >Términos, Condiciones y Defensa al Consumidor</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-space-sm">
+            <h4
+              class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-bold border-b border-surface-variant pb-2"
+            >
+              Pagos y Logística
+            </h4>
+            <div class="flex flex-col gap-space-sm">
+              <p class="font-body-sm text-body-sm text-secondary">
+                Aceptamos Mercado Pago, MODO, Transferencia Directa (15% OFF) y
+                todas las tarjetas de crédito bancarias.
+              </p>
+              <div class="grid grid-cols-2 gap-2">
+                <div
+                  class="border border-surface-variant bg-surface-container-lowest p-2 rounded text-center font-label-sm text-label-sm text-on-surface"
+                >
+                  Andreani Oficial
+                </div>
+                <div
+                  class="border border-surface-variant bg-surface-container-lowest p-2 rounded text-center font-label-sm text-label-sm text-on-surface"
+                >
+                  Correo Argentino
+                </div>
+                <div
+                  class="border border-surface-variant bg-surface-container-lowest p-2 rounded text-center font-label-sm text-label-sm text-on-surface"
+                >
+                  Mercado Pago
+                </div>
+                <div
+                  class="border border-surface-variant bg-surface-container-lowest p-2 rounded text-center font-label-sm text-label-sm text-on-surface"
+                >
+                  Transferencia BNA
+                </div>
+              </div>
+              <div
+                class="border border-surface-variant bg-surface-container-lowest p-2 rounded flex items-center justify-between text-secondary"
+              >
+                <span class="font-label-sm text-[10px]"
+                  >DATA FISCAL AFIP 960/D</span
+                ><span
+                  class="material-symbols-outlined text-[20px] text-tertiary"
+                  >verified</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-surface-variant mt-space-2xl pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-secondary"
+        >
+          <div>
+            © 2025 ZeroLag Hardware Argentina S.R.L. - CUIT 30-71829304-8. Todos
+            los derechos reservados.
+          </div>
+          <div class="flex items-center gap-space-md">
+            <a class="hover:text-on-surface transition-colors" href="#"
+              >Privacidad</a
+            ><a class="hover:text-on-surface transition-colors" href="#"
+              >Seguridad y SSL</a
+            ><a class="hover:text-on-surface transition-colors" href="#"
+              >Botón de Arrepentimiento</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

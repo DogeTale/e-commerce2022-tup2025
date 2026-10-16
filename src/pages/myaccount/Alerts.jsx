@@ -17,7 +17,7 @@ function Alerts() {
           </p>
         </div>
         <a
-          className="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary hover:underline uppercase font-bold shrink-0"
+          className="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary hover:text-primary-container transition-colors uppercase font-bold shrink-0"
           href="#"
         >
           <span>Ver Protocolo RMA</span>

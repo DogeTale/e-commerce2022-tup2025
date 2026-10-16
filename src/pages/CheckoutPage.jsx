@@ -1,8 +1,8 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import CheckoutLayout from "../components/checkout/CheckoutLayout";
-import CompatibilityVerificationBanner from "../components/checkout/CompatibilityVerificationBanner";
-import StepperBuyProcess from "../components/checkout/StepperBuyProcess";
+import CheckoutLayout from "./checkout/CheckoutLayout";
+import CompatibilityVerificationBanner from "./checkout/CompatibilityVerificationBanner";
+import StepperBuyProcess from "./checkout/StepperBuyProcess";
 
 function Checkout() {
   return (

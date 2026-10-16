@@ -19,7 +19,7 @@ function MonthlyAssemblies() {
             </p>
           </div>
           <a
-            className="inline-flex items-center gap-1 font-label-lg text-label-lg text-primary hover:underline"
+            className="inline-flex items-center gap-1 font-label-lg text-label-lg text-primary hover:text-primary-container transition-colors"
             data-path="pc-armadas-gaming"
             href="#"
           >

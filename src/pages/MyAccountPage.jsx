@@ -1,8 +1,8 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Alerts from "../components/myaccount/Alerts";
-import MyAccountHeader from "../components/myaccount/MyAccountHeader";
-import MyAccountMain from "../components/myaccount/MyAccountMain";
+import Alerts from "./myaccount/Alerts";
+import MyAccountHeader from "./myaccount/MyAccountHeader";
+import MyAccountMain from "./myaccount/MyAccountMain";
 
 function MyAccount() {
   return (
