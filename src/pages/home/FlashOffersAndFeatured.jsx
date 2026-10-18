@@ -1,16 +1,4 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-
-function FlashOffersAndFeatured() {
-  const BACKEND_URL = "http://localhost:3000/";
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios.get(`${BACKEND_URL}api/products`).then((response) => {
-      setProducts(response.data);
-    });
-  }, []);
-
+function FlashOffersAndFeatured({ products, BACKEND_URL }) {
   return (
     <section className="w-full border-b border-surface-variant bg-surface">
       <div className="max-w-[1320px] mx-auto px-margin-desktop py-space-2xl">

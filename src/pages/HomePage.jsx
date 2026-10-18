@@ -1,3 +1,6 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 import Footer from "../components/Footer.jsx";
 import Header from "../components/Header.jsx";
 import BuildYourPCBanner from "./home/BuildYourPCBanner.jsx";
@@ -8,6 +11,20 @@ import LocalBenefits from "./home/LocalBenefits.jsx";
 import MonthlyAssemblies from "./home/MonthlyAssemblies.jsx";
 
 function HomePage() {
+  const BACKEND_URL = "http://localhost:3000/";
+  const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    axios.get(`${BACKEND_URL}api/products`).then((response) => {
+      setProducts(response.data);
+    });
+
+    axios.get(`${BACKEND_URL}api/cart-items`).then((response) => {
+      setCart(response.data);
+    });
+  }, []);
+
   return (
     <>
       <link rel="icon" type="image/svg+xml" href="/home-favicon.svg" />
@@ -16,7 +33,7 @@ function HomePage() {
       SECCIÓN GENERAL: HEADER PRINCIPAL
       Incluye la barra de anuncios superior, el buscador, logo y menú de navegación.
       */}
-      <Header />
+      <Header cart={cart} />
 
       {/* 
           SECCIÓN GENERAL: CONTENIDO PRINCIPAL (MAIN)
@@ -45,7 +62,10 @@ function HomePage() {
               las tarjetas de productos sueltos (GPUs, Monitores, Periféricos, etc.) 
               provenientes de tu base de datos (ej: productosFlash.map(...))
            */}
-          <FlashOffersAndFeatured />
+          <FlashOffersAndFeatured
+            products={products}
+            BACKEND_URL={BACKEND_URL}
+          />
 
           {/* 6. BANNER CONFIGURADOR ARMA TU PC */}
           <BuildYourPCBanner />

@@ -2,7 +2,13 @@ import { Link, NavLink } from "react-router";
 
 import ZeroLagLogo from "../assets/zerolag-logo.svg";
 
-function Header() {
+function Header({ cart }) {
+  let totalQuantity = 0;
+
+  cart.forEach((cartItem) => {
+    totalQuantity += cartItem.quantity;
+  });
+
   const isCartActive = ({ isActive }) =>
     isActive
       ? "flex items-center gap-space-xs border border-primary-container bg-surface-container-lowest px-space-sm h-10 rounded-lg hover:border-on-surface transition-colors relative"
@@ -133,7 +139,7 @@ function Header() {
                 Mi Carrito
               </span>
               <span className="bg-primary text-on-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded-sm">
-                2
+                {totalQuantity}
               </span>
             </NavLink>
           </div>
