@@ -1,10 +1,15 @@
 import axios from "axios";
-import { products } from "../../../starting-code/data/products.js";
+import { useEffect, useState } from "react";
 
 function FlashOffersAndFeatured() {
-  axios.get("http://localhost:3000/api/products").then((response) => {
-    console.log(response.data);
-  });
+  const BACKEND_URL = "http://localhost:3000/";
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get(`${BACKEND_URL}api/products`).then((response) => {
+      setProducts(response.data);
+    });
+  }, []);
 
   return (
     <section className="w-full border-b border-surface-variant bg-surface">
@@ -57,8 +62,8 @@ function FlashOffersAndFeatured() {
                   <div className="w-full h-44 bg-surface-container-low border border-surface-variant flex items-center justify-center p-2 mb-space-md relative">
                     <img
                       className="w-full h-full object-contain"
-                      alt="Placa de video ASUS TUF Gaming GeForce RTX 4070 Super"
-                      src={`../../../starting-code/${product.image}`}
+                      alt={product.name}
+                      src={BACKEND_URL + product.image}
                     />
                   </div>
                   <span className="font-label-sm text-label-sm text-secondary uppercase font-bold">
