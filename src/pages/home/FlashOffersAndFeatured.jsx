@@ -1,6 +1,11 @@
+import axios from "axios";
 import { products } from "../../../starting-code/data/products.js";
 
 function FlashOffersAndFeatured() {
+  axios.get("http://localhost:3000/api/products").then((response) => {
+    console.log(response.data);
+  });
+
   return (
     <section className="w-full border-b border-surface-variant bg-surface">
       <div className="max-w-[1320px] mx-auto px-margin-desktop py-space-2xl">
