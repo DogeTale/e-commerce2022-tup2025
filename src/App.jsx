@@ -13,6 +13,7 @@ function App() {
         <Route path="checkout" element={<CheckoutPage />} />
         <Route path="orders" element={<MyAccountPage />} />
         <Route path="orders/tracking" element={<TrackingPage />} />
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>

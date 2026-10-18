@@ -1,3 +1,5 @@
+import { products } from "../../../starting-code/data/products.js";
+
 function FlashOffersAndFeatured() {
   return (
     <section className="w-full border-b border-surface-variant bg-surface">
@@ -32,6 +34,86 @@ function FlashOffersAndFeatured() {
 
         {/* Contenedor Grid donde irán las tarjetas de productos desde la Base de Datos */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-md">
+          {products.map((product) => {
+            return (
+              <div
+                key={product.id}
+                className="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col justify-between rounded"
+              >
+                <div className="flex flex-col">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded uppercase font-bold">
+                      -18% OFF
+                    </span>
+                    <span className="font-label-sm text-label-sm text-secondary">
+                      SKU: GPU-AT4070S
+                    </span>
+                  </div>
+                  <div className="w-full h-44 bg-surface-container-low border border-surface-variant flex items-center justify-center p-2 mb-space-md relative">
+                    <img
+                      className="w-full h-full object-contain"
+                      alt="Placa de video ASUS TUF Gaming GeForce RTX 4070 Super"
+                      src={`../../../starting-code/${product.image}`}
+                    />
+                  </div>
+                  <span className="font-label-sm text-label-sm text-secondary uppercase font-bold">
+                    ASUS TUF Gaming
+                  </span>
+                  <h3 className="font-headline-sm text-headline-sm text-on-surface line-clamp-2 mt-1">
+                    {product.name}
+                  </h3>
+                  <div className="mt-space-md bg-surface-container p-2 border border-surface-variant">
+                    <div className="flex justify-between font-label-sm text-label-sm mb-1">
+                      <span className="text-secondary">Stock para oferta:</span>
+                      <span className="font-bold text-primary">
+                        Quedan 4 unidades
+                      </span>
+                    </div>
+                    <div className="w-full bg-surface-container-highest h-1.5 rounded">
+                      <div
+                        className="bg-primary h-1.5 rounded"
+                        style={{ width: "25%" }}
+                      ></div>
+                    </div>
+                  </div>
+                  <div className="mt-space-md">
+                    <span className="font-body-sm text-body-sm text-secondary line-through">
+                      ${product.priceCents} ARS
+                    </span>
+                    <div className="font-headline-md text-headline-md text-primary-container leading-none font-bold">
+                      ${Math.ceil(product.priceCents * 0.85)}
+                      <span className="font-label-md text-label-md text-secondary">
+                        ARS
+                      </span>
+                    </div>
+                    <span className="font-body-sm text-body-sm text-tertiary mt-1 block font-semibold">
+                      Envío gratis vía Andreani
+                    </span>
+                  </div>
+                </div>
+                <div className="mt-space-lg pt-space-sm border-t border-surface-variant flex items-center gap-space-xs">
+                  <button
+                    className="flex-1 h-10 bg-primary-container text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-1 hover:bg-primary transition-colors"
+                    type="button"
+                  >
+                    <span className="material-symbols-outlined text-[18px]">
+                      add_shopping_cart
+                    </span>
+                    <span>Comprar</span>
+                  </button>
+                  <button
+                    aria-label="Ver detalles técnicos"
+                    className="w-10 h-10 border border-surface-variant bg-surface flex items-center justify-center rounded hover:bg-surface-variant text-on-surface"
+                    type="button"
+                  >
+                    <span className="material-symbols-outlined text-[20px]">
+                      info
+                    </span>
+                  </button>
+                </div>
+              </div>
+            );
+          })}
           {/* TARJETA DE PRODUCTO 1 */}
           <div className="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col justify-between rounded">
             <div className="flex flex-col">
