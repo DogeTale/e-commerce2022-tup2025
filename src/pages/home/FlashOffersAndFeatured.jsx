@@ -1,4 +1,4 @@
-function FlashOffersAndFeatured({ products, BACKEND_URL }) {
+function FlashOffersAndFeatured({ products }) {
   return (
     <section className="w-full border-b border-surface-variant bg-surface">
       <div className="max-w-[1320px] mx-auto px-margin-desktop py-space-2xl">
@@ -51,7 +51,7 @@ function FlashOffersAndFeatured({ products, BACKEND_URL }) {
                     <img
                       className="w-full h-full object-contain"
                       alt={product.name}
-                      src={BACKEND_URL + product.image}
+                      src={product.image}
                     />
                   </div>
                   <span className="font-label-sm text-label-sm text-secondary uppercase font-bold">

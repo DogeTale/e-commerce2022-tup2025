@@ -11,16 +11,15 @@ import LocalBenefits from "./home/LocalBenefits.jsx";
 import MonthlyAssemblies from "./home/MonthlyAssemblies.jsx";
 
 function HomePage() {
-  const BACKEND_URL = "http://localhost:3000/";
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    axios.get(`${BACKEND_URL}api/products`).then((response) => {
+    axios.get(`/api/products`).then((response) => {
       setProducts(response.data);
     });
 
-    axios.get(`${BACKEND_URL}api/cart-items`).then((response) => {
+    axios.get(`/api/cart-items`).then((response) => {
       setCart(response.data);
     });
   }, []);
@@ -62,10 +61,7 @@ function HomePage() {
               las tarjetas de productos sueltos (GPUs, Monitores, Periféricos, etc.) 
               provenientes de tu base de datos (ej: productosFlash.map(...))
            */}
-          <FlashOffersAndFeatured
-            products={products}
-            BACKEND_URL={BACKEND_URL}
-          />
+          <FlashOffersAndFeatured products={products} />
 
           {/* 6. BANNER CONFIGURADOR ARMA TU PC */}
           <BuildYourPCBanner />
