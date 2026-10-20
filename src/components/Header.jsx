@@ -11,7 +11,7 @@ function Header({ cart }) {
 
   const isCartActive = ({ isActive }) =>
     isActive
-      ? "flex items-center gap-space-xs border border-primary-container bg-surface-container-lowest px-space-sm h-10 rounded-lg hover:border-on-surface transition-colors relative"
+      ? "flex items-center gap-space-xs border border-primary-container bg-surface-container-lowest px-space-sm h-10 rounded-lg relative"
       : "flex items-center gap-space-xs border border-surface-variant bg-surface-container-lowest px-space-sm h-10 rounded-lg hover:border-on-surface transition-colors relative";
 
   return (

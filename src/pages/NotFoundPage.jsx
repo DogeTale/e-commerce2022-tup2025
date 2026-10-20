@@ -5,8 +5,6 @@ import Header from "../components/Header";
 function NotFoundPage() {
   return (
     <>
-      <Header />
-
       <main className="w-full pt-[156px] bg-surface min-h-[calc(100vh-156px)]">
         <div className="flex flex-col w-full">
           {/* Main 404 Technical Core Canvas */}
@@ -271,8 +269,6 @@ function NotFoundPage() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </>
   );
 }

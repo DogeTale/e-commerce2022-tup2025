@@ -8,7 +8,7 @@ import Footer from "../components/Footer.jsx";
 function TrackingPage() {
   return (
     <>
-      <Header />
+      <title>Seguimiento</title>
 
       <main className="w-full pt-[156px] bg-surface min-h-[calc(100vh-156px)]">
         <div className="flex flex-col w-full">
@@ -24,8 +24,6 @@ function TrackingPage() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </>
   );
 }

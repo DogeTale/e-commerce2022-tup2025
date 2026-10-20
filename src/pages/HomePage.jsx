@@ -12,15 +12,10 @@ import MonthlyAssemblies from "./home/MonthlyAssemblies.jsx";
 
 function HomePage() {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     axios.get(`/api/products`).then((response) => {
       setProducts(response.data);
-    });
-
-    axios.get(`/api/cart-items`).then((response) => {
-      setCart(response.data);
     });
   }, []);
 
@@ -28,15 +23,7 @@ function HomePage() {
     <>
       <link rel="icon" type="image/svg+xml" href="/home-favicon.svg" />
       <title>ZeroLag</title>
-      {/*
-      SECCIÓN GENERAL: HEADER PRINCIPAL
-      Incluye la barra de anuncios superior, el buscador, logo y menú de navegación.
-      */}
-      <Header cart={cart} />
 
-      {/* 
-          SECCIÓN GENERAL: CONTENIDO PRINCIPAL (MAIN)
-       */}
       <main className="w-full pt-[156px] bg-surface min-h-[calc(100vh-156px)]">
         <div className="flex flex-col w-full">
           {/* 1. HERO BANNER PRINCIPAL */}
@@ -67,11 +54,6 @@ function HomePage() {
           <BuildYourPCBanner />
         </div>
       </main>
-
-      {/* 
-          SECCIÓN GENERAL: FOOTER (PIE DE PÁGINA)
-      */}
-      <Footer />
     </>
   );
 }

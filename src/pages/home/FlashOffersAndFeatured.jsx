@@ -1,3 +1,5 @@
+import { formatMoney } from "../../utils/money.js";
+
 function FlashOffersAndFeatured({ products }) {
   return (
     <section className="w-full border-b border-surface-variant bg-surface">
@@ -76,10 +78,10 @@ function FlashOffersAndFeatured({ products }) {
                   </div>
                   <div className="mt-space-md">
                     <span className="font-body-sm text-body-sm text-secondary line-through">
-                      ${product.priceCents} ARS
+                      {formatMoney(product.priceCents)} ARS
                     </span>
                     <div className="font-headline-md text-headline-md text-primary-container leading-none font-bold">
-                      ${Math.ceil(product.priceCents * 0.85)}
+                      {formatMoney(Math.ceil(product.priceCents * 0.85))}
                       <span className="font-label-md text-label-md text-secondary">
                         ARS
                       </span>

@@ -1,16 +1,12 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import CheckoutLayout from "./checkout/CheckoutLayout";
 import CompatibilityVerificationBanner from "./checkout/CompatibilityVerificationBanner";
 import StepperBuyProcess from "./checkout/StepperBuyProcess";
 
-function Checkout() {
+function Checkout({ cart }) {
   return (
     <>
       <link rel="icon" type="image/svg+xml" href="/cart-favicon.svg" />
       <title>Carrito</title>
-
-      <Header />
 
       <main className="w-full pt-[156px] bg-surface min-h-[calc(100vh-156px)]">
         <div className="flex flex-col w-full">
@@ -29,12 +25,10 @@ function Checkout() {
             {/* 
               LAYOUT PRINCIPAL (Grid de 2 columnas: 70% Izquierda / 30% Derecha)
             */}
-            <CheckoutLayout />
+            <CheckoutLayout cart={cart} />
           </div>
         </div>
       </main>
-
-      <Footer />
     </>
   );
 }

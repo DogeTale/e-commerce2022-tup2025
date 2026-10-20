@@ -11,8 +11,6 @@ function MyAccount() {
       <link rel="icon" type="image/svg+xml" href="/orders-favicon.svg" />
       <title>Mi Perfil</title>
 
-      <Header />
-
       {/* =========================================================================
           SECCIÓN GENERAL: CONTENIDO PRINCIPAL DE LA CUENTA
           ========================================================================= */}
@@ -37,8 +35,6 @@ function MyAccount() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </>
   );
 }

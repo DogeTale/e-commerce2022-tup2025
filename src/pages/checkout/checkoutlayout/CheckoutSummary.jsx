@@ -1,4 +1,22 @@
+import axios from "axios";
+import dayjs from "dayjs";
+import es from "dayjs/locale/es";
+import { useEffect, useState } from "react";
+import { formatMoney } from "../../../utils/money";
+
+dayjs.locale(es);
+
 function CheckoutSummary() {
+  const [deliveryOptions, setDeliveryOptions] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("/api/delivery-options?expand=estimatedDeliveryTime")
+      .then((response) => {
+        setDeliveryOptions(response.data);
+      });
+  }, []);
+
   return (
     <aside className="lg:col-span-4 flex flex-col gap-space-md sticky top-[176px]">
       <div className="bg-surface-container-lowest border border-surface-variant rounded-DEFAULT overflow-hidden">
@@ -46,29 +64,46 @@ function CheckoutSummary() {
             <legend className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold mb-2">
               Seleccioná Método de Entrega:
             </legend>
-            <label className="flex items-start gap-space-sm p-space-sm border border-surface-variant bg-surface-container-low hover:border-on-surface cursor-pointer rounded-DEFAULT transition-colors">
-              <input
-                defaultChecked
-                className="mt-1 accent-primary"
-                name="shipping-method"
-                onChange={() => {}}
-                type="radio"
-                value="0"
-              />
-              <div className="flex flex-col w-full">
-                <div className="flex items-center justify-between">
-                  <span className="font-label-md text-label-md text-on-surface font-bold">
-                    Retiro en Belgrano, CABA
-                  </span>
-                  <span className="font-label-sm text-label-sm text-tertiary font-bold uppercase">
-                    GRATIS
-                  </span>
-                </div>
-                <span className="font-body-sm text-[11px] text-secondary">
-                  Av. Cabildo 2450, Piso 3. Listo en 2 horas hábiles.
-                </span>
-              </div>
-            </label>
+            {deliveryOptions.map((deliveryOption) => {
+              let priceString = "GRATIS";
+
+              if (deliveryOption.priceCents > 0) {
+                priceString = `${formatMoney(deliveryOption.priceCents)}`;
+              }
+
+              return (
+                <label
+                  key={deliveryOption.id}
+                  className="flex items-start gap-space-sm p-space-sm border border-surface-variant bg-surface-container-low hover:border-on-surface cursor-pointer rounded-DEFAULT transition-colors"
+                >
+                  <input
+                    checked={deliveryOption.id === "1"}
+                    className="mt-1 accent-primary"
+                    name={`shipping-method-${deliveryOption.id}`}
+                    onChange={() => {}}
+                    type="radio"
+                    value="0"
+                  />
+                  <div className="flex flex-col w-full">
+                    <div className="flex items-center justify-between">
+                      <span className="font-label-md text-label-md text-on-surface font-bold">
+                        Retiro en Belgrano, CABA
+                      </span>
+                      <span className="font-label-sm text-label-sm text-tertiary font-bold uppercase">
+                        {priceString}
+                      </span>
+                    </div>
+                    <span className="font-body-sm text-[11px] text-secondary capitalize">
+                      Av. Cabildo 2450, Piso 3.{" "}
+                      {dayjs(deliveryOption.estimatedDeliveryTimeMs).format(
+                        "dddd, MMMM D",
+                      )}
+                    </span>
+                  </div>
+                </label>
+              );
+            })}
+
             <label className="flex items-start gap-space-sm p-space-sm border border-surface-variant bg-surface-container-low hover:border-on-surface cursor-pointer rounded-DEFAULT transition-colors">
               <input
                 className="mt-1 accent-primary"
