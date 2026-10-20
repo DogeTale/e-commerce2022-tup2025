@@ -1,7 +1,7 @@
 import { formatMoney } from "../../../utils/money.js";
 function HardwareListing({ cart }) {
   return (
-    <section className="lg:col-span-8 flex flex-col gap-space-md">
+    <section className="lg:col-span-8 flex flex-col gap-space-md sticky top-[176px]">
       <div className="bg-surface-container-lowest border border-surface-variant rounded-DEFAULT overflow-hidden">
         <div className="px-space-md py-space-sm bg-surface-container border-b border-surface-variant flex items-center justify-between">
           <div className="flex items-center gap-space-xs">
