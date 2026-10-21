@@ -1,6 +1,18 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import dayjs from "dayjs";
+import { formatMoney } from "../../utils/money.js";
 
 function MyAccountMain() {
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    axios.get("api/orders?expand=products").then((response) => {
+      setOrders(response.data);
+    });
+  }, []);
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
       {/* NAVEGACIÓN LATERAL / PESTAÑAS TÉCNICAS */}
@@ -144,125 +156,148 @@ function MyAccountMain() {
               </select>
             </div>
           </div>
-
-          {/* PEDIDO 1 DE EJEMPLO */}
-          <article className="bg-surface-container-lowest border border-surface-variant">
-            <div className="bg-surface-container-low border-b border-surface-variant p-space-md flex flex-wrap items-center justify-between gap-space-sm">
-              <div className="flex items-center gap-space-md flex-wrap">
-                <span className="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight">
-                  Pedido #ZL-89104
-                </span>
-                <span className="text-secondary font-body-sm text-body-sm">
-                  | 22 de Octubre 2024
-                </span>
-                <span className="bg-[#1976D2] text-on-primary font-label-sm text-[11px] px-2.5 py-0.5 uppercase font-bold">
-                  En camino por Andreani
-                </span>
-              </div>
-              <div className="text-right">
-                <span className="font-label-sm text-[11px] text-secondary uppercase block">
-                  Total Abonado
-                </span>
-                <span className="font-headline-sm text-headline-sm text-on-surface font-extrabold">
-                  $ 174.900
-                  <span className="font-body-sm text-[12px] font-normal text-secondary">
-                    ARS
-                  </span>
-                </span>
-              </div>
-            </div>
-            <div className="p-space-md border-b border-surface-variant bg-surface-container-lowest">
-              <div className="bg-surface-container-low border border-surface-variant p-space-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
-                <div className="flex items-center gap-space-sm">
-                  <span className="material-symbols-outlined text-[24px] text-[#1976D2]">
-                    local_shipping
-                  </span>
-                  <div>
-                    <span className="font-label-md text-label-md text-on-surface font-bold">
-                      Seguimiento Andreani Express
+          {orders.map((order) => {
+            return (
+              <article
+                key={order.id}
+                className="bg-surface-container-lowest border border-surface-variant"
+              >
+                <div className="bg-surface-container-low border-b border-surface-variant p-space-md flex flex-wrap items-center justify-between gap-space-sm">
+                  <div className="flex items-center gap-space-md flex-wrap">
+                    <span className="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight">
+                      Pedido #ZL-89104
                     </span>
-                    <p className="font-body-sm text-body-sm text-secondary">
-                      Número de Guía:
-                      <span className="font-mono font-bold text-on-surface">
-                        AR-938210928
+                    <span className="text-secondary font-body-sm text-body-sm capitalize">
+                      | {dayjs(order.orderTimeMs).format("D [de] MMMM YYYY")}
+                    </span>
+                    <span className="bg-[#1976D2] text-on-primary font-label-sm text-[11px] px-2.5 py-0.5 uppercase font-bold">
+                      En camino por Andreani
+                    </span>
+                  </div>
+                  <div className="text-right">
+                    <span className="font-label-sm text-[11px] text-secondary uppercase block">
+                      Total Abonado
+                    </span>
+                    <span className="font-headline-sm text-headline-sm text-on-surface font-extrabold">
+                      {formatMoney(order.totalCostCents)}
+                      <span className="font-body-sm text-[12px] font-normal text-secondary">
+                        ARS
                       </span>
-                      • Destino:
-                      <strong className="text-on-surface">
-                        Showroom Belgrano (Retiro Express)
-                      </strong>
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-space-xs">
-                  <span className="bg-[#1976D2] text-on-primary px-2 py-1 font-label-sm text-label-sm font-bold">
-                    En tránsito a Belgrano, CABA
-                  </span>
-                  <Link
-                    className="h-8 px-3 bg-surface border border-surface-variant font-label-sm text-label-sm text-on-surface hover:bg-surface-container flex items-center gap-1 font-bold"
-                    to="tracking"
-                  >
-                    <span className="material-symbols-outlined text-[14px]">
-                      open_in_new
-                    </span>
-                    <span>Trazabilidad</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="p-space-md divide-y divide-surface-variant">
-              <div className="py-space-sm flex items-center justify-between gap-space-md first:pt-0 last:pb-0">
-                <div className="flex items-center gap-space-md">
-                  <img
-                    className="w-16 h-16 object-contain bg-surface-container-lowest border border-surface-variant p-1 shrink-0"
-                    alt="Logitech G PRO X TKL Lightspeed"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD85k7-AOKjOwxkUu7W6rQvNCn6-7rnegijkoIpghMmbGViORYCgPthXaMBNHUtnBnEyS_VUqug_gFrPK3-Ger_8edYhaWjcGhtR8GLh1SIZ2Xb8wDQ4871IUPFBjvUszRLq6QKR7BwL8hT9_PQQs9cA3c9uWLqHNg3kJX2kQ3a38qJF-sczm7ClkJlCKtJUIFsIvgVlxqg-JzAw2-4EX4nNN5IGZoHl_KkRhvTi53p9eNLeelsCJg"
-                  />
-                  <div className="flex flex-col">
-                    <span className="font-label-sm text-[10px] text-secondary uppercase font-bold">
-                      Periféricos / Teclados Mecánicos
-                    </span>
-                    <span className="font-label-lg text-label-lg text-on-surface font-bold">
-                      Logitech G PRO X TKL Lightspeed Wireless - Tactile Brown
-                      Switches
-                    </span>
-                    <span className="font-body-sm text-body-sm text-secondary">
-                      SKU: LOG-920-012135 • Cantidad: 1 unidad
                     </span>
                   </div>
                 </div>
-                <div className="text-right shrink-0">
-                  <span className="font-headline-sm text-headline-sm text-on-surface font-bold">
-                    $ 174.900
-                  </span>
-                  <span className="font-body-sm text-[11px] text-tertiary block font-bold">
-                    Pagado con Mercado Pago
-                  </span>
+                <div className="p-space-md border-b border-surface-variant bg-surface-container-lowest">
+                  <div className="bg-surface-container-low border border-surface-variant p-space-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+                    <div className="flex items-center gap-space-sm">
+                      <span className="material-symbols-outlined text-[24px] text-[#1976D2]">
+                        local_shipping
+                      </span>
+                      <div>
+                        <span className="font-label-md text-label-md text-on-surface font-bold">
+                          Seguimiento Andreani Express
+                        </span>
+                        <p className="font-body-sm text-body-sm text-secondary">
+                          Número de Guía:
+                          <span className="font-mono font-bold text-on-surface">
+                            {" "}
+                            AR-938210928{" "}
+                          </span>
+                          • Destino:
+                          <strong className="text-on-surface">
+                            {" "}
+                            Showroom Belgrano (Retiro Express)
+                          </strong>
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-space-xs">
+                      <span className="bg-[#1976D2] text-on-primary px-2 py-1 font-label-sm text-label-sm font-bold">
+                        En tránsito a Belgrano, CABA
+                      </span>
+                      <Link
+                        className="h-8 px-3 bg-surface border border-surface-variant font-label-sm text-label-sm text-on-surface hover:bg-surface-container flex items-center gap-1 font-bold"
+                        to="tracking"
+                      >
+                        <span className="material-symbols-outlined text-[14px]">
+                          open_in_new
+                        </span>
+                        <span>Trazabilidad</span>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="bg-surface-container-low border-t border-surface-variant p-space-sm flex flex-wrap items-center justify-between gap-space-sm">
-              <div className="flex items-center gap-space-xs text-body-sm font-body-sm text-secondary">
-                <span className="material-symbols-outlined text-[16px] text-tertiary">
-                  check
-                </span>
-                <span>Entrega estimada: Mañana entre 11:00 y 16:00 hs</span>
-              </div>
-              <div className="flex items-center gap-space-xs">
-                <button className="h-9 px-space-md bg-surface-container-lowest border border-surface-variant font-label-md text-label-md text-on-surface hover:bg-surface transition-colors flex items-center gap-1 font-bold">
-                  <span className="material-symbols-outlined text-[16px]">
-                    picture_as_pdf
-                  </span>
-                  <span>Factura B</span>
-                </button>
-                <button className="h-9 px-space-md bg-surface-container-lowest border border-surface-variant font-label-md text-label-md text-on-surface hover:bg-surface transition-colors flex items-center gap-1 font-bold">
-                  <span className="material-symbols-outlined text-[16px]">
-                    help
-                  </span>
-                  <span>Consultar Despacho</span>
-                </button>
-              </div>
-            </div>
-          </article>
+                {order.products.map((orderProduct) => {
+                  return (
+                    <div
+                      key={orderProduct.product.id}
+                      className="p-space-md divide-y divide-surface-variant"
+                    >
+                      <div className="py-space-sm flex items-center justify-between gap-space-md first:pt-0 last:pb-0">
+                        <div className="flex items-center gap-space-md">
+                          <img
+                            className="w-16 h-16 object-contain bg-surface-container-lowest border border-surface-variant p-1 shrink-0"
+                            alt="Logitech G PRO X TKL Lightspeed"
+                            src={orderProduct.product.image}
+                          />
+                          <div className="flex flex-col">
+                            <span className="font-label-sm text-[10px] text-secondary uppercase font-bold">
+                              Periféricos / Teclados Mecánicos
+                            </span>
+                            <span className="font-label-lg text-label-lg text-on-surface font-bold">
+                              {orderProduct.product.name}
+                            </span>
+                            <span className="font-body-sm text-body-sm text-secondary">
+                              SKU: LOG-920-012135 • Cantidad:{" "}
+                              {orderProduct.quantity} unidad
+                            </span>
+                          </div>
+                        </div>
+                        <div className="text-right shrink-0">
+                          <span className="font-headline-sm text-headline-sm text-on-surface font-bold">
+                            {formatMoney(
+                              orderProduct.quantity *
+                                orderProduct.product.priceCents,
+                            )}
+                          </span>
+                          <span className="font-body-sm text-[11px] text-tertiary block font-bold">
+                            Pagado con Mercado Pago
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+                <div className="bg-surface-container-low border-t border-surface-variant p-space-sm flex flex-wrap items-center justify-between gap-space-sm">
+                  <div className="flex items-center gap-space-xs text-body-sm font-body-sm text-secondary">
+                    <span className="material-symbols-outlined text-[16px] text-tertiary">
+                      check
+                    </span>
+                    <span className="capitalize">
+                      Entrega estimada:{" "}
+                      {dayjs(order.products[0].estimatedDeliveryTimeMs).format(
+                        "MMMM D",
+                      )}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-space-xs">
+                    <button className="h-9 px-space-md bg-surface-container-lowest border border-surface-variant font-label-md text-label-md text-on-surface hover:bg-surface transition-colors flex items-center gap-1 font-bold">
+                      <span className="material-symbols-outlined text-[16px]">
+                        picture_as_pdf
+                      </span>
+                      <span>Factura B</span>
+                    </button>
+                    <button className="h-9 px-space-md bg-surface-container-lowest border border-surface-variant font-label-md text-label-md text-on-surface hover:bg-surface transition-colors flex items-center gap-1 font-bold">
+                      <span className="material-symbols-outlined text-[16px]">
+                        help
+                      </span>
+                      <span>Consultar Despacho</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+          {/* PEDIDO 1 DE EJEMPLO */}
 
           {/* PEDIDO 2 DE EJEMPLO */}
           <article className="bg-surface-container-lowest border border-surface-variant">
