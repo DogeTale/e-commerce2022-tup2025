@@ -1,8 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
-import Footer from "../components/Footer.jsx";
-import Header from "../components/Header.jsx";
 import BuildYourPCBanner from "./home/BuildYourPCBanner.jsx";
 import FlashOffersAndFeatured from "./home/FlashOffersAndFeatured.jsx";
 import HardwareCategoriesBanner from "./home/HardwareCategoriesBanner.jsx";
@@ -10,12 +7,12 @@ import HeroBannerMain from "./home/HeroBannerMain.jsx";
 import LocalBenefits from "./home/LocalBenefits.jsx";
 import MonthlyAssemblies from "./home/MonthlyAssemblies.jsx";
 
-function HomePage() {
+function HomePage({ loadCart }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const getHomeData = async () => {
-      const response = await axios.get(`/api/products`);
+      const response = await axios.get(`/api/productos`);
       setProducts(response.data);
     };
 
@@ -51,7 +48,7 @@ function HomePage() {
               las tarjetas de productos sueltos (GPUs, Monitores, Periféricos, etc.) 
               provenientes de tu base de datos (ej: productosFlash.map(...))
            */}
-          <FlashOffersAndFeatured products={products} />
+          <FlashOffersAndFeatured products={products} loadCart={loadCart} />
 
           {/* 6. BANNER CONFIGURADOR ARMA TU PC */}
           <BuildYourPCBanner />

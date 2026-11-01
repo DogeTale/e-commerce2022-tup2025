@@ -1,325 +1,43 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="web_dashboard" name="shell-type" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      @layer base {
-        html,
-        body {
-          margin: 0;
-          padding: 0;
-        }
-        body {
-          overscroll-behavior: none;
-        }
-        main > :first-child {
-          margin-top: 0 !important;
-        }
-        main > :last-child {
-          margin-bottom: 0 !important;
-        }
-      }
-      ::-webkit-scrollbar {
-        display: none;
-      }
-      * {
-        box-shadow: none !important;
-        text-shadow: none !important;
-        filter: none !important;
-      }
-    </style>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "inverse-surface": "#303031",
-              "on-tertiary-fixed": "#002204",
-              "on-primary": "#ffffff",
-              "on-primary-fixed": "#410003",
-              error: "#ba1a1a",
-              "on-tertiary-container": "#d8ffd0",
-              "inverse-on-surface": "#f2f0f0",
-              outline: "#8f6f6c",
-              tertiary: "#11651d",
-              "inverse-primary": "#ffb3ac",
-              secondary: "#5f5e5e",
-              surface: "#fbf9f8",
-              "on-secondary-container": "#656464",
-              "surface-container-lowest": "#ffffff",
-              "on-error-container": "#93000a",
-              "tertiary-container": "#307f34",
-              "on-error": "#ffffff",
-              "primary-fixed-dim": "#ffb3ac",
-              "surface-dim": "#dbdad9",
-              "surface-container-high": "#e9e8e7",
-              "on-background": "#1b1c1c",
-              "on-surface-variant": "#5b403d",
-              background: "#fbf9f8",
-              "primary-container": "#d32f2f",
-              "on-primary-fixed-variant": "#930010",
-              "secondary-fixed": "#e5e2e1",
-              "outline-variant": "#e4beba",
-              "surface-tint": "#ba1a20",
-              "on-surface": "#1b1c1c",
-              "on-primary-container": "#fff2f0",
-              "tertiary-fixed": "#a3f69c",
-              "tertiary-fixed-dim": "#88d982",
-              "on-secondary-fixed-variant": "#474646",
-              "primary-fixed": "#ffdad6",
-              "error-container": "#ffdad6",
-              "secondary-container": "#e5e2e1",
-              "surface-container": "#efeded",
-              "surface-container-low": "#f5f3f3",
-              "secondary-fixed-dim": "#c8c6c5",
-              "surface-variant": "#e4e2e2",
-              "on-tertiary-fixed-variant": "#005312",
-              "on-tertiary": "#ffffff",
-              "surface-container-highest": "#e4e2e2",
-              "surface-bright": "#fbf9f8",
-              "on-secondary": "#ffffff",
-              "on-secondary-fixed": "#1c1b1b",
-              primary: "#af101a",
-            },
-            borderRadius: {
-              DEFAULT: "0.125rem",
-              lg: "0.25rem",
-              xl: "0.5rem",
-              full: "0.75rem",
-            },
-            spacing: {
-              "space-xl": "2rem",
-              gutter: "1rem",
-              "margin-desktop": "2rem",
-              margin: "1rem",
-              "space-xs": "0.25rem",
-              "gutter-tablet": "1.25rem",
-              "space-md": "1rem",
-              "margin-tablet": "1.5rem",
-              "gutter-desktop": "1.5rem",
-              "space-sm": "0.5rem",
-              "space-lg": "1.5rem",
-              "space-2xl": "3rem",
-            },
-            fontFamily: {
-              "label-sm": ["Inter"],
-              "headline-sm": ["Inter"],
-              "headline-lg-mobile": ["Inter"],
-              "headline-xl": ["Inter"],
-              "headline-xl-mobile": ["Inter"],
-              "body-md": ["Inter"],
-              "body-lg": ["Inter"],
-              "label-md": ["Inter"],
-              "label-lg": ["Inter"],
-              "headline-lg": ["Inter"],
-              "headline-md": ["Inter"],
-              "body-sm": ["Inter"],
-            },
-            fontSize: {
-              "label-sm": [
-                "11px",
-                {
-                  lineHeight: "14px",
-                  letterSpacing: "0.04em",
-                  fontWeight: "700",
-                },
-              ],
-              "headline-sm": [
-                "18px",
-                {
-                  lineHeight: "24px",
-                  letterSpacing: "-0.005em",
-                  fontWeight: "600",
-                },
-              ],
-              "headline-lg-mobile": [
-                "24px",
-                {
-                  lineHeight: "32px",
-                  letterSpacing: "-0.01em",
-                  fontWeight: "700",
-                },
-              ],
-              "headline-xl": [
-                "40px",
-                {
-                  lineHeight: "48px",
-                  letterSpacing: "-0.02em",
-                  fontWeight: "800",
-                },
-              ],
-              "headline-xl-mobile": [
-                "30px",
-                {
-                  lineHeight: "36px",
-                  letterSpacing: "-0.015em",
-                  fontWeight: "800",
-                },
-              ],
-              "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
-              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
-              "label-md": [
-                "12px",
-                {
-                  lineHeight: "16px",
-                  letterSpacing: "0.02em",
-                  fontWeight: "600",
-                },
-              ],
-              "label-lg": [
-                "14px",
-                {
-                  lineHeight: "18px",
-                  letterSpacing: "0.01em",
-                  fontWeight: "600",
-                },
-              ],
-              "headline-lg": [
-                "32px",
-                {
-                  lineHeight: "40px",
-                  letterSpacing: "-0.015em",
-                  fontWeight: "700",
-                },
-              ],
-              "headline-md": [
-                "22px",
-                {
-                  lineHeight: "28px",
-                  letterSpacing: "-0.01em",
-                  fontWeight: "700",
-                },
-              ],
-              "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
-            },
-          },
-        },
-      };
-    </script>
-  </head>
-  <body class="bg-surface font-body-md text-on-surface antialiased">
-    <header
-      class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-surface-variant"
-    >
-      <div
-        class="w-full px-margin-desktop h-16 flex items-center justify-between"
-      >
-        <div class="flex items-center gap-space-lg">
-          <a
-            class="flex items-center gap-space-sm shrink-0 cursor-pointer"
-            data-path="home"
-            href="#"
-            ><img
-              alt="ZeroLag Logo"
-              class="h-8 w-auto object-contain"
-              src="https://lh3.googleusercontent.com/aida/AEtjO1Wt_esEXmOhcAK74Hfmge3dK9jQ86GoHsQBgEnZ_n3bvojcJ6yJlEuQ8ccu-7QscR76ggR_AYYtqC7JfTTw4gRM42_Rz-KLJzAWCMkz7doQ4YYkNsl7L8zev9pl6Mo-Ksk06bs5ccdbYKnSR6WFdYDdM50r2eHMuOZNM1fYFvh-1KU3ULAXNr2UOD_Q3m-RJlRvVOERXEDy1454rrmEDVMmD6NHGGtF3U3rjJTXsOf3-WAZ5qEQ-wy_s9U"
-            />
-            <div class="flex flex-col">
-              <span
-                class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface leading-none"
-                >ZeroLag</span
-              ><span
-                class="font-label-sm text-[9px] uppercase tracking-widest text-primary font-bold leading-none mt-1"
-                >Panel de Administración</span
-              >
-            </div></a
-          >
-          <div
-            class="hidden md:flex items-center gap-space-xs px-2.5 py-1 bg-surface-container border border-surface-variant rounded"
-          >
-            <span class="w-2 h-2 rounded-full bg-tertiary"></span
-            ><span class="font-label-sm text-label-sm text-secondary uppercase"
-              >Servidor Principal AR-BUE</span
-            >
-          </div>
-        </div>
-        <div class="flex items-center gap-space-md">
-          <a
-            class="flex items-center gap-1 font-label-md text-label-md text-secondary hover:text-primary transition-colors border border-surface-variant px-space-md py-1.5 rounded-lg bg-surface-container-low"
-            data-path="home"
-            href="#"
-            ><span class="material-symbols-outlined text-[18px]"
-              >storefront</span
-            ><span>Volver a la Tienda</span></a
-          >
-          <div
-            class="flex items-center gap-space-xs pl-space-md border-l border-surface-variant"
-          >
-            <div
-              class="w-8 h-8 rounded bg-primary-container text-on-primary flex items-center justify-center font-bold text-label-md"
-            >
-              ADM
-            </div>
-            <div class="hidden lg:flex flex-col">
-              <span
-                class="font-label-md text-label-md text-on-surface leading-tight"
-                >Admin Operativo</span
-              ><span
-                class="font-body-sm text-[11px] text-secondary leading-tight"
-                >sucursal.belgrano@zerolag.com.ar</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div class="flex min-h-screen pt-16">
+  <body className="bg-surface font-body-md text-on-surface antialiased">
+    <div className="flex min-h-screen pt-16">
       <aside
-        class="w-64 fixed left-0 top-16 bottom-0 bg-surface-container-low border-r border-surface-variant flex flex-col justify-between p-space-md z-40"
+        className="w-64 fixed left-0 top-16 bottom-0 bg-surface-container-low border-r border-surface-variant flex flex-col justify-between p-space-md z-40"
       >
-        <div class="flex flex-col gap-space-md">
+        <div className="flex flex-col gap-space-md">
           <div
-            class="font-label-sm text-label-sm uppercase text-secondary tracking-wider px-space-xs font-bold"
+            className="font-label-sm text-label-sm uppercase text-secondary tracking-wider px-space-xs font-bold"
           >
             Módulos de Gestión
           </div>
           <nav
-            class="flex flex-col gap-1"
+            className="flex flex-col gap-1"
             data-active-classes="bg-primary text-on-primary font-bold"
           >
             <a
-              class="text-on-surface hover:bg-surface-container-highest px-space-md py-2.5 rounded-lg font-label-md text-label-md transition-colors block"
+              className="text-on-surface hover:bg-surface-container-highest px-space-md py-2.5 rounded-lg font-label-md text-label-md transition-colors block"
               data-path="admin-dashboard"
               href="#"
               >Dashboard General</a
             ><a
-              class="text-on-surface hover:bg-surface-container-highest px-space-md py-2.5 rounded-lg font-label-md text-label-md transition-colors block"
+              className="text-on-surface hover:bg-surface-container-highest px-space-md py-2.5 rounded-lg font-label-md text-label-md transition-colors block"
               data-path="admin-inventory"
               href="#"
               >Inventario &amp; Productos</a
             ><a
               aria-current="page"
-              class="px-space-md py-2.5 rounded-lg transition-colors block bg-primary text-on-primary font-bold"
+              className="px-space-md py-2.5 rounded-lg transition-colors block bg-primary text-on-primary font-bold"
               data-path="admin-orders"
               href="#"
               >Gestión de Pedidos</a
             ><a
-              class="text-on-surface hover:bg-surface-container-highest px-space-md py-2.5 rounded-lg font-label-md text-label-md transition-colors block"
+              className="text-on-surface hover:bg-surface-container-highest px-space-md py-2.5 rounded-lg font-label-md text-label-md transition-colors block"
               data-path="profile"
               href="#"
               >Vista Cliente / Mi Perfil</a
             ><a
-              class="text-on-surface hover:bg-surface-container-highest px-space-md py-2.5 rounded-lg font-label-md text-label-md transition-colors block"
+              className="text-on-surface hover:bg-surface-container-highest px-space-md py-2.5 rounded-lg font-label-md text-label-md transition-colors block"
               data-path="about-support"
               href="#"
               >Soporte &amp; RMA Interno</a
@@ -327,13 +45,13 @@
           </nav>
         </div>
         <div
-          class="border-t border-surface-variant pt-space-md flex flex-col gap-2"
+          className="border-t border-surface-variant pt-space-md flex flex-col gap-2"
         >
-          <div class="px-space-xs font-label-sm text-[11px] text-secondary">
+          <div className="px-space-xs font-label-sm text-[11px] text-secondary">
             ZeroLag Backoffice v2.4<br />Belgrano Hub, CABA
           </div>
           <a
-            class="text-error hover:bg-error-container hover:text-on-error-container px-space-md py-2 rounded-lg font-label-md text-label-md transition-colors block text-center border border-error-container"
+            className="text-error hover:bg-error-container hover:text-on-error-container px-space-md py-2 rounded-lg font-label-md text-label-md transition-colors block text-center border border-error-container"
             data-path="auth"
             href="#"
             >Cerrar Sesión</a
@@ -341,192 +59,195 @@
         </div>
       </aside>
       <main
-        class="flex-1 pl-64 w-full bg-surface min-h-[calc(100vh-64px)] p-space-xl"
+        className="flex-1 pl-64 w-full bg-surface min-h-[calc(100vh-64px)] p-space-xl"
       >
-        <div class="flex flex-col w-full gap-space-lg">
+        <div className="flex flex-col w-full gap-space-lg">
           <div
-            class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-md border-b border-surface-variant"
+            className="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-md border-b border-surface-variant"
           >
-            <div class="flex flex-col gap-1">
-              <div class="flex items-center gap-2">
+            <div className="flex flex-col gap-1">
+              <div className="flex items-center gap-2">
                 <span
-                  class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold"
+                  className="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold"
                   >Módulo Logístico &amp; Taller</span
                 >
-                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                <span class="font-label-sm text-label-sm text-secondary"
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                <span className="font-label-sm text-label-sm text-secondary"
                   >Actualizado hace 3 min</span
                 >
               </div>
               <h1
-                class="font-headline-lg text-headline-lg text-on-surface tracking-tight"
+                className="font-headline-lg text-headline-lg text-on-surface tracking-tight"
               >
                 Gestión de Pedidos &amp; Órdenes de Hardware
               </h1>
-              <p class="font-body-md text-body-md text-secondary">
+              <p className="font-body-md text-body-md text-secondary">
                 Control integral de compras web, validación de transferencias
                 bancarias, armado en banco técnico y guías de despacho Andreani.
               </p>
             </div>
-            <div class="flex items-center gap-space-sm shrink-0">
+            <div className="flex items-center gap-space-sm shrink-0">
               <button
-                class="flex items-center gap-1.5 px-space-md py-2 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface font-label-md text-label-md rounded transition-colors"
-                onclick="
+                className="flex items-center gap-1.5 px-space-md py-2 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface font-label-md text-label-md rounded transition-colors"
+                onClick="
                   alert(
                     'Exportando reporte consolidado del día en formato CSV/Excel...',
                   )
                 "
               >
-                <span class="material-symbols-outlined text-[18px]"
+                <span className="material-symbols-outlined text-[18px]"
                   >download</span
                 >
                 <span>Exportar Reporte</span>
               </button>
               <button
-                class="flex items-center gap-1.5 px-space-md py-2 bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md rounded transition-colors"
-                onclick="
+                className="flex items-center gap-1.5 px-space-md py-2 bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md rounded transition-colors"
+                onClick="
                   alert('Iniciando carga de orden manual de mostrador...')
                 "
               >
-                <span class="material-symbols-outlined text-[18px]"
+                <span className="material-symbols-outlined text-[18px]"
                   >add_circle</span
                 >
                 <span>Nueva Venta Mostrador</span>
               </button>
             </div>
           </div>
-          <div class="grid grid-cols-2 md:grid-cols-5 gap-space-sm">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-space-sm">
             <button
-              class="flex flex-col p-space-md bg-surface-container-lowest border-2 border-primary text-left transition-colors"
+              className="flex flex-col p-space-md bg-surface-container-lowest border-2 border-primary text-left transition-colors"
             >
-              <div class="flex justify-between items-center w-full mb-1">
+              <div className="flex justify-between items-center w-full mb-1">
                 <span
-                  class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold"
+                  className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold"
                   >Todos</span
                 >
-                <span class="material-symbols-outlined text-[18px] text-primary"
+                <span
+                  className="material-symbols-outlined text-[18px] text-primary"
                   >view_list</span
                 >
               </div>
               <span
-                class="font-headline-md text-headline-md text-on-surface font-bold"
+                className="font-headline-md text-headline-md text-on-surface font-bold"
                 >142</span
               >
-              <span class="font-body-sm text-body-sm text-secondary mt-1"
+              <span className="font-body-sm text-body-sm text-secondary mt-1"
                 >Total del mes activo</span
               >
             </button>
             <button
-              class="flex flex-col p-space-md bg-surface-container border border-surface-variant text-left hover:bg-surface-container-high transition-colors"
+              className="flex flex-col p-space-md bg-surface-container border border-surface-variant text-left hover:bg-surface-container-high transition-colors"
             >
-              <div class="flex justify-between items-center w-full mb-1">
+              <div className="flex justify-between items-center w-full mb-1">
                 <span
-                  class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold"
+                  className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold"
                   >Pendientes</span
                 >
                 <span
-                  class="material-symbols-outlined text-[18px] text-secondary"
+                  className="material-symbols-outlined text-[18px] text-secondary"
                   >hourglass_empty</span
                 >
               </div>
               <span
-                class="font-headline-md text-headline-md text-secondary font-bold"
+                className="font-headline-md text-headline-md text-secondary font-bold"
                 >8</span
               >
-              <span class="font-body-sm text-body-sm text-secondary mt-1"
+              <span className="font-body-sm text-body-sm text-secondary mt-1"
                 >Aguardando pago / CBU</span
               >
             </button>
             <button
-              class="flex flex-col p-space-md bg-surface-container border border-surface-variant text-left hover:bg-surface-container-high transition-colors"
+              className="flex flex-col p-space-md bg-surface-container border border-surface-variant text-left hover:bg-surface-container-high transition-colors"
             >
-              <div class="flex justify-between items-center w-full mb-1">
+              <div className="flex justify-between items-center w-full mb-1">
                 <span
-                  class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary-container font-bold"
+                  className="font-label-sm text-label-sm uppercase tracking-wider text-tertiary-container font-bold"
                   >En Armado</span
                 >
                 <span
-                  class="material-symbols-outlined text-[18px] text-tertiary-container"
+                  className="material-symbols-outlined text-[18px] text-tertiary-container"
                   >precision_manufacturing</span
                 >
               </div>
               <span
-                class="font-headline-md text-headline-md text-tertiary-container font-bold"
+                className="font-headline-md text-headline-md text-tertiary-container font-bold"
                 >12</span
               >
-              <span class="font-body-sm text-body-sm text-secondary mt-1"
+              <span className="font-body-sm text-body-sm text-secondary mt-1"
                 >Bancos 1, 2 y 3 activos</span
               >
             </button>
             <button
-              class="flex flex-col p-space-md bg-surface-container border border-surface-variant text-left hover:bg-surface-container-high transition-colors"
+              className="flex flex-col p-space-md bg-surface-container border border-surface-variant text-left hover:bg-surface-container-high transition-colors"
             >
-              <div class="flex justify-between items-center w-full mb-1">
+              <div className="flex justify-between items-center w-full mb-1">
                 <span
-                  class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold"
+                  className="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold"
                   >Listos p/ Enviar</span
                 >
-                <span class="material-symbols-outlined text-[18px] text-primary"
+                <span
+                  className="material-symbols-outlined text-[18px] text-primary"
                   >local_shipping</span
                 >
               </div>
               <span
-                class="font-headline-md text-headline-md text-primary font-bold"
+                className="font-headline-md text-headline-md text-primary font-bold"
                 >18</span
               >
-              <span class="font-body-sm text-body-sm text-secondary mt-1"
+              <span className="font-body-sm text-body-sm text-secondary mt-1"
                 >Colecta Andreani 17:30</span
               >
             </button>
             <button
-              class="flex flex-col p-space-md bg-surface-container border border-surface-variant text-left hover:bg-surface-container-high transition-colors col-span-2 md:col-span-1"
+              className="flex flex-col p-space-md bg-surface-container border border-surface-variant text-left hover:bg-surface-container-high transition-colors col-span-2 md:col-span-1"
             >
-              <div class="flex justify-between items-center w-full mb-1">
+              <div className="flex justify-between items-center w-full mb-1">
                 <span
-                  class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary font-bold"
+                  className="font-label-sm text-label-sm uppercase tracking-wider text-tertiary font-bold"
                   >Entregados</span
                 >
                 <span
-                  class="material-symbols-outlined text-[18px] text-tertiary"
+                  className="material-symbols-outlined text-[18px] text-tertiary"
                   >check_circle</span
                 >
               </div>
               <span
-                class="font-headline-md text-headline-md text-tertiary font-bold"
+                className="font-headline-md text-headline-md text-tertiary font-bold"
                 >104</span
               >
-              <span class="font-body-sm text-body-sm text-secondary mt-1"
+              <span className="font-body-sm text-body-sm text-secondary mt-1"
                 >Conformes y facturados</span
               >
             </button>
           </div>
           <div
-            class="flex flex-col md:flex-row gap-space-sm items-stretch md:items-center justify-between bg-surface-container-low p-space-md border border-surface-variant"
+            className="flex flex-col md:flex-row gap-space-sm items-stretch md:items-center justify-between bg-surface-container-low p-space-md border border-surface-variant"
           >
             <div
-              class="flex-1 flex items-center gap-space-sm bg-surface-container-lowest border border-surface-variant px-space-md py-2"
+              className="flex-1 flex items-center gap-space-sm bg-surface-container-lowest border border-surface-variant px-space-md py-2"
             >
-              <span class="material-symbols-outlined text-[20px] text-secondary"
+              <span
+                className="material-symbols-outlined text-[20px] text-secondary"
                 >search</span
               >
               <input
-                class="w-full bg-transparent outline-none font-body-md text-body-md text-on-surface placeholder-secondary"
+                className="w-full bg-transparent outline-none font-body-md text-body-md text-on-surface placeholder-secondary"
                 id="searchInput"
-                onkeyup="filterOrders()"
+                onKeyUp="filterOrders()"
                 placeholder="Buscar por # Orden (#ZL-XXXXX), DNI/CUIT o Nombre del cliente..."
                 type="text"
               />
             </div>
-            <div class="flex items-center gap-space-sm shrink-0">
-              <div class="flex items-center gap-2">
+            <div className="flex items-center gap-space-sm shrink-0">
+              <div className="flex items-center gap-2">
                 <span
-                  class="font-label-sm text-label-sm uppercase text-secondary font-bold"
+                  className="font-label-sm text-label-sm uppercase text-secondary font-bold"
                   >Filtro Estado:</span
                 >
                 <select
-                  class="bg-surface-container-lowest border border-surface-variant text-on-surface font-body-sm text-body-sm px-space-sm py-2 outline-none cursor-pointer"
+                  className="bg-surface-container-lowest border border-surface-variant text-on-surface font-body-sm text-body-sm px-space-sm py-2 outline-none cursor-pointer"
                   id="statusFilter"
-                  onchange="filterOrders()"
+                  onChange="filterOrders()"
                 >
                   <option value="all">Todos los Estados</option>
                   <option value="pendiente">Pendiente de Pago</option>
@@ -537,15 +258,15 @@
                   <option value="entregado">Entregado / Retirado</option>
                 </select>
               </div>
-              <div class="flex items-center gap-2">
+              <div className="flex items-center gap-2">
                 <span
-                  class="font-label-sm text-label-sm uppercase text-secondary font-bold"
+                  className="font-label-sm text-label-sm uppercase text-secondary font-bold"
                   >Tipo Entrega:</span
                 >
                 <select
-                  class="bg-surface-container-lowest border border-surface-variant text-on-surface font-body-sm text-body-sm px-space-sm py-2 outline-none cursor-pointer"
+                  className="bg-surface-container-lowest border border-surface-variant text-on-surface font-body-sm text-body-sm px-space-sm py-2 outline-none cursor-pointer"
                   id="shippingFilter"
-                  onchange="filterOrders()"
+                  onChange="filterOrders()"
                 >
                   <option value="all">Todas las modalidades</option>
                   <option value="showroom">Retiro Showroom Belgrano</option>
@@ -553,161 +274,172 @@
                 </select>
               </div>
               <button
-                class="p-2 bg-surface-container-lowest border border-surface-variant text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"
-                onclick="resetFilters()"
+                className="p-2 bg-surface-container-lowest border border-surface-variant text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"
+                onClick="resetFilters()"
                 title="Restablecer filtros"
               >
-                <span class="material-symbols-outlined text-[20px]"
+                <span className="material-symbols-outlined text-[20px]"
                   >restart_alt</span
                 >
               </button>
             </div>
           </div>
           <div
-            class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start"
+            className="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start"
           >
             <div
-              class="xl:col-span-8 flex flex-col bg-surface-container-lowest border border-surface-variant"
+              className="xl:col-span-8 flex flex-col bg-surface-container-lowest border border-surface-variant"
             >
               <div
-                class="px-space-md py-space-sm bg-surface-container-low border-b border-surface-variant flex items-center justify-between"
+                className="px-space-md py-space-sm bg-surface-container-low border-b border-surface-variant flex items-center justify-between"
               >
-                <div class="flex items-center gap-2">
+                <div className="flex items-center gap-2">
                   <span
-                    class="font-label-md text-label-md text-on-surface font-bold"
+                    className="font-label-md text-label-md text-on-surface font-bold"
                     >Cola de Órdenes Recientes</span
                   >
                   <span
-                    class="px-2 py-0.5 bg-surface-container-highest font-label-sm text-label-sm text-on-surface font-bold"
+                    className="px-2 py-0.5 bg-surface-container-highest font-label-sm text-label-sm text-on-surface font-bold"
                     id="orderCountBadge"
                     >4 Órdenes</span
                   >
                 </div>
-                <div class="flex items-center gap-3">
+                <div className="flex items-center gap-3">
                   <span
-                    class="flex items-center gap-1 font-label-sm text-label-sm text-secondary"
+                    className="flex items-center gap-1 font-label-sm text-label-sm text-secondary"
                   >
-                    <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                    <span className="w-2 h-2 rounded-full bg-tertiary"></span>
                     Sincronizado AFIP &amp; Logística
                   </span>
                 </div>
               </div>
-              <div class="overflow-x-auto">
+              <div className="overflow-x-auto">
                 <table
-                  class="w-full border-collapse text-left"
+                  className="w-full border-collapse text-left"
                   id="ordersTable"
                 >
                   <thead>
                     <tr
-                      class="bg-surface-container font-label-sm text-label-sm uppercase text-secondary border-b border-surface-variant"
+                      className="bg-surface-container font-label-sm text-label-sm uppercase text-secondary border-b border-surface-variant"
                     >
-                      <th class="p-space-sm pl-space-md">Orden &amp; Fecha</th>
-                      <th class="p-space-sm">Cliente &amp; WhatsApp</th>
-                      <th class="p-space-sm">Detalle Hardware</th>
-                      <th class="p-space-sm">Logística</th>
-                      <th class="p-space-sm text-right">
+                      <th className="p-space-sm pl-space-md">
+                        Orden &amp; Fecha
+                      </th>
+                      <th className="p-space-sm">Cliente &amp; WhatsApp</th>
+                      <th className="p-space-sm">Detalle Hardware</th>
+                      <th className="p-space-sm">Logística</th>
+                      <th className="p-space-sm text-right">
                         Monto &amp; Facturación
                       </th>
-                      <th class="p-space-sm">Estado Operativo</th>
-                      <th class="p-space-sm pr-space-md text-center">
+                      <th className="p-space-sm">Estado Operativo</th>
+                      <th className="p-space-sm pr-space-md text-center">
                         Acciones
                       </th>
                     </tr>
                   </thead>
                   <tbody
-                    class="divide-y divide-surface-variant font-body-sm text-body-sm text-on-surface"
+                    className="divide-y divide-surface-variant font-body-sm text-body-sm text-on-surface"
                   >
                     <tr
-                      class="hover:bg-surface-container-low transition-colors cursor-pointer bg-primary-fixed/20 border-l-4 border-l-primary"
-                      onclick="selectOrder('ZL-89210')"
+                      className="hover:bg-surface-container-low transition-colors cursor-pointer bg-primary-fixed/20 border-l-4 border-l-primary"
+                      onClick="selectOrder('ZL-89210')"
                     >
-                      <td class="p-space-sm pl-space-md">
-                        <div class="flex flex-col">
+                      <td className="p-space-sm pl-space-md">
+                        <div className="flex flex-col">
                           <span
-                            class="font-label-md text-label-md font-bold text-primary"
+                            className="font-label-md text-label-md font-bold text-primary"
                             >#ZL-89210</span
                           >
-                          <span class="font-body-sm text-[11px] text-secondary"
+                          <span
+                            className="font-body-sm text-[11px] text-secondary"
                             >Hoy, 14:22 hs</span
                           >
                         </div>
                       </td>
-                      <td class="p-space-sm">
-                        <div class="flex flex-col">
+                      <td className="p-space-sm">
+                        <div className="flex flex-col">
                           <span
-                            class="font-label-md text-label-md text-on-surface font-bold"
+                            className="font-label-md text-label-md text-on-surface font-bold"
                             >Federico Valenzuela</span
                           >
-                          <span class="font-body-sm text-[11px] text-secondary"
+                          <span
+                            className="font-body-sm text-[11px] text-secondary"
                             >CUIT 20-38491024-9</span
                           >
                           <a
-                            class="flex items-center gap-1 font-label-sm text-[11px] text-tertiary font-bold hover:text-primary mt-0.5"
+                            className="flex items-center gap-1 font-label-sm text-[11px] text-tertiary font-bold hover:text-primary mt-0.5"
                             href="https://wa.me/5491140928341"
-                            onclick="event.stopPropagation()"
+                            onClick="event.stopPropagation()"
                             target="_blank"
                           >
-                            <span class="material-symbols-outlined text-[14px]"
+                            <span
+                              className="material-symbols-outlined text-[14px]"
                               >chat</span
                             >
                             <span>+54 9 11 4092-8341</span>
                           </a>
                         </div>
                       </td>
-                      <td class="p-space-sm max-w-[200px]">
-                        <div class="flex flex-col">
+                      <td className="p-space-sm max-w-[200px]">
+                        <div className="flex flex-col">
                           <span
-                            class="font-label-sm text-label-sm text-on-surface font-bold uppercase truncate"
+                            className="font-label-sm text-label-sm text-on-surface font-bold uppercase truncate"
                             title="PC Custom: Ryzen 7 7800X3D + RTX 4070Ti Super"
                             >PC Custom: 7800X3D + 4070Ti Super</span
                           >
-                          <span class="font-body-sm text-[11px] text-secondary"
+                          <span
+                            className="font-body-sm text-[11px] text-secondary"
                             >Mother B650E, 32GB DDR5 6000MHz, 2TB Gen4</span
                           >
                           <span
-                            class="font-label-sm text-[10px] text-tertiary font-bold mt-0.5"
+                            className="font-label-sm text-[10px] text-tertiary font-bold mt-0.5"
                             >Armado Premium + Benchmarks</span
                           >
                         </div>
                       </td>
-                      <td class="p-space-sm">
-                        <div class="flex flex-col gap-0.5">
+                      <td className="p-space-sm">
+                        <div className="flex flex-col gap-0.5">
                           <span
-                            class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface font-semibold"
+                            className="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface font-semibold"
                           >
                             <span
-                              class="material-symbols-outlined text-[16px] text-primary"
+                              className="material-symbols-outlined text-[16px] text-primary"
                               >local_shipping</span
                             >
                             Andreani Express
                           </span>
                           <span
-                            class="font-body-sm text-[11px] text-secondary font-mono"
+                            className="font-body-sm text-[11px] text-secondary font-mono"
                             >Guía: #AD-84019230</span
                           >
-                          <span class="font-body-sm text-[10px] text-secondary"
+                          <span
+                            className="font-body-sm text-[10px] text-secondary"
                             >Córdoba Capital, CBA</span
                           >
                         </div>
                       </td>
-                      <td class="p-space-sm text-right">
-                        <div class="flex flex-col items-end">
+                      <td className="p-space-sm text-right">
+                        <div className="flex flex-col items-end">
                           <span
-                            class="font-label-md text-label-md font-bold text-on-surface"
+                            className="font-label-md text-label-md font-bold text-on-surface"
                             >$2.018.742 ARS</span
                           >
                           <span
-                            class="font-body-sm text-[11px] text-tertiary font-semibold"
+                            className="font-body-sm text-[11px] text-tertiary font-semibold"
                             >Factura A Emitida</span
                           >
-                          <span class="font-body-sm text-[10px] text-secondary"
+                          <span
+                            className="font-body-sm text-[10px] text-secondary"
                             >Transferencia Bancaria</span
                           >
                         </div>
                       </td>
-                      <td class="p-space-sm" onclick="event.stopPropagation()">
+                      <td
+                        className="p-space-sm"
+                        onClick="event.stopPropagation()"
+                      >
                         <select
-                          class="w-full bg-surface-container border border-surface-variant font-label-sm text-label-sm py-1.5 px-2 text-on-surface font-semibold focus:border-primary outline-none"
+                          className="w-full bg-surface-container border border-surface-variant font-label-sm text-label-sm py-1.5 px-2 text-on-surface font-semibold focus:border-primary outline-none"
                         >
                           <option value="pendiente">Pendiente de Pago</option>
                           <option value="confirmado">Pago Confirmado</option>
@@ -720,50 +452,54 @@
                           </option>
                           <option value="entregado">Entregado Showroom</option>
                         </select>
-                        <div class="mt-1 flex items-center gap-1">
+                        <div className="mt-1 flex items-center gap-1">
                           <span
-                            class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"
+                            className="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"
                           ></span>
-                          <span class="font-body-sm text-[11px] text-secondary"
+                          <span
+                            className="font-body-sm text-[11px] text-secondary"
                             >Banco 02 (Téc. Lautaro)</span
                           >
                         </div>
                       </td>
                       <td
-                        class="p-space-sm pr-space-md text-center"
-                        onclick="event.stopPropagation()"
+                        className="p-space-sm pr-space-md text-center"
+                        onClick="event.stopPropagation()"
                       >
-                        <div class="flex items-center justify-center gap-1">
+                        <div className="flex items-center justify-center gap-1">
                           <button
-                            class="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface"
-                            onclick="
+                            className="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface"
+                            onClick="
                               alert(
                                 'Generando etiqueta térmica ZPL para Andreani #AD-84019230...',
                               )
                             "
                             title="Imprimir Remito / Etiqueta Andreani"
                           >
-                            <span class="material-symbols-outlined text-[18px]"
+                            <span
+                              className="material-symbols-outlined text-[18px]"
                               >print</span
                             >
                           </button>
                           <button
-                            class="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface"
-                            onclick="selectOrder('ZL-89210')"
+                            className="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface"
+                            onClick="selectOrder('ZL-89210')"
                             title="Ver detalle de componentes y SN"
                           >
-                            <span class="material-symbols-outlined text-[18px]"
+                            <span
+                              className="material-symbols-outlined text-[18px]"
                               >visibility</span
                             >
                           </button>
                           <button
-                            class="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-tertiary"
-                            onclick="
+                            className="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-tertiary"
+                            onClick="
                               notifyClient('Federico Valenzuela', 'ZL-89210')
                             "
                             title="Notificar por WhatsApp"
                           >
-                            <span class="material-symbols-outlined text-[18px]"
+                            <span
+                              className="material-symbols-outlined text-[18px]"
                               >send</span
                             >
                           </button>
@@ -771,87 +507,96 @@
                       </td>
                     </tr>
                     <tr
-                      class="hover:bg-surface-container-low transition-colors cursor-pointer"
-                      onclick="selectOrder('ZL-89209')"
+                      className="hover:bg-surface-container-low transition-colors cursor-pointer"
+                      onClick="selectOrder('ZL-89209')"
                     >
-                      <td class="p-space-sm pl-space-md">
-                        <div class="flex flex-col">
+                      <td className="p-space-sm pl-space-md">
+                        <div className="flex flex-col">
                           <span
-                            class="font-label-md text-label-md font-bold text-on-surface"
+                            className="font-label-md text-label-md font-bold text-on-surface"
                             >#ZL-89209</span
                           >
-                          <span class="font-body-sm text-[11px] text-secondary"
+                          <span
+                            className="font-body-sm text-[11px] text-secondary"
                             >Hoy, 13:10 hs</span
                           >
                         </div>
                       </td>
-                      <td class="p-space-sm">
-                        <div class="flex flex-col">
+                      <td className="p-space-sm">
+                        <div className="flex flex-col">
                           <span
-                            class="font-label-md text-label-md text-on-surface font-bold"
+                            className="font-label-md text-label-md text-on-surface font-bold"
                             >Mariana Giménez</span
                           >
-                          <span class="font-body-sm text-[11px] text-secondary"
+                          <span
+                            className="font-body-sm text-[11px] text-secondary"
                             >DNI 34.120.948</span
                           >
                           <a
-                            class="flex items-center gap-1 font-label-sm text-[11px] text-tertiary font-bold hover:text-primary mt-0.5"
+                            className="flex items-center gap-1 font-label-sm text-[11px] text-tertiary font-bold hover:text-primary mt-0.5"
                             href="https://wa.me/5491129481920"
-                            onclick="event.stopPropagation()"
+                            onClick="event.stopPropagation()"
                             target="_blank"
                           >
-                            <span class="material-symbols-outlined text-[14px]"
+                            <span
+                              className="material-symbols-outlined text-[14px]"
                               >chat</span
                             >
                             <span>+54 9 11 2948-1920</span>
                           </a>
                         </div>
                       </td>
-                      <td class="p-space-sm max-w-[200px]">
-                        <div class="flex flex-col">
+                      <td className="p-space-sm max-w-[200px]">
+                        <div className="flex flex-col">
                           <span
-                            class="font-label-sm text-label-sm text-on-surface font-bold uppercase truncate"
+                            className="font-label-sm text-label-sm text-on-surface font-bold uppercase truncate"
                             >Monitor Gamer 27" 240Hz 0.5ms IPS</span
                           >
-                          <span class="font-body-sm text-[11px] text-secondary"
+                          <span
+                            className="font-body-sm text-[11px] text-secondary"
                             >+ Brazo articulado VESA y Cable DP 1.4</span
                           >
                         </div>
                       </td>
-                      <td class="p-space-sm">
-                        <div class="flex flex-col gap-0.5">
+                      <td className="p-space-sm">
+                        <div className="flex flex-col gap-0.5">
                           <span
-                            class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface font-semibold"
+                            className="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface font-semibold"
                           >
                             <span
-                              class="material-symbols-outlined text-[16px] text-secondary"
+                              className="material-symbols-outlined text-[16px] text-secondary"
                               >storefront</span
                             >
                             Retiro Showroom
                           </span>
-                          <span class="font-body-sm text-[11px] text-secondary"
+                          <span
+                            className="font-body-sm text-[11px] text-secondary"
                             >Belgrano Hub, CABA</span
                           >
                         </div>
                       </td>
-                      <td class="p-space-sm text-right">
-                        <div class="flex flex-col items-end">
+                      <td className="p-space-sm text-right">
+                        <div className="flex flex-col items-end">
                           <span
-                            class="font-label-md text-label-md font-bold text-on-surface"
+                            className="font-label-md text-label-md font-bold text-on-surface"
                             >$540.000 ARS</span
                           >
                           <span
-                            class="font-body-sm text-[11px] text-secondary font-semibold"
+                            className="font-body-sm text-[11px] text-secondary font-semibold"
                             >Factura B Emitida</span
                           >
-                          <span class="font-body-sm text-[10px] text-secondary"
+                          <span
+                            className="font-body-sm text-[10px] text-secondary"
                             >3 Cuotas sin interés</span
                           >
                         </div>
                       </td>
-                      <td class="p-space-sm" onclick="event.stopPropagation()">
+                      <td
+                        className="p-space-sm"
+                        onClick="event.stopPropagation()"
+                      >
                         <select
-                          class="w-full bg-surface-container border border-surface-variant font-label-sm text-label-sm py-1.5 px-2 text-on-surface font-semibold focus:border-primary outline-none"
+                          className="w-full bg-surface-container border border-surface-variant font-label-sm text-label-sm py-1.5 px-2 text-on-surface font-semibold focus:border-primary outline-none"
                         >
                           <option value="pendiente">Pendiente de Pago</option>
                           <option value="confirmado">Pago Confirmado</option>
@@ -864,49 +609,54 @@
                             Listo para Retiro
                           </option>
                         </select>
-                        <div class="mt-1 flex items-center gap-1">
-                          <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                        <div className="mt-1 flex items-center gap-1">
                           <span
-                            class="font-body-sm text-[11px] text-tertiary font-bold"
+                            className="w-2 h-2 rounded-full bg-tertiary"
+                          ></span>
+                          <span
+                            className="font-body-sm text-[11px] text-tertiary font-bold"
                             >En mostrador central</span
                           >
                         </div>
                       </td>
                       <td
-                        class="p-space-sm pr-space-md text-center"
-                        onclick="event.stopPropagation()"
+                        className="p-space-sm pr-space-md text-center"
+                        onClick="event.stopPropagation()"
                       >
-                        <div class="flex items-center justify-center gap-1">
+                        <div className="flex items-center justify-center gap-1">
                           <button
-                            class="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface"
-                            onclick="
+                            className="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface"
+                            onClick="
                               alert(
                                 'Imprimiendo remito de mostrador para #ZL-89209...',
                               )
                             "
                             title="Imprimir Remito"
                           >
-                            <span class="material-symbols-outlined text-[18px]"
+                            <span
+                              className="material-symbols-outlined text-[18px]"
                               >print</span
                             >
                           </button>
                           <button
-                            class="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface"
-                            onclick="selectOrder('ZL-89209')"
+                            className="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface"
+                            onClick="selectOrder('ZL-89209')"
                             title="Ver detalle"
                           >
-                            <span class="material-symbols-outlined text-[18px]"
+                            <span
+                              className="material-symbols-outlined text-[18px]"
                               >visibility</span
                             >
                           </button>
                           <button
-                            class="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-tertiary"
-                            onclick="
+                            className="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-tertiary"
+                            onClick="
                               notifyClient('Mariana Giménez', 'ZL-89209')
                             "
                             title="Notificar por WhatsApp"
                           >
-                            <span class="material-symbols-outlined text-[18px]"
+                            <span
+                              className="material-symbols-outlined text-[18px]"
                               >send</span
                             >
                           </button>
@@ -914,91 +664,100 @@
                       </td>
                     </tr>
                     <tr
-                      class="hover:bg-surface-container-low transition-colors cursor-pointer"
-                      onclick="selectOrder('ZL-89208')"
+                      className="hover:bg-surface-container-low transition-colors cursor-pointer"
+                      onClick="selectOrder('ZL-89208')"
                     >
-                      <td class="p-space-sm pl-space-md">
-                        <div class="flex flex-col">
+                      <td className="p-space-sm pl-space-md">
+                        <div className="flex flex-col">
                           <span
-                            class="font-label-md text-label-md font-bold text-on-surface"
+                            className="font-label-md text-label-md font-bold text-on-surface"
                             >#ZL-89208</span
                           >
-                          <span class="font-body-sm text-[11px] text-secondary"
+                          <span
+                            className="font-body-sm text-[11px] text-secondary"
                             >Hoy, 11:45 hs</span
                           >
                         </div>
                       </td>
-                      <td class="p-space-sm">
-                        <div class="flex flex-col">
+                      <td className="p-space-sm">
+                        <div className="flex flex-col">
                           <span
-                            class="font-label-md text-label-md text-on-surface font-bold"
+                            className="font-label-md text-label-md text-on-surface font-bold"
                             >Estudio Arq. &amp; Renders SRL</span
                           >
-                          <span class="font-body-sm text-[11px] text-secondary"
+                          <span
+                            className="font-body-sm text-[11px] text-secondary"
                             >CUIT 30-71829401-2</span
                           >
                           <a
-                            class="flex items-center gap-1 font-label-sm text-[11px] text-tertiary font-bold hover:text-primary mt-0.5"
+                            className="flex items-center gap-1 font-label-sm text-[11px] text-tertiary font-bold hover:text-primary mt-0.5"
                             href="https://wa.me/5491151928374"
-                            onclick="event.stopPropagation()"
+                            onClick="event.stopPropagation()"
                             target="_blank"
                           >
-                            <span class="material-symbols-outlined text-[14px]"
+                            <span
+                              className="material-symbols-outlined text-[14px]"
                               >chat</span
                             >
                             <span>+54 9 11 5192-8374</span>
                           </a>
                         </div>
                       </td>
-                      <td class="p-space-sm max-w-[200px]">
-                        <div class="flex flex-col">
+                      <td className="p-space-sm max-w-[200px]">
+                        <div className="flex flex-col">
                           <span
-                            class="font-label-sm text-label-sm text-on-surface font-bold uppercase truncate"
+                            className="font-label-sm text-label-sm text-on-surface font-bold uppercase truncate"
                             >2x Workstation i9 14900K + RTX 4090 24GB</span
                           >
-                          <span class="font-body-sm text-[11px] text-secondary"
+                          <span
+                            className="font-body-sm text-[11px] text-secondary"
                             >128GB DDR5 Corsair, 4TB NVMe Samsung 990 Pro</span
                           >
                         </div>
                       </td>
-                      <td class="p-space-sm">
-                        <div class="flex flex-col gap-0.5">
+                      <td className="p-space-sm">
+                        <div className="flex flex-col gap-0.5">
                           <span
-                            class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface font-semibold"
+                            className="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface font-semibold"
                           >
                             <span
-                              class="material-symbols-outlined text-[16px] text-primary"
+                              className="material-symbols-outlined text-[16px] text-primary"
                               >local_shipping</span
                             >
                             Andreani Asegurado
                           </span>
                           <span
-                            class="font-body-sm text-[11px] text-secondary font-mono"
+                            className="font-body-sm text-[11px] text-secondary font-mono"
                             >Guía: Pendiente</span
                           >
-                          <span class="font-body-sm text-[10px] text-secondary"
+                          <span
+                            className="font-body-sm text-[10px] text-secondary"
                             >Rosario, Santa Fe</span
                           >
                         </div>
                       </td>
-                      <td class="p-space-sm text-right">
-                        <div class="flex flex-col items-end">
+                      <td className="p-space-sm text-right">
+                        <div className="flex flex-col items-end">
                           <span
-                            class="font-label-md text-label-md font-bold text-on-surface"
+                            className="font-label-md text-label-md font-bold text-on-surface"
                             >$8.950.000 ARS</span
                           >
                           <span
-                            class="font-body-sm text-[11px] text-secondary font-semibold"
+                            className="font-body-sm text-[11px] text-secondary font-semibold"
                             >Factura A Pendiente</span
                           >
-                          <span class="font-body-sm text-[10px] text-secondary"
+                          <span
+                            className="font-body-sm text-[10px] text-secondary"
                             >Transferencia USD / ARS</span
                           >
                         </div>
                       </td>
-                      <td class="p-space-sm" onclick="event.stopPropagation()">
+                      <td
+                        className="p-space-sm"
+                        onClick="event.stopPropagation()"
+                      >
                         <select
-                          class="w-full bg-surface-container border border-surface-variant font-label-sm text-label-sm py-1.5 px-2 text-on-surface font-semibold focus:border-primary outline-none"
+                          className="w-full bg-surface-container border border-surface-variant font-label-sm text-label-sm py-1.5 px-2 text-on-surface font-semibold focus:border-primary outline-none"
                         >
                           <option selected="" value="pendiente">
                             Pendiente de Pago
@@ -1011,48 +770,52 @@
                           </option>
                           <option value="entregado">Entregado</option>
                         </select>
-                        <div class="mt-1 flex items-center gap-1">
+                        <div className="mt-1 flex items-center gap-1">
                           <span
-                            class="w-2 h-2 rounded-full bg-secondary"
+                            className="w-2 h-2 rounded-full bg-secondary"
                           ></span>
-                          <span class="font-body-sm text-[11px] text-secondary"
+                          <span
+                            className="font-body-sm text-[11px] text-secondary"
                             >Falta acreditar CBU</span
                           >
                         </div>
                       </td>
                       <td
-                        class="p-space-sm pr-space-md text-center"
-                        onclick="event.stopPropagation()"
+                        className="p-space-sm pr-space-md text-center"
+                        onClick="event.stopPropagation()"
                       >
-                        <div class="flex items-center justify-center gap-1">
+                        <div className="flex items-center justify-center gap-1">
                           <button
-                            class="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface"
-                            onclick="
+                            className="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface"
+                            onClick="
                               alert(
                                 'Generando presupuesto / proforma #ZL-89208...',
                               )
                             "
                             title="Imprimir comprobante preliminar"
                           >
-                            <span class="material-symbols-outlined text-[18px]"
+                            <span
+                              className="material-symbols-outlined text-[18px]"
                               >print</span
                             >
                           </button>
                           <button
-                            class="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface"
-                            onclick="selectOrder('ZL-89208')"
+                            className="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface"
+                            onClick="selectOrder('ZL-89208')"
                             title="Ver detalle"
                           >
-                            <span class="material-symbols-outlined text-[18px]"
+                            <span
+                              className="material-symbols-outlined text-[18px]"
                               >visibility</span
                             >
                           </button>
                           <button
-                            class="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-tertiary"
-                            onclick="notifyClient('Estudio Arq.', 'ZL-89208')"
+                            className="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-tertiary"
+                            onClick="notifyClient('Estudio Arq.', 'ZL-89208')"
                             title="Recordatorio por WhatsApp"
                           >
-                            <span class="material-symbols-outlined text-[18px]"
+                            <span
+                              className="material-symbols-outlined text-[18px]"
                               >send</span
                             >
                           </button>
@@ -1060,127 +823,139 @@
                       </td>
                     </tr>
                     <tr
-                      class="hover:bg-surface-container-low transition-colors cursor-pointer"
-                      onclick="selectOrder('ZL-89205')"
+                      className="hover:bg-surface-container-low transition-colors cursor-pointer"
+                      onClick="selectOrder('ZL-89205')"
                     >
-                      <td class="p-space-sm pl-space-md">
-                        <div class="flex flex-col">
+                      <td className="p-space-sm pl-space-md">
+                        <div className="flex flex-col">
                           <span
-                            class="font-label-md text-label-md font-bold text-on-surface"
+                            className="font-label-md text-label-md font-bold text-on-surface"
                             >#ZL-89205</span
                           >
-                          <span class="font-body-sm text-[11px] text-secondary"
+                          <span
+                            className="font-body-sm text-[11px] text-secondary"
                             >Ayer, 18:02 hs</span
                           >
                         </div>
                       </td>
-                      <td class="p-space-sm">
-                        <div class="flex flex-col">
+                      <td className="p-space-sm">
+                        <div className="flex flex-col">
                           <span
-                            class="font-label-md text-label-md text-on-surface font-bold"
+                            className="font-label-md text-label-md text-on-surface font-bold"
                             >Lucas Benítez</span
                           >
-                          <span class="font-body-sm text-[11px] text-secondary"
+                          <span
+                            className="font-body-sm text-[11px] text-secondary"
                             >DNI 41.502.933</span
                           >
                           <a
-                            class="flex items-center gap-1 font-label-sm text-[11px] text-tertiary font-bold hover:text-primary mt-0.5"
+                            className="flex items-center gap-1 font-label-sm text-[11px] text-tertiary font-bold hover:text-primary mt-0.5"
                             href="https://wa.me/5491168491029"
-                            onclick="event.stopPropagation()"
+                            onClick="event.stopPropagation()"
                             target="_blank"
                           >
-                            <span class="material-symbols-outlined text-[14px]"
+                            <span
+                              className="material-symbols-outlined text-[14px]"
                               >chat</span
                             >
                             <span>+54 9 11 6849-1029</span>
                           </a>
                         </div>
                       </td>
-                      <td class="p-space-sm max-w-[200px]">
-                        <div class="flex flex-col">
+                      <td className="p-space-sm max-w-[200px]">
+                        <div className="flex flex-col">
                           <span
-                            class="font-label-sm text-label-sm text-on-surface font-bold uppercase truncate"
+                            className="font-label-sm text-label-sm text-on-surface font-bold uppercase truncate"
                             >Placa de Video RTX 4060 8GB ASUS Dual OC</span
                           >
-                          <span class="font-body-sm text-[11px] text-secondary"
+                          <span
+                            className="font-body-sm text-[11px] text-secondary"
                             >Fuente Seasonic 650W Bronze</span
                           >
                         </div>
                       </td>
-                      <td class="p-space-sm">
-                        <div class="flex flex-col gap-0.5">
+                      <td className="p-space-sm">
+                        <div className="flex flex-col gap-0.5">
                           <span
-                            class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface font-semibold"
+                            className="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface font-semibold"
                           >
                             <span
-                              class="material-symbols-outlined text-[16px] text-tertiary"
+                              className="material-symbols-outlined text-[16px] text-tertiary"
                               >inventory</span
                             >
                             Andreani Entregado
                           </span>
                           <span
-                            class="font-body-sm text-[11px] text-secondary font-mono"
+                            className="font-body-sm text-[11px] text-secondary font-mono"
                             >Guía: #AD-83910248</span
                           >
-                          <span class="font-body-sm text-[10px] text-secondary"
+                          <span
+                            className="font-body-sm text-[10px] text-secondary"
                             >Mendoza Capital</span
                           >
                         </div>
                       </td>
-                      <td class="p-space-sm text-right">
-                        <div class="flex flex-col items-end">
+                      <td className="p-space-sm text-right">
+                        <div className="flex flex-col items-end">
                           <span
-                            class="font-label-md text-label-md font-bold text-on-surface"
+                            className="font-label-md text-label-md font-bold text-on-surface"
                             >$512.900 ARS</span
                           >
                           <span
-                            class="font-body-sm text-[11px] text-tertiary font-semibold"
+                            className="font-body-sm text-[11px] text-tertiary font-semibold"
                             >Factura B Emitida</span
                           >
-                          <span class="font-body-sm text-[10px] text-secondary"
+                          <span
+                            className="font-body-sm text-[10px] text-secondary"
                             >Mercado Pago / Débito</span
                           >
                         </div>
                       </td>
-                      <td class="p-space-sm" onclick="event.stopPropagation()">
+                      <td
+                        className="p-space-sm"
+                        onClick="event.stopPropagation()"
+                      >
                         <span
-                          class="inline-flex items-center gap-1 px-2 py-1 bg-tertiary text-on-tertiary font-label-sm text-label-sm font-bold"
+                          className="inline-flex items-center gap-1 px-2 py-1 bg-tertiary text-on-tertiary font-label-sm text-label-sm font-bold"
                         >
-                          <span class="material-symbols-outlined text-[14px]"
+                          <span
+                            className="material-symbols-outlined text-[14px]"
                             >done_all</span
                           >
                           Entregado Conforme
                         </span>
                         <div
-                          class="mt-1 font-body-sm text-[10px] text-secondary"
+                          className="mt-1 font-body-sm text-[10px] text-secondary"
                         >
                           Recibió: L. Benítez (Titular)
                         </div>
                       </td>
                       <td
-                        class="p-space-sm pr-space-md text-center"
-                        onclick="event.stopPropagation()"
+                        className="p-space-sm pr-space-md text-center"
+                        onClick="event.stopPropagation()"
                       >
-                        <div class="flex items-center justify-center gap-1">
+                        <div className="flex items-center justify-center gap-1">
                           <button
-                            class="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface"
-                            onclick="
+                            className="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface"
+                            onClick="
                               alert(
                                 'Descargando duplicado Factura B #0004-00019284...',
                               )
                             "
                             title="Reimprimir Factura B"
                           >
-                            <span class="material-symbols-outlined text-[18px]"
+                            <span
+                              className="material-symbols-outlined text-[18px]"
                               >receipt</span
                             >
                           </button>
                           <button
-                            class="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface"
-                            onclick="selectOrder('ZL-89205')"
+                            className="p-1.5 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface"
+                            onClick="selectOrder('ZL-89205')"
                             title="Ver detalle"
                           >
-                            <span class="material-symbols-outlined text-[18px]"
+                            <span
+                              className="material-symbols-outlined text-[18px]"
                               >visibility</span
                             >
                           </button>
@@ -1191,35 +966,35 @@
                 </table>
               </div>
               <div
-                class="p-space-md bg-surface-container-lowest border-t border-surface-variant flex items-center justify-between"
+                className="p-space-md bg-surface-container-lowest border-t border-surface-variant flex items-center justify-between"
               >
-                <span class="font-body-sm text-body-sm text-secondary"
+                <span className="font-body-sm text-body-sm text-secondary"
                   >Mostrando 4 de 142 órdenes registradas</span
                 >
-                <div class="flex items-center gap-1">
+                <div className="flex items-center gap-1">
                   <button
-                    class="px-space-sm py-1 border border-surface-variant bg-surface-container-low text-secondary font-label-sm text-label-sm disabled:opacity-50"
+                    className="px-space-sm py-1 border border-surface-variant bg-surface-container-low text-secondary font-label-sm text-label-sm disabled:opacity-50"
                     disabled=""
                   >
                     Anterior
                   </button>
                   <button
-                    class="px-space-sm py-1 border border-primary bg-primary text-on-primary font-label-sm text-label-sm font-bold"
+                    className="px-space-sm py-1 border border-primary bg-primary text-on-primary font-label-sm text-label-sm font-bold"
                   >
                     1
                   </button>
                   <button
-                    class="px-space-sm py-1 border border-surface-variant bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-highest"
+                    className="px-space-sm py-1 border border-surface-variant bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-highest"
                   >
                     2
                   </button>
                   <button
-                    class="px-space-sm py-1 border border-surface-variant bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-highest"
+                    className="px-space-sm py-1 border border-surface-variant bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-highest"
                   >
                     3
                   </button>
                   <button
-                    class="px-space-sm py-1 border border-surface-variant bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-highest"
+                    className="px-space-sm py-1 border border-surface-variant bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-highest"
                   >
                     Siguiente
                   </button>
@@ -1227,255 +1002,255 @@
               </div>
             </div>
             <div
-              class="xl:col-span-4 flex flex-col bg-surface-container-lowest border border-surface-variant"
+              className="xl:col-span-4 flex flex-col bg-surface-container-lowest border border-surface-variant"
             >
               <div
-                class="p-space-md bg-surface-container border-b border-surface-variant flex items-center justify-between"
+                className="p-space-md bg-surface-container border-b border-surface-variant flex items-center justify-between"
               >
-                <div class="flex items-center gap-2">
+                <div className="flex items-center gap-2">
                   <span
-                    class="font-headline-sm text-headline-sm font-bold text-on-surface"
+                    className="font-headline-sm text-headline-sm font-bold text-on-surface"
                     >Detalle de Orden</span
                   >
                   <span
-                    class="px-2 py-0.5 bg-primary text-on-primary font-label-sm text-label-sm font-bold"
+                    className="px-2 py-0.5 bg-primary text-on-primary font-label-sm text-label-sm font-bold"
                     id="detailBadgeId"
                     >#ZL-89210</span
                   >
                 </div>
                 <span
-                  class="font-label-sm text-label-sm text-tertiary-container font-bold uppercase flex items-center gap-1"
+                  className="font-label-sm text-label-sm text-tertiary-container font-bold uppercase flex items-center gap-1"
                 >
                   <span
-                    class="w-2 h-2 rounded-full bg-tertiary-container"
+                    className="w-2 h-2 rounded-full bg-tertiary-container"
                   ></span>
                   Banco Activo
                 </span>
               </div>
-              <div class="p-space-md flex flex-col gap-space-md">
+              <div className="p-space-md flex flex-col gap-space-md">
                 <div
-                  class="flex flex-col gap-2 p-space-sm bg-surface-container-low border border-surface-variant"
+                  className="flex flex-col gap-2 p-space-sm bg-surface-container-low border border-surface-variant"
                 >
-                  <div class="flex justify-between items-start">
-                    <div class="flex flex-col">
+                  <div className="flex justify-between items-start">
+                    <div className="flex flex-col">
                       <span
-                        class="font-label-sm text-label-sm text-secondary uppercase font-bold"
+                        className="font-label-sm text-label-sm text-secondary uppercase font-bold"
                         >Cliente Comprador</span
                       >
                       <span
-                        class="font-label-md text-label-md text-on-surface font-bold"
+                        className="font-label-md text-label-md text-on-surface font-bold"
                         >Federico Valenzuela</span
                       >
-                      <span class="font-body-sm text-[12px] text-secondary"
+                      <span className="font-body-sm text-[12px] text-secondary"
                         >fede.valenzuela@gmail.com</span
                       >
-                      <span class="font-body-sm text-[12px] text-secondary"
+                      <span className="font-body-sm text-[12px] text-secondary"
                         >CUIT: 20-38491024-9 (Responsable Inscripto)</span
                       >
                     </div>
                     <button
-                      class="px-2 py-1 bg-surface-container border border-surface-variant font-label-sm text-[11px] text-tertiary font-bold hover:bg-surface-container-highest flex items-center gap-1"
-                      onclick="notifyClient('Federico Valenzuela', 'ZL-89210')"
+                      className="px-2 py-1 bg-surface-container border border-surface-variant font-label-sm text-[11px] text-tertiary font-bold hover:bg-surface-container-highest flex items-center gap-1"
+                      onClick="notifyClient('Federico Valenzuela', 'ZL-89210')"
                     >
-                      <span class="material-symbols-outlined text-[14px]"
+                      <span className="material-symbols-outlined text-[14px]"
                         >chat</span
                       >
                       WhatsApp
                     </button>
                   </div>
                   <div
-                    class="border-t border-surface-variant pt-2 flex flex-col gap-1"
+                    className="border-t border-surface-variant pt-2 flex flex-col gap-1"
                   >
                     <span
-                      class="font-label-sm text-[11px] text-secondary uppercase font-bold"
+                      className="font-label-sm text-[11px] text-secondary uppercase font-bold"
                       >Destino de Entrega</span
                     >
                     <span
-                      class="font-body-sm text-body-sm text-on-surface font-semibold"
+                      className="font-body-sm text-body-sm text-on-surface font-semibold"
                       >Av. Colón 1450, Piso 4 B - Nueva Córdoba, Córdoba (CP
                       5000)</span
                     >
                     <div
-                      class="flex items-center justify-between text-[11px] font-body-sm text-secondary"
+                      className="flex items-center justify-between text-[11px] font-body-sm text-secondary"
                     >
                       <span>Transporte: Andreani Pack Estándar</span>
-                      <span class="font-mono font-bold text-on-surface"
+                      <span className="font-mono font-bold text-on-surface"
                         >Guía #AD-84019230</span
                       >
                     </div>
                   </div>
                 </div>
                 <div
-                  class="flex flex-col gap-2 p-space-sm bg-surface-container-low border border-surface-variant"
+                  className="flex flex-col gap-2 p-space-sm bg-surface-container-low border border-surface-variant"
                 >
-                  <div class="flex items-center justify-between">
+                  <div className="flex items-center justify-between">
                     <span
-                      class="font-label-sm text-label-sm text-secondary uppercase font-bold"
+                      className="font-label-sm text-label-sm text-secondary uppercase font-bold"
                       >Pago &amp; Comprobante Bancario</span
                     >
                     <span
-                      class="px-2 py-0.5 bg-tertiary text-on-tertiary font-label-sm text-[10px] font-bold uppercase"
+                      className="px-2 py-0.5 bg-tertiary text-on-tertiary font-label-sm text-[10px] font-bold uppercase"
                       >Verificado</span
                     >
                   </div>
-                  <div class="flex items-center justify-between">
-                    <span class="font-body-sm text-body-sm text-on-surface"
+                  <div className="flex items-center justify-between">
+                    <span className="font-body-sm text-body-sm text-on-surface"
                       >Total Liquidado:</span
                     >
                     <span
-                      class="font-headline-sm text-headline-sm font-bold text-primary"
+                      className="font-headline-sm text-headline-sm font-bold text-primary"
                       >$2.018.742 ARS</span
                     >
                   </div>
                   <div
-                    class="flex items-center justify-between text-body-sm text-[11px] text-secondary"
+                    className="flex items-center justify-between text-body-sm text-[11px] text-secondary"
                   >
                     <span>Método: Transferencia Inmediata Banco Galicia</span>
                     <span>Ref: #GLX-9938102</span>
                   </div>
-                  <div class="mt-1 flex items-center gap-2">
+                  <div className="mt-1 flex items-center gap-2">
                     <button
-                      class="flex-1 py-1.5 bg-surface-container border border-surface-variant text-on-surface font-label-sm text-[11px] font-bold hover:bg-surface-container-highest flex items-center justify-center gap-1"
-                      onclick="
+                      className="flex-1 py-1.5 bg-surface-container border border-surface-variant text-on-surface font-label-sm text-[11px] font-bold hover:bg-surface-container-highest flex items-center justify-center gap-1"
+                      onClick="
                         alert(
                           'Abriendo comprobante bancario PDF (Adjunto: comprobante_transferencia_89210.pdf)...',
                         )
                       "
                     >
-                      <span class="material-symbols-outlined text-[14px]"
+                      <span className="material-symbols-outlined text-[14px]"
                         >attach_file</span
                       >
                       Ver Comprobante CBU
                     </button>
                     <button
-                      class="flex-1 py-1.5 bg-surface-container border border-surface-variant text-on-surface font-label-sm text-[11px] font-bold hover:bg-surface-container-highest flex items-center justify-center gap-1"
-                      onclick="
+                      className="flex-1 py-1.5 bg-surface-container border border-surface-variant text-on-surface font-label-sm text-[11px] font-bold hover:bg-surface-container-highest flex items-center justify-center gap-1"
+                      onClick="
                         alert(
                           'Abriendo constancia electrónica de Factura A AFIP CAE 7491028401923...',
                         )
                       "
                     >
-                      <span class="material-symbols-outlined text-[14px]"
+                      <span className="material-symbols-outlined text-[14px]"
                         >receipt_long</span
                       >
                       Factura A #0004-1849
                     </button>
                   </div>
                 </div>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center justify-between">
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center justify-between">
                     <span
-                      class="font-label-sm text-label-sm text-secondary uppercase font-bold"
+                      className="font-label-sm text-label-sm text-secondary uppercase font-bold"
                       >Números de Serie Escaneados (Garantía RMA)</span
                     >
                     <button
-                      class="font-label-sm text-[11px] text-primary font-bold hover:text-primary"
-                      onclick="scanBarcode()"
+                      className="font-label-sm text-[11px] text-primary font-bold hover:text-primary"
+                      onClick="scanBarcode()"
                     >
                       + Escanear S/N
                     </button>
                   </div>
                   <div
-                    class="flex flex-col divide-y divide-surface-variant border border-surface-variant bg-surface-container-lowest"
+                    className="flex flex-col divide-y divide-surface-variant border border-surface-variant bg-surface-container-lowest"
                   >
-                    <div class="p-2 flex items-center justify-between">
-                      <div class="flex flex-col">
+                    <div className="p-2 flex items-center justify-between">
+                      <div className="flex flex-col">
                         <span
-                          class="font-label-sm text-[11px] text-on-surface font-bold"
+                          className="font-label-sm text-[11px] text-on-surface font-bold"
                           >AMD Ryzen 7 7800X3D Box</span
                         >
-                        <span class="font-mono text-[10px] text-secondary"
+                        <span className="font-mono text-[10px] text-secondary"
                           >SN: 9JA0491840291-AM5</span
                         >
                       </div>
                       <span
-                        class="material-symbols-outlined text-[16px] text-tertiary"
+                        className="material-symbols-outlined text-[16px] text-tertiary"
                         >check_circle</span
                       >
                     </div>
-                    <div class="p-2 flex items-center justify-between">
-                      <div class="flex flex-col">
+                    <div className="p-2 flex items-center justify-between">
+                      <div className="flex flex-col">
                         <span
-                          class="font-label-sm text-[11px] text-on-surface font-bold"
+                          className="font-label-sm text-[11px] text-on-surface font-bold"
                           >ASUS TUF RTX 4070 Ti Super 16GB</span
                         >
-                        <span class="font-mono text-[10px] text-secondary"
+                        <span className="font-mono text-[10px] text-secondary"
                           >SN: M80CY194819024-VN</span
                         >
                       </div>
                       <span
-                        class="material-symbols-outlined text-[16px] text-tertiary"
+                        className="material-symbols-outlined text-[16px] text-tertiary"
                         >check_circle</span
                       >
                     </div>
-                    <div class="p-2 flex items-center justify-between">
-                      <div class="flex flex-col">
+                    <div className="p-2 flex items-center justify-between">
+                      <div className="flex flex-col">
                         <span
-                          class="font-label-sm text-[11px] text-on-surface font-bold"
+                          className="font-label-sm text-[11px] text-on-surface font-bold"
                           >Gigabyte B650E AORUS ELITE X AX</span
                         >
-                        <span class="font-mono text-[10px] text-secondary"
+                        <span className="font-mono text-[10px] text-secondary"
                           >SN: SN234900192834</span
                         >
                       </div>
                       <span
-                        class="material-symbols-outlined text-[16px] text-tertiary"
+                        className="material-symbols-outlined text-[16px] text-tertiary"
                         >check_circle</span
                       >
                     </div>
-                    <div class="p-2 flex items-center justify-between">
-                      <div class="flex flex-col">
+                    <div className="p-2 flex items-center justify-between">
+                      <div className="flex flex-col">
                         <span
-                          class="font-label-sm text-[11px] text-on-surface font-bold"
+                          className="font-label-sm text-[11px] text-on-surface font-bold"
                           >Kingston Fury Renegade 32GB (2x16)</span
                         >
-                        <span class="font-mono text-[10px] text-secondary"
+                        <span className="font-mono text-[10px] text-secondary"
                           >SN: KF560C32-32-KIT2</span
                         >
                       </div>
                       <span
-                        class="material-symbols-outlined text-[16px] text-tertiary"
+                        className="material-symbols-outlined text-[16px] text-tertiary"
                         >check_circle</span
                       >
                     </div>
-                    <div class="p-2 flex items-center justify-between">
-                      <div class="flex flex-col">
+                    <div className="p-2 flex items-center justify-between">
+                      <div className="flex flex-col">
                         <span
-                          class="font-label-sm text-[11px] text-on-surface font-bold"
+                          className="font-label-sm text-[11px] text-on-surface font-bold"
                           >Fuente Corsair RM850e 80+ Gold ATX 3.0</span
                         >
-                        <span class="font-mono text-[10px] text-secondary"
+                        <span className="font-mono text-[10px] text-secondary"
                           >SN: CP-9020263-AR</span
                         >
                       </div>
                       <span
-                        class="material-symbols-outlined text-[16px] text-tertiary"
+                        className="material-symbols-outlined text-[16px] text-tertiary"
                         >check_circle</span
                       >
                     </div>
                   </div>
                 </div>
                 <div
-                  class="flex flex-col gap-2 p-space-sm bg-surface-container-low border border-surface-variant"
+                  className="flex flex-col gap-2 p-space-sm bg-surface-container-low border border-surface-variant"
                 >
-                  <div class="flex items-center justify-between">
+                  <div className="flex items-center justify-between">
                     <span
-                      class="font-label-sm text-label-sm text-secondary uppercase font-bold"
+                      className="font-label-sm text-label-sm text-secondary uppercase font-bold"
                       >Checklist de Taller &amp; Ensamble</span
                     >
                     <span
-                      class="font-label-sm text-[11px] text-tertiary font-bold"
+                      className="font-label-sm text-[11px] text-tertiary font-bold"
                       >4 / 4 Completados</span
                     >
                   </div>
-                  <div class="flex flex-col gap-1.5">
+                  <div className="flex flex-col gap-1.5">
                     <label
-                      class="flex items-center gap-2 text-body-sm text-[12px] text-on-surface cursor-pointer"
+                      className="flex items-center gap-2 text-body-sm text-[12px] text-on-surface cursor-pointer"
                     >
                       <input
                         checked=""
-                        class="w-4 h-4 accent-primary"
-                        onchange="updateChecklist(this)"
+                        className="w-4 h-4 accent-primary"
+                        onChange="updateChecklist(this)"
                         type="checkbox"
                       />
                       <span
@@ -1484,12 +1259,12 @@
                       >
                     </label>
                     <label
-                      class="flex items-center gap-2 text-body-sm text-[12px] text-on-surface cursor-pointer"
+                      className="flex items-center gap-2 text-body-sm text-[12px] text-on-surface cursor-pointer"
                     >
                       <input
                         checked=""
-                        class="w-4 h-4 accent-primary"
-                        onchange="updateChecklist(this)"
+                        className="w-4 h-4 accent-primary"
+                        onChange="updateChecklist(this)"
                         type="checkbox"
                       />
                       <span
@@ -1497,12 +1272,12 @@
                       >
                     </label>
                     <label
-                      class="flex items-center gap-2 text-body-sm text-[12px] text-on-surface cursor-pointer"
+                      className="flex items-center gap-2 text-body-sm text-[12px] text-on-surface cursor-pointer"
                     >
                       <input
                         checked=""
-                        class="w-4 h-4 accent-primary"
-                        onchange="updateChecklist(this)"
+                        className="w-4 h-4 accent-primary"
+                        onChange="updateChecklist(this)"
                         type="checkbox"
                       />
                       <span
@@ -1511,12 +1286,12 @@
                       >
                     </label>
                     <label
-                      class="flex items-center gap-2 text-body-sm text-[12px] text-on-surface cursor-pointer"
+                      className="flex items-center gap-2 text-body-sm text-[12px] text-on-surface cursor-pointer"
                     >
                       <input
                         checked=""
-                        class="w-4 h-4 accent-primary"
-                        onchange="updateChecklist(this)"
+                        className="w-4 h-4 accent-primary"
+                        onChange="updateChecklist(this)"
                         type="checkbox"
                       />
                       <span
@@ -1526,21 +1301,21 @@
                     </label>
                   </div>
                   <div
-                    class="mt-2 p-2 bg-surface-container-lowest border border-surface-variant flex items-center justify-between"
+                    className="mt-2 p-2 bg-surface-container-lowest border border-surface-variant flex items-center justify-between"
                   >
-                    <div class="flex items-center gap-2">
+                    <div className="flex items-center gap-2">
                       <span
-                        class="material-symbols-outlined text-[18px] text-tertiary"
+                        className="material-symbols-outlined text-[18px] text-tertiary"
                         >verified</span
                       >
                       <span
-                        class="font-label-sm text-[11px] text-on-surface font-semibold"
+                        className="font-label-sm text-[11px] text-on-surface font-semibold"
                         >Informe FurMark: Max GPU 64°C / Hotspot 76°C</span
                       >
                     </div>
                     <button
-                      class="font-label-sm text-[10px] text-secondary hover:text-on-surface underline"
-                      onclick="
+                      className="font-label-sm text-[10px] text-secondary hover:text-on-surface underline"
+                      onClick="
                         alert(
                           'Abriendo log completo de temperaturas HWiNFO64...',
                         )
@@ -1551,26 +1326,26 @@
                   </div>
                 </div>
                 <div
-                  class="flex flex-col gap-2 pt-2 border-t border-surface-variant"
+                  className="flex flex-col gap-2 pt-2 border-t border-surface-variant"
                 >
                   <button
-                    class="w-full py-2.5 bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-bold uppercase transition-colors flex items-center justify-center gap-2"
-                    onclick="printShippingLabel('ZL-89210')"
+                    className="w-full py-2.5 bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-bold uppercase transition-colors flex items-center justify-center gap-2"
+                    onClick="printShippingLabel('ZL-89210')"
                   >
-                    <span class="material-symbols-outlined text-[20px]"
+                    <span className="material-symbols-outlined text-[20px]"
                       >local_shipping</span
                     >
                     <span>Imprimir Etiqueta Térmica Andreani</span>
                   </button>
                   <button
-                    class="w-full py-2 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-2"
-                    onclick="
+                    className="w-full py-2 bg-surface-container border border-surface-variant hover:bg-surface-container-highest text-on-surface font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-2"
+                    onClick="
                       alert(
                         'Enviando correo automático al comprador con números de serie y garantía digital...',
                       )
                     "
                   >
-                    <span class="material-symbols-outlined text-[18px]"
+                    <span className="material-symbols-outlined text-[18px]"
                       >mail</span
                     >
                     <span>Enviar Certificado de Garantía por Mail</span>

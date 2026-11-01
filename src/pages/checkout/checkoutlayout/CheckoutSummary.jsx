@@ -93,9 +93,9 @@ function CheckoutSummary() {
                       className="flex items-start gap-space-sm p-space-sm border border-surface-variant bg-surface-container-low hover:border-on-surface cursor-pointer rounded-DEFAULT transition-colors"
                     >
                       <input
-                        checked={deliveryOption.id === "1"}
+                        defaultChecked={deliveryOption.id === "1"}
                         className="mt-1 accent-primary"
-                        name={`shipping-method-${deliveryOption.id}`}
+                        name={`shipping-method`}
                         onChange={() => {}}
                         type="radio"
                         value="0"

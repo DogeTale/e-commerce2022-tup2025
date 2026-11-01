@@ -2,7 +2,7 @@ import CheckoutLayout from "./checkout/CheckoutLayout";
 import CompatibilityVerificationBanner from "./checkout/CompatibilityVerificationBanner";
 import StepperBuyProcess from "./checkout/StepperBuyProcess";
 
-function Checkout({ cart }) {
+function Checkout({ cart, loadCart }) {
   return (
     <>
       <link rel="icon" type="image/svg+xml" href="/cart-favicon.svg" />
@@ -25,7 +25,7 @@ function Checkout({ cart }) {
             {/* 
               LAYOUT PRINCIPAL (Grid de 2 columnas: 70% Izquierda / 30% Derecha)
             */}
-            <CheckoutLayout cart={cart} />
+            <CheckoutLayout cart={cart} loadCart={loadCart} />
           </div>
         </div>
       </main>

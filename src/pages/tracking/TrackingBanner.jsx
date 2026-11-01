@@ -23,13 +23,13 @@ function TrackingBanner() {
       <div className="shrink-0 w-full lg:w-auto">
         <label
           className="block font-label-sm text-label-sm uppercase text-secondary mb-1"
-          for="tracking-search"
+          htmlFor="tracking-search"
         >
           Consultar otro envío o RMA
         </label>
         <form
           className="flex items-center gap-0 w-full lg:w-80"
-          onsubmit="
+          onSubmit="
                   event.preventDefault();
                   alert('Cargando datos de la guía ingresada...');
                 "

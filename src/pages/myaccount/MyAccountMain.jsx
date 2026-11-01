@@ -8,9 +8,12 @@ function MyAccountMain() {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios.get("api/orders?expand=products").then((response) => {
+    const fetchOrdersData = async () => {
+      const response = await axios.get("api/orders?expand=products");
       setOrders(response.data);
-    });
+    };
+
+    fetchOrdersData();
   }, []);
 
   return (
@@ -216,7 +219,7 @@ function MyAccountMain() {
                       </span>
                       <Link
                         className="h-8 px-3 bg-surface border border-surface-variant font-label-sm text-label-sm text-on-surface hover:bg-surface-container flex items-center gap-1 font-bold"
-                        to="tracking"
+                        to={`tracking/${order.id}`}
                       >
                         <span className="material-symbols-outlined text-[14px]">
                           open_in_new

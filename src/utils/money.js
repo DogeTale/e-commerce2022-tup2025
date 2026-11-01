@@ -3,5 +3,5 @@ const formatToARGMoney = new Intl.NumberFormat("es-AR", {
 });
 
 export function formatMoney(amountCents) {
-  return `$${formatToARGMoney.format((amountCents * 100).toFixed(0))}`;
+  return `$${formatToARGMoney.format(amountCents)}`;
 }

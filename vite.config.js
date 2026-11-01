@@ -7,10 +7,14 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:3000",
+        target: "https://backend-ecommerce-lc.onrender.com",
+        changeOrigin: true,
+        secure: false, // <-- Esto evita que Node.js falle por problemas con el certificado SSL del backend
       },
       "/images": {
-        target: "http://localhost:3000/",
+        target: "https://backend-ecommerce-lc.onrender.com/",
+        changeOrigin: true,
+        secure: false, // <-- Lo mismo para las imágenes
       },
     },
   },

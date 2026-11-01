@@ -1,13 +1,14 @@
-import { Link, NavLink } from "react-router";
+import { NavLink } from "react-router";
 
 import ZeroLagLogo from "../assets/zerolag-logo.svg";
 
 function Header({ cart }) {
   let totalQuantity = 0;
 
-  cart.forEach((cartItem) => {
-    totalQuantity += cartItem.quantity;
-  });
+  if (cart.carrito_items)
+    cart.carrito_items.forEach((cartItem) => {
+      totalQuantity += cartItem.quantity;
+    });
 
   const isCartActive = ({ isActive }) =>
     isActive

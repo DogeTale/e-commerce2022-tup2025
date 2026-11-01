@@ -217,200 +217,18 @@
       };
     </script>
   </head>
-  <body class="bg-surface font-body-md text-on-surface antialiased">
-    <header
-      class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-surface-variant"
-    >
-      <div class="bg-surface-container border-b border-surface-variant">
+  <body className="bg-surface font-body-md text-on-surface antialiased">
+    <main className="w-full pt-[156px] bg-surface min-h-[calc(100vh-156px)]">
+      <div className="flex flex-col w-full">
         <div
-          class="max-w-[1320px] mx-auto px-margin-desktop h-8 flex items-center justify-between font-label-sm text-label-sm"
+          className="w-full bg-surface-container-low border-b border-surface-variant"
         >
-          <div class="flex items-center gap-space-xs text-secondary truncate">
-            <span class="material-symbols-outlined text-[14px] text-tertiary"
-              >local_shipping</span
-            ><span
-              >Envíos a todo el país vía Andreani y Correo Argentino | Hasta 12
-              cuotas sin interés | Showroom Belgrano, CABA</span
-            >
-          </div>
-          <div class="hidden lg:flex items-center gap-space-md text-secondary">
-            <a
-              class="hover:text-primary transition-colors"
-              data-path="about-support"
-              href="#"
-              >Soporte y Garantías RMA</a
-            ><span class="text-surface-variant">|</span
-            ><a
-              class="hover:text-primary transition-colors"
-              data-path="about-support"
-              href="#"
-              >Sobre Nosotros &amp; FAQ</a
-            ><span class="text-surface-variant">|</span
-            ><a
-              class="hover:text-primary transition-colors text-primary font-bold"
-              data-path="admin-dashboard"
-              href="#"
-              >Panel Admin</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="border-b border-surface-variant">
-        <div
-          class="max-w-[1320px] mx-auto px-margin-desktop h-20 flex items-center gap-space-lg"
-        >
-          <a
-            class="flex items-center gap-space-sm shrink-0 cursor-pointer"
-            data-path="home"
-            href="#"
-            ><img
-              alt="ZeroLag Logo"
-              class="h-8 w-auto object-contain"
-              src="https://lh3.googleusercontent.com/aida/AEtjO1Wt_esEXmOhcAK74Hfmge3dK9jQ86GoHsQBgEnZ_n3bvojcJ6yJlEuQ8ccu-7QscR76ggR_AYYtqC7JfTTw4gRM42_Rz-KLJzAWCMkz7doQ4YYkNsl7L8zev9pl6Mo-Ksk06bs5ccdbYKnSR6WFdYDdM50r2eHMuOZNM1fYFvh-1KU3ULAXNr2UOD_Q3m-RJlRvVOERXEDy1454rrmEDVMmD6NHGGtF3U3rjJTXsOf3-WAZ5qEQ-wy_s9U"
-            />
-            <div class="flex flex-col">
+          <div
+            className="max-w-[1320px] mx-auto px-margin-desktop py-space-sm flex flex-wrap items-center justify-between gap-space-sm font-label-sm text-label-sm text-secondary"
+          >
+            <div className="flex items-center gap-space-xs">
               <span
-                class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface leading-none"
-                >ZeroLag</span
-              ><span
-                class="font-label-sm text-[9px] uppercase tracking-widest text-primary font-bold leading-none mt-1"
-                >Hardware &amp; Gaming</span
-              >
-            </div></a
-          >
-          <div class="flex-1 max-w-2xl">
-            <form action="#" class="flex w-full" method="GET">
-              <input
-                class="w-full h-10 px-space-md bg-surface-container-low border border-surface-variant border-r-0 rounded-l-lg text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
-                placeholder="Buscar placas de video, procesadores, periféricos, notebooks..."
-                type="text"
-              /><button
-                class="h-10 px-space-lg bg-primary-container text-on-primary font-label-lg text-label-lg rounded-r-lg flex items-center gap-space-xs shrink-0 hover:bg-primary transition-colors"
-                type="submit"
-              >
-                <span class="material-symbols-outlined text-[18px]">search</span
-                ><span>Buscar</span>
-              </button>
-            </form>
-          </div>
-          <div
-            class="hidden xl:flex items-center gap-space-xs border border-surface-variant bg-surface-container-low px-space-sm py-1 rounded-lg shrink-0"
-          >
-            <span class="material-symbols-outlined text-tertiary text-[20px]"
-              >currency_exchange</span
-            >
-            <div class="flex flex-col">
-              <div class="flex items-center gap-1 font-label-sm text-label-sm">
-                <span class="text-secondary">USD BNA:</span
-                ><span class="font-bold text-on-surface">$1.085</span>
-              </div>
-              <span
-                class="text-[10px] leading-tight font-bold text-tertiary uppercase"
-                >Transferencia -15% OFF</span
-              >
-            </div>
-          </div>
-          <div class="flex items-center gap-space-md shrink-0 ml-auto">
-            <div class="flex items-center gap-space-sm">
-              <a
-                class="flex items-center gap-space-xs text-left group border border-surface-variant bg-surface-container-low px-space-sm h-10 rounded-lg hover:border-primary transition-colors"
-                data-path="auth"
-                href="#"
-                ><span
-                  class="material-symbols-outlined text-primary text-[20px]"
-                  >login</span
-                >
-                <div class="flex flex-col">
-                  <span
-                    class="font-label-sm text-[10px] text-secondary leading-tight"
-                    >Acceso</span
-                  ><span
-                    class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors leading-tight"
-                    >Iniciar Sesión</span
-                  >
-                </div></a
-              ><a
-                class="flex items-center gap-space-xs text-left group border border-surface-variant bg-surface-container-lowest px-space-sm h-10 rounded-lg hover:border-primary transition-colors"
-                data-path="profile"
-                href="#"
-                ><div
-                  class="w-7 h-7 rounded-full bg-primary flex items-center justify-center shrink-0"
-                >
-                  <span
-                    class="material-symbols-outlined text-on-primary text-[16px]"
-                    >person</span
-                  >
-                </div>
-                <div class="hidden md:flex flex-col">
-                  <span
-                    class="font-label-sm text-[10px] text-secondary leading-tight"
-                    >Mi Perfil</span
-                  ><span
-                    class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors leading-tight"
-                    >Garantías &amp; Compras</span
-                  >
-                </div></a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="bg-surface-container-lowest">
-        <div
-          class="max-w-[1320px] mx-auto px-margin-desktop h-11 flex items-center justify-between"
-        >
-          <nav
-            class="flex items-center gap-space-md overflow-x-auto h-full"
-            data-active-classes="text-primary font-bold border-b-2 border-primary"
-          >
-            <a
-              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
-              data-path="home"
-              href="#"
-              >Inicio &amp; Catálogo</a
-            ><a
-              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
-              data-path="profile"
-              href="#"
-              >Mi Cuenta</a
-            ><a
-              class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
-              data-path="about-support"
-              href="#"
-              >Sobre Nosotros &amp; Soporte</a
-            ><a
-              aria-current="page"
-              class="whitespace-nowrap h-full flex items-center transition-colors text-primary font-bold border-b-2 border-primary"
-              data-path="auth"
-              href="#"
-              >Acceso Usuarios</a
-            >
-          </nav>
-          <div
-            class="flex items-center pl-space-md shrink-0 border-l border-surface-variant h-6"
-          >
-            <a
-              class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors flex items-center gap-1 uppercase tracking-wider font-bold"
-              data-path="admin-dashboard"
-              href="#"
-              ><span class="material-symbols-outlined text-[16px] text-primary"
-                >settings</span
-              ><span>Panel Administrador</span></a
-            >
-          </div>
-        </div>
-      </div>
-    </header>
-    <main class="w-full pt-[156px] bg-surface min-h-[calc(100vh-156px)]">
-      <div class="flex flex-col w-full">
-        <div
-          class="w-full bg-surface-container-low border-b border-surface-variant"
-        >
-          <div
-            class="max-w-[1320px] mx-auto px-margin-desktop py-space-sm flex flex-wrap items-center justify-between gap-space-sm font-label-sm text-label-sm text-secondary"
-          >
-            <div class="flex items-center gap-space-xs">
-              <span class="material-symbols-outlined text-[16px] text-tertiary"
+                className="material-symbols-outlined text-[16px] text-tertiary"
                 >lock</span
               >
               <span
@@ -418,17 +236,18 @@
                 ID</span
               >
             </div>
-            <div class="flex items-center gap-space-md">
-              <span class="flex items-center gap-1">
-                <span class="material-symbols-outlined text-[15px] text-primary"
+            <div className="flex items-center gap-space-md">
+              <span className="flex items-center gap-1">
+                <span
+                  className="material-symbols-outlined text-[15px] text-primary"
                   >storefront</span
                 >
                 Showroom Belgrano: Av. Cabildo 2450
               </span>
-              <span class="hidden sm:inline text-surface-variant">|</span>
-              <span class="flex items-center gap-1">
+              <span className="hidden sm:inline text-surface-variant">|</span>
+              <span className="flex items-center gap-1">
                 <span
-                  class="material-symbols-outlined text-[15px] text-tertiary"
+                  className="material-symbols-outlined text-[15px] text-tertiary"
                   >check_circle</span
                 >
                 AFIP Factura A y B Electrónica
@@ -437,82 +256,84 @@
           </div>
         </div>
         <div
-          class="max-w-[1320px] mx-auto px-margin-desktop py-space-xl w-full"
+          className="max-w-[1320px] mx-auto px-margin-desktop py-space-xl w-full"
         >
           <div
-            class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start"
           >
             <div
-              class="lg:col-span-7 bg-surface-container-lowest border border-surface-variant rounded-lg p-space-lg sm:p-space-xl"
+              className="lg:col-span-7 bg-surface-container-lowest border border-surface-variant rounded-lg p-space-lg sm:p-space-xl"
             >
               <div
-                class="flex items-center justify-between border-b border-surface-variant pb-space-md mb-space-lg"
+                className="flex items-center justify-between border-b border-surface-variant pb-space-md mb-space-lg"
               >
                 <div>
                   <span
-                    class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-bold"
+                    className="font-label-sm text-label-sm text-primary uppercase tracking-wider font-bold"
                     >Portal Clientes</span
                   >
                   <h1
-                    class="font-headline-md text-headline-md text-on-surface mt-1"
+                    className="font-headline-md text-headline-md text-on-surface mt-1"
                   >
                     Acceso y Registro ZeroLag
                   </h1>
                 </div>
                 <span
-                  class="material-symbols-outlined text-secondary text-[28px]"
+                  className="material-symbols-outlined text-secondary text-[28px]"
                   >sports_esports</span
                 >
               </div>
               <div
-                class="grid grid-cols-2 gap-space-xs p-1 bg-surface-container rounded-lg border border-surface-variant mb-space-lg"
+                className="grid grid-cols-2 gap-space-xs p-1 bg-surface-container rounded-lg border border-surface-variant mb-space-lg"
               >
                 <button
-                  class="py-2 text-center font-label-lg text-label-lg rounded transition-colors bg-surface-container-lowest text-primary font-bold border border-surface-variant"
+                  className="py-2 text-center font-label-lg text-label-lg rounded transition-colors bg-surface-container-lowest text-primary font-bold border border-surface-variant"
                   id="tab-login-btn"
-                  onclick="switchAuthTab('login')"
+                  onClick="switchAuthTab('login')"
                   type="button"
                 >
                   Iniciar Sesión
                 </button>
                 <button
-                  class="py-2 text-center font-label-lg text-label-lg rounded transition-colors text-secondary hover:text-on-surface font-semibold"
+                  className="py-2 text-center font-label-lg text-label-lg rounded transition-colors text-secondary hover:text-on-surface font-semibold"
                   id="tab-register-btn"
-                  onclick="switchAuthTab('register')"
+                  onClick="switchAuthTab('register')"
                   type="button"
                 >
                   Crear Cuenta Nueva
                 </button>
               </div>
-              <div class="flex flex-col" id="form-login-pane">
-                <div class="mb-space-md">
-                  <h2 class="font-headline-sm text-headline-sm text-on-surface">
+              <div className="flex flex-col" id="form-login-pane">
+                <div className="mb-space-md">
+                  <h2
+                    className="font-headline-sm text-headline-sm text-on-surface"
+                  >
                     Bienvenido de vuelta
                   </h2>
-                  <p class="font-body-sm text-body-sm text-secondary mt-1">
+                  <p className="font-body-sm text-body-sm text-secondary mt-1">
                     Ingresá tus credenciales para administrar tus órdenes,
                     garantías RMA y presupuestos guardados.
                   </p>
                 </div>
                 <form
                   action="#"
-                  class="flex flex-col gap-space-md"
+                  className="flex flex-col gap-space-md"
                   method="POST"
-                  onsubmit="event.preventDefault()"
+                  onSubmit="event.preventDefault()"
                 >
-                  <div class="flex flex-col gap-1">
+                  <div className="flex flex-col gap-1">
                     <label
-                      class="font-label-md text-label-md text-on-surface"
-                      for="login-email"
+                      className="font-label-md text-label-md text-on-surface"
+                      htmlFor="login-email"
                       >Correo Electrónico</label
                     >
-                    <div class="relative flex items-center">
+                    <div className="relative flex items-center">
                       <span
-                        class="material-symbols-outlined absolute left-3 text-secondary text-[18px]"
+                        className="material-symbols-outlined absolute left-3 text-secondary text-[18px]"
                         >mail</span
                       >
                       <input
-                        class="w-full h-10 pl-10 pr-space-md bg-surface border border-surface-variant rounded text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
+                        className="w-full h-10 pl-10 pr-space-md bg-surface border border-surface-variant rounded text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
                         id="login-email"
                         placeholder="tu-usuario@dominio.com.ar"
                         required=""
@@ -520,26 +341,26 @@
                       />
                     </div>
                   </div>
-                  <div class="flex flex-col gap-1">
-                    <div class="flex items-center justify-between">
+                  <div className="flex flex-col gap-1">
+                    <div className="flex items-center justify-between">
                       <label
-                        class="font-label-md text-label-md text-on-surface"
-                        for="login-password"
+                        className="font-label-md text-label-md text-on-surface"
+                        htmlFor="login-password"
                         >Contraseña</label
                       >
                       <a
-                        class="font-label-sm text-label-sm text-primary hover:text-primary font-semibold"
+                        className="font-label-sm text-label-sm text-primary hover:text-primary font-semibold"
                         href="#"
                         >¿Olvidaste tu contraseña?</a
                       >
                     </div>
-                    <div class="relative flex items-center">
+                    <div className="relative flex items-center">
                       <span
-                        class="material-symbols-outlined absolute left-3 text-secondary text-[18px]"
+                        className="material-symbols-outlined absolute left-3 text-secondary text-[18px]"
                         >key</span
                       >
                       <input
-                        class="w-full h-10 pl-10 pr-10 bg-surface border border-surface-variant rounded text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
+                        className="w-full h-10 pl-10 pr-10 bg-surface border border-surface-variant rounded text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
                         id="login-password"
                         placeholder="••••••••••••"
                         required=""
@@ -547,64 +368,67 @@
                       />
                       <button
                         aria-label="Mostrar contraseña"
-                        class="absolute right-3 text-secondary hover:text-on-surface"
-                        onclick="
+                        className="absolute right-3 text-secondary hover:text-on-surface"
+                        onClick="
                           togglePasswordVisibility('login-password', this)
                         "
                         type="button"
                       >
-                        <span class="material-symbols-outlined text-[18px]"
+                        <span className="material-symbols-outlined text-[18px]"
                           >visibility</span
                         >
                       </button>
                     </div>
                   </div>
-                  <div class="flex items-center justify-between py-1">
+                  <div className="flex items-center justify-between py-1">
                     <label
-                      class="flex items-center gap-2 cursor-pointer select-none"
+                      className="flex items-center gap-2 cursor-pointer select-none"
                     >
                       <input
-                        class="w-4 h-4 rounded border-surface-variant accent-primary cursor-pointer"
+                        className="w-4 h-4 rounded border-surface-variant accent-primary cursor-pointer"
                         type="checkbox"
                       />
-                      <span class="font-body-sm text-body-sm text-on-surface"
+                      <span
+                        className="font-body-sm text-body-sm text-on-surface"
                         >Recordar sesión en este equipo</span
                       >
                     </label>
                     <span
-                      class="font-label-sm text-label-sm text-secondary hidden sm:inline"
+                      className="font-label-sm text-label-sm text-secondary hidden sm:inline"
                       >Protección reCAPTCHA</span
                     >
                   </div>
                   <button
-                    class="w-full h-11 bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-space-xs transition-colors tracking-wide font-bold"
+                    className="w-full h-11 bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-space-xs transition-colors tracking-wide font-bold"
                     type="submit"
                   >
-                    <span class="material-symbols-outlined text-[20px]"
+                    <span className="material-symbols-outlined text-[20px]"
                       >login</span
                     >
                     <span>INGRESAR A ZEROLAG</span>
                   </button>
                 </form>
-                <div class="relative my-space-lg">
-                  <div class="absolute inset-0 flex items-center">
-                    <div class="w-full border-t border-surface-variant"></div>
+                <div className="relative my-space-lg">
+                  <div className="absolute inset-0 flex items-center">
+                    <div
+                      className="w-full border-t border-surface-variant"
+                    ></div>
                   </div>
                   <div
-                    class="relative flex justify-center text-label-sm font-label-sm uppercase tracking-wider"
+                    className="relative flex justify-center text-label-sm font-label-sm uppercase tracking-wider"
                   >
                     <span
-                      class="bg-surface-container-lowest px-space-md text-secondary"
+                      className="bg-surface-container-lowest px-space-md text-secondary"
                       >O acceder directamente con</span
                     >
                   </div>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
                   <button
-                    class="h-10 px-space-sm bg-surface hover:bg-surface-container border border-surface-variant rounded flex items-center justify-center gap-2 font-label-md text-label-md text-on-surface transition-colors"
+                    className="h-10 px-space-sm bg-surface hover:bg-surface-container border border-surface-variant rounded flex items-center justify-center gap-2 font-label-md text-label-md text-on-surface transition-colors"
                     type="button"
                   >
-                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24">
                       <path
                         d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
                         fill="#4285F4"
@@ -625,66 +449,68 @@
                     <span>Google</span>
                   </button>
                   <button
-                    class="h-10 px-space-sm bg-surface hover:bg-surface-container border border-surface-variant rounded flex items-center justify-center gap-2 font-label-md text-label-md text-on-surface transition-colors"
+                    className="h-10 px-space-sm bg-surface hover:bg-surface-container border border-surface-variant rounded flex items-center justify-center gap-2 font-label-md text-label-md text-on-surface transition-colors"
                     type="button"
                   >
                     <span
-                      class="material-symbols-outlined text-[18px] text-on-surface"
+                      className="material-symbols-outlined text-[18px] text-on-surface"
                       >sports_esports</span
                     >
                     <span>Steam</span>
                   </button>
                   <button
-                    class="h-10 px-space-sm bg-surface hover:bg-surface-container border border-surface-variant rounded flex items-center justify-center gap-2 font-label-md text-label-md text-on-surface transition-colors"
+                    className="h-10 px-space-sm bg-surface hover:bg-surface-container border border-surface-variant rounded flex items-center justify-center gap-2 font-label-md text-label-md text-on-surface transition-colors"
                     type="button"
                   >
                     <span
-                      class="material-symbols-outlined text-[18px] text-[#5865F2]"
+                      className="material-symbols-outlined text-[18px] text-[#5865F2]"
                       >forum</span
                     >
                     <span>Discord</span>
                   </button>
                 </div>
               </div>
-              <div class="hidden flex-col" id="form-register-pane">
-                <div class="mb-space-md">
-                  <h2 class="font-headline-sm text-headline-sm text-on-surface">
+              <div className="hidden flex-col" id="form-register-pane">
+                <div className="mb-space-md">
+                  <h2
+                    className="font-headline-sm text-headline-sm text-on-surface"
+                  >
                     Registro de Usuario y Facturación
                   </h2>
-                  <p class="font-body-sm text-body-sm text-secondary mt-1">
+                  <p className="font-body-sm text-body-sm text-secondary mt-1">
                     Completá tus datos reales para habilitar compras con emisión
                     de comprobante legal AFIP y soporte RMA.
                   </p>
                 </div>
                 <form
                   action="#"
-                  class="flex flex-col gap-space-md"
+                  className="flex flex-col gap-space-md"
                   method="POST"
-                  onsubmit="event.preventDefault()"
+                  onSubmit="event.preventDefault()"
                 >
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
-                    <div class="flex flex-col gap-1">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                    <div className="flex flex-col gap-1">
                       <label
-                        class="font-label-md text-label-md text-on-surface"
-                        for="reg-name"
+                        className="font-label-md text-label-md text-on-surface"
+                        htmlFor="reg-name"
                         >Nombre y Apellido / Razón Social *</label
                       >
                       <input
-                        class="w-full h-10 px-space-md bg-surface border border-surface-variant rounded text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
+                        className="w-full h-10 px-space-md bg-surface border border-surface-variant rounded text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
                         id="reg-name"
                         placeholder="Ej: Lucas Martínez"
                         required=""
                         type="text"
                       />
                     </div>
-                    <div class="flex flex-col gap-1">
+                    <div className="flex flex-col gap-1">
                       <label
-                        class="font-label-md text-label-md text-on-surface"
-                        for="reg-tax-type"
+                        className="font-label-md text-label-md text-on-surface"
+                        htmlFor="reg-tax-type"
                         >Tipo de Facturación *</label
                       >
                       <select
-                        class="w-full h-10 px-space-md bg-surface border border-surface-variant rounded text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary-container cursor-pointer"
+                        className="w-full h-10 px-space-md bg-surface border border-surface-variant rounded text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary-container cursor-pointer"
                         id="reg-tax-type"
                       >
                         <option value="B">Consumidor Final (Factura B)</option>
@@ -695,37 +521,37 @@
                       </select>
                     </div>
                   </div>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
-                    <div class="flex flex-col gap-1">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                    <div className="flex flex-col gap-1">
                       <label
-                        class="font-label-md text-label-md text-on-surface"
-                        for="reg-tax-id"
+                        className="font-label-md text-label-md text-on-surface"
+                        htmlFor="reg-tax-id"
                         >DNI o CUIT (11 dígitos) *</label
                       >
                       <input
-                        class="w-full h-10 px-space-md bg-surface border border-surface-variant rounded text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
+                        className="w-full h-10 px-space-md bg-surface border border-surface-variant rounded text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
                         id="reg-tax-id"
                         placeholder="20-38495821-4"
                         required=""
                         type="text"
                       />
-                      <span class="font-label-sm text-[10px] text-secondary"
+                      <span className="font-label-sm text-[10px] text-secondary"
                         >Validación automática ante padrón AFIP / ARCA</span
                       >
                     </div>
-                    <div class="flex flex-col gap-1">
+                    <div className="flex flex-col gap-1">
                       <label
-                        class="font-label-md text-label-md text-on-surface"
-                        for="reg-phone"
+                        className="font-label-md text-label-md text-on-surface"
+                        htmlFor="reg-phone"
                         >Teléfono / WhatsApp *</label
                       >
-                      <div class="flex">
+                      <div className="flex">
                         <span
-                          class="h-10 px-2 bg-surface-container border border-surface-variant border-r-0 rounded-l flex items-center font-label-md text-secondary"
+                          className="h-10 px-2 bg-surface-container border border-surface-variant border-r-0 rounded-l flex items-center font-label-md text-secondary"
                           >+54 9</span
                         >
                         <input
-                          class="w-full h-10 px-space-md bg-surface border border-surface-variant rounded-r text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
+                          className="w-full h-10 px-space-md bg-surface border border-surface-variant rounded-r text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
                           id="reg-phone"
                           placeholder="11 5500-1234"
                           required=""
@@ -734,47 +560,47 @@
                       </div>
                     </div>
                   </div>
-                  <div class="flex flex-col gap-1">
+                  <div className="flex flex-col gap-1">
                     <label
-                      class="font-label-md text-label-md text-on-surface"
-                      for="reg-email"
+                      className="font-label-md text-label-md text-on-surface"
+                      htmlFor="reg-email"
                       >Correo Electrónico *</label
                     >
                     <input
-                      class="w-full h-10 px-space-md bg-surface border border-surface-variant rounded text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
+                      className="w-full h-10 px-space-md bg-surface border border-surface-variant rounded text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
                       id="reg-email"
                       placeholder="tu-email@gmail.com"
                       required=""
                       type="email"
                     />
-                    <span class="font-label-sm text-[10px] text-secondary"
+                    <span className="font-label-sm text-[10px] text-secondary"
                       >Enviaremos el comprobante de compra y los números de guía
                       Andreani a esta casilla.</span
                     >
                   </div>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
-                    <div class="flex flex-col gap-1">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                    <div className="flex flex-col gap-1">
                       <label
-                        class="font-label-md text-label-md text-on-surface"
-                        for="reg-pwd"
+                        className="font-label-md text-label-md text-on-surface"
+                        htmlFor="reg-pwd"
                         >Contraseña (Mín. 8 caracteres) *</label
                       >
                       <input
-                        class="w-full h-10 px-space-md bg-surface border border-surface-variant rounded text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
+                        className="w-full h-10 px-space-md bg-surface border border-surface-variant rounded text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
                         id="reg-pwd"
                         placeholder="••••••••••••"
                         required=""
                         type="password"
                       />
                     </div>
-                    <div class="flex flex-col gap-1">
+                    <div className="flex flex-col gap-1">
                       <label
-                        class="font-label-md text-label-md text-on-surface"
-                        for="reg-pwd-confirm"
+                        className="font-label-md text-label-md text-on-surface"
+                        htmlFor="reg-pwd-confirm"
                         >Confirmar Contraseña *</label
                       >
                       <input
-                        class="w-full h-10 px-space-md bg-surface border border-surface-variant rounded text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
+                        className="w-full h-10 px-space-md bg-surface border border-surface-variant rounded text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
                         id="reg-pwd-confirm"
                         placeholder="••••••••••••"
                         required=""
@@ -782,38 +608,42 @@
                       />
                     </div>
                   </div>
-                  <div class="flex flex-col gap-2 pt-1">
-                    <label class="flex items-start gap-2 cursor-pointer">
+                  <div className="flex flex-col gap-2 pt-1">
+                    <label className="flex items-start gap-2 cursor-pointer">
                       <input
-                        class="mt-1 w-4 h-4 rounded border-surface-variant accent-primary cursor-pointer shrink-0"
+                        className="mt-1 w-4 h-4 rounded border-surface-variant accent-primary cursor-pointer shrink-0"
                         required=""
                         type="checkbox"
                       />
-                      <span class="font-body-sm text-body-sm text-secondary">
+                      <span
+                        className="font-body-sm text-body-sm text-secondary"
+                      >
                         Acepto los
-                        <a class="text-primary underline" href="#"
+                        <a className="text-primary underline" href="#"
                           >Términos y Condiciones de Compra</a
                         >, políticas de garantía RMA oficial y tratamiento de
                         datos personales bajo Ley 25.326.
                       </span>
                     </label>
-                    <label class="flex items-start gap-2 cursor-pointer">
+                    <label className="flex items-start gap-2 cursor-pointer">
                       <input
                         checked=""
-                        class="mt-1 w-4 h-4 rounded border-surface-variant accent-primary cursor-pointer shrink-0"
+                        className="mt-1 w-4 h-4 rounded border-surface-variant accent-primary cursor-pointer shrink-0"
                         type="checkbox"
                       />
-                      <span class="font-body-sm text-body-sm text-secondary">
+                      <span
+                        className="font-body-sm text-body-sm text-secondary"
+                      >
                         Deseo recibir alertas de reingreso de GPUs, procesadores
                         y drops de precios especiales.
                       </span>
                     </label>
                   </div>
                   <button
-                    class="w-full h-11 bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-space-xs transition-colors tracking-wide font-bold mt-2"
+                    className="w-full h-11 bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-space-xs transition-colors tracking-wide font-bold mt-2"
                     type="submit"
                   >
-                    <span class="material-symbols-outlined text-[20px]"
+                    <span className="material-symbols-outlined text-[20px]"
                       >person_add</span
                     >
                     <span>CREAR MI CUENTA EN ZEROLAG</span>
@@ -821,83 +651,85 @@
                 </form>
               </div>
             </div>
-            <div class="lg:col-span-5 flex flex-col gap-space-md">
+            <div className="lg:col-span-5 flex flex-col gap-space-md">
               <div
-                class="bg-surface-container-lowest border border-surface-variant rounded-lg p-space-lg"
+                className="bg-surface-container-lowest border border-surface-variant rounded-lg p-space-lg"
               >
                 <div
-                  class="flex items-center gap-space-xs mb-space-md border-b border-surface-variant pb-space-sm"
+                  className="flex items-center gap-space-xs mb-space-md border-b border-surface-variant pb-space-sm"
                 >
                   <span
-                    class="material-symbols-outlined text-primary text-[22px]"
+                    className="material-symbols-outlined text-primary text-[22px]"
                     >verified_user</span
                   >
-                  <h3 class="font-headline-sm text-headline-sm text-on-surface">
+                  <h3
+                    className="font-headline-sm text-headline-sm text-on-surface"
+                  >
                     Beneficios de tu Cuenta ZeroLag
                   </h3>
                 </div>
-                <div class="flex flex-col gap-space-md">
+                <div className="flex flex-col gap-space-md">
                   <div
-                    class="flex items-start gap-space-sm p-space-sm bg-surface rounded border border-surface-variant"
+                    className="flex items-start gap-space-sm p-space-sm bg-surface rounded border border-surface-variant"
                   >
                     <div
-                      class="w-8 h-8 rounded bg-tertiary-container text-on-tertiary flex items-center justify-center shrink-0"
+                      className="w-8 h-8 rounded bg-tertiary-container text-on-tertiary flex items-center justify-center shrink-0"
                     >
-                      <span class="material-symbols-outlined text-[18px]"
+                      <span className="material-symbols-outlined text-[18px]"
                         >percent</span
                       >
                     </div>
-                    <div class="flex flex-col">
+                    <div className="flex flex-col">
                       <span
-                        class="font-label-lg text-label-lg text-on-surface font-bold"
+                        className="font-label-lg text-label-lg text-on-surface font-bold"
                         >15% OFF Primera Transferencia</span
                       >
                       <span
-                        class="font-body-sm text-body-sm text-secondary mt-0.5"
+                        className="font-body-sm text-body-sm text-secondary mt-0.5"
                         >Precio cash directo liquidado al tipo de cambio BNA sin
                         recargo bancario extra.</span
                       >
                     </div>
                   </div>
                   <div
-                    class="flex items-start gap-space-sm p-space-sm bg-surface rounded border border-surface-variant"
+                    className="flex items-start gap-space-sm p-space-sm bg-surface rounded border border-surface-variant"
                   >
                     <div
-                      class="w-8 h-8 rounded bg-surface-container text-primary flex items-center justify-center shrink-0 border border-surface-variant"
+                      className="w-8 h-8 rounded bg-surface-container text-primary flex items-center justify-center shrink-0 border border-surface-variant"
                     >
-                      <span class="material-symbols-outlined text-[18px]"
+                      <span className="material-symbols-outlined text-[18px]"
                         >build_circle</span
                       >
                     </div>
-                    <div class="flex flex-col">
+                    <div className="flex flex-col">
                       <span
-                        class="font-label-lg text-label-lg text-on-surface font-bold"
+                        className="font-label-lg text-label-lg text-on-surface font-bold"
                         >Seguimiento RMA y Garantías</span
                       >
                       <span
-                        class="font-body-sm text-body-sm text-secondary mt-0.5"
+                        className="font-body-sm text-body-sm text-secondary mt-0.5"
                         >Ticket único con número de serie del componente para
                         reemplazo directo en laboratorio técnico.</span
                       >
                     </div>
                   </div>
                   <div
-                    class="flex items-start gap-space-sm p-space-sm bg-surface rounded border border-surface-variant"
+                    className="flex items-start gap-space-sm p-space-sm bg-surface rounded border border-surface-variant"
                   >
                     <div
-                      class="w-8 h-8 rounded bg-surface-container text-on-surface flex items-center justify-center shrink-0 border border-surface-variant"
+                      className="w-8 h-8 rounded bg-surface-container text-on-surface flex items-center justify-center shrink-0 border border-surface-variant"
                     >
-                      <span class="material-symbols-outlined text-[18px]"
+                      <span className="material-symbols-outlined text-[18px]"
                         >memory</span
                       >
                     </div>
-                    <div class="flex flex-col">
+                    <div className="flex flex-col">
                       <span
-                        class="font-label-lg text-label-lg text-on-surface font-bold"
+                        className="font-label-lg text-label-lg text-on-surface font-bold"
                         >Historial de Compatibilidad</span
                       >
                       <span
-                        class="font-body-sm text-body-sm text-secondary mt-0.5"
+                        className="font-body-sm text-body-sm text-secondary mt-0.5"
                         >Guardá tus ensambles en el configurador y verificá
                         compatibilidad de socket, TDP y clearance de
                         gabinete.</span
@@ -907,65 +739,65 @@
                 </div>
               </div>
               <div
-                class="bg-surface-container-low border border-surface-variant rounded-lg p-space-md flex flex-col gap-space-sm"
+                className="bg-surface-container-low border border-surface-variant rounded-lg p-space-md flex flex-col gap-space-sm"
               >
-                <div class="flex items-center justify-between">
+                <div className="flex items-center justify-between">
                   <span
-                    class="font-label-sm text-label-sm uppercase font-bold text-secondary tracking-wider"
+                    className="font-label-sm text-label-sm uppercase font-bold text-secondary tracking-wider"
                     >Atención Presencial &amp; Retiros</span
                   >
                   <span
-                    class="font-label-sm text-tertiary font-bold flex items-center gap-1"
+                    className="font-label-sm text-tertiary font-bold flex items-center gap-1"
                   >
-                    <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                    <span className="w-2 h-2 rounded-full bg-tertiary"></span>
                     Showroom Abierto
                   </span>
                 </div>
                 <div
-                  class="flex items-start gap-space-sm text-body-sm font-body-sm text-on-surface"
+                  className="flex items-start gap-space-sm text-body-sm font-body-sm text-on-surface"
                 >
                   <span
-                    class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5"
+                    className="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5"
                     >location_on</span
                   >
-                  <div class="flex flex-col">
-                    <span class="font-bold">Showroom Belgrano, CABA</span>
-                    <span class="text-secondary"
+                  <div className="flex flex-col">
+                    <span className="font-bold">Showroom Belgrano, CABA</span>
+                    <span className="text-secondary"
                       >Av. Cabildo 2450, Piso 3 - Oficinas ZeroLag</span
                     >
-                    <span class="text-secondary text-[11px] mt-1"
+                    <span className="text-secondary text-[11px] mt-1"
                       >Lunes a Viernes 10:00 a 19:00 hs | Sábados 10:00 a 14:00
                       hs</span
                     >
                   </div>
                 </div>
                 <div
-                  class="border-t border-surface-variant pt-space-xs flex items-center justify-between font-label-sm text-label-sm"
+                  className="border-t border-surface-variant pt-space-xs flex items-center justify-between font-label-sm text-label-sm"
                 >
-                  <span class="text-secondary">Soporte por WhatsApp:</span>
-                  <span class="font-bold text-on-surface"
+                  <span className="text-secondary">Soporte por WhatsApp:</span>
+                  <span className="font-bold text-on-surface"
                     >+54 11 4920-8800</span
                   >
                 </div>
               </div>
               <div
-                class="border border-surface-variant rounded-lg bg-surface-container-lowest p-space-md flex items-center justify-between gap-space-md"
+                className="border border-surface-variant rounded-lg bg-surface-container-lowest p-space-md flex items-center justify-between gap-space-md"
               >
-                <div class="flex flex-col">
+                <div className="flex flex-col">
                   <span
-                    class="font-label-sm text-[10px] uppercase tracking-wider text-secondary font-bold"
+                    className="font-label-sm text-[10px] uppercase tracking-wider text-secondary font-bold"
                     >Seguridad Bancaria</span
                   >
-                  <span class="font-body-sm text-body-sm text-on-surface"
+                  <span className="font-body-sm text-body-sm text-on-surface"
                     >Operaciones verificadas con token y cifrado SSL</span
                   >
                 </div>
-                <div class="flex items-center gap-1 text-secondary">
+                <div className="flex items-center gap-1 text-secondary">
                   <span
-                    class="material-symbols-outlined text-[20px] text-tertiary"
+                    className="material-symbols-outlined text-[20px] text-tertiary"
                     >shield</span
                   >
-                  <span class="font-label-sm text-[11px] font-bold"
+                  <span className="font-label-sm text-[11px] font-bold"
                     >256-BIT</span
                   >
                 </div>
@@ -1015,162 +847,5 @@
         }
       </script>
     </main>
-    <footer
-      class="w-full bg-surface-container-low border-t border-surface-variant"
-    >
-      <div class="max-w-[1320px] mx-auto px-margin-desktop py-space-2xl">
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl"
-        >
-          <div class="flex flex-col gap-space-sm">
-            <div class="flex items-center gap-space-xs">
-              <img
-                alt="ZeroLag Logo"
-                class="h-7 w-auto object-contain"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1Wt_esEXmOhcAK74Hfmge3dK9jQ86GoHsQBgEnZ_n3bvojcJ6yJlEuQ8ccu-7QscR76ggR_AYYtqC7JfTTw4gRM42_Rz-KLJzAWCMkz7doQ4YYkNsl7L8zev9pl6Mo-Ksk06bs5ccdbYKnSR6WFdYDdM50r2eHMuOZNM1fYFvh-1KU3ULAXNr2UOD_Q3m-RJlRvVOERXEDy1454rrmEDVMmD6NHGGtF3U3rjJTXsOf3-WAZ5qEQ-wy_s9U"
-              /><span
-                class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface"
-                >ZeroLag</span
-              >
-            </div>
-            <p class="font-body-md text-body-md text-secondary leading-relaxed">
-              Especialistas en hardware de alto rendimiento, workstations y
-              ensamble gamer para toda la República Argentina. Garantía oficial
-              directa de marcas líderes.
-            </p>
-            <div
-              class="flex flex-col gap-1 font-body-sm text-body-sm text-secondary"
-            >
-              <span class="font-bold text-on-surface"
-                >Showroom Belgrano, CABA</span
-              ><span>Av. Cabildo 2450, Piso 3</span
-              ><span>Lunes a Viernes de 10:00 a 19:00 hs</span>
-            </div>
-          </div>
-          <div class="flex flex-col gap-space-sm">
-            <h4
-              class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-bold border-b border-surface-variant pb-2"
-            >
-              Mi Cuenta y Servicios
-            </h4>
-            <ul
-              class="flex flex-col gap-2 font-body-md text-body-md text-secondary"
-            >
-              <li class="hover:text-primary transition-colors">
-                <a data-path="auth" href="#">Ingreso y Registro de Cliente</a>
-              </li>
-              <li class="hover:text-primary transition-colors">
-                <a data-path="profile" href="#">Historial de Compras</a>
-              </li>
-              <li class="hover:text-primary transition-colors">
-                <a data-path="profile" href="#">Gestión de Garantías y RMA</a>
-              </li>
-              <li class="hover:text-primary transition-colors">
-                <a data-path="about-support" href="#"
-                  >Centro de Ayuda &amp; FAQ</a
-                >
-              </li>
-              <li class="hover:text-primary transition-colors">
-                <a data-path="about-support" href="#"
-                  >Soporte Técnico en Showroom</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="flex flex-col gap-space-sm">
-            <h4
-              class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-bold border-b border-surface-variant pb-2"
-            >
-              Gestión Interna
-            </h4>
-            <ul
-              class="flex flex-col gap-2 font-body-md text-body-md text-secondary"
-            >
-              <li class="hover:text-primary transition-colors">
-                <a data-path="admin-dashboard" href="#">Dashboard Backoffice</a>
-              </li>
-              <li class="hover:text-primary transition-colors">
-                <a data-path="admin-inventory" href="#"
-                  >Inventario &amp; Catálogo CRUD</a
-                >
-              </li>
-              <li class="hover:text-primary transition-colors">
-                <a data-path="admin-orders" href="#">Despachos y Pedidos</a>
-              </li>
-              <li class="hover:text-primary transition-colors">
-                <a data-path="about-support" href="#"
-                  >Contacto y Ventas Mayoristas</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="flex flex-col gap-space-sm">
-            <h4
-              class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface font-bold border-b border-surface-variant pb-2"
-            >
-              Pagos y Logística
-            </h4>
-            <div class="flex flex-col gap-space-sm">
-              <p class="font-body-sm text-body-sm text-secondary">
-                Aceptamos Mercado Pago, MODO, Transferencia Directa (15% OFF) y
-                cuotas con tarjetas bancarias.
-              </p>
-              <div class="grid grid-cols-2 gap-2">
-                <div
-                  class="border border-surface-variant bg-surface-container-lowest p-2 rounded text-center font-label-sm text-label-sm text-on-surface"
-                >
-                  Andreani Express
-                </div>
-                <div
-                  class="border border-surface-variant bg-surface-container-lowest p-2 rounded text-center font-label-sm text-label-sm text-on-surface"
-                >
-                  Correo Argentino
-                </div>
-                <div
-                  class="border border-surface-variant bg-surface-container-lowest p-2 rounded text-center font-label-sm text-label-sm text-on-surface"
-                >
-                  Mercado Pago
-                </div>
-                <div
-                  class="border border-surface-variant bg-surface-container-lowest p-2 rounded text-center font-label-sm text-label-sm text-on-surface"
-                >
-                  Transferencia BNA
-                </div>
-              </div>
-              <div
-                class="border border-surface-variant bg-surface-container-lowest p-2 rounded flex items-center justify-between text-secondary"
-              >
-                <span class="font-label-sm text-[10px]"
-                  >DATA FISCAL AFIP 960/D</span
-                ><span
-                  class="material-symbols-outlined text-[20px] text-tertiary"
-                  >verified</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="border-t border-surface-variant mt-space-2xl pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-secondary"
-        >
-          <div>
-            © 2025 ZeroLag Hardware Argentina S.R.L. - CUIT 30-71829304-8. Todos
-            los derechos reservados.
-          </div>
-          <div class="flex items-center gap-space-md">
-            <a
-              class="hover:text-on-surface transition-colors"
-              data-path="about-support"
-              href="#"
-              >Términos y Garantía</a
-            ><a class="hover:text-on-surface transition-colors" href="#"
-              >Defensa al Consumidor</a
-            ><a class="hover:text-on-surface transition-colors" href="#"
-              >Botón de Arrepentimiento</a
-            >
-          </div>
-        </div>
-      </div>
-    </footer>
   </body>
 </html>

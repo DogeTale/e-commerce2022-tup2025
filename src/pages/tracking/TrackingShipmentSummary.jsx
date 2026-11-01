@@ -1,4 +1,9 @@
-function TrackingShipmentSummary() {
+import dayjs from "dayjs";
+import es from "dayjs/locale/es";
+
+dayjs.locale(es);
+
+function TrackingShipmentSummary({ order }) {
   return (
     <div className="bg-surface-container-lowest border border-surface-variant rounded-[4px] p-space-lg mb-space-xl">
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md border-b border-surface-variant pb-space-md">
@@ -12,7 +17,7 @@ function TrackingShipmentSummary() {
                 Número de Pedido
               </span>
               <span className="font-headline-sm text-headline-sm text-on-surface font-bold">
-                #ZL-89104
+                {order.id}
               </span>
             </div>
           </div>
@@ -43,11 +48,8 @@ function TrackingShipmentSummary() {
             Disponibilidad Estimada
           </span>
           <div className="flex items-baseline gap-1">
-            <span className="font-headline-sm text-headline-sm text-tertiary font-bold">
-              Mañana
-            </span>
-            <span className="font-body-sm text-body-sm text-on-surface">
-              11:00 a 16:00 hs
+            <span className="font-headline-sm text-headline-sm text-tertiary font-bold capitalize">
+              {dayjs(order.orderTimeMs).format("dddd, MMMM D")}
             </span>
           </div>
           <span className="font-body-sm text-[11px] text-secondary mt-1 block">
