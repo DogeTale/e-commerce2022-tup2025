@@ -25,6 +25,7 @@ import SearchPage from "./pages/SearchPage.jsx";
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [hideHeaderFooter, setHideHeaderFooter] = useState(false);
 
   const loadCart = async () => {
     try {
@@ -36,11 +37,17 @@ function App() {
   };
 
   useEffect(() => {
+    const handleHideHeaderFooter = () => {
+      setHideHeaderFooter(
+        window.location.pathname.startsWith("/control-panel") ||
+          window.location.pathname.startsWith("/inventory") ||
+          window.location.pathname.startsWith("/admin-orders"),
+      );
+    };
+
+    handleHideHeaderFooter();
     loadCart();
   }, []);
-
-  const adminRoutes = ["/control-panel", "/inventory", "/admin-orders"];
-  const hideHeaderFooter = adminRoutes.includes(location.pathname);
 
   return (
     <>

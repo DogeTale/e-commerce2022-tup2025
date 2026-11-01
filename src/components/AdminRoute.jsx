@@ -4,7 +4,6 @@ export default function AdminRoute() {
   const token = localStorage.getItem("token");
   const usuarioString = localStorage.getItem("usuario"); // Asumiendo que guardas el rol al loguearte
   const usuarioJson = JSON.parse(usuarioString);
-  console.log(usuarioJson);
 
   // Si no está logueado o no es ADMIN, lo mandamos al login o home
   if (!token || usuarioJson.rol !== "CLIENTE") {
