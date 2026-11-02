@@ -27,14 +27,26 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [cart, setCart] = useState([]);
   const [hideHeaderFooter, setHideHeaderFooter] = useState(false);
-  // Estado de filtros del cliente
 
   const loadCart = async () => {
+    // Opcional: Si guardas tu token en localStorage, puedes verificarlo aquí.
+    // Cambia "token" por el nombre exacto que uses (ej: "access_token", "authToken", etc.)
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setCart([]);
+      return;
+    }
+
     try {
       const response = await axiosAuth.get(`/api/carrito`);
       setCart(response.data);
     } catch (error) {
-      console.error("Error al cargar el carrito:", error);
+      // Si el error es 401 (No autorizado), lo manejamos de forma silenciosa para usuarios no logueados
+      if (error.response && error.response.status === 401) {
+        setCart([]);
+      } else {
+        console.error("Error al cargar el carrito:", error);
+      }
     }
   };
 
@@ -48,7 +60,7 @@ function App() {
       console.log("Se ha agregado un producto al carrito con exito!");
       loadCart();
     } catch (error) {
-      console.error("Error al cargar el carrito:", error);
+      console.error("Error al agregar al carrito:", error);
     }
   };
 
