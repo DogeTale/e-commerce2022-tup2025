@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { formatMoney } from "../../utils/money";
 
 function FlashProduct({ product, handleAddToCart }) {
@@ -75,13 +76,13 @@ function FlashProduct({ product, handleAddToCart }) {
           </span>
           <span>Comprar</span>
         </button>
-        <button
+        <Link
           aria-label="Ver detalles técnicos"
           className="w-10 h-10 border border-surface-variant bg-surface flex items-center justify-center rounded hover:bg-surface-variant text-on-surface"
-          type="button"
+          to={`/product-details/${product.id}`}
         >
           <span className="material-symbols-outlined text-[20px]">info</span>
-        </button>
+        </Link>
       </div>
     </div>
   );
