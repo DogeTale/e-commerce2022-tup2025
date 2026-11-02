@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 function HardwareCategoriesBanner() {
   return (
     <section className="w-full border-b border-surface-variant bg-surface">
@@ -14,10 +16,10 @@ function HardwareCategoriesBanner() {
           </span>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-space-sm">
-          <a
+          <Link
             className="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col items-center text-center group hover:border-primary-container transition-colors rounded"
             data-path="notebooks-laptops"
-            href="#"
+            to="/search?categoria=Notebooks"
           >
             <div className="w-12 h-12 flex items-center justify-center bg-surface-container-low text-on-surface group-hover:bg-primary-container group-hover:text-on-primary transition-colors rounded mb-2">
               <span className="material-symbols-outlined text-[26px]">
@@ -30,11 +32,11 @@ function HardwareCategoriesBanner() {
             <span className="font-body-sm text-body-sm text-secondary mt-1">
               Portátiles
             </span>
-          </a>
-          <a
+          </Link>
+          <Link
             className="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col items-center text-center group hover:border-primary-container transition-colors rounded"
             data-path="placas-de-video-gpu"
-            href="#"
+            to="/search?categoria=Placas de Video"
           >
             <div className="w-12 h-12 flex items-center justify-center bg-surface-container-low text-on-surface group-hover:bg-primary-container group-hover:text-on-primary transition-colors rounded mb-2">
               <span className="material-symbols-outlined text-[26px]">
@@ -47,11 +49,11 @@ function HardwareCategoriesBanner() {
             <span className="font-body-sm text-body-sm text-secondary mt-1">
               GeForce / AMD
             </span>
-          </a>
-          <a
+          </Link>
+          <Link
             className="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col items-center text-center group hover:border-primary-container transition-colors rounded"
             data-path="procesadores-cpu"
-            href="#"
+            to="/search?categoria=Microprocesadores"
           >
             <div className="w-12 h-12 flex items-center justify-center bg-surface-container-low text-on-surface group-hover:bg-primary-container group-hover:text-on-primary transition-colors rounded mb-2">
               <span className="material-symbols-outlined text-[26px]">
@@ -64,11 +66,11 @@ function HardwareCategoriesBanner() {
             <span className="font-body-sm text-body-sm text-secondary mt-1">
               Intel &amp; Ryzen
             </span>
-          </a>
-          <a
+          </Link>
+          <Link
             className="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col items-center text-center group hover:border-primary-container transition-colors rounded"
             data-path="monitores"
-            href="#"
+            to="/search?categoria=Monitores LED"
           >
             <div className="w-12 h-12 flex items-center justify-center bg-surface-container-low text-on-surface group-hover:bg-primary-container group-hover:text-on-primary transition-colors rounded mb-2">
               <span className="material-symbols-outlined text-[26px]">
@@ -81,11 +83,11 @@ function HardwareCategoriesBanner() {
             <span className="font-body-sm text-body-sm text-secondary mt-1">
               144Hz / 240Hz
             </span>
-          </a>
-          <a
+          </Link>
+          <Link
             className="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col items-center text-center group hover:border-primary-container transition-colors rounded"
             data-path="perifericos"
-            href="#"
+            to="/search?categoria=Teclados, Mouse"
           >
             <div className="w-12 h-12 flex items-center justify-center bg-surface-container-low text-on-surface group-hover:bg-primary-container group-hover:text-on-primary transition-colors rounded mb-2">
               <span className="material-symbols-outlined text-[26px]">
@@ -98,11 +100,11 @@ function HardwareCategoriesBanner() {
             <span className="font-body-sm text-body-sm text-secondary mt-1">
               Mouse &amp; Teclados
             </span>
-          </a>
-          <a
+          </Link>
+          <Link
             className="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col items-center text-center group hover:border-primary-container transition-colors rounded"
             data-path="componentes"
-            href="#"
+            to="/search?categoria=Discos"
           >
             <div className="w-12 h-12 flex items-center justify-center bg-surface-container-low text-on-surface group-hover:bg-primary-container group-hover:text-on-primary transition-colors rounded mb-2">
               <span className="material-symbols-outlined text-[26px]">
@@ -115,11 +117,11 @@ function HardwareCategoriesBanner() {
             <span className="font-body-sm text-body-sm text-secondary mt-1">
               SSD M.2 NVMe
             </span>
-          </a>
-          <a
+          </Link>
+          <Link
             className="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col items-center text-center group hover:border-primary-container transition-colors rounded"
             data-path="componentes"
-            href="#"
+            to="/search?categoria=Fuentes"
           >
             <div className="w-12 h-12 flex items-center justify-center bg-surface-container-low text-on-surface group-hover:bg-primary-container group-hover:text-on-primary transition-colors rounded mb-2">
               <span className="material-symbols-outlined text-[26px]">
@@ -132,11 +134,11 @@ function HardwareCategoriesBanner() {
             <span className="font-body-sm text-body-sm text-secondary mt-1">
               Gold &amp; Platinum
             </span>
-          </a>
-          <a
+          </Link>
+          <Link
             className="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col items-center text-center group hover:border-primary-container transition-colors rounded"
             data-path="componentes"
-            href="#"
+            to="/search?categoria=Gabinetes"
           >
             <div className="w-12 h-12 flex items-center justify-center bg-surface-container-low text-on-surface group-hover:bg-primary-container group-hover:text-on-primary transition-colors rounded mb-2">
               <span className="material-symbols-outlined text-[26px]">
@@ -149,7 +151,7 @@ function HardwareCategoriesBanner() {
             <span className="font-body-sm text-body-sm text-secondary mt-1">
               Watercooling
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -4,19 +4,22 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import SearchHeaderControls from "./search/SearchHeaderControls";
 import SearchSidebarFilters from "./search/SearchSidebarFilters";
 import SearchProductGrid from "./search/SearchProductGrid";
+import { useSearchParams } from "react-router";
 
 function SearchPage({ searchTerm, setSearchTerm }) {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Estado de filtros del cliente
+  const [searchParams, setSearchParams] = useSearchParams();
+  const categoriaUrl = searchParams.get("categoria") || "";
+
   const [filters, setFilters] = useState({
     priceMin: 150000,
     priceMax: 4500000,
     inMediato: false,
     preventa: false,
     showroom: false,
-    categoria: "", // NUEVO: Categoría seleccionada
+    categoria: categoriaUrl, // Inicializamos con el valor de la URL si existe
     chipsets: {
       "NVIDIA GeForce RTX 4090": false,
       "GeForce RTX 4080 SUPER": false,
@@ -61,6 +64,12 @@ function SearchPage({ searchTerm, setSearchTerm }) {
     fetchProducts();
   }, []);
 
+  // Sincronizar cambios de la URL con el estado si el usuario usa las flechas del navegador
+  useEffect(() => {
+    const cat = searchParams.get("categoria") || "";
+    setFilters((prev) => ({ ...prev, categoria: cat }));
+  }, [searchParams]);
+
   // Manejadores de cambios en los filtros
   const handlePriceChange = (e, type) => {
     const value = Number(e.target.value);
@@ -87,17 +96,27 @@ function SearchPage({ searchTerm, setSearchTerm }) {
     }));
   };
 
+  // MODIFICADO: Actualiza el estado y también modifica los Query Params en la URL
+  const handleCategoryChange = (e) => {
+    const nuevaCategoria = e.target.value;
+
+    setFilters((prev) => ({
+      ...prev,
+      categoria: nuevaCategoria,
+    }));
+
+    if (nuevaCategoria) {
+      setSearchParams({ categoria: nuevaCategoria });
+    } else {
+      searchParams.delete("categoria");
+      setSearchParams(searchParams);
+    }
+  };
+
   const handleVramSelect = (size) => {
     setFilters((prev) => ({
       ...prev,
       vram: prev.vram === size ? null : size,
-    }));
-  };
-
-  const handleCategoryChange = (e) => {
-    setFilters((prev) => ({
-      ...prev,
-      categoria: e.target.value,
     }));
   };
 
@@ -108,7 +127,7 @@ function SearchPage({ searchTerm, setSearchTerm }) {
       inMediato: false,
       preventa: false,
       showroom: false,
-      categoria: "", // NUEVO: Resetea la categoría
+      categoria: "",
       chipsets: Object.keys(filters.chipsets).reduce(
         (acc, k) => ({ ...acc, [k]: false }),
         {},
@@ -123,6 +142,7 @@ function SearchPage({ searchTerm, setSearchTerm }) {
         {},
       ),
     });
+    setSearchParams({}); // Limpia los query params de la URL al resetear
     setSearchTerm("");
   };
 
@@ -132,7 +152,7 @@ function SearchPage({ searchTerm, setSearchTerm }) {
       const precioNum = Number(prod.precio) || 0;
       const nombreDesc = `${prod.nombre} ${prod.descripcion}`.toLowerCase();
 
-      // NUEVO: Filtro por Categoría
+      // Filtro por Categoría
       if (filters.categoria && prod.categorias?.nombre !== filters.categoria) {
         return false;
       }

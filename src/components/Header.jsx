@@ -4,7 +4,6 @@ import ZeroLagLogo from "../assets/zerolag-logo.svg";
 
 function Header({ cart, searchTerm, setSearchTerm }) {
   let totalQuantity = 0;
-  console.log(cart.carrito_items);
 
   if (cart.carrito_items) {
     cart.carrito_items.forEach((cartItem) => {
@@ -25,6 +24,16 @@ function Header({ cart, searchTerm, setSearchTerm }) {
     isActive
       ? "flex items-center gap-space-xs border border-primary-container bg-surface-container-lowest px-space-sm h-10 rounded-lg relative"
       : "flex items-center gap-space-xs border border-surface-variant bg-surface-container-lowest px-space-sm h-10 rounded-lg hover:border-on-surface transition-colors relative";
+
+  const categoriasList = [
+    "Notebooks",
+    "Computadoras",
+    "Placas de Video",
+    "Microprocesadores",
+    "Monitores LED",
+    "Parlantes, Auriculares",
+    "Memoria Ram",
+  ];
 
   return (
     <header className="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-surface-variant">
@@ -171,62 +180,16 @@ function Header({ cart, searchTerm, setSearchTerm }) {
             className="flex items-center gap-space-md overflow-x-auto h-full"
             data-active-classes="text-primary font-bold border-b-2 border-primary"
           >
-            <a
-              className="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
-              data-path="notebooks-laptops"
-              href="#"
-            >
-              Notebooks &amp; Laptops
-            </a>
-            <a
-              className="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
-              data-path="pc-armadas-gaming"
-              href="#"
-            >
-              PC Armadas Gaming
-            </a>
-            <a
-              className="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
-              data-path="placas-de-video-gpu"
-              href="#"
-            >
-              Placas de Video (GPU)
-            </a>
-            <a
-              className="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
-              data-path="procesadores-cpu"
-              href="#"
-            >
-              Procesadores (CPU)
-            </a>
-            <a
-              className="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
-              data-path="monitores"
-              href="#"
-            >
-              Monitores
-            </a>
-            <a
-              className="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
-              data-path="perifericos"
-              href="#"
-            >
-              Periféricos
-            </a>
-            <a
-              className="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
-              data-path="componentes"
-              href="#"
-            >
-              Componentes
-            </a>
-            <a
-              className="text-primary hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors uppercase font-bold"
-              data-path="ofertas-relampago"
-              href="#"
-            >
-              Ofertas Relámpago
-            </a>
+            {categoriasList.map((cat) => (
+              <NavLink
+                key={cat}
+                className="text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap h-full flex items-center border-b-2 border-transparent transition-colors"
+                data-path="notebooks-laptops"
+                to={`/search?categoria=${cat}`}
+              >
+                {cat}
+              </NavLink>
+            ))}
           </nav>
           <div className="hidden md:flex items-center pl-space-md shrink-0 border-l border-surface-variant h-6">
             <a

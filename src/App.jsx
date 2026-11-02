@@ -27,6 +27,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [cart, setCart] = useState([]);
   const [hideHeaderFooter, setHideHeaderFooter] = useState(false);
+  // Estado de filtros del cliente
 
   const loadCart = async () => {
     try {
