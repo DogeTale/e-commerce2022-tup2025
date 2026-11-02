@@ -24,6 +24,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage.jsx";
 import SearchPage from "./pages/SearchPage.jsx";
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
   const [cart, setCart] = useState([]);
   const [hideHeaderFooter, setHideHeaderFooter] = useState(false);
 
@@ -65,7 +66,13 @@ function App() {
 
   return (
     <>
-      {!hideHeaderFooter && <Header cart={cart} />}
+      {!hideHeaderFooter && (
+        <Header
+          cart={cart}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+        />
+      )}
 
       <Routes>
         {/* Paginas Publicas SIN EXCEPCION */}
@@ -83,7 +90,12 @@ function App() {
           path="product-details/:productId"
           element={<ProductDetailsPage />}
         />
-        <Route path="search" element={<SearchPage />} />
+        <Route
+          path="search"
+          element={
+            <SearchPage searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          }
+        />
         <Route path="about-us" element={<AboutUsPage />} />
         <Route path="*" element={<NotFoundPage />} />
 

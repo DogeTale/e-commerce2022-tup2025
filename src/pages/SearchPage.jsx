@@ -2,10 +2,9 @@ import axios from "axios";
 import { useEffect, useState, useMemo } from "react";
 import { Link } from "react-router";
 
-function SearchPage() {
+function SearchPage({ searchTerm, setSearchTerm }) {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("");
 
   // Estado de filtros del cliente
   const [filters, setFilters] = useState({

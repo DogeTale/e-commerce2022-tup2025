@@ -1,8 +1,8 @@
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 
 import ZeroLagLogo from "../assets/zerolag-logo.svg";
 
-function Header({ cart }) {
+function Header({ cart, searchTerm, setSearchTerm }) {
   let totalQuantity = 0;
   console.log(cart.carrito_items);
 
@@ -11,6 +11,15 @@ function Header({ cart }) {
       totalQuantity += cartItem.cantidad;
     });
   }
+
+  const navigate = useNavigate(); // 2. Inicializa el hook
+
+  const handleSearch = (e) => {
+    e.preventDefault(); // Evita que la página se recargue por defecto
+
+    // 3. Redirige a la otra página pasando el término como parámetro en la URL (Query Param)
+    navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
+  };
 
   const isCartActive = ({ isActive }) =>
     isActive
@@ -78,11 +87,17 @@ function Header({ cart }) {
             />
           </NavLink>
           <div className="flex-1 max-w-2xl">
-            <form action="#" className="flex w-full" method="GET">
+            <form
+              onSubmit={handleSearch}
+              action="#"
+              className="flex w-full"
+              method="GET"
+            >
               <input
                 className="w-full h-10 px-space-md bg-surface-container-lowest border border-surface-variant border-r-0 rounded-l-lg text-body-md font-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary-container"
                 placeholder="Buscar placas de video, procesadores, periféricos, notebooks..."
                 type="text"
+                onChange={(e) => setSearchTerm(e.target.value)}
               />
               <button
                 className="h-10 px-space-lg bg-primary-container text-on-primary font-label-lg text-label-lg rounded-r-lg flex items-center gap-space-xs shrink-0 hover:bg-primary transition-colors"
