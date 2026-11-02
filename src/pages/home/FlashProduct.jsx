@@ -1,6 +1,19 @@
 import { formatMoney } from "../../utils/money";
 
 function FlashProduct({ product, handleAddToCart }) {
+  const IsProductStockLow =
+    product.stock < 7 ? (
+      <div
+        className="bg-primary h-1.5 rounded"
+        style={{ width: `${(product.stock / 10) * 100}%` }}
+      ></div>
+    ) : (
+      <div
+        className="bg-tertiary h-1.5 rounded"
+        style={{ width: `${(product.stock / 10) * 100}%` }}
+      ></div>
+    );
+
   return (
     <div className="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col justify-between rounded">
       <div className="flex flex-col">
@@ -28,13 +41,12 @@ function FlashProduct({ product, handleAddToCart }) {
         <div className="mt-space-md bg-surface-container p-2 border border-surface-variant">
           <div className="flex justify-between font-label-sm text-label-sm mb-1">
             <span className="text-secondary">Stock para oferta:</span>
-            <span className="font-bold text-primary">Quedan 4 unidades</span>
+            <span className="font-bold text-primary">
+              Quedan {product.stock} unidades
+            </span>
           </div>
           <div className="w-full bg-surface-container-highest h-1.5 rounded">
-            <div
-              className="bg-primary h-1.5 rounded"
-              style={{ width: "25%" }}
-            ></div>
+            {IsProductStockLow}
           </div>
         </div>
         <div className="mt-space-md">
