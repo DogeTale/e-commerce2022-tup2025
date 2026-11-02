@@ -1,17 +1,37 @@
 import dayjs from "dayjs";
 import es from "dayjs/locale/es";
 import { formatMoney } from "../../../utils/money";
+import { useState } from "react";
+import axiosAuth from "../../../api/axiosAuth.js";
 
 dayjs.locale(es);
 
-function CheckoutSummary({ cart }) {
+function CheckoutSummary({ cart, setCurrentStep, setPedidoId }) {
+  const [costoEnvio, setCostoEnvio] = useState("GRATIS");
+  const [loadingPedido, setLoadingPedido] = useState(false);
+
   const pago = cart?.carrito_items?.reduce(
     (totalQuantity, cartItem) =>
       totalQuantity + cartItem.cantidad * cartItem.productos.precio,
     0,
   );
 
-  console.log("hola", pago);
+  const handleContinuarPago = async () => {
+    try {
+      setLoadingPedido(true);
+      const response = await axiosAuth.post("/api/pedidos");
+      const idPedidoCreado = response.data.id || response.data.pedido?.id;
+
+      // Guardamos el ID y avanzamos al paso 2 (esto actualizará el localStorage automáticamente)
+      setPedidoId(idPedidoCreado);
+      setCurrentStep(2);
+    } catch (error) {
+      console.error("Error al crear el pedido:", error);
+      alert("Hubo un error al generar el pedido. Intenta nuevamente.");
+    } finally {
+      setLoadingPedido(false);
+    }
+  };
 
   return (
     <aside className="lg:col-span-4 flex flex-col gap-space-md sticky top-[176px]">
@@ -65,7 +85,7 @@ function CheckoutSummary({ cart }) {
                     className="font-bold text-on-surface"
                     id="summary-shipping"
                   >
-                    Gratis
+                    {costoEnvio}
                   </span>
                 </div>
               </div>
@@ -80,7 +100,9 @@ function CheckoutSummary({ cart }) {
                     defaultChecked
                     className="mt-1 accent-primary"
                     name="shipping-method"
-                    onChange={() => {}}
+                    onChange={() => {
+                      setCostoEnvio("GRATIS");
+                    }}
                     type="radio"
                     value="0"
                   />
@@ -102,7 +124,9 @@ function CheckoutSummary({ cart }) {
                   <input
                     className="mt-1 accent-primary"
                     name="shipping-method"
-                    onChange={() => {}}
+                    onChange={(e) => {
+                      setCostoEnvio(formatMoney(e.target.value));
+                    }}
                     type="radio"
                     value="8500"
                   />
@@ -124,7 +148,9 @@ function CheckoutSummary({ cart }) {
                   <input
                     className="mt-1 accent-primary"
                     name="shipping-method"
-                    onChange={() => {}}
+                    onChange={(e) => {
+                      setCostoEnvio(formatMoney(e.target.value));
+                    }}
                     type="radio"
                     value="14200"
                   />
@@ -204,10 +230,14 @@ function CheckoutSummary({ cart }) {
 
               {/* Botón Primario de Checkout */}
               <button
-                className="w-full h-12 bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-wider font-bold rounded-DEFAULT transition-colors flex items-center justify-center gap-space-xs"
+                className="w-full h-12 bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-wider font-bold rounded-DEFAULT transition-colors flex items-center justify-center gap-space-xs disabled:opacity-50"
                 type="button"
+                onClick={handleContinuarPago}
+                disabled={loadingPedido}
               >
-                <span>Continuar al Pago</span>
+                <span>
+                  {loadingPedido ? "Generando Pedido..." : "Continuar al Pago"}
+                </span>
                 <span className="material-symbols-outlined text-[20px]">
                   arrow_forward
                 </span>

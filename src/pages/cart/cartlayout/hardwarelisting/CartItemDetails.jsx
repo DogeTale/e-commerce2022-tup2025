@@ -1,13 +1,43 @@
+import axiosAuth from "../../../../api/axiosAuth";
 import { formatMoney } from "../../../../utils/money";
 
-function CartItemDetails({ cartItem, deleteCartItem }) {
+function CartItemDetails({ cartItem, loadCart, deleteCartItem }) {
+  const handleUpdateQuantity = async (itemId, nuevaCantidad) => {
+    try {
+      await axiosAuth.put(`/api/carrito/items/${itemId}`, {
+        cantidad: nuevaCantidad,
+      });
+
+      await loadCart();
+      console.log("Cantidad actualizada con éxito");
+      // Aquí actualizas tu estado local o vuelves a consultar el carrito
+    } catch (error) {
+      console.error("Error al actualizar la cantidad", error);
+    }
+  };
+
+  const handleDecrease = async () => {
+    const nuevaCantidad = cartItem.cantidad - 1;
+    if (nuevaCantidad <= 0) {
+      deleteCartItem();
+    } else {
+      // Si manejas la función por props:
+      handleUpdateQuantity(cartItem.id, nuevaCantidad);
+    }
+  };
+
+  const handleIncrease = async () => {
+    const nuevaCantidad = cartItem.cantidad + 1;
+    handleUpdateQuantity(cartItem.id, nuevaCantidad);
+  };
+
   return (
     <>
       <div className="flex items-center gap-space-md flex-1 min-w-0">
         <div className="w-20 h-20 bg-surface-container-low border border-surface-variant flex items-center justify-center shrink-0 p-1">
           <img
             className="w-full h-full object-contain"
-            alt="ASUS TUF GeForce RTX 4070 Ti SUPER"
+            alt={cartItem.productos.nombre}
             src={cartItem.productos.img}
           />
         </div>
@@ -41,31 +71,28 @@ function CartItemDetails({ cartItem, deleteCartItem }) {
         <div className="flex items-center border border-surface-variant bg-surface-container-low h-9">
           <button
             className="w-8 h-full flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors"
-            onClick={() => {}}
+            onClick={handleDecrease}
             type="button"
           >
             -
           </button>
           <input
             className="w-9 h-full text-center bg-transparent font-label-md text-label-md text-on-surface border-none focus:outline-none"
-            id="qty-tuf-4070ti"
+            id={`qty-${cartItem.id}`}
             readOnly
             type="text"
             value={cartItem.cantidad}
           />
           <button
             className="w-8 h-full flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors"
-            onClick={() => {}}
+            onClick={handleIncrease}
             type="button"
           >
             +
           </button>
         </div>
         <div className="flex flex-col items-end">
-          <span
-            className="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight"
-            id="price-tuf-4070ti"
-          >
+          <span className="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">
             {formatMoney(cartItem.cantidad * cartItem.productos.precio)}
           </span>
           <span className="font-body-sm text-[11px] text-secondary">

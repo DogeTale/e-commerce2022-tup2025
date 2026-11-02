@@ -1,5 +1,5 @@
-import axios from "axios";
 import CartItemDetails from "./hardwarelisting/CartItemDetails.jsx";
+import axiosAuth from "../../../api/axiosAuth.js";
 
 function HardwareListing({ cart, loadCart }) {
   return (
@@ -45,7 +45,7 @@ function HardwareListing({ cart, loadCart }) {
         >
           {cart?.carrito_items?.map((cartItem) => {
             const deleteCartItem = async () => {
-              await axios.delete(`/api/carrito/items/${cartItem.id}`);
+              await axiosAuth.delete(`/api/carrito/items/${cartItem.id}`);
               await loadCart();
             };
 
@@ -57,6 +57,7 @@ function HardwareListing({ cart, loadCart }) {
               >
                 <CartItemDetails
                   cartItem={cartItem}
+                  loadCart={loadCart}
                   deleteCartItem={deleteCartItem}
                 />
               </article>

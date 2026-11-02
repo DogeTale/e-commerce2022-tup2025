@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router";
 
 import ZeroLagLogo from "../assets/zerolag-logo.svg";
@@ -11,12 +12,34 @@ function Header({ cart, searchTerm, setSearchTerm }) {
     });
   }
 
-  const navigate = useNavigate(); // 2. Inicializa el hook
+  const navigate = useNavigate();
+
+  // Estados para manejar la sesión del usuario
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userName, setUserName] = useState("Gamer");
+
+  useEffect(() => {
+    // Verificamos si existe el token en localStorage
+    const token = localStorage.getItem("token"); // Ajusta la clave si tu token se llama diferente (ej. "authToken")
+    const usuarioString = localStorage.getItem("usuario"); // Ajusta la clave si tu objeto se llama diferente (ej. "user")
+
+    if (token) {
+      setIsLoggedIn(true);
+      if (usuarioString) {
+        try {
+          const usuario = JSON.parse(usuarioString);
+          if (usuario && usuario.nombre) {
+            setUserName(usuario.nombre);
+          }
+        } catch (error) {
+          console.error("Error al parsear el usuario del localStorage", error);
+        }
+      }
+    }
+  }, []);
 
   const handleSearch = (e) => {
-    e.preventDefault(); // Evita que la página se recargue por defecto
-
-    // 3. Redirige a la otra página pasando el término como parámetro en la URL (Query Param)
+    e.preventDefault();
     navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
   };
 
@@ -136,8 +159,8 @@ function Header({ cart, searchTerm, setSearchTerm }) {
           <div className="flex items-center gap-space-md shrink-0 ml-auto">
             <NavLink
               className="flex items-center gap-space-xs text-left group"
-              data-path="login"
-              to="/orders"
+              data-path={isLoggedIn ? "orders" : "login"}
+              to={isLoggedIn ? "/orders" : "/login"}
             >
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0">
                 <span className="material-symbols-outlined text-on-primary text-[18px]">
@@ -146,10 +169,10 @@ function Header({ cart, searchTerm, setSearchTerm }) {
               </div>
               <div className="hidden md:flex flex-col">
                 <span className="font-label-sm text-[10px] text-secondary leading-tight">
-                  Hola, Gamer!
+                  Hola, {userName}!
                 </span>
                 <span className="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors leading-tight">
-                  Ingresar / Registro
+                  {isLoggedIn ? "Ver mis pedidos" : "Ingresar / Registro"}
                 </span>
               </div>
             </NavLink>
