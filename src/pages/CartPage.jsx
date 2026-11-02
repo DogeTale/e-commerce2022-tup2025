@@ -1,8 +1,8 @@
-import CheckoutLayout from "./checkout/CheckoutLayout";
-import CompatibilityVerificationBanner from "./checkout/CompatibilityVerificationBanner";
-import StepperBuyProcess from "./checkout/StepperBuyProcess";
+import CartLayout from "./cart/CartLayout";
+import CompatibilityVerificationBanner from "./cart/CompatibilityVerificationBanner";
+import StepperBuyProcess from "./cart/StepperBuyProcess";
 
-function Checkout({ cart, loadCart }) {
+function CartPage({ cart, loadCart }) {
   return (
     <>
       <link rel="icon" type="image/svg+xml" href="/cart-favicon.svg" />
@@ -25,7 +25,7 @@ function Checkout({ cart, loadCart }) {
             {/* 
               LAYOUT PRINCIPAL (Grid de 2 columnas: 70% Izquierda / 30% Derecha)
             */}
-            <CheckoutLayout cart={cart} loadCart={loadCart} />
+            <CartLayout cart={cart} loadCart={loadCart} />
           </div>
         </div>
       </main>
@@ -33,4 +33,4 @@ function Checkout({ cart, loadCart }) {
   );
 }
 
-export default Checkout;
+export default CartPage;

@@ -9,7 +9,7 @@ import PublicRoute from "./components/PublicRoute.jsx";
 
 /* Paginas y Componentes */
 import HomePage from "./pages/HomePage.jsx";
-import CheckoutPage from "./pages/CheckoutPage.jsx";
+import CartPage from "./pages/CartPage.jsx";
 import MyAccountPage from "./pages/MyAccountPage.jsx";
 import TrackingPage from "./pages/TrackingPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
@@ -36,6 +36,20 @@ function App() {
     }
   };
 
+  const handleAddToCart = async (producto_id) => {
+    try {
+      await axiosAuth.post("/api/carrito/items", {
+        producto_id,
+        cantidad: 1,
+      });
+
+      console.log("Se ha agregado un producto al carrito con exito!");
+      loadCart();
+    } catch (error) {
+      console.error("Error al cargar el carrito:", error);
+    }
+  };
+
   useEffect(() => {
     const handleHideHeaderFooter = () => {
       setHideHeaderFooter(
@@ -55,8 +69,20 @@ function App() {
 
       <Routes>
         {/* Paginas Publicas SIN EXCEPCION */}
-        <Route index element={<HomePage cart={cart} loadCart={loadCart} />} />
-        <Route path="product-details" element={<ProductDetailsPage />} />
+        <Route
+          index
+          element={
+            <HomePage
+              cart={cart}
+              loadCart={loadCart}
+              handleAddToCart={handleAddToCart}
+            />
+          }
+        />
+        <Route
+          path="product-details/:productId"
+          element={<ProductDetailsPage />}
+        />
         <Route path="search" element={<SearchPage />} />
         <Route path="about-us" element={<AboutUsPage />} />
         <Route path="*" element={<NotFoundPage />} />
@@ -70,7 +96,7 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route
             path="checkout"
-            element={<CheckoutPage cart={cart} loadCart={loadCart} />}
+            element={<CartPage cart={cart} loadCart={loadCart} />}
           />
           <Route path="orders" element={<MyAccountPage />} />
           <Route path="orders/tracking/:orderId" element={<TrackingPage />} />

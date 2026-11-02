@@ -4,11 +4,13 @@ import ZeroLagLogo from "../assets/zerolag-logo.svg";
 
 function Header({ cart }) {
   let totalQuantity = 0;
+  console.log(cart.carrito_items);
 
-  if (cart.carrito_items)
+  if (cart.carrito_items) {
     cart.carrito_items.forEach((cartItem) => {
-      totalQuantity += cartItem.quantity;
+      totalQuantity += cartItem.cantidad;
     });
+  }
 
   const isCartActive = ({ isActive }) =>
     isActive

@@ -13,11 +13,11 @@ function HardwareListing({ cart, loadCart }) {
             <h1 className="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface">
               Hardware en Carrito (
               <span id="cart-item-count">
-                {cart.reduce(
+                {cart?.carrito_items?.reduce(
                   (totalQuantity, cartItem) =>
-                    totalQuantity + cartItem.quantity,
+                    totalQuantity + cartItem.cantidad,
                   0,
-                )}
+                ) ?? 0}
               </span>
               )
             </h1>
@@ -43,9 +43,9 @@ function HardwareListing({ cart, loadCart }) {
           className="divide-y divide-surface-variant"
           id="cart-items-container"
         >
-          {cart.map((cartItem) => {
+          {cart?.carrito_items?.map((cartItem) => {
             const deleteCartItem = async () => {
-              await axios.delete(`/api/cart-items/${cartItem.productId}`);
+              await axios.delete(`/api/carrito/items/${cartItem.id}`);
               await loadCart();
             };
 

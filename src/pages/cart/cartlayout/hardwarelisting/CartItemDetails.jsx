@@ -8,7 +8,7 @@ function CartItemDetails({ cartItem, deleteCartItem }) {
           <img
             className="w-full h-full object-contain"
             alt="ASUS TUF GeForce RTX 4070 Ti SUPER"
-            src={cartItem.product.image}
+            src={cartItem.productos.img}
           />
         </div>
         <div className="flex flex-col min-w-0">
@@ -25,7 +25,7 @@ function CartItemDetails({ cartItem, deleteCartItem }) {
             </span>
           </div>
           <h2 className="font-label-lg text-label-lg text-on-surface truncate font-bold">
-            {cartItem.product.name}
+            {cartItem.productos.nombre}
           </h2>
           <div className="flex items-center gap-space-sm mt-1 text-secondary font-body-sm text-body-sm">
             <span className="flex items-center gap-1 text-[11px] text-on-surface-variant">
@@ -51,7 +51,7 @@ function CartItemDetails({ cartItem, deleteCartItem }) {
             id="qty-tuf-4070ti"
             readOnly
             type="text"
-            value={cartItem.quantity}
+            value={cartItem.cantidad}
           />
           <button
             className="w-8 h-full flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors"
@@ -66,10 +66,10 @@ function CartItemDetails({ cartItem, deleteCartItem }) {
             className="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight"
             id="price-tuf-4070ti"
           >
-            {formatMoney(cartItem.product.priceCents)}
+            {formatMoney(cartItem.cantidad * cartItem.productos.precio)}
           </span>
           <span className="font-body-sm text-[11px] text-secondary">
-            Unitario: {formatMoney(cartItem.product.priceCents)}
+            Unitario: {formatMoney(cartItem.productos.precio)}
           </span>
         </div>
         <button

@@ -1,6 +1,6 @@
 import FlashProduct from "./FlashProduct.jsx";
 
-function FlashOffersAndFeatured({ products, loadCart }) {
+function FlashOffersAndFeatured({ products, loadCart, handleAddToCart }) {
   return (
     <section className="w-full border-b border-surface-variant bg-surface">
       <div className="max-w-[1320px] mx-auto px-margin-desktop py-space-2xl">
@@ -40,6 +40,7 @@ function FlashOffersAndFeatured({ products, loadCart }) {
                 key={product.id}
                 product={product}
                 loadCart={loadCart}
+                handleAddToCart={handleAddToCart}
               />
             );
           })}

@@ -1,7 +1,7 @@
-import CheckoutSummary from "./checkoutlayout/CheckoutSummary";
-import HardwareListing from "./checkoutlayout/HardwareListing";
+import CartSummary from "./cartlayout/CartSummary";
+import HardwareListing from "./cartlayout/HardwareListing";
 
-function CheckoutLayout({ cart, loadCart }) {
+function CartLayout({ cart, loadCart }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
       {/* 
@@ -12,9 +12,9 @@ function CheckoutLayout({ cart, loadCart }) {
       {/* 
         COLUMNA DERECHA: RESUMEN DE PEDIDO, LOGÍSTICA Y PAGO (SIDEBAR)
       */}
-      <CheckoutSummary />
+      <CartSummary cart={cart} />
     </div>
   );
 }
 
-export default CheckoutLayout;
+export default CartLayout;

@@ -1,15 +1,6 @@
-import axios from "axios";
 import { formatMoney } from "../../utils/money";
 
-function FlashProduct({ product, loadCart }) {
-  const addToCart = async () => {
-    await axios.post("/api/carrito", {
-      productId: product.id,
-      quantity: 1,
-    });
-    await loadCart();
-  };
-
+function FlashProduct({ product, handleAddToCart }) {
   return (
     <div className="border border-surface-variant bg-surface-container-lowest p-space-md flex flex-col justify-between rounded">
       <div className="flex flex-col">
@@ -65,7 +56,7 @@ function FlashProduct({ product, loadCart }) {
         <button
           className="flex-1 h-10 bg-primary-container text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-1 hover:bg-primary transition-colors"
           type="button"
-          onClick={addToCart}
+          onClick={() => handleAddToCart(product.id)}
         >
           <span className="material-symbols-outlined text-[18px]">
             add_shopping_cart

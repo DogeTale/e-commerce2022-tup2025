@@ -7,7 +7,7 @@ import HeroBannerMain from "./home/HeroBannerMain.jsx";
 import LocalBenefits from "./home/LocalBenefits.jsx";
 import MonthlyAssemblies from "./home/MonthlyAssemblies.jsx";
 
-function HomePage({ loadCart }) {
+function HomePage({ loadCart, handleAddToCart }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -48,7 +48,11 @@ function HomePage({ loadCart }) {
               las tarjetas de productos sueltos (GPUs, Monitores, Periféricos, etc.) 
               provenientes de tu base de datos (ej: productosFlash.map(...))
            */}
-          <FlashOffersAndFeatured products={products} loadCart={loadCart} />
+          <FlashOffersAndFeatured
+            products={products}
+            loadCart={loadCart}
+            handleAddToCart={handleAddToCart}
+          />
 
           {/* 6. BANNER CONFIGURADOR ARMA TU PC */}
           <BuildYourPCBanner />
