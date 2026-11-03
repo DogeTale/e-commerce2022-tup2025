@@ -1,4 +1,36 @@
+import { useState, useEffect } from "react";
+
 function MyAccountHeader() {
+  const [usuario, setUsuario] = useState(null);
+  const [hasToken, setHasToken] = useState(false);
+
+  useEffect(() => {
+    // Detectar si hay un token en localStorage (asumiendo la clave "token")
+    const token = localStorage.getItem("token");
+    const usuarioData = localStorage.getItem("usuario");
+
+    if (token) {
+      setHasToken(true);
+    }
+
+    if (usuarioData) {
+      try {
+        setUsuario(JSON.parse(usuarioData));
+      } catch (error) {
+        console.error(
+          "Error al parsear los datos del usuario desde localStorage:",
+          error,
+        );
+      }
+    }
+  }, []);
+
+  // Generar las iniciales de forma dinámica para el avatar (ej: "PN" para Prueba1Nombre)
+  const iniciales =
+    usuario?.nombre && usuario?.apellido
+      ? `${usuario.nombre[0]}${usuario.apellido[0]}`.toUpperCase()
+      : "MG";
+
   return (
     <section className="bg-surface-container-lowest border border-surface-variant p-space-lg">
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
@@ -6,37 +38,44 @@ function MyAccountHeader() {
         <div className="flex items-start gap-space-md">
           <div className="w-16 h-16 bg-surface-container-highest border border-surface-variant flex items-center justify-center shrink-0">
             <span className="font-headline-lg text-headline-lg text-primary uppercase font-extrabold">
-              MG
+              {iniciales}
             </span>
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-space-xs flex-wrap">
               <h1 className="font-headline-md text-headline-md text-on-surface">
-                Hola, Martín Gómez
+                Hola,{" "}
+                {usuario ? `${usuario.nombre} ${usuario.apellido}` : "Invitado"}
               </h1>
               <span className="bg-tertiary text-on-tertiary font-label-sm text-label-sm px-2 py-0.5 tracking-wider uppercase font-bold">
-                Cliente Enthusiast Tier 3
+                {usuario ? usuario.rol : "VISITANTE"} Tier 3
               </span>
             </div>
             <p className="font-body-sm text-body-sm text-secondary mt-1">
-              CUIT/CUIL:{" "}
-              <span className="font-bold text-on-surface">20-38491024-3 </span>•
-              Facturación Fiscal tipo{" "}
-              <span className="font-bold text-on-surface">Factura A </span>
-              registrada
+              Email:{" "}
+              <span className="font-bold text-on-surface">
+                {usuario ? usuario.email : "No disponible"}
+              </span>{" "}
+              • Teléfono:{" "}
+              <span className="font-bold text-on-surface">
+                {usuario ? usuario.telefono : "No registrado"}
+              </span>
             </p>
             <div className="flex items-center gap-space-sm mt-2 text-body-sm font-body-sm text-secondary">
               <span className="flex items-center gap-1">
                 <span className="material-symbols-outlined text-[16px] text-tertiary">
                   verified_user
                 </span>
-                Cuenta Verificada
+                {hasToken
+                  ? "Cuenta Verificada (Token activo)"
+                  : "Sin sesión iniciada"}
               </span>
               <span>•</span>
               <span>Socio desde: Marzo 2022</span>
             </div>
           </div>
         </div>
+
         {/* Indicadores de Balance & Puntos & Botón Perfil */}
         <div className="flex items-stretch gap-space-md flex-wrap lg:flex-nowrap">
           <div className="border border-surface-variant bg-surface-container-low px-space-md py-2 flex flex-col justify-center min-w-[140px]">

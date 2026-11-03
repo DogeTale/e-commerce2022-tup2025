@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router";
+import { Link } from "react-router";
 
 import ZeroLagLogo from "../assets/zerolag-logo.svg";
 
-function Header({ cart, searchTerm, setSearchTerm }) {
+function Header({ cart, loadingCart, searchTerm, setSearchTerm }) {
   let totalQuantity = 0;
 
   if (cart.carrito_items) {
@@ -71,39 +72,6 @@ function Header({ cart, searchTerm, setSearchTerm }) {
               Envíos a todo el país vía Andreani y Correo Argentino | Hasta 12
               cuotas sin interés | Local en Belgrano, CABA
             </span>
-          </div>
-          <div className="hidden lg:flex items-center gap-space-md text-secondary">
-            <a
-              className="hover:text-primary transition-colors"
-              data-path="arma-tu-pc"
-              href="#"
-            >
-              Armá tu PC
-            </a>
-            <span className="text-surface-variant">|</span>
-            <a
-              className="hover:text-primary transition-colors"
-              data-path="garantias-y-rma"
-              href="#"
-            >
-              Garantías y RMA
-            </a>
-            <span className="text-surface-variant">|</span>
-            <a
-              className="hover:text-primary transition-colors"
-              data-path="ayuda-faq"
-              href="#"
-            >
-              Ayuda / FAQ
-            </a>
-            <span className="text-surface-variant">|</span>
-            <a
-              className="hover:text-primary transition-colors"
-              data-path="venta-corporativa"
-              href="#"
-            >
-              Venta Corporativa
-            </a>
           </div>
         </div>
       </div>
@@ -188,8 +156,12 @@ function Header({ cart, searchTerm, setSearchTerm }) {
               <span className="hidden md:inline font-label-md text-label-md text-on-surface">
                 Mi Carrito
               </span>
-              <span className="bg-primary text-on-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded-sm">
-                {totalQuantity}
+              <span className="bg-primary text-on-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded-sm flex items-center justify-center min-w-[20px] min-h-[20px]">
+                {loadingCart ? (
+                  <div className="w-3 h-3 border-2 border-on-primary border-t-transparent rounded-full animate-spin"></div>
+                ) : (
+                  totalQuantity
+                )}
               </span>
             </NavLink>
           </div>
@@ -215,16 +187,16 @@ function Header({ cart, searchTerm, setSearchTerm }) {
             ))}
           </nav>
           <div className="hidden md:flex items-center pl-space-md shrink-0 border-l border-surface-variant h-6">
-            <a
+            <Link
               className="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors flex items-center gap-1 uppercase tracking-wider"
               data-path="admin-dashboard"
-              href="#"
+              to="/control-panel"
             >
               <span className="material-symbols-outlined text-[16px]">
                 tune
               </span>
               <span>Panel Admin</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -16,21 +16,18 @@ import NotFoundPage from "./pages/NotFoundPage.jsx";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import AboutUsPage from "./pages/AboutUsPage.jsx";
-import ControlPanelPage from "./pages/ControlPanelPage.jsx";
-import InventoryPage from "./pages/InventoryPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
-import OrdersPage from "./pages/OrdersPage.jsx";
 import ProductDetailsPage from "./pages/ProductDetailsPage.jsx";
 import SearchPage from "./pages/SearchPage.jsx";
+import InventoryPage from "./pages/InventoryPage.jsx";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [cart, setCart] = useState([]);
+  const [loadingCart, setLoadingCart] = useState(false); // <--- Nuevo estado
   const [hideHeaderFooter, setHideHeaderFooter] = useState(false);
 
   const loadCart = async () => {
-    // Opcional: Si guardas tu token en localStorage, puedes verificarlo aquí.
-    // Cambia "token" por el nombre exacto que uses (ej: "access_token", "authToken", etc.)
     const token = localStorage.getItem("token");
     if (!token) {
       setCart([]);
@@ -38,15 +35,17 @@ function App() {
     }
 
     try {
+      setLoadingCart(true); // <--- Activamos carga
       const response = await axiosAuth.get(`/api/carrito`);
       setCart(response.data);
     } catch (error) {
-      // Si el error es 401 (No autorizado), lo manejamos de forma silenciosa para usuarios no logueados
       if (error.response && error.response.status === 401) {
         setCart([]);
       } else {
         console.error("Error al cargar el carrito:", error);
       }
+    } finally {
+      setLoadingCart(false); // <--- Desactivamos carga
     }
   };
 
@@ -58,19 +57,16 @@ function App() {
       });
 
       console.log("Se ha agregado un producto al carrito con exito!");
-      loadCart();
+      await loadCart();
     } catch (error) {
       console.error("Error al agregar al carrito:", error);
+      throw error; // Permite que el componente local capture el error si es necesario
     }
   };
 
   useEffect(() => {
     const handleHideHeaderFooter = () => {
-      setHideHeaderFooter(
-        window.location.pathname.startsWith("/control-panel") ||
-          window.location.pathname.startsWith("/inventory") ||
-          window.location.pathname.startsWith("/admin-orders"),
-      );
+      setHideHeaderFooter(false);
     };
 
     handleHideHeaderFooter();
@@ -83,6 +79,7 @@ function App() {
         <Header
           cart={cart}
           searchTerm={searchTerm}
+          loadingCart={loadingCart} // <--- Se lo pasamos al Header
           setSearchTerm={setSearchTerm}
         />
       )}
@@ -101,12 +98,16 @@ function App() {
         />
         <Route
           path="product-details/:productId"
-          element={<ProductDetailsPage />}
+          element={<ProductDetailsPage handleAddToCart={handleAddToCart} />}
         />
         <Route
           path="search"
           element={
-            <SearchPage searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+            <SearchPage
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+              handleAddToCart={handleAddToCart}
+            />
           }
         />
         <Route path="about-us" element={<AboutUsPage />} />
@@ -129,9 +130,7 @@ function App() {
 
         {/* Paginas visibles solo para ADMINS */}
         <Route element={<AdminRoute />}>
-          <Route path="inventory" element={<InventoryPage />} />
-          <Route path="control-panel" element={<ControlPanelPage />} />
-          <Route path="admin-orders" element={<OrdersPage />} />
+          <Route path="inventory" element={<InventoryPage />}></Route>
         </Route>
       </Routes>
 

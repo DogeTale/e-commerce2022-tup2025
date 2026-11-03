@@ -1,27 +1,31 @@
+import { useState } from "react";
 import axiosAuth from "../../../../api/axiosAuth";
 import { formatMoney } from "../../../../utils/money";
 
 function CartItemDetails({ cartItem, loadCart, deleteCartItem }) {
+  const [isUpdating, setIsUpdating] = useState(false);
+
   const handleUpdateQuantity = async (itemId, nuevaCantidad) => {
     try {
+      setIsUpdating(true);
       await axiosAuth.put(`/api/carrito/items/${itemId}`, {
         cantidad: nuevaCantidad,
       });
 
       await loadCart();
       console.log("Cantidad actualizada con éxito");
-      // Aquí actualizas tu estado local o vuelves a consultar el carrito
     } catch (error) {
       console.error("Error al actualizar la cantidad", error);
+    } finally {
+      setIsUpdating(false);
     }
   };
 
   const handleDecrease = async () => {
     const nuevaCantidad = cartItem.cantidad - 1;
     if (nuevaCantidad <= 0) {
-      deleteCartItem();
+      handleDelete();
     } else {
-      // Si manejas la función por props:
       handleUpdateQuantity(cartItem.id, nuevaCantidad);
     }
   };
@@ -29,6 +33,17 @@ function CartItemDetails({ cartItem, loadCart, deleteCartItem }) {
   const handleIncrease = async () => {
     const nuevaCantidad = cartItem.cantidad + 1;
     handleUpdateQuantity(cartItem.id, nuevaCantidad);
+  };
+
+  const handleDelete = async () => {
+    try {
+      setIsUpdating(true);
+      await deleteCartItem();
+    } catch (error) {
+      console.error("Error al eliminar ítem", error);
+    } finally {
+      setIsUpdating(false);
+    }
   };
 
   return (
@@ -68,29 +83,37 @@ function CartItemDetails({ cartItem, loadCart, deleteCartItem }) {
         </div>
       </div>
       <div className="flex items-center justify-between sm:justify-end gap-space-lg w-full sm:w-auto shrink-0 border-t sm:border-t-0 border-surface-variant pt-space-sm sm:pt-0">
+        {/* Contenedor de Selectores de Cantidad */}
         <div className="flex items-center border border-surface-variant bg-surface-container-low h-9">
           <button
-            className="w-8 h-full flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors"
+            className="w-8 h-full flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
             onClick={handleDecrease}
+            disabled={isUpdating}
             type="button"
           >
             -
           </button>
-          <input
-            className="w-9 h-full text-center bg-transparent font-label-md text-label-md text-on-surface border-none focus:outline-none"
-            id={`qty-${cartItem.id}`}
-            readOnly
-            type="text"
-            value={cartItem.cantidad}
-          />
+
+          {/* Si está actualizando, muestra el spinner en lugar del número */}
+          <div className="w-9 h-full flex items-center justify-center font-label-md text-label-md text-on-surface">
+            {isUpdating ? (
+              <div className="w-3.5 h-3.5 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+            ) : (
+              cartItem.cantidad
+            )}
+          </div>
+
           <button
-            className="w-8 h-full flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors"
+            className="w-8 h-full flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
             onClick={handleIncrease}
+            disabled={isUpdating}
             type="button"
           >
             +
           </button>
         </div>
+
+        {/* Totales del Ítem */}
         <div className="flex flex-col items-end">
           <span className="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">
             {formatMoney(cartItem.cantidad * cartItem.productos.precio)}
@@ -99,13 +122,22 @@ function CartItemDetails({ cartItem, loadCart, deleteCartItem }) {
             Unitario: {formatMoney(cartItem.productos.precio)}
           </span>
         </div>
+
+        {/* Botón de Eliminar */}
         <button
-          className="w-9 h-9 flex items-center justify-center border border-surface-variant bg-surface-container-low text-secondary hover:text-error hover:border-error transition-colors"
-          onClick={deleteCartItem}
+          className="w-9 h-9 flex items-center justify-center border border-surface-variant bg-surface-container-low text-secondary hover:text-error hover:border-error transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          onClick={handleDelete}
+          disabled={isUpdating}
           title="Eliminar ítem"
           type="button"
         >
-          <span className="material-symbols-outlined text-[18px]">delete</span>
+          {isUpdating ? (
+            <div className="w-3.5 h-3.5 border-2 border-error border-t-transparent rounded-full animate-spin"></div>
+          ) : (
+            <span className="material-symbols-outlined text-[18px]">
+              delete
+            </span>
+          )}
         </button>
       </div>
     </>

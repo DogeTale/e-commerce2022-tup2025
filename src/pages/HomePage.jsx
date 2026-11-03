@@ -9,11 +9,18 @@ import MonthlyAssemblies from "./home/MonthlyAssemblies.jsx";
 
 function HomePage({ loadCart, handleAddToCart }) {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true); // <--- 1. Añadimos el estado de carga
 
   useEffect(() => {
     const getHomeData = async () => {
-      const response = await axios.get(`/api/productos`);
-      setProducts(response.data);
+      try {
+        const response = await axios.get(`/api/productos`);
+        setProducts(response.data);
+      } catch (error) {
+        console.error("Error al cargar los productos:", error);
+      } finally {
+        setLoading(false); // <--- 2. Desactivamos el loading cuando finaliza (exito o error)
+      }
     };
 
     getHomeData();
@@ -35,23 +42,17 @@ function HomePage({ loadCart, handleAddToCart }) {
           {/* 3. CATEGORÍAS RÁPIDAS DE HARDWARE */}
           <HardwareCategoriesBanner />
 
-          {/* 
-              4. SECCIÓN DE ENSAMBLADOS DEL MES
-              [ZONA DE TARJETAS PARA REACT]: Aquí deberás mapear o renderizar 
-              las PCs armadas dinámicamente desde la base de datos (ej: pcsArmadas.map(...))
-           */}
+          {/* 4. SECCIÓN DE ENSAMBLADOS DEL MES */}
           <MonthlyAssemblies />
 
           {/* 
               5. SECCIÓN DE OFERTAS RELÁMPAGO Y PRODUCTOS DESTACADOS
-              [ZONA DE TARJETAS PARA REACT]: Aquí deberás mapear o renderizar 
-              las tarjetas de productos sueltos (GPUs, Monitores, Periféricos, etc.) 
-              provenientes de tu base de datos (ej: productosFlash.map(...))
-           */}
+          */}
           <FlashOffersAndFeatured
             products={products}
             loadCart={loadCart}
             handleAddToCart={handleAddToCart}
+            loading={loading} // <--- 3. Le pasamos la prop de carga al componente
           />
 
           {/* 6. BANNER CONFIGURADOR ARMA TU PC */}

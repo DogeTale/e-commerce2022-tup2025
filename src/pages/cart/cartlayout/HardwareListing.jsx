@@ -22,16 +22,6 @@ function HardwareListing({ cart, loadCart }) {
               )
             </h1>
           </div>
-          <button
-            className="font-label-sm text-label-sm text-secondary hover:text-error transition-colors flex items-center gap-1"
-            onClick={() => {}}
-            type="button"
-          >
-            <span className="material-symbols-outlined text-[14px]">
-              delete_sweep
-            </span>
-            <span>Vaciar Carrito</span>
-          </button>
         </div>
 
         {/* 

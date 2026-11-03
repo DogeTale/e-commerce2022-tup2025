@@ -2,17 +2,17 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router";
 
-function ProductDetailsPage() {
+function ProductDetailsPage({ handleAddToCart }) {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isAdding, setIsAdding] = useState(false);
 
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
         const response = await axios.get(`/api/productos/${productId}`);
         setProduct(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error("Error al obtener los detalles del producto:", error);
       } finally {
@@ -24,6 +24,18 @@ function ProductDetailsPage() {
       fetchProductDetails();
     }
   }, [productId]);
+
+  const onAddToCart = async () => {
+    if (!product || isAdding) return;
+    try {
+      setIsAdding(true);
+      await handleAddToCart(product.id);
+    } catch (error) {
+      console.error("Error al agregar al carrito desde detalles:", error);
+    } finally {
+      setIsAdding(false);
+    }
+  };
 
   if (loading) {
     return (
@@ -185,19 +197,26 @@ function ProductDetailsPage() {
                 {/* Quantity & Buy Action Row */}
                 <div className="flex flex-col gap-space-sm pt-space-xs">
                   <button
-                    className="w-full h-11 bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 hover:bg-[#8f0d15] active:scale-[0.99] transition-all"
+                    onClick={onAddToCart}
+                    disabled={isAdding || product.stock <= 0}
+                    className="w-full h-11 bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 hover:bg-[#8f0d15] active:scale-[0.99] transition-all disabled:opacity-60 disabled:cursor-not-allowed disabled:active:scale-100"
                     type="button"
                   >
-                    <span className="material-symbols-outlined text-[20px]">
-                      shopping_cart
-                    </span>
-                    <span>AGREGAR AL CARRITO</span>
-                  </button>
-                  <button
-                    className="w-full h-11 border border-on-surface bg-on-surface text-surface-container-lowest font-label-lg text-label-lg font-bold hover:bg-inverse-surface active:scale-[0.99] transition-all"
-                    type="button"
-                  >
-                    COMPRAR AHORA DIRECTO
+                    {isAdding ? (
+                      <>
+                        <span className="material-symbols-outlined text-[20px] animate-spin">
+                          progress_activity
+                        </span>
+                        <span>AGREGANDO...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="material-symbols-outlined text-[20px]">
+                          shopping_cart
+                        </span>
+                        <span>AGREGAR AL CARRITO</span>
+                      </>
+                    )}
                   </button>
                 </div>
               </div>

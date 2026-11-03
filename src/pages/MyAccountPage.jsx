@@ -1,4 +1,3 @@
-import Alerts from "./myaccount/Alerts";
 import MyAccountHeader from "./myaccount/MyAccountHeader";
 import MyAccountMain from "./myaccount/MyAccountMain";
 
@@ -19,11 +18,6 @@ function MyAccount() {
                 Muestra la identidad, membresía y balances del cliente logueado.
                 ========================================================================= */}
             <MyAccountHeader />
-
-            {/* =========================================================================
-                SECCIÓN: BANNER ALERTA SHOWROOM / RMA EXPRESS
-                ========================================================================= */}
-            <Alerts />
 
             {/* =========================================================================
                 SECCIÓN: CUERPO PRINCIPAL (TABS Y PANELES DE GESTIÓN)

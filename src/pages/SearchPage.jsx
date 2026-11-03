@@ -6,7 +6,7 @@ import SearchSidebarFilters from "./search/SearchSidebarFilters";
 import SearchProductGrid from "./search/SearchProductGrid";
 import { useSearchParams } from "react-router";
 
-function SearchPage({ searchTerm, setSearchTerm }) {
+function SearchPage({ searchTerm, setSearchTerm, handleAddToCart }) {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -235,6 +235,7 @@ function SearchPage({ searchTerm, setSearchTerm }) {
                 <SearchProductGrid
                   loading={loading}
                   filteredProducts={filteredProducts}
+                  handleAddToCart={handleAddToCart}
                 />
               </div>
             </div>

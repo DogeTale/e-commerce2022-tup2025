@@ -1,7 +1,21 @@
+import { useState } from "react";
 import { Link } from "react-router";
 import { formatMoney } from "../../utils/money";
 
 function FlashProduct({ product, handleAddToCart }) {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleAdd = async () => {
+    setIsLoading(true);
+    try {
+      await handleAddToCart(product.id);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const IsProductStockLow =
     product.stock < 7 ? (
       <div
@@ -67,14 +81,24 @@ function FlashProduct({ product, handleAddToCart }) {
       </div>
       <div className="mt-space-lg pt-space-sm border-t border-surface-variant flex items-center gap-space-xs">
         <button
-          className="flex-1 h-10 bg-primary-container text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-1 hover:bg-primary transition-colors"
+          className="flex-1 h-10 bg-primary-container text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-1 hover:bg-primary transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           type="button"
-          onClick={() => handleAddToCart(product.id)}
+          onClick={handleAdd}
+          disabled={isLoading}
         >
-          <span className="material-symbols-outlined text-[18px]">
-            add_shopping_cart
-          </span>
-          <span>Comprar</span>
+          {isLoading ? (
+            <>
+              <div className="w-4 h-4 border-2 border-on-primary border-t-transparent rounded-full animate-spin"></div>
+              <span>Agregando...</span>
+            </>
+          ) : (
+            <>
+              <span className="material-symbols-outlined text-[18px]">
+                add_shopping_cart
+              </span>
+              <span>Comprar</span>
+            </>
+          )}
         </button>
         <Link
           aria-label="Ver detalles técnicos"

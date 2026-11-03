@@ -1,13 +1,32 @@
 import { useMemo } from "react";
 import FlashProduct from "./FlashProduct.jsx";
 
-function FlashOffersAndFeatured({ products, loadCart, handleAddToCart }) {
+function FlashOffersAndFeatured({
+  products,
+  loadCart,
+  handleAddToCart,
+  loading,
+}) {
   const productosFiltradosYAzar = useMemo(() => {
+    if (!products) return [];
     return products
       .filter((product) => product.stock < 10) // Solo stock menor a 10
       .sort(() => Math.random() - 0.5) // Los desordena de forma aleatoria
       .slice(0, 6); // Toma un máximo de 6 productos
   }, [products]);
+
+  if (loading) {
+    return (
+      <div className="w-full pt-[156px] bg-surface min-h-[calc(100vh-156px)] flex items-center justify-center">
+        <div className="flex flex-col items-center gap-2">
+          <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+          <span className="font-body-md text-secondary uppercase tracking-wider text-xs">
+            Cargando ofertas relámpago...
+          </span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <section className="w-full border-b border-surface-variant bg-surface">
