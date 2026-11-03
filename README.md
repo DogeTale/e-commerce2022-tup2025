@@ -25,6 +25,7 @@ El proyecto fue realizado por el grupo **La Cachoneta**, integrado por:
 - [Integración con el backend](#integración-con-el-backend)
 - [Estilos y recursos](#estilos-y-recursos)
 - [Despliegue](#despliegue)
+- [Roadmap](#roadmap)
 - [Notas del estado actual](#notas-del-estado-actual)
 
 ## Tecnologías
@@ -54,12 +55,12 @@ Vite muestra en la terminal la dirección local para abrir en el navegador. La a
 
 ## Comandos disponibles
 
-| Comando | Descripción |
-| --- | --- |
-| `pnpm dev` | Inicia Vite en modo desarrollo. |
-| `pnpm build` | Genera la compilación de producción en `dist/`. |
+| Comando        | Descripción                                           |
+| -------------- | ----------------------------------------------------- |
+| `pnpm dev`     | Inicia Vite en modo desarrollo.                       |
+| `pnpm build`   | Genera la compilación de producción en `dist/`.       |
 | `pnpm preview` | Sirve localmente la compilación para previsualizarla. |
-| `pnpm lint` | Ejecuta ESLint sobre el proyecto. |
+| `pnpm lint`    | Ejecuta ESLint sobre el proyecto.                     |
 
 También se pueden ejecutar los scripts con npm (`npm run dev`, `npm run build`, etc.), aunque pnpm es el gestor indicado por el archivo de bloqueo.
 
@@ -118,17 +119,17 @@ También se pueden ejecutar los scripts con npm (`npm run dev`, `npm run build`,
 
 Las rutas declaradas en `App.jsx` son:
 
-| Ruta | Acceso | Contenido |
-| --- | --- | --- |
-| `/` | Público | Inicio |
-| `/product-details/:productId` | Público | Detalle de producto |
-| `/search` | Público | Catálogo y filtros |
-| `/about-us` | Público | Información institucional |
-| `/login` | Solo usuarios no autenticados | Inicio de sesión y registro |
-| `/checkout` | Usuario autenticado | Carrito y proceso de compra |
-| `/orders` | Usuario autenticado | Cuenta e historial de pedidos |
-| `/inventory` | Administrador | Gestión del inventario |
-| `*` | Público | Página 404 |
+| Ruta                          | Acceso                        | Contenido                     |
+| ----------------------------- | ----------------------------- | ----------------------------- |
+| `/`                           | Público                       | Inicio                        |
+| `/product-details/:productId` | Público                       | Detalle de producto           |
+| `/search`                     | Público                       | Catálogo y filtros            |
+| `/about-us`                   | Público                       | Información institucional     |
+| `/login`                      | Solo usuarios no autenticados | Inicio de sesión y registro   |
+| `/checkout`                   | Usuario autenticado           | Carrito y proceso de compra   |
+| `/orders`                     | Usuario autenticado           | Cuenta e historial de pedidos |
+| `/inventory`                  | Administrador                 | Gestión del inventario        |
+| `*`                           | Público                       | Página 404                    |
 
 `ProtectedRoute` requiere una sesión para las rutas de usuario. `AdminRoute` además comprueba que el rol almacenado sea `ADMIN`. `PublicRoute` redirige al inicio a los usuarios que ya iniciaron sesión.
 
@@ -146,20 +147,20 @@ La aplicación consume una API externa. Durante el desarrollo, `vite.config.js` 
 
 Las llamadas observadas en el código incluyen:
 
-| Método | Endpoint | Uso |
-| --- | --- | --- |
-| `GET` | `/api/productos` | Catálogo e inventario |
-| `GET` | `/api/productos/:productId` | Detalle de producto |
-| `POST` | `/api/usuarios` | Registro |
-| `POST` | `/api/usuarios/login` | Inicio de sesión |
-| `GET` | `/api/carrito` | Carga del carrito |
-| `POST` | `/api/carrito/items` | Agregar un producto |
-| `PUT` | `/api/carrito/items/:itemId` | Actualizar cantidad |
-| `DELETE` | `/api/carrito/items/:itemId` | Eliminar un artículo |
-| `GET` | `/api/pedidos` | Consultar pedidos |
-| `POST` | `/api/pedidos` | Crear un pedido |
-| `POST` | `/api/pagos/crear-preferencia` | Solicitar una preferencia de pago |
-| `GET` | `/api/orders/:orderId?expand=products` | Consultar datos para seguimiento |
+| Método   | Endpoint                               | Uso                               |
+| -------- | -------------------------------------- | --------------------------------- |
+| `GET`    | `/api/productos`                       | Catálogo e inventario             |
+| `GET`    | `/api/productos/:productId`            | Detalle de producto               |
+| `POST`   | `/api/usuarios`                        | Registro                          |
+| `POST`   | `/api/usuarios/login`                  | Inicio de sesión                  |
+| `GET`    | `/api/carrito`                         | Carga del carrito                 |
+| `POST`   | `/api/carrito/items`                   | Agregar un producto               |
+| `PUT`    | `/api/carrito/items/:itemId`           | Actualizar cantidad               |
+| `DELETE` | `/api/carrito/items/:itemId`           | Eliminar un artículo              |
+| `GET`    | `/api/pedidos`                         | Consultar pedidos                 |
+| `POST`   | `/api/pedidos`                         | Crear un pedido                   |
+| `POST`   | `/api/pagos/crear-preferencia`         | Solicitar una preferencia de pago |
+| `GET`    | `/api/orders/:orderId?expand=products` | Consultar datos para seguimiento  |
 
 Las respuestas y nombres de campos dependen del backend. Para cambiar el servicio remoto, hay que revisar tanto `vite.config.js` como `vercel.json`.
 
@@ -183,6 +184,58 @@ pnpm build
 ```
 
 El resultado se guarda en `dist/`. Esa carpeta es un artefacto generado y no contiene el código fuente del proyecto.
+
+## Roadmap
+
+### Hito 1: Configuración Inicial, Arquitectura Base y Estilos
+
+- **Fecha:** Octubre de 2026
+- **Descripción:** Establecimiento de los cimientos del proyecto, configuración del entorno de desarrollo, integración de herramientas de diseño y la primera conexión inicial con la arquitectura del servidor backend.
+- **Características Principales:**
+  - Configuración inicial del repositorio ([`dbeb318`](../../commit/dbeb318)).
+  - Instalación de Tailwind CSS y creación de las vistas iniciales de Home y Checkout ([`cd360e1`](../../commit/cd360e1)).
+  - Implementación de enrutamiento con React Router mediante componentes `Link` ([`0ec75e2`](../../commit/0ec75e2)) y `NavLink` con estilos personalizados para el carrito ([`5de178c`](../../commit/5de178c)), junto con la reorganización de carpetas de páginas ([`5637750`](../../commit/5637750)).
+  - Creación de componentes estructurales como la página de Tracking y 404, además del componente de `Breadcrumbs` ([`17af2b5`](../../commit/17af2b5)).
+  - Configuración de peticiones HTTP con Axios ([`1ed1df4`](../../commit/1ed1df4)), eliminación de la carpeta de código estático para usar datos del backend ([`ca6dd2a`](../../commit/ca6dd2a)), obtención del carrito y conteo de ítems ([`30bc1b6`](../../commit/30bc1b6)), y configuración de proxy del servidor para `/api` e `/images` ([`6f9dbdb`](../../commit/6f9dbdb)).
+  - Generación de opciones de prueba para envíos ([`96c9f49`](../../commit/96c9f49)), creación preliminar del resumen de pago con diseño _sticky_ ([`6b18c39`](../../commit/6b18c39)), y carga dinámica de tarjetas en `FlashOffers` utilizando datos de prueba ([`1bfb516`](../../commit/1bfb516)).
+
+### Hito 2: Autenticación, Gestión de Usuarios y Vistas de Cuenta
+
+- **Fecha:** Octubre de 2026
+- **Descripción:** Desarrollo de los flujos de identidad de usuario, integración de bases de datos relacionales y estructuración de los resúmenes de pago interactivos.
+- **Características Principales:**
+  - Corrección de elementos estéticos generales, favicon, títulos dinámicos y redirección del logo en el header ([`9f6220d`](../../commit/9f6220d)).
+  - Incorporación inicial de la página `MyAccount` ([`695f3fc`](../../commit/695f3fc)) y estandarización del idioma de los títulos al español ([`d70e58f`](../../commit/d70e58f)).
+  - Migración y refactorización de peticiones asíncronas utilizando `async/await` dentro de los `useEffect` en `HomePage`, `App` y `CheckoutSummary` ([`2283cde`](../../commit/2283cde)).
+  - Conexión a la base de datos real, habilitación de páginas pendientes, registro/inicio de sesión de usuarios y consumo correcto de tokens de autenticación ([`2b7fcee`](../../commit/2b7fcee)).
+
+### Hito 3: Catálogo, Buscador Avanzado y Experiencia de Compra (Checkout)
+
+- **Fecha:** Noviembre de 2026
+- **Descripción:** Refactorización profunda de la experiencia de navegación, optimización del motor de búsqueda de productos y estructuración completa del flujo del carrito de compras.
+- **Características Principales:**
+  - Ocultamiento dinámico de header y footer en páginas exclusivas de administración ([`e6329d7`](../../commit/e6329d7)).
+  - Integración del carrito de compras (`CartPage`) consumiendo datos directos de la base de datos ([`e9fa71f`](../../commit/e9fa71f)).
+  - Implementación del buscador en el header con redirección y búsqueda precisa en la vista de resultados ([`0852c13`](../../commit/0852c13)).
+  - Factorización de `SearchPage` en subcomponentes modulares e integración de filtros por categoría ([`aad3406`](../../commit/aad3406)).
+  - Sincronización de las categorías en `SearchPage` mediante parámetros de URL, vinculando el header y la `HomePage` con la vista de búsqueda ([`0a16176`](../../commit/0a16176)).
+  - Actualización de `FlashOffers` para limitar la visualización a 6 productos, mostrando stock real dinámico y barras de progreso proporcionales ([`b250e52`](../../commit/b250e52)).
+  - Corrección de redirecciones en botones de categorías de la `HomePage` ([`0270941`](../../commit/0270941)) y enlaces de información de productos hacia `product-details` ([`7f536fb`](../../commit/7f536fb)).
+  - Modificación del componente de `breadcrumbs` para adaptarlo a `SearchPage` y verificación condicional de tokens en las peticiones del carrito dentro de `App` ([`383382e`](../../commit/383382e)).
+  - Implementación del flujo transaccional completo: confirmación del carrito, paso a envío/facturación, creación del pedido y redirección a la pasarela de pagos de **MercadoPago** ([`485ddd6`](../../commit/485ddd6)).
+
+### Hito 4: Roles de Seguridad, Inventario y Despliegue a Producción
+
+- **Fecha:** Noviembre de 2026
+- **Descripción:** Fortalecimiento de la seguridad basada en roles, optimización del estado global de autenticación, ampliación del panel de inventario y preparación del entorno para despliegue en la nube.
+- **Características Principales:**
+  - Funcionalidad completa en botones de adición al carrito con indicadores de carga (_spinners_) y pantallas de carga globales para todas las interacciones con el backend ([`b1a06c4`](../../commit/b1a06c4)).
+  - Restricción de acceso visual y lógico al **Panel de Administración** validando de forma exclusiva el rol `ADMIN` del usuario ([`113d19f`](../../commit/113d19f)).
+  - Limpieza de archivos obsoletos e implementación de un `AuthContext` dedicado al manejo reactivo del estado de sesión y renderizado de páginas, junto con mejoras de adaptabilidad responsiva ([`e11feaa`](../../commit/e11feaa)).
+  - Actualización del comportamiento del contador de ítems del carrito al confirmar pedidos ([`a77c988`](../../commit/a77c988)).
+  - Preparación del proyecto para despliegue mediante la incorporación del archivo de configuración `vercel.json` ([`f9253cd`](../../commit/f9253cd)).
+  - Optimización y mejora general de comentarios en los archivos del código fuente con asistencia de IA ([`5045f96`](../../commit/5045f96)).
+  - Creación y documentación inicial del repositorio mediante el archivo README ([`f27a868`](../../commit/f27a868)).
 
 ## Notas del estado actual
 
