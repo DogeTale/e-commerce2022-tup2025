@@ -50,7 +50,7 @@ function MyAccountHeader() {
                 {usuario ? `${usuario.nombre} ${usuario.apellido}` : userName}
               </h1>
               <span className="bg-tertiary text-on-tertiary font-label-sm text-label-sm px-2 py-0.5 tracking-wider uppercase font-bold">
-                {userRole || (usuario ? usuario.rol : "VISITANTE")} Tier 3
+                {userRole || (usuario ? usuario.rol : "VISITANTE")}
               </span>
             </div>
             <p className="font-body-sm text-body-sm text-secondary mt-1 break-words">

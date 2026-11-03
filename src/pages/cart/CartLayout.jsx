@@ -16,6 +16,7 @@ function CartLayout({ cart, loadCart, setCurrentStep, setPedidoId }) {
         cart={cart}
         setCurrentStep={setCurrentStep}
         setPedidoId={setPedidoId}
+        loadCart={loadCart}
       />
     </div>
   );

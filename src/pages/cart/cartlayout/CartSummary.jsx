@@ -6,7 +6,7 @@ import axiosAuth from "../../../api/axiosAuth.js";
 
 dayjs.locale(es);
 
-function CheckoutSummary({ cart, setCurrentStep, setPedidoId }) {
+function CheckoutSummary({ cart, setCurrentStep, setPedidoId, loadCart }) {
   const [costoEnvio, setCostoEnvio] = useState("GRATIS");
   const [loadingPedido, setLoadingPedido] = useState(false);
 
@@ -22,8 +22,11 @@ function CheckoutSummary({ cart, setCurrentStep, setPedidoId }) {
       const response = await axiosAuth.post("/api/pedidos");
       const idPedidoCreado = response.data.id || response.data.pedido?.id;
 
-      // Guardamos el ID y avanzamos al paso 2 (esto actualizará el localStorage automáticamente)
       setPedidoId(idPedidoCreado);
+
+      // Refrescamos el carrito para que se vacíe en el frontend al instante
+      await loadCart();
+
       setCurrentStep(2);
     } catch (error) {
       console.error("Error al crear el pedido:", error);
