@@ -1,17 +1,14 @@
 import CartSummary from "./cartlayout/CartSummary.jsx";
 import HardwareListing from "./cartlayout/HardwareListing.jsx";
 
+/** Organiza el listado de productos y el resumen del carrito. */
 function CartLayout({ cart, loadCart, setCurrentStep, setPedidoId }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
-      {/* 
-        COLUMNA IZQUIERDA: LISTADO DE HARDWARE EN CARRITO
-      */}
+      {/* Productos del carrito */}
       <HardwareListing cart={cart} loadCart={loadCart} />
 
-      {/* 
-        COLUMNA DERECHA: RESUMEN DE PEDIDO, LOGÍSTICA Y PAGO (SIDEBAR)
-      */}
+      {/* Resumen del pedido, logística y pago */}
       <CartSummary
         cart={cart}
         setCurrentStep={setCurrentStep}

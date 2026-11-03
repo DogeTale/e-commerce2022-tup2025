@@ -11,7 +11,7 @@ function FlashOffersAndFeatured({
     if (!products) return [];
     return products
       .filter((product) => product.stock < 10) // Solo stock menor a 10
-      .sort(() => Math.random() - 0.5) // Los desordena de forma aleatoria
+      .sort(() => Math.random() - 0.5) // Ordena los productos de forma aleatoria.
       .slice(0, 6); // Toma un máximo de 6 productos
   }, [products]);
 

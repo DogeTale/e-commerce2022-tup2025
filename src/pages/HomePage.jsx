@@ -7,9 +7,10 @@ import HeroBannerMain from "./home/HeroBannerMain.jsx";
 import LocalBenefits from "./home/LocalBenefits.jsx";
 import MonthlyAssemblies from "./home/MonthlyAssemblies.jsx";
 
+/** Muestra la página de inicio y carga los productos destacados. */
 function HomePage({ loadCart, handleAddToCart }) {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true); // <--- 1. Añadimos el estado de carga
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getHomeData = async () => {
@@ -19,7 +20,7 @@ function HomePage({ loadCart, handleAddToCart }) {
       } catch (error) {
         console.error("Error al cargar los productos:", error);
       } finally {
-        setLoading(false); // <--- 2. Desactivamos el loading cuando finaliza (exito o error)
+        setLoading(false);
       }
     };
 
@@ -33,29 +34,27 @@ function HomePage({ loadCart, handleAddToCart }) {
 
       <main className="w-full pt-[156px] bg-surface min-h-[calc(100vh-156px)]">
         <div className="flex flex-col w-full">
-          {/* 1. HERO BANNER PRINCIPAL */}
+          {/* Banner principal */}
           <HeroBannerMain />
 
-          {/* 2. BARRA DE BENEFICIOS LOCALES EN ARGENTINA */}
+          {/* Beneficios locales */}
           <LocalBenefits />
 
-          {/* 3. CATEGORÍAS RÁPIDAS DE HARDWARE */}
+          {/* Categorías de hardware */}
           <HardwareCategoriesBanner />
 
-          {/* 4. SECCIÓN DE ENSAMBLADOS DEL MES */}
+          {/* Ensamblados destacados */}
           <MonthlyAssemblies />
 
-          {/* 
-              5. SECCIÓN DE OFERTAS RELÁMPAGO Y PRODUCTOS DESTACADOS
-          */}
+          {/* Ofertas relámpago y productos destacados */}
           <FlashOffersAndFeatured
             products={products}
             loadCart={loadCart}
             handleAddToCart={handleAddToCart}
-            loading={loading} // <--- 3. Le pasamos la prop de carga al componente
+            loading={loading}
           />
 
-          {/* 6. BANNER CONFIGURADOR ARMA TU PC */}
+          {/* Configurador de PC */}
           <BuildYourPCBanner />
         </div>
       </main>

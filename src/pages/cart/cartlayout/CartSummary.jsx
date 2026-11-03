@@ -6,6 +6,7 @@ import axiosAuth from "../../../api/axiosAuth.js";
 
 dayjs.locale(es);
 
+/** Muestra los importes del carrito y permite iniciar el pago. */
 function CheckoutSummary({ cart, setCurrentStep, setPedidoId, loadCart }) {
   const [costoEnvio, setCostoEnvio] = useState("GRATIS");
   const [loadingPedido, setLoadingPedido] = useState(false);
@@ -24,7 +25,7 @@ function CheckoutSummary({ cart, setCurrentStep, setPedidoId, loadCart }) {
 
       setPedidoId(idPedidoCreado);
 
-      // Refrescamos el carrito para que se vacíe en el frontend al instante
+      // Actualiza el carrito después de crear el pedido.
       await loadCart();
 
       setCurrentStep(2);

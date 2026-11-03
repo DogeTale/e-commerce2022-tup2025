@@ -6,6 +6,7 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+/** Carga y muestra el estado de envío de un pedido. */
 function TrackingPage() {
   const { orderId } = useParams();
   const [order, setOrder] = useState(null);
@@ -32,11 +33,11 @@ function TrackingPage() {
           <div className="max-w-[1320px] mx-auto px-margin-desktop w-full py-space-xl">
             <Breadcrumbs />
 
-            {/* Header & Quick Tracker Search */}
+            {/* Búsqueda de seguimiento */}
             <TrackingBanner />
-            {/* Hero Card: Shipment Summary */}
+            {/* Resumen del envío */}
             <TrackingShipmentSummary order={order} />
-            {/* Main Content Grid: Timeline + Detail Sidebar */}
+            {/* Cronología y detalles del pedido */}
             <TrackingMainContent order={order} />
           </div>
         </div>

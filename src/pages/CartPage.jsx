@@ -5,26 +5,25 @@ import CheckoutForm from "./cart/CheckoutForm";
 import PaymentConfirmation from "./cart/PaymentConfirmation";
 import axiosAuth from "../api/axiosAuth.js";
 
+/** Gestiona los pasos del proceso de compra y el pedido pendiente. */
 function CartPage({ cart, loadCart }) {
   const [currentStep, setCurrentStep] = useState(1);
   const [pedidoId, setPedidoId] = useState(null);
   const [loadingInitial, setLoadingInitial] = useState(true);
 
-  // Al montar la página, consultamos si ya hay un pedido pendiente creado
+  // Recupera el pedido pendiente para continuar un proceso de compra iniciado.
   useEffect(() => {
     const verificarPedidoPendiente = async () => {
       try {
         const response = await axiosAuth.get("/api/pedidos");
         const pedidos = response.data || [];
 
-        // Buscamos si alguno de los pedidos está en estado pendiente
-        // (Ajustá la propiedad 'estado' o 'status' según lo que devuelva tu backend)
         const pedidoPendiente = pedidos.find((p) => p.estado === "PENDIENTE");
 
         if (pedidoPendiente) {
           const idEncontrado = pedidoPendiente.id;
           setPedidoId(idEncontrado);
-          setCurrentStep(2); // Lo movemos automáticamente a Envío y Facturación
+          setCurrentStep(2); // Continúa en el paso de envío y facturación.
         }
       } catch (error) {
         console.error("Error al verificar pedidos existentes:", error);
@@ -36,7 +35,7 @@ function CartPage({ cart, loadCart }) {
     verificarPedidoPendiente();
   }, []);
 
-  // Función para reiniciar el checkout si se completa o cancela
+  /** Restablece el proceso de compra para iniciar un pedido nuevo. */
   const resetCheckout = () => {
     setCurrentStep(1);
     setPedidoId(null);

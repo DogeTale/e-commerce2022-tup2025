@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axiosAuth from "../../api/axiosAuth.js";
 
+/** Crea la preferencia de pago y redirige al usuario a la pasarela. */
 function PaymentConfirmation({ pedidoId }) {
   const [errorMsg, setErrorMsg] = useState(null);
 
@@ -8,7 +9,7 @@ function PaymentConfirmation({ pedidoId }) {
     const crearPreferenciaPago = async () => {
       try {
         const response = await axiosAuth.post("/api/pagos/crear-preferencia", {
-          pedido_id: pedidoId, // Asegurate si tu backend espera 'pedido_id' o 'id'
+          pedido_id: pedidoId,
         });
 
         const urlPago = response.data?.url_pago_prueba;

@@ -1,10 +1,11 @@
 import axios from "axios";
 
+/** Cliente HTTP compartido para solicitudes autenticadas. */
 const axiosAuth = axios.create({
   baseURL: "",
 });
 
-// Interceptor de peticiones (Igual que lo tienes)
+// Añade el token de autenticación a las solicitudes.
 axiosAuth.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
@@ -16,18 +17,18 @@ axiosAuth.interceptors.request.use(
   (error) => Promise.reject(error),
 );
 
-// Interceptor de respuestas mejorado con manejo de sesión
+// Limpia la sesión y redirige al login cuando las credenciales expiran.
 axiosAuth.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response && error.response.status === 401) {
       console.warn("La sesión ha expirado. Limpiando credenciales...");
 
-      // Limpiamos el storage
+      // Elimina las credenciales almacenadas.
       localStorage.removeItem("token");
       localStorage.removeItem("usuario");
 
-      // Si no estás ya en el login, redirigimos de forma limpia o dejamos que el router maneje la ruta protegida
+      // Evita repetir la redirección si el usuario ya está en la página de login.
       if (!window.location.pathname.includes("/login")) {
         window.location.href = "/login";
       }

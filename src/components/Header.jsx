@@ -4,6 +4,7 @@ import { useAuth } from "../context/AuthContext";
 
 import ZeroLagLogo from "../assets/zerolag-logo.svg";
 
+/** Renderiza la navegación principal, la búsqueda y el acceso al carrito. */
 function Header({ cart, loadingCart, searchTerm, setSearchTerm }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -43,7 +44,7 @@ function Header({ cart, loadingCart, searchTerm, setSearchTerm }) {
 
   return (
     <header className="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-surface-variant">
-      {/* Subsección: Barra de anuncios */}
+      {/* Barra de anuncios */}
       <div className="bg-surface-container border-b border-surface-variant">
         <div className="max-w-[1320px] mx-auto px-3 md:px-margin-desktop h-7 md:h-8 flex items-center justify-between font-label-sm text-[10px] md:text-label-sm">
           <div className="flex items-center gap-space-xs text-secondary truncate">
@@ -58,10 +59,10 @@ function Header({ cart, loadingCart, searchTerm, setSearchTerm }) {
         </div>
       </div>
 
-      {/* Subsección: Barra central ultra-compacta en móvil */}
+      {/* Navegación principal */}
       <div className="border-b border-surface-variant">
         <div className="max-w-[1320px] mx-auto px-3 md:px-margin-desktop h-14 md:h-20 flex items-center justify-between gap-2 md:gap-space-lg">
-          {/* Menú hamburguesa (móvil) */}
+          {/* Menú móvil */}
           <button
             onClick={toggleMenu}
             className="md:hidden text-on-surface p-1 focus:outline-none shrink-0"
@@ -81,7 +82,7 @@ function Header({ cart, loadingCart, searchTerm, setSearchTerm }) {
             />
           </NavLink>
 
-          {/* Buscador optimizado (Ocupa el espacio central restante) */}
+          {/* Búsqueda de productos */}
           <div className="flex-1 max-w-2xl min-w-0">
             <form onSubmit={handleSearch} className="flex w-full">
               <input
@@ -104,7 +105,7 @@ function Header({ cart, loadingCart, searchTerm, setSearchTerm }) {
             </form>
           </div>
 
-          {/* Cotización USD (Solo visible en pantallas XL) */}
+          {/* Cotización en dólares, visible en pantallas extra grandes */}
           <div className="hidden xl:flex items-center gap-space-xs border border-surface-variant bg-surface-container-low px-space-sm py-1 rounded-lg shrink-0">
             <span className="material-symbols-outlined text-tertiary text-[20px]">
               currency_exchange
@@ -120,7 +121,7 @@ function Header({ cart, loadingCart, searchTerm, setSearchTerm }) {
             </div>
           </div>
 
-          {/* Acciones de usuario & Carrito */}
+          {/* Cuenta de usuario y carrito */}
           <div className="flex items-center gap-1.5 md:gap-space-md shrink-0">
             <NavLink
               className="flex items-center gap-space-xs text-left group"
@@ -162,7 +163,7 @@ function Header({ cart, loadingCart, searchTerm, setSearchTerm }) {
         </div>
       </div>
 
-      {/* Subsección: Categorías en escritorio (Oculto en celular) */}
+      {/* Categorías en escritorio */}
       <div className="bg-surface-container-lowest hidden md:block">
         <div className="max-w-[1320px] mx-auto px-margin-desktop h-11 flex items-center justify-between">
           <nav className="flex items-center gap-space-md overflow-x-auto h-full scrollbar-none">
@@ -193,7 +194,7 @@ function Header({ cart, loadingCart, searchTerm, setSearchTerm }) {
         </div>
       </div>
 
-      {/* Menú desplegable lateral/vertical en celular cuando tocas la hamburguesa */}
+      {/* Menú de categorías en dispositivos móviles */}
       {isMenuOpen && (
         <div className="md:hidden bg-surface-container-lowest border-b border-surface-variant px-4 py-3 flex flex-col gap-3 shadow-lg">
           <span className="font-bold text-xs text-secondary uppercase tracking-wider">

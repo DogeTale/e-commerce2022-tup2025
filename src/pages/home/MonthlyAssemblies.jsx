@@ -1,3 +1,4 @@
+/** Muestra los ensamblados destacados del mes. */
 function MonthlyAssemblies() {
   return (
     <section className="w-full border-b border-surface-variant bg-surface-container-low">
@@ -30,9 +31,8 @@ function MonthlyAssemblies() {
           </a>
         </div>
 
-        {/* Contenedor Grid donde irán las tarjetas de PCs desde la Base de Datos */}
+        {/* Ensamblados destacados */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
-          {/* TARJETA 1 DE EJEMPLO (Reemplazar con .map() de la BD) */}
           <div className="border border-surface-variant bg-surface-container-lowest flex flex-col justify-between">
             <div className="p-space-md border-b border-surface-variant flex items-center justify-between bg-surface">
               <span className="font-label-sm text-label-sm text-secondary uppercase tracking-wider">
@@ -114,7 +114,6 @@ function MonthlyAssemblies() {
             </div>
           </div>
 
-          {/* TARJETA 2 DE EJEMPLO */}
           <div className="border-2 border-primary bg-surface-container-lowest flex flex-col justify-between relative">
             <div className="p-space-md border-b border-surface-variant flex items-center justify-between bg-surface-container">
               <span className="font-label-sm text-label-sm text-primary uppercase tracking-wider font-bold">
@@ -196,7 +195,6 @@ function MonthlyAssemblies() {
             </div>
           </div>
 
-          {/* TARJETA 3 DE EJEMPLO */}
           <div className="border border-surface-variant bg-surface-container-lowest flex flex-col justify-between">
             <div className="p-space-md border-b border-surface-variant flex items-center justify-between bg-surface">
               <span className="font-label-sm text-label-sm text-secondary uppercase tracking-wider">

@@ -9,12 +9,12 @@ export default defineConfig({
       "/api": {
         target: "https://backend-ecommerce-lc.onrender.com",
         changeOrigin: true,
-        secure: false, // <-- Esto evita que Node.js falle por problemas con el certificado SSL del backend
+        secure: false, // Desactiva la validación del certificado TLS para este proxy.
       },
       "/images": {
         target: "https://backend-ecommerce-lc.onrender.com/",
         changeOrigin: true,
-        secure: false, // <-- Lo mismo para las imágenes
+        secure: false, // Desactiva la validación del certificado TLS para este proxy.
       },
     },
   },

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router";
 
+/** Muestra los datos de un producto y permite agregarlo al carrito. */
 function ProductDetailsPage({ handleAddToCart }) {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
@@ -62,7 +63,7 @@ function ProductDetailsPage({ handleAddToCart }) {
       <main className="w-full pt-[156px] bg-surface min-h-[calc(100vh-156px)]">
         <div className="flex flex-col w-full">
           <div className="max-w-[1320px] mx-auto px-margin-desktop py-space-md w-full">
-            {/* 1. Breadcrumbs Nav */}
+            {/* Navegación de rutas */}
             <nav
               aria-label="Breadcrumb"
               className="flex items-center gap-space-xs text-secondary font-label-md text-label-md mb-space-lg flex-wrap"
@@ -86,9 +87,9 @@ function ProductDetailsPage({ handleAddToCart }) {
               </span>
             </nav>
 
-            {/* Main Grid: Left Gallery + Right Purchase Specs */}
+            {/* Galería del producto y detalles de compra */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
-              {/* 2. Columna Izquierda: Imagen del Producto */}
+              {/* Imagen del producto */}
               <div className="lg:col-span-7 flex flex-col gap-space-md">
                 <div className="relative bg-surface-container-lowest border border-surface-variant rounded-none p-space-lg flex items-center justify-center min-h-[460px]">
                   <div className="absolute top-space-md left-space-md flex flex-col gap-1 z-10">
@@ -111,7 +112,7 @@ function ProductDetailsPage({ handleAddToCart }) {
                   />
                 </div>
 
-                {/* Badges & Official Warranty Strip */}
+                {/* Insignias y garantía */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-space-sm mt-space-xs">
                   <div className="border border-surface-variant bg-surface-container-low p-space-sm flex items-center gap-space-sm">
                     <div className="w-10 h-10 bg-surface-container-lowest border border-surface-variant flex items-center justify-center shrink-0">
@@ -146,9 +147,9 @@ function ProductDetailsPage({ handleAddToCart }) {
                 </div>
               </div>
 
-              {/* 3. Columna Derecha: Panel de Compra y Especificaciones */}
+              {/* Compra y especificaciones */}
               <div className="lg:col-span-5 flex flex-col border border-surface-variant bg-surface-container-lowest p-space-lg gap-space-md">
-                {/* Top Metadata & Rating */}
+                {/* Información y calificación */}
                 <div className="flex flex-col gap-1 border-b border-surface-variant pb-space-sm">
                   <div className="flex items-center justify-between font-label-sm text-label-sm text-secondary uppercase flex-wrap gap-2">
                     <span>
@@ -167,7 +168,7 @@ function ProductDetailsPage({ handleAddToCart }) {
                   </h1>
                 </div>
 
-                {/* Pricing Card Container */}
+                {/* Precio */}
                 <div className="bg-surface-container-low border border-surface-variant p-space-md flex flex-col gap-space-sm">
                   <div className="flex flex-col">
                     <span className="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">
@@ -184,7 +185,7 @@ function ProductDetailsPage({ handleAddToCart }) {
                   </div>
                 </div>
 
-                {/* Description Section */}
+                {/* Descripción */}
                 <div className="border-t border-surface-variant pt-space-md flex flex-col gap-2">
                   <h3 className="font-label-lg text-label-lg text-on-surface font-bold uppercase">
                     Descripción
@@ -194,7 +195,7 @@ function ProductDetailsPage({ handleAddToCart }) {
                   </p>
                 </div>
 
-                {/* Quantity & Buy Action Row */}
+                {/* Cantidad y acción de compra */}
                 <div className="flex flex-col gap-space-sm pt-space-xs">
                   <button
                     onClick={onAddToCart}

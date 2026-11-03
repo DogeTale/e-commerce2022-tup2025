@@ -1,6 +1,7 @@
 import CartItemDetails from "./hardwarelisting/CartItemDetails.jsx";
 import axiosAuth from "../../../api/axiosAuth.js";
 
+/** Renderiza los productos del carrito y los servicios asociados. */
 function HardwareListing({ cart, loadCart }) {
   return (
     <section className="lg:col-span-8 flex flex-col gap-space-md top-[176px]">
@@ -24,11 +25,6 @@ function HardwareListing({ cart, loadCart }) {
           </div>
         </div>
 
-        {/* 
-                  ZONA DE TARJETAS PARA REACT (LISTADO DE PRODUCTOS):
-                  Aquí deberás mapear o renderizar los ítems del carrito traídos 
-                  desde tu base de datos o estado global (ej: cartItems.map(item => (...)))
-                */}
         <div
           className="divide-y divide-surface-variant"
           id="cart-items-container"

@@ -1,12 +1,13 @@
 import { useState } from "react";
 
+/** Recopila los datos de envío y facturación antes del pago. */
 function CheckoutForm({ setCurrentStep }) {
   const [direccion, setDireccion] = useState("");
   const [facturacion, setFacturacion] = useState("Consumidor Final");
 
   const handleSubmitEnvioFacturacion = (e) => {
     e.preventDefault();
-    // Como backend no lo maneja, avanzamos directamente al paso 3
+    // Continúa al paso de pago mientras no se envían estos datos al servidor.
     setCurrentStep(3);
   };
 
@@ -19,7 +20,7 @@ function CheckoutForm({ setCurrentStep }) {
         onSubmit={handleSubmitEnvioFacturacion}
         className="flex flex-col gap-space-md"
       >
-        {/* Input de Dirección */}
+        {/* Dirección de envío */}
         <div className="flex flex-col gap-1.5">
           <label className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">
             Dirección de Envío
@@ -34,7 +35,7 @@ function CheckoutForm({ setCurrentStep }) {
           />
         </div>
 
-        {/* Select de Facturación */}
+        {/* Tipo de facturación */}
         <div className="flex flex-col gap-1.5">
           <label className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">
             Tipo de Facturación

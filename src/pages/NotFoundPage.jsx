@@ -1,18 +1,19 @@
 import Breadcrumbs from "../components/Breadcrumbs";
 
+/** Presenta opciones de navegación cuando la ruta solicitada no existe. */
 function NotFoundPage() {
   return (
     <>
       <main className="w-full pt-[156px] bg-surface min-h-[calc(100vh-156px)]">
         <div className="flex flex-col w-full">
-          {/* Main 404 Technical Core Canvas */}
+          {/* Contenido principal del error 404 */}
           <div className="w-full max-w-[1320px] mx-auto px-margin-desktop py-space-xl">
             <Breadcrumbs />
 
-            {/* Hero 404 Technical Diagnostics Block */}
+            {/* Diagnóstico del error y opciones de búsqueda */}
             <div className="w-full bg-surface-container-lowest border border-surface-variant p-space-lg md:p-space-xl rounded-none relative">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
-                {/* Left: Technical Graphics & Status Code */}
+                {/* Código de estado y diagnóstico */}
                 <div className="lg:col-span-5 flex flex-col items-start border-b lg:border-b-0 lg:border-r border-surface-variant pb-space-lg lg:pb-0 lg:pr-space-xl">
                   <div className="flex items-center gap-space-xs font-mono font-label-sm text-label-sm text-primary uppercase tracking-widest mb-space-xs">
                     <span className="material-symbols-outlined text-[18px]">
@@ -49,7 +50,7 @@ function NotFoundPage() {
                     </div>
                   </div>
                 </div>
-                {/* Right: Diagnostic Content & Immediate Search Utility */}
+                {/* Mensaje de error y búsqueda de productos */}
                 <div className="lg:col-span-7 flex flex-col justify-center">
                   <span className="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider mb-space-xs">
                     Desconexión de Línea de Datos
@@ -64,7 +65,7 @@ function NotFoundPage() {
                     sigue 100% operativo con envíos directos a toda la
                     Argentina.
                   </p>
-                  {/* Integrated Spec Search Bar */}
+                  {/* Búsqueda de productos */}
                   <div className="w-full bg-surface-container-low border border-surface-variant p-2 mb-space-lg">
                     <form
                       action="#"
@@ -92,7 +93,7 @@ function NotFoundPage() {
                       </button>
                     </form>
                   </div>
-                  {/* Direct Routing Actions */}
+                  {/* Accesos directos */}
                   <div className="flex flex-wrap items-center gap-space-sm">
                     <a
                       className="h-10 px-space-lg bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center gap-2 hover:bg-primary transition-colors font-bold uppercase"
@@ -129,7 +130,7 @@ function NotFoundPage() {
               </div>
             </div>
 
-            {/* Section: Quick Technical Category Routing */}
+            {/* Acceso rápido a categorías */}
             <div className="mt-space-2xl">
               <div className="flex items-center justify-between border-b border-surface-variant pb-space-xs mb-space-lg">
                 <div className="flex items-center gap-space-xs">
@@ -143,7 +144,7 @@ function NotFoundPage() {
                 </span>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
-                {/* Category Card 1 */}
+                {/* Categoría */}
                 <a
                   className="group bg-surface-container-lowest border border-surface-variant p-space-md flex flex-col justify-between hover:border-primary transition-colors"
                   data-path="placas-de-video-gpu"
@@ -172,7 +173,7 @@ function NotFoundPage() {
                     </span>
                   </div>
                 </a>
-                {/* Category Card 2 */}
+                {/* Categoría */}
                 <a
                   className="group bg-surface-container-lowest border border-surface-variant p-space-md flex flex-col justify-between hover:border-primary transition-colors"
                   data-path="procesadores-cpu"
@@ -202,7 +203,7 @@ function NotFoundPage() {
                     </span>
                   </div>
                 </a>
-                {/* Category Card 3 */}
+                {/* Categoría */}
                 <a
                   className="group bg-surface-container-lowest border border-surface-variant p-space-md flex flex-col justify-between hover:border-primary transition-colors"
                   data-path="pc-armadas-gaming"
@@ -232,7 +233,7 @@ function NotFoundPage() {
                     </span>
                   </div>
                 </a>
-                {/* Category Card 4 */}
+                {/* Categoría */}
                 <a
                   className="group bg-surface-container-lowest border border-surface-variant p-space-md flex flex-col justify-between hover:border-primary transition-colors"
                   data-path="perifericos"

@@ -2,11 +2,13 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext();
 
+/** Proporciona el estado y las acciones de autenticación a la aplicación. */
 export function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState("Gamer");
   const [userRole, setUserRole] = useState(null);
 
+  /** Sincroniza el estado de autenticación con las credenciales almacenadas. */
   const checkUserSession = () => {
     const token = localStorage.getItem("token");
     const usuarioString = localStorage.getItem("usuario");
@@ -34,12 +36,12 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     checkUserSession();
 
-    // Escuchar cambios en otras pestañas o si se limpia el storage
+    // Sincroniza la sesión cuando cambia el almacenamiento en otra pestaña.
     window.addEventListener("storage", checkUserSession);
     return () => window.removeEventListener("storage", checkUserSession);
   }, []);
 
-  // Función para llamar justo después de hacer login exitoso
+  /** Guarda las credenciales y notifica el inicio de sesión. */
   const login = (token, usuario) => {
     localStorage.setItem("token", token);
     localStorage.setItem("usuario", JSON.stringify(usuario));
@@ -47,6 +49,7 @@ export function AuthProvider({ children }) {
     window.dispatchEvent(new Event("user-logged-in"));
   };
 
+  /** Elimina las credenciales y restablece el estado de autenticación. */
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("usuario");
@@ -69,6 +72,7 @@ export function AuthProvider({ children }) {
   );
 }
 
+/** Devuelve el contexto de autenticación actual. */
 export function useAuth() {
   return useContext(AuthContext);
 }

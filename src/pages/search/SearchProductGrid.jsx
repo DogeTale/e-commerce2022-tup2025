@@ -28,7 +28,7 @@ function SearchProductGrid({ loading, filteredProducts, handleAddToCart }) {
     startIndex + PRODUCTS_PER_PAGE,
   );
 
-  // Función para cambiar de página y volver arriba visualmente si se desea
+  // Cambia de página y desplaza la vista al inicio de los resultados.
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
       setCurrentPage(newPage);

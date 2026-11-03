@@ -1,7 +1,7 @@
 import { NavLink } from "react-router";
 
 function AdminSideBar() {
-  // Clase base común para todos los links de navegación
+  // Clase base compartida por los enlaces de navegación.
   const baseLinkClasses =
     "px-space-md py-2.5 rounded-lg font-label-md text-label-md transition-colors block";
 

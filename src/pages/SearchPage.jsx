@@ -6,6 +6,7 @@ import SearchSidebarFilters from "./search/SearchSidebarFilters";
 import SearchProductGrid from "./search/SearchProductGrid";
 import { useSearchParams } from "react-router";
 
+/** Muestra el catálogo y aplica los filtros seleccionados por el usuario. */
 function SearchPage({ searchTerm, setSearchTerm, handleAddToCart }) {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,7 +20,7 @@ function SearchPage({ searchTerm, setSearchTerm, handleAddToCart }) {
     inMediato: false,
     preventa: false,
     showroom: false,
-    categoria: categoriaUrl, // Inicializamos con el valor de la URL si existe
+    categoria: categoriaUrl, // Inicializa el filtro con la categoría de la URL.
     chipsets: {
       "NVIDIA GeForce RTX 4090": false,
       "GeForce RTX 4080 SUPER": false,
@@ -47,7 +48,7 @@ function SearchPage({ searchTerm, setSearchTerm, handleAddToCart }) {
     },
   });
 
-  // Cargar productos del backend al montar el componente
+  // Carga los productos del catálogo.
   const fetchProducts = async () => {
     try {
       setLoading(true);
@@ -64,13 +65,13 @@ function SearchPage({ searchTerm, setSearchTerm, handleAddToCart }) {
     fetchProducts();
   }, []);
 
-  // Sincronizar cambios de la URL con el estado si el usuario usa las flechas del navegador
+  // Sincroniza la categoría seleccionada cuando cambia la URL.
   useEffect(() => {
     const cat = searchParams.get("categoria") || "";
     setFilters((prev) => ({ ...prev, categoria: cat }));
   }, [searchParams]);
 
-  // Manejadores de cambios en los filtros
+  // Actualiza los filtros seleccionados.
   const handlePriceChange = (e, type) => {
     const value = Number(e.target.value);
     setFilters((prev) => ({
@@ -96,7 +97,7 @@ function SearchPage({ searchTerm, setSearchTerm, handleAddToCart }) {
     }));
   };
 
-  // MODIFICADO: Actualiza el estado y también modifica los Query Params en la URL
+  // Actualiza la categoría seleccionada y su parámetro en la URL.
   const handleCategoryChange = (e) => {
     const nuevaCategoria = e.target.value;
 
@@ -142,32 +143,32 @@ function SearchPage({ searchTerm, setSearchTerm, handleAddToCart }) {
         {},
       ),
     });
-    setSearchParams({}); // Limpia los query params de la URL al resetear
+    setSearchParams({});
     setSearchTerm("");
   };
 
-  // Filtrado lógico aplicado en memoria sobre el array recibido del backend
+  // Aplica los filtros al catálogo cargado.
   const filteredProducts = useMemo(() => {
     return productos.filter((prod) => {
       const precioNum = Number(prod.precio) || 0;
       const nombreDesc = `${prod.nombre} ${prod.descripcion}`.toLowerCase();
 
-      // Filtro por Categoría
+      // Categoría.
       if (filters.categoria && prod.categorias?.nombre !== filters.categoria) {
         return false;
       }
 
-      // 1. Filtro por buscador de texto
+      // Texto de búsqueda.
       if (searchTerm && !nombreDesc.includes(searchTerm.toLowerCase())) {
         return false;
       }
 
-      // 2. Filtro por Rango de Precio
+      // Rango de precio.
       if (precioNum < filters.priceMin || precioNum > filters.priceMax) {
         return false;
       }
 
-      // 3. Filtro por Chipset
+      // Chipset.
       const activeChipsets = Object.keys(filters.chipsets).filter(
         (k) => filters.chipsets[k],
       );
@@ -178,7 +179,7 @@ function SearchPage({ searchTerm, setSearchTerm, handleAddToCart }) {
         if (!matchesChipset) return false;
       }
 
-      // 4. Filtro por Marca / Fabricante
+      // Marca o fabricante.
       const activeMarcas = Object.keys(filters.marcas).filter(
         (k) => filters.marcas[k],
       );
@@ -189,7 +190,7 @@ function SearchPage({ searchTerm, setSearchTerm, handleAddToCart }) {
         if (!matchesMarca) return false;
       }
 
-      // 5. Filtro por VRAM
+      // Memoria VRAM.
       if (filters.vram) {
         if (!nombreDesc.includes(filters.vram.toLowerCase())) {
           return false;
@@ -204,10 +205,10 @@ function SearchPage({ searchTerm, setSearchTerm, handleAddToCart }) {
     <>
       <main className="w-full pt-[156px] bg-surface min-h-[calc(100vh-156px)]">
         <div className="flex flex-col w-full">
-          {/* BREADCRUMBS & TOP METADATA */}
+          {/* Navegación y metadatos */}
           <Breadcrumbs />
 
-          {/* CATEGORY HEADER & CONTROLS */}
+          {/* Encabezado y controles del catálogo */}
           <SearchHeaderControls
             filteredProducts={filteredProducts}
             searchTerm={searchTerm}
@@ -217,11 +218,11 @@ function SearchPage({ searchTerm, setSearchTerm, handleAddToCart }) {
             handleResetFilters={handleResetFilters}
           />
 
-          {/* MAIN CATALOGUE CONTAINER */}
+          {/* Catálogo de productos */}
           <section className="w-full py-space-xl">
             <div className="max-w-[1320px] mx-auto px-margin-desktop">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
-                {/* ==================== SIDEBAR FILTERS (4 Cols) ==================== */}
+                {/* Filtros del catálogo */}
                 <SearchSidebarFilters
                   handleResetFilters={handleResetFilters}
                   filters={filters}
@@ -231,7 +232,7 @@ function SearchPage({ searchTerm, setSearchTerm, handleAddToCart }) {
                   handleCategoryChange={handleCategoryChange}
                 />
 
-                {/* ==================== PRODUCT GRID (9 Cols) ==================== */}
+                {/* Resultados */}
                 <SearchProductGrid
                   loading={loading}
                   filteredProducts={filteredProducts}

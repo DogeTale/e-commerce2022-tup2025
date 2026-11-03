@@ -1,3 +1,4 @@
+/** Presenta información institucional y canales de contacto de ZeroLag. */
 function AboutUsPage() {
   return (
     <>

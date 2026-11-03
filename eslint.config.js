@@ -6,7 +6,7 @@ import reactPlugin from "eslint-plugin-react";
 
 export default [
   {
-    ignores: ["dist"], // Quitamos globalIgnores y usamos la propiedad nativa ignores
+    ignores: ["dist"],
   },
   {
     files: ["**/*.{js,jsx}"],
@@ -33,7 +33,7 @@ export default [
       ...reactPlugin.configs.flat.recommended.rules,
       ...reactPlugin.configs.flat["jsx-runtime"].rules,
       ...reactHooks.configs.recommended.rules,
-      "react/jsx-key": "error", //
+      "react/jsx-key": "error",
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import AdminSideBar from "../components/AdminSideBar";
 
+/** Muestra y filtra el inventario de productos para administración. */
 function InventoryPage() {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -28,7 +29,7 @@ function InventoryPage() {
       });
   }, []);
 
-  // Filtrar productos por categoría
+  // Filtra los productos por categoría.
   const productosFiltrados = productos.filter((product) => {
     if (!categoriaSeleccionada) return true;
     return (
@@ -37,14 +38,14 @@ function InventoryPage() {
     );
   });
 
-  // Calcular el valor total de los productos (precio unitario * stock) según el filtro actual
+  // Calcula el valor del inventario filtrado.
   const valorTotalInventario = productosFiltrados.reduce((acc, product) => {
     const precio = Number(product.precio) || 0;
     const stock = Number(product.stock) || 0;
     return acc + precio * stock;
   }, 0);
 
-  // Calcular paginación
+  // Calcula los índices de la página actual.
   const totalPaginas =
     Math.ceil(productosFiltrados.length / productosPorPagina) || 1;
   const indiceUltimoProducto = paginaActual * productosPorPagina;
@@ -54,7 +55,7 @@ function InventoryPage() {
     indiceUltimoProducto,
   );
 
-  // Obtener categorías únicas para el filtro
+  // Obtiene las categorías disponibles sin duplicados.
   const categoriasUnicas = Array.from(
     new Map(
       productos
@@ -63,7 +64,7 @@ function InventoryPage() {
     ).values(),
   );
 
-  // Componente de Paginación reutilizable (arriba y abajo)
+  // Renderiza los controles de paginación.
   const renderPaginacion = () => (
     <div className="p-space-md border-b border-surface-variant flex flex-col sm:flex-row items-center justify-between gap-space-sm bg-surface-container-low">
       <span className="font-body-sm text-body-sm text-secondary">
@@ -114,7 +115,7 @@ function InventoryPage() {
         <AdminSideBar />
         <main className="flex-1 pl-64 w-full bg-surface min-h-[calc(100vh-156px)] p-space-xl">
           <div className="flex flex-col w-full">
-            {/* Sub-header Operativo */}
+            {/* Resumen del inventario */}
             <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md mb-space-lg bg-surface-container-lowest p-space-lg border border-surface-variant rounded">
               <div className="flex flex-col">
                 <div className="flex items-center gap-space-xs mb-1">
@@ -132,14 +133,14 @@ function InventoryPage() {
               </div>
             </div>
 
-            {/* Filtros de Categoría y Valor Total del Inventario */}
+            {/* Filtros y valor total del inventario */}
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-lg bg-surface-container-lowest p-space-md border border-surface-variant rounded">
               <div className="flex flex-wrap items-center gap-space-sm">
                 <select
                   value={categoriaSeleccionada}
                   onChange={(e) => {
                     setCategoriaSeleccionada(e.target.value);
-                    setPaginaActual(1); // Resetear a la primera página al filtrar
+                    setPaginaActual(1); // Reinicia la paginación al cambiar el filtro.
                   }}
                   className="h-10 px-space-md bg-surface border border-surface-variant text-on-surface font-label-md text-label-md rounded focus:outline-none focus:border-primary"
                 >
@@ -174,9 +175,9 @@ function InventoryPage() {
               </div>
             </div>
 
-            {/* Layout Principal con Tabla y Paginación Superior/Inferior */}
+            {/* Tabla de inventario y paginación */}
             <div className="flex flex-col bg-surface-container-lowest border border-surface-variant rounded">
-              {/* Paginación Superior */}
+              {/* Paginación superior */}
               {!loading &&
                 !error &&
                 productosFiltrados.length > 0 &&
@@ -273,7 +274,7 @@ function InventoryPage() {
                 </div>
               )}
 
-              {/* Paginación Inferior */}
+              {/* Paginación inferior */}
               {!loading &&
                 !error &&
                 productosFiltrados.length > 0 &&

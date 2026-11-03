@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 import { formatMoney } from "../../utils/money.js";
 import axiosAuth from "../../api/axiosAuth.js";
 
-// Lista de destinos aleatorios en Argentina para simular despachos dinámicos
+/** Destinos de referencia para mostrar la ubicación de los pedidos. */
 const DESTINOS_POSIBLES = [
   {
     ciudad: "Córdoba",
@@ -38,7 +38,7 @@ const DESTINOS_POSIBLES = [
   },
 ];
 
-// Función auxiliar fuera del componente (evita errores de hooks y mutaciones)
+/** Selecciona de forma estable un destino de referencia según el ID del pedido. */
 const getUbicacionAleatoria = (id) => {
   const index =
     Math.abs(id.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0)) %
@@ -46,6 +46,7 @@ const getUbicacionAleatoria = (id) => {
   return DESTINOS_POSIBLES[index];
 };
 
+/** Muestra los pedidos y la información principal de la cuenta. */
 function MyAccountMain() {
   const [Pedidos, setPedidos] = useState([]);
   const [loading, setLoading] = useState(true);

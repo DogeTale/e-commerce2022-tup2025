@@ -5,8 +5,9 @@ import Register from "./login/Register";
 import Login from "./login/Login";
 import axios from "axios";
 import { useNavigate } from "react-router";
-import { useAuth } from "../context/AuthContext.jsx"; // <-- 1. Importamos el hook del contexto
+import { useAuth } from "../context/AuthContext.jsx";
 
+/** Gestiona el registro y el inicio de sesión de los usuarios. */
 function LoginPage() {
   const [authTab, setAuthTab] = useState("login");
   const [nombre, setNombre] = useState("");
@@ -17,8 +18,9 @@ function LoginPage() {
   const [error, setError] = useState(null);
 
   const navigate = useNavigate();
-  const { login } = useAuth(); // <-- 2. Extraemos la función login del contexto
+  const { login } = useAuth();
 
+  /** Registra una cuenta y autentica al usuario al finalizar. */
   const handleRegister = async (e) => {
     e.preventDefault();
 
@@ -33,7 +35,7 @@ function LoginPage() {
       });
 
       console.log("Se ha registrado con exito!");
-      // Una vez registrado con éxito, ejecutamos el login automáticamente
+      // Inicia sesión automáticamente después de completar el registro.
       await handleLogin();
     } catch (error) {
       console.error("Error al intentar registrarse: ", error);
@@ -41,8 +43,9 @@ function LoginPage() {
     }
   };
 
+  /** Valida las credenciales e inicia la sesión del usuario. */
   const handleLogin = async (e) => {
-    // Si viene de un evento submit, prevenimos su comportamiento por defecto
+    // Previene el envío tradicional cuando la función recibe un evento.
     if (e && e.preventDefault) e.preventDefault();
 
     setError(null);
@@ -55,7 +58,7 @@ function LoginPage() {
 
       const { token, usuario } = response.data;
 
-      // 3. Usamos la función del contexto en lugar de localStorage a mano
+      // Guarda la sesión mediante el contexto de autenticación.
       login(token, usuario);
 
       console.log("Inicio de sesion exitoso");
