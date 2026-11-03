@@ -6,7 +6,7 @@ export default function AdminRoute() {
   const usuarioJson = JSON.parse(usuarioString);
 
   // Si no está logueado o no es ADMIN, lo mandamos al login o home
-  if (!token || usuarioJson.rol !== "CLIENTE") {
+  if (!token || usuarioJson.rol !== "ADMIN") {
     return <Navigate to="/" replace />;
   }
 

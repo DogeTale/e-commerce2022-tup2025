@@ -1,117 +1,98 @@
-import { useState, useEffect } from "react";
+import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router";
 
 function MyAccountHeader() {
-  const [usuario, setUsuario] = useState(null);
-  const [hasToken, setHasToken] = useState(false);
+  const { userName, userRole, logout } = useAuth();
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    // Detectar si hay un token en localStorage (asumiendo la clave "token")
-    const token = localStorage.getItem("token");
-    const usuarioData = localStorage.getItem("usuario");
-
-    if (token) {
-      setHasToken(true);
+  let usuario = null;
+  const usuarioString = localStorage.getItem("usuario");
+  if (usuarioString) {
+    try {
+      usuario = JSON.parse(usuarioString);
+    } catch (error) {
+      console.error(
+        "Error al parsear los datos del usuario desde localStorage:",
+        error,
+      );
     }
+  }
 
-    if (usuarioData) {
-      try {
-        setUsuario(JSON.parse(usuarioData));
-      } catch (error) {
-        console.error(
-          "Error al parsear los datos del usuario desde localStorage:",
-          error,
-        );
-      }
-    }
-  }, []);
+  const token = localStorage.getItem("token");
 
-  // Generar las iniciales de forma dinámica para el avatar (ej: "PN" para Prueba1Nombre)
   const iniciales =
     usuario?.nombre && usuario?.apellido
-      ? `${usuario.nombre[0]}${usuario.apellido[0]}`.toUpperCase()
-      : "MG";
+      ? `${usuario.nombre[0]}`.toUpperCase() +
+        `${usuario.apellido[0]}`.toUpperCase()
+      : userName !== "Gamer"
+        ? userName[0].toUpperCase()
+        : "MG font-bold";
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login", { replace: true });
+  };
 
   return (
-    <section className="bg-surface-container-lowest border border-surface-variant p-space-lg">
+    <section className="bg-surface-container-lowest border border-surface-variant p-4 sm:p-space-lg">
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
         {/* Identidad y Membresía */}
-        <div className="flex items-start gap-space-md">
-          <div className="w-16 h-16 bg-surface-container-highest border border-surface-variant flex items-center justify-center shrink-0">
+        <div className="flex flex-col sm:flex-row items-start gap-space-md">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 bg-surface-container-highest border border-surface-variant flex items-center justify-center shrink-0 self-start">
             <span className="font-headline-lg text-headline-lg text-primary uppercase font-extrabold">
               {iniciales}
             </span>
           </div>
-          <div className="flex flex-col">
-            <div className="flex items-center gap-space-xs flex-wrap">
-              <h1 className="font-headline-md text-headline-md text-on-surface">
+          <div className="flex flex-col w-full">
+            <div className="flex items-center gap-2 flex-wrap">
+              <h1 className="font-headline-md text-xl sm:text-headline-md text-on-surface">
                 Hola,{" "}
-                {usuario ? `${usuario.nombre} ${usuario.apellido}` : "Invitado"}
+                {usuario ? `${usuario.nombre} ${usuario.apellido}` : userName}
               </h1>
               <span className="bg-tertiary text-on-tertiary font-label-sm text-label-sm px-2 py-0.5 tracking-wider uppercase font-bold">
-                {usuario ? usuario.rol : "VISITANTE"} Tier 3
+                {userRole || (usuario ? usuario.rol : "VISITANTE")} Tier 3
               </span>
             </div>
-            <p className="font-body-sm text-body-sm text-secondary mt-1">
+            <p className="font-body-sm text-body-sm text-secondary mt-1 break-words">
               Email:{" "}
-              <span className="font-bold text-on-surface">
+              <span className="font-bold text-on-surface break-all">
                 {usuario ? usuario.email : "No disponible"}
               </span>{" "}
-              • Teléfono:{" "}
+              <span className="hidden sm:inline">•</span>{" "}
+              <br className="sm:hidden" />
+              Teléfono:{" "}
               <span className="font-bold text-on-surface">
                 {usuario ? usuario.telefono : "No registrado"}
               </span>
             </p>
-            <div className="flex items-center gap-space-sm mt-2 text-body-sm font-body-sm text-secondary">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mt-2 text-body-sm font-body-sm text-secondary">
               <span className="flex items-center gap-1">
-                <span className="material-symbols-outlined text-[16px] text-tertiary">
+                <span className="material-symbols-outlined text-[16px] text-tertiary shrink-0">
                   verified_user
                 </span>
-                {hasToken
-                  ? "Cuenta Verificada (Token activo)"
-                  : "Sin sesión iniciada"}
+                <span>
+                  {token
+                    ? "Cuenta Verificada (Token activo)"
+                    : "Sin sesión iniciada"}
+                </span>
               </span>
-              <span>•</span>
+              <span className="hidden xs:inline">•</span>
               <span>Socio desde: Marzo 2022</span>
             </div>
           </div>
         </div>
 
-        {/* Indicadores de Balance & Puntos & Botón Perfil */}
-        <div className="flex items-stretch gap-space-md flex-wrap lg:flex-nowrap">
-          <div className="border border-surface-variant bg-surface-container-low px-space-md py-2 flex flex-col justify-center min-w-[140px]">
-            <span className="font-label-sm text-[10px] text-secondary uppercase font-bold tracking-wider">
-              Saldo a Favor
-            </span>
-            <span className="font-headline-sm text-headline-sm text-tertiary leading-tight font-extrabold">
-              $ 42.500
-              <span className="text-[12px] text-secondary font-normal">
-                ARS
-              </span>
-            </span>
-            <span className="font-body-sm text-[10px] text-secondary">
-              Acreditable en checkout
-            </span>
-          </div>
-          <div className="border border-surface-variant bg-surface-container-low px-space-md py-2 flex flex-col justify-center min-w-[140px]">
-            <span className="font-label-sm text-[10px] text-secondary uppercase font-bold tracking-wider">
-              ZeroPoints Gaming
-            </span>
-            <span className="font-headline-sm text-headline-sm text-primary leading-tight font-extrabold">
-              12.850
-              <span className="text-[12px] text-secondary font-normal">
-                pts
-              </span>
-            </span>
-            <span className="font-body-sm text-[10px] text-secondary">
-              Canjeables por HW &amp; Merch
-            </span>
-          </div>
-          <div className="flex flex-col justify-center">
-            <button className="h-10 px-space-md bg-surface-container border border-surface-variant text-on-surface hover:bg-surface-variant font-label-lg text-label-lg flex items-center justify-center gap-space-xs transition-colors">
+        {/* Botón de Logout Rojo */}
+        <div className="flex items-stretch gap-space-md w-full sm:w-auto lg:flex-nowrap mt-2 sm:mt-0">
+          <div className="flex flex-col justify-center w-full sm:w-auto">
+            <button
+              onClick={handleLogout}
+              className="h-10 px-space-md w-full sm:w-auto bg-error-container text-error hover:bg-error hover:text-on-error border border-error/30 font-label-lg text-label-lg flex items-center justify-center gap-space-xs transition-colors cursor-pointer"
+            >
               <span className="material-symbols-outlined text-[18px]">
-                manage_accounts
+                logout
               </span>
-              <span>Editar Datos</span>
+              <span>Cerrar Sesión</span>
             </button>
           </div>
         </div>

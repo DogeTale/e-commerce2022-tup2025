@@ -10,12 +10,11 @@ function MyAccount() {
       {/* =========================================================================
           SECCIÓN GENERAL: CONTENIDO PRINCIPAL DE LA CUENTA
           ========================================================================= */}
-      <main className="w-full pt-[156px] bg-surface min-h-[calc(100vh-156px)]">
+      <main className="w-full pt-24 sm:pt-[156px] bg-surface min-h-[calc(100vh-156px)]">
         <div className="flex flex-col w-full">
-          <div className="max-w-[1320px] mx-auto w-full px-margin-desktop py-space-lg flex flex-col gap-space-lg">
+          <div className="max-w-[1320px] mx-auto w-full px-4 sm:px-6 md:px-margin-desktop py-space-md sm:py-space-lg flex flex-col gap-space-md sm:gap-space-lg">
             {/* =========================================================================
                 SECCIÓN: CABECERA DE PERFIL DE USUARIO
-                Muestra la identidad, membresía y balances del cliente logueado.
                 ========================================================================= */}
             <MyAccountHeader />
 

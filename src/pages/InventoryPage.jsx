@@ -121,13 +121,9 @@ function InventoryPage() {
                   <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">
                     Base de Datos Centralizada
                   </span>
-                  <span className="text-secondary font-label-sm">•</span>
-                  <span className="font-label-sm text-label-sm text-secondary">
-                    Trazabilidad Fiscal y RMA
-                  </span>
                 </div>
                 <h1 className="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight">
-                  Inventario de Hardware &amp; Control de Series (SKU)
+                  Inventario de Hardware
                 </h1>
                 <p className="font-body-md text-body-md text-secondary">
                   Control de existencias físicas en Sucursal Belgrano y Depósito

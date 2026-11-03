@@ -1,50 +1,37 @@
 import axios from "axios";
 
-// Creamos la instancia de axios
 const axiosAuth = axios.create({
-  // Si usas el proxy de Vite, puedes dejar baseURL vacío o con "/api"
   baseURL: "",
 });
 
-// Interceptor de peticiones: se ejecuta automáticamente antes de cada request
+// Interceptor de peticiones (Igual que lo tienes)
 axiosAuth.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
-
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
-
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  },
+  (error) => Promise.reject(error),
 );
 
-// Interceptor de respuestas: maneja cuando el token muere (401 Unauthorized)
+// Interceptor de respuestas mejorado con manejo de sesión
 axiosAuth.interceptors.response.use(
-  (response) => {
-    // Si la respuesta es exitosa, la dejamos pasar tal cual
-    return response;
-  },
+  (response) => response,
   (error) => {
-    // Si el servidor responde con un 401, significa que el token expiró o es inválido
     if (error.response && error.response.status === 401) {
       console.warn("La sesión ha expirado. Limpiando credenciales...");
 
-      // 1. Borramos el token vencido del localStorage
+      // Limpiamos el storage
       localStorage.removeItem("token");
+      localStorage.removeItem("usuario");
 
-      // Opcional: Si guardas los datos del usuario o rol, bórralos también:
-      // localStorage.removeItem("user");
-
-      // 2. Redirigimos al usuario al login (evitando bucles si ya está ahí)
+      // Si no estás ya en el login, redirigimos de forma limpia o dejamos que el router maneje la ruta protegida
       if (!window.location.pathname.includes("/login")) {
         window.location.href = "/login";
       }
     }
-
     return Promise.reject(error);
   },
 );

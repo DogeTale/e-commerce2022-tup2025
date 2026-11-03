@@ -68,17 +68,6 @@ function CheckoutSummary({ cart, setCurrentStep, setPedidoId }) {
                     {formatMoney(pago)}
                   </span>
                 </div>
-                <div className="flex items-center justify-between text-tertiary">
-                  <span className="flex items-center gap-1 font-label-md text-label-md">
-                    <span className="material-symbols-outlined text-[16px]">
-                      savings
-                    </span>
-                    Descuento Transferencia (-15%)
-                  </span>
-                  <span className="font-bold" id="summary-discount">
-                    -{formatMoney(pago * 0.15)}
-                  </span>
-                </div>
                 <div className="flex items-center justify-between text-secondary">
                   <span>Costo de Envío</span>
                   <span
@@ -210,7 +199,7 @@ function CheckoutSummary({ cart, setCurrentStep, setPedidoId }) {
                   className="font-headline-lg text-headline-lg font-bold text-primary leading-none"
                   id="total-cash"
                 >
-                  {formatMoney(pago * 0.85)}
+                  {formatMoney(pago)}
                 </div>
                 <div className="mt-2 pt-2 border-t border-surface-variant flex flex-col gap-0.5">
                   <span className="font-body-sm text-body-sm text-secondary">

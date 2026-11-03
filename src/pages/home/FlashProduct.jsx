@@ -16,7 +16,7 @@ function FlashProduct({ product, handleAddToCart }) {
     }
   };
 
-  const IsProductStockLow =
+  const IsProductStockLowBar =
     product.stock < 7 ? (
       <div
         className="bg-primary h-1.5 rounded"
@@ -27,6 +27,17 @@ function FlashProduct({ product, handleAddToCart }) {
         className="bg-tertiary h-1.5 rounded"
         style={{ width: `${(product.stock / 10) * 100}%` }}
       ></div>
+    );
+
+  const IsProductStockLowText =
+    product.stock < 7 ? (
+      <span className="font-bold text-primary">
+        Quedan {product.stock} unidades
+      </span>
+    ) : (
+      <span className="font-bold text-tertiary">
+        Quedan {product.stock} unidades
+      </span>
     );
 
   return (
@@ -56,17 +67,15 @@ function FlashProduct({ product, handleAddToCart }) {
         <div className="mt-space-md bg-surface-container p-2 border border-surface-variant">
           <div className="flex justify-between font-label-sm text-label-sm mb-1">
             <span className="text-secondary">Stock para oferta:</span>
-            <span className="font-bold text-primary">
-              Quedan {product.stock} unidades
-            </span>
+            {IsProductStockLowText}
           </div>
           <div className="w-full bg-surface-container-highest h-1.5 rounded">
-            {IsProductStockLow}
+            {IsProductStockLowBar}
           </div>
         </div>
         <div className="mt-space-md">
           <span className="font-body-sm text-body-sm text-secondary line-through">
-            {formatMoney(Math.ceil(product.precio * 1.25))} ARS
+            {formatMoney(Math.ceil(product.precio * 1.18))} ARS
           </span>
           <div className="font-headline-md text-headline-md text-primary-container leading-none font-bold">
             {formatMoney(product.precio)}

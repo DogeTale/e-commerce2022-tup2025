@@ -5,9 +5,9 @@ import Register from "./login/Register";
 import Login from "./login/Login";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import { useAuth } from "../context/AuthContext.jsx"; // <-- 1. Importamos el hook del contexto
 
 function LoginPage() {
-  // Estado para alternar entre la pestaña de "Iniciar Sesión" y "Crear Cuenta Nueva"
   const [authTab, setAuthTab] = useState("login");
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
@@ -15,7 +15,9 @@ function LoginPage() {
   const [password, setPassword] = useState("");
   const [telefono, setTelefono] = useState("");
   const [error, setError] = useState(null);
+
   const navigate = useNavigate();
+  const { login } = useAuth(); // <-- 2. Extraemos la función login del contexto
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -31,13 +33,18 @@ function LoginPage() {
       });
 
       console.log("Se ha registrado con exito!");
-      handleLogin();
+      // Una vez registrado con éxito, ejecutamos el login automáticamente
+      await handleLogin();
     } catch (error) {
       console.error("Error al intentar registrarse: ", error);
+      setError("Error al registrarse. Verificá los datos ingresados.");
     }
   };
 
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
+    // Si viene de un evento submit, prevenimos su comportamiento por defecto
+    if (e && e.preventDefault) e.preventDefault();
+
     setError(null);
 
     try {
@@ -48,8 +55,9 @@ function LoginPage() {
 
       const { token, usuario } = response.data;
 
-      localStorage.setItem("token", token);
-      localStorage.setItem("usuario", JSON.stringify(usuario));
+      // 3. Usamos la función del contexto en lugar de localStorage a mano
+      login(token, usuario);
+
       console.log("Inicio de sesion exitoso");
       navigate("/", { replace: true });
     } catch (err) {
@@ -62,22 +70,11 @@ function LoginPage() {
     <>
       <main className="w-full pt-[156px] bg-surface min-h-[calc(100vh-156px)]">
         <div className="flex flex-col w-full">
-          {/* =========================================================================
-              SECCIÓN: BARRA SUPERIOR DE SEGURIDAD Y DATOS FISCALES
-              Muestra información de cifrado, ubicación del showroom y tipo de facturación.
-              ========================================================================= */}
           <LoginHeader />
 
-          {/* =========================================================================
-              LAYOUT PRINCIPAL DE AUTENTICACIÓN (Grid de 2 columnas)
-              ========================================================================= */}
           <div className="max-w-[1320px] mx-auto px-margin-desktop py-space-xl w-full">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
-              {/* ---------------------------------------------------------------------
-                  COLUMNA IZQUIERDA: FORMULARIOS DE ACCESO Y REGISTRO (7 Columnas)
-                  --------------------------------------------------------------------- */}
               <div className="lg:col-span-7 bg-surface-container-lowest border border-surface-variant rounded-lg p-space-lg sm:p-space-xl">
-                {/* Cabecera del Portal */}
                 <div className="flex items-center justify-between border-b border-surface-variant pb-space-md mb-space-lg">
                   <div>
                     <span className="font-label-sm text-label-sm text-primary uppercase tracking-wider font-bold">
@@ -92,7 +89,6 @@ function LoginPage() {
                   </span>
                 </div>
 
-                {/* Botones de Pestañas (Switch entre Login y Registro) */}
                 <div className="grid grid-cols-2 gap-space-xs p-1 bg-surface-container rounded-lg border border-surface-variant mb-space-lg">
                   <button
                     className={`py-2 text-center font-label-lg text-label-lg rounded transition-colors ${
@@ -120,10 +116,6 @@ function LoginPage() {
                   </button>
                 </div>
 
-                {/* ===================================================================
-                    PANEL 1: FORMULARIO DE INICIO DE SESIÓN (LOGIN)
-                    [ZONA DE ACCIÓN REACT]: Aquí conectarás la función de autenticación (ej: handleSubmit / Supabase Auth / Firebase)
-                    =================================================================== */}
                 <Login
                   authTab={authTab}
                   handleLogin={handleLogin}
@@ -133,11 +125,7 @@ function LoginPage() {
                   setPassword={setPassword}
                   error={error}
                 />
-                {/* ===================================================================
-                    PANEL 2: FORMULARIO DE REGISTRO Y FACTURACIÓN
-                    [ZONA DE ACCIÓN REACT]: Aquí conectarás la lógica para guardar el 
-                    nuevo usuario y datos fiscales en tu base de datos.
-                    =================================================================== */}
+
                 <Register
                   authTab={authTab}
                   handleRegister={handleRegister}
@@ -154,9 +142,6 @@ function LoginPage() {
                 />
               </div>
 
-              {/* ---------------------------------------------------------------------
-                  COLUMNA DERECHA: BENEFICIOS, SHOWROOM Y SEGURIDAD (5 Columnas)
-                  --------------------------------------------------------------------- */}
               <RightCol />
             </div>
           </div>

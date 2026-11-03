@@ -11,7 +11,6 @@ import PublicRoute from "./components/PublicRoute.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import CartPage from "./pages/CartPage.jsx";
 import MyAccountPage from "./pages/MyAccountPage.jsx";
-import TrackingPage from "./pages/TrackingPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
@@ -65,12 +64,20 @@ function App() {
   };
 
   useEffect(() => {
-    const handleHideHeaderFooter = () => {
-      setHideHeaderFooter(false);
+    // 1. Carga inicial del carrito
+    loadCart();
+
+    // 2. Escuchamos cuando el usuario hace login para refrescar el carrito solo
+    const handleLoginEvent = () => {
+      loadCart();
     };
 
-    handleHideHeaderFooter();
-    loadCart();
+    window.addEventListener("user-logged-in", handleLoginEvent);
+
+    // Limpieza del evento al desmontar el componente
+    return () => {
+      window.removeEventListener("user-logged-in", handleLoginEvent);
+    };
   }, []);
 
   return (
@@ -125,7 +132,6 @@ function App() {
             element={<CartPage cart={cart} loadCart={loadCart} />}
           />
           <Route path="orders" element={<MyAccountPage />} />
-          <Route path="orders/tracking/:orderId" element={<TrackingPage />} />
         </Route>
 
         {/* Paginas visibles solo para ADMINS */}
