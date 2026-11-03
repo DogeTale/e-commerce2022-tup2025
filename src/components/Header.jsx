@@ -15,22 +15,29 @@ function Header({ cart, loadingCart, searchTerm, setSearchTerm }) {
 
   const navigate = useNavigate();
 
-  // Estados para manejar la sesión del usuario
+  // Estados para manejar la sesión y el rol del usuario
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState("Gamer");
+  const [userRole, setUserRole] = useState(null); // <-- Estado para almacenar el rol
 
   useEffect(() => {
-    // Verificamos si existe el token en localStorage
-    const token = localStorage.getItem("token"); // Ajusta la clave si tu token se llama diferente (ej. "authToken")
-    const usuarioString = localStorage.getItem("usuario"); // Ajusta la clave si tu objeto se llama diferente (ej. "user")
+    // Verificamos si existe el token y el usuario en localStorage
+    const token = localStorage.getItem("token");
+    const usuarioString = localStorage.getItem("usuario");
 
     if (token) {
       setIsLoggedIn(true);
       if (usuarioString) {
         try {
           const usuario = JSON.parse(usuarioString);
-          if (usuario && usuario.nombre) {
-            setUserName(usuario.nombre);
+          if (usuario) {
+            if (usuario.nombre) {
+              setUserName(usuario.nombre);
+            }
+            // Capturamos el rol del usuario (ajusta si la propiedad se llama diferente, ej: usuario.role)
+            if (usuario.rol) {
+              setUserRole(usuario.rol);
+            }
           }
         } catch (error) {
           console.error("Error al parsear el usuario del localStorage", error);
@@ -186,18 +193,22 @@ function Header({ cart, loadingCart, searchTerm, setSearchTerm }) {
               </NavLink>
             ))}
           </nav>
-          <div className="hidden md:flex items-center pl-space-md shrink-0 border-l border-surface-variant h-6">
-            <Link
-              className="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors flex items-center gap-1 uppercase tracking-wider"
-              data-path="admin-dashboard"
-              to="/control-panel"
-            >
-              <span className="material-symbols-outlined text-[16px]">
-                tune
-              </span>
-              <span>Panel Admin</span>
-            </Link>
-          </div>
+
+          {/* Renderizado condicional: Solo se muestra si userRole es 'ADMIN' */}
+          {userRole === "ADMIN" && (
+            <div className="hidden md:flex items-center pl-space-md shrink-0 border-l border-surface-variant h-6">
+              <Link
+                className="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors flex items-center gap-1 uppercase tracking-wider"
+                data-path="admin-dashboard"
+                to="/control-panel"
+              >
+                <span className="material-symbols-outlined text-[16px]">
+                  tune
+                </span>
+                <span>Panel Admin</span>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </header>
