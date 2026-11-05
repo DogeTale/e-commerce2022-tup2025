@@ -1,10 +1,15 @@
+import { Link } from "react-router";
 import CartItemDetails from "./hardwarelisting/CartItemDetails.jsx";
 import axiosAuth from "../../../api/axiosAuth.js";
 
 /** Renderiza los productos del carrito y los servicios asociados. */
-function HardwareListing({ cart, loadCart }) {
+function HardwareListing({ cart, loadCart, isEmpty }) {
   return (
-    <section className="lg:col-span-8 flex flex-col gap-space-md top-[176px]">
+    <section
+      className={`${
+        isEmpty ? "lg:col-span-12" : "lg:col-span-8"
+      } flex flex-col gap-space-md top-[176px]`}
+    >
       <div className="bg-surface-container-lowest border border-surface-variant rounded-DEFAULT overflow-hidden">
         <div className="px-space-md py-space-sm bg-surface-container border-b border-surface-variant flex items-center justify-between">
           <div className="flex items-center gap-space-xs">
@@ -25,50 +30,77 @@ function HardwareListing({ cart, loadCart }) {
           </div>
         </div>
 
-        <div
-          className="divide-y divide-surface-variant"
-          id="cart-items-container"
-        >
-          {cart?.carrito_items?.map((cartItem) => {
-            const deleteCartItem = async () => {
-              await axiosAuth.delete(`/api/carrito/items/${cartItem.id}`);
-              await loadCart();
-            };
-
-            return (
-              <article
-                key={cartItem.id}
-                className="p-space-md flex flex-col sm:flex-row gap-space-md items-start sm:items-center justify-between bg-surface-container-lowest"
-                data-product-id="tuf-4070ti"
-              >
-                <CartItemDetails
-                  cartItem={cartItem}
-                  loadCart={loadCart}
-                  deleteCartItem={deleteCartItem}
-                />
-              </article>
-            );
-          })}
-        </div>
-
-        {/* Acciones secundarias del carrito */}
-        <div className="p-space-md bg-surface-container-low border-t border-surface-variant flex flex-col sm:flex-row items-center justify-between gap-space-md">
-          <a
-            className="font-label-md text-label-md text-secondary hover:text-on-surface flex items-center gap-space-xs transition-colors"
-            href="#"
-          >
-            <span className="material-symbols-outlined text-[18px]">
-              arrow_back
+        {isEmpty ? (
+          /* Estado vacío: invita a seguir explorando el catálogo */
+          <div className="px-space-md py-space-xl flex flex-col items-center text-center gap-space-sm bg-surface-container-lowest">
+            <span className="material-symbols-outlined text-[56px] text-secondary">
+              remove_shopping_cart
             </span>
-            <span>Seguir agregando componentes</span>
-          </a>
-          <div className="flex items-center gap-space-sm text-secondary font-label-sm text-label-sm">
-            <span className="material-symbols-outlined text-[18px] text-tertiary">
-              lock
-            </span>
-            <span>Checkout 256-bit SSL Encriptado</span>
+            <h2 className="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface">
+              Tu carrito está vacío
+            </h2>
+            <p className="font-body-md text-body-md text-secondary max-w-[420px]">
+              Todavía no agregaste componentes. Explorá el catálogo y armá tu
+              próximo setup.
+            </p>
+            <Link
+              to="/search"
+              className="mt-space-xs px-space-md py-space-sm bg-primary-container text-on-primary-container font-label-md text-label-md uppercase rounded-DEFAULT hover:opacity-90 transition-opacity flex items-center gap-space-xs"
+            >
+              <span className="material-symbols-outlined text-[18px]">
+                search
+              </span>
+              <span>Explorar productos</span>
+            </Link>
           </div>
-        </div>
+        ) : (
+          <>
+            <div
+              className="divide-y divide-surface-variant"
+              id="cart-items-container"
+            >
+              {cart.carrito_items.map((cartItem) => {
+                const deleteCartItem = async () => {
+                  await axiosAuth.delete(`/api/carrito/items/${cartItem.id}`);
+                  await loadCart();
+                };
+
+                return (
+                  <article
+                    key={cartItem.id}
+                    className="p-space-md flex flex-col sm:flex-row gap-space-md items-start sm:items-center justify-between bg-surface-container-lowest"
+                    data-product-id="tuf-4070ti"
+                  >
+                    <CartItemDetails
+                      cartItem={cartItem}
+                      loadCart={loadCart}
+                      deleteCartItem={deleteCartItem}
+                    />
+                  </article>
+                );
+              })}
+            </div>
+
+            {/* Acciones secundarias del carrito */}
+            <div className="p-space-md bg-surface-container-low border-t border-surface-variant flex flex-col sm:flex-row items-center justify-between gap-space-md">
+              <a
+                className="font-label-md text-label-md text-secondary hover:text-on-surface flex items-center gap-space-xs transition-colors"
+                href="#"
+              >
+                <span className="material-symbols-outlined text-[18px]">
+                  arrow_back
+                </span>
+                <span>Seguir agregando componentes</span>
+              </a>
+              <div className="flex items-center gap-space-sm text-secondary font-label-sm text-label-sm">
+                <span className="material-symbols-outlined text-[18px] text-tertiary">
+                  lock
+                </span>
+                <span>Checkout 256-bit SSL Encriptado</span>
+              </div>
+            </div>
+          </>
+        )}
       </div>
 
       {/* Subsección: Servicios Extras Garantizados ZeroLag */}
