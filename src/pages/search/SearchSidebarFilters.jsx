@@ -131,7 +131,7 @@ function SearchSidebarFilters({
         <span className="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wide">
           Fabricante / Ensamblador
         </span>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="max-h-48 overflow-y-auto grid grid-cols-2 gap-2 pr-1">
           {Object.keys(filters.marcas).map((marca) => (
             <label
               key={marca}

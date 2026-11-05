@@ -22,23 +22,29 @@ function SearchPage({ searchTerm, setSearchTerm, handleAddToCart }) {
     showroom: false,
     categoria: categoriaUrl, // Inicializa el filtro con la categoría de la URL.
     chipsets: {
-      "NVIDIA GeForce RTX 4090": false,
-      "GeForce RTX 4080 SUPER": false,
-      "GeForce RTX 4070 Ti SUPER": false,
-      "GeForce RTX 4070 SUPER": false,
-      "GeForce RTX 4060 Ti / 4060": false,
-      "AMD Radeon RX 7900 XTX": false,
-      "AMD Radeon RX 7800 XT": false,
+      "GeForce RTX 5070 Ti": false,
+      "GeForce RTX 5070": false,
+      "GeForce RTX 5060 Ti": false,
+      "GeForce RTX 5060": false,
+      "GeForce RTX 5050": false,
+      "GeForce RTX 3050": false,
+      "Radeon RX 9070": false,
+      "Radeon RX 9060 XT": false,
+      "Radeon RX 7600": false,
     },
     marcas: {
       ASUS: false,
-      MSI: false,
       Gigabyte: false,
-      Zotac: false,
-      PNY: false,
-      Sapphire: false,
-      XFX: false,
-      Palit: false,
+      MSI: false,
+      SAPPHIRE: false,
+      Lenovo: false,
+      HP: false,
+      Kelyx: false,
+      Logitech: false,
+      Kingston: false,
+      Samsung: false,
+      Corsair: false,
+      Thermaltake: false,
     },
     vram: null,
     psu: {
@@ -151,7 +157,7 @@ function SearchPage({ searchTerm, setSearchTerm, handleAddToCart }) {
   const filteredProducts = useMemo(() => {
     return productos.filter((prod) => {
       const precioNum = Number(prod.precio) || 0;
-      const nombreDesc = `${prod.nombre} ${prod.descripcion}`.toLowerCase();
+      const nombreDesc = `${prod.nombre} ${prod.descripcion}`.toLowerCase().replace(/[™®]/g, "");
 
       // Categoría.
       if (filters.categoria && prod.categorias?.nombre !== filters.categoria) {
