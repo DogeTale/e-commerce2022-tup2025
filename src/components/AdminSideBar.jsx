@@ -24,6 +24,18 @@ function AdminSideBar() {
           >
             Inventario &amp; Productos
           </NavLink>
+          <NavLink
+            to="/categories"
+            className={({ isActive }) =>
+              `${baseLinkClasses} ${
+                isActive
+                  ? "bg-primary text-on-primary font-bold"
+                  : "text-on-surface hover:bg-surface-container-highest"
+              }`
+            }
+          >
+            Categorías
+          </NavLink>
         </nav>
       </div>
 

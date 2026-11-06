@@ -19,6 +19,7 @@ import LoginPage from "./pages/LoginPage.jsx";
 import ProductDetailsPage from "./pages/ProductDetailsPage.jsx";
 import SearchPage from "./pages/SearchPage.jsx";
 import InventoryPage from "./pages/InventoryPage.jsx";
+import CategoriesPage from "./pages/CategoriesPage.jsx";
 
 /** Renderiza las rutas y coordina el estado compartido del carrito. */
 function App() {
@@ -140,6 +141,7 @@ function App() {
         {/* Rutas de administración */}
         <Route element={<AdminRoute />}>
           <Route path="inventory" element={<InventoryPage />}></Route>
+          <Route path="categories" element={<CategoriesPage />}></Route>
         </Route>
       </Routes>
 
