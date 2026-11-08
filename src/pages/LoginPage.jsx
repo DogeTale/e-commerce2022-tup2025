@@ -7,6 +7,31 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 import { useAuth } from "../context/AuthContext.jsx";
 
+/**
+ * Convierte un error de axios en un mensaje legible.
+ * Soporta respuestas del back como { message }, { error } o { errores: { campo: [..] } }.
+ */
+function mensajeDeError(err, mensajePorDefecto) {
+  const status = err.response?.status;
+  const data = err.response?.data;
+
+  if (status === 409) return "Ya existe una cuenta con ese correo electrónico.";
+
+  if (data && typeof data === "object") {
+    if (data.errores && typeof data.errores === "object") {
+      const mensajes = Object.values(data.errores).flat().filter(Boolean);
+      if (mensajes.length > 0) return mensajes.join(" ");
+    }
+    if (typeof data.message === "string") return data.message;
+    if (typeof data.mensaje === "string") return data.mensaje;
+    if (typeof data.error === "string") return data.error;
+  }
+
+  if (!err.response) return "No se pudo conectar con el servidor. Probá de nuevo en unos minutos.";
+
+  return mensajePorDefecto;
+}
+
 /** Gestiona el registro y el inicio de sesión de los usuarios. */
 function LoginPage() {
   const [authTab, setAuthTab] = useState("login");
@@ -20,26 +45,39 @@ function LoginPage() {
   const navigate = useNavigate();
   const { login } = useAuth();
 
+  /** Cambia de pestaña y limpia el error de la pestaña anterior. */
+  const cambiarTab = (tab) => {
+    setError(null);
+    setAuthTab(tab);
+  };
+
   /** Registra una cuenta y autentica al usuario al finalizar. */
   const handleRegister = async (e) => {
     e.preventDefault();
+    setError(null);
 
     try {
-      console.log(nombre, apellido, email, telefono, password);
-      await axios.post("/api/usuarios", {
-        nombre,
-        apellido,
-        email,
-        telefono,
+      const { data } = await axios.post("/api/usuarios", {
+        nombre: nombre.trim(),
+        apellido: apellido.trim(),
+        email: email.trim(),
+        telefono: telefono.trim(),
         pw: password,
       });
 
-      console.log("Se ha registrado con exito!");
+      // Payload que devuelve el back al registrar (no debería incluir la contraseña).
+      console.log("Se ha registrado con exito! Payload:", data);
+
       // Inicia sesión automáticamente después de completar el registro.
       await handleLogin();
-    } catch (error) {
-      console.error("Error al intentar registrarse: ", error);
-      setError("Error al registrarse. Verificá los datos ingresados.");
+    } catch (err) {
+      console.error("Error al intentar registrarse: ", err);
+      setError(
+        mensajeDeError(
+          err,
+          "Error al registrarse. Verificá los datos ingresados.",
+        ),
+      );
     }
   };
 
@@ -100,7 +138,7 @@ function LoginPage() {
                         : "text-secondary hover:text-on-surface font-semibold"
                     }`}
                     id="tab-login-btn"
-                    onClick={() => setAuthTab("login")}
+                    onClick={() => cambiarTab("login")}
                     type="button"
                   >
                     Iniciar Sesión
@@ -112,7 +150,7 @@ function LoginPage() {
                         : "text-secondary hover:text-on-surface font-semibold"
                     }`}
                     id="tab-register-btn"
-                    onClick={() => setAuthTab("register")}
+                    onClick={() => cambiarTab("register")}
                     type="button"
                   >
                     Crear Cuenta Nueva
@@ -142,6 +180,7 @@ function LoginPage() {
                   setEmail={setEmail}
                   password={password}
                   setPassword={setPassword}
+                  error={error}
                 />
               </div>
 
