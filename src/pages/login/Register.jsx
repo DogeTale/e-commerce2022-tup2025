@@ -14,6 +14,7 @@ function Register({
   setEmail,
   password,
   setPassword,
+  error,
 }) {
   // Estado local: no hace falta tocar LoginPage.jsx
   const [confirmarPassword, setConfirmarPassword] = useState("");
@@ -290,6 +291,12 @@ function Register({
             </span>
           </label>
         </div>
+
+        {error && (
+          <p className="text-red-500 text-sm" role="alert">
+            {error}
+          </p>
+        )}
 
         <button
           className="w-full h-11 bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-space-xs transition-colors tracking-wide font-bold mt-2"
