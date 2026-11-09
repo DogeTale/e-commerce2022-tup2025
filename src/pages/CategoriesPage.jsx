@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import AdminSideBar from "../components/AdminSideBar";
 import axiosAuth from "../api/axiosAuth.js";
 import CategoryFormModal from "./categories/CategoryFormModal.jsx";
+import { mensajeDeError } from "../utils/apiError.js";
 
 /** Administra las categorías del catálogo. */
 function CategoriesPage() {
@@ -87,7 +88,7 @@ function CategoriesPage() {
       // Con productos asociados el backend responde 409 e informa cuántos son.
       notificar(
         "error",
-        err.response?.data?.error ?? "No se pudo eliminar la categoría",
+        mensajeDeError(err, "No se pudo eliminar la categoría"),
       );
 
       // El conteo pudo cambiar: se recarga para mostrar el valor real.

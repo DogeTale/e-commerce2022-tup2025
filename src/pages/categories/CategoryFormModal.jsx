@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axiosAuth from "../../api/axiosAuth.js";
+import { mensajesDeError } from "../../utils/apiError.js";
 
 /** Formulario de alta y edición de categorías del catálogo. */
 function CategoryFormModal({ categoria, onClose, onGuardado }) {
@@ -42,15 +43,8 @@ function CategoryFormModal({ categoria, onClose, onGuardado }) {
     } catch (error) {
       console.error("Error al guardar la categoría:", error);
 
-      const respuesta = error.response?.data;
-
-      // El backend devuelve la lista de errores de validación en "detalles"
-      // y un 409 con un único mensaje cuando el nombre está repetido.
-      setErrores(
-        respuesta?.detalles ?? [
-          respuesta?.error ?? "No se pudo guardar la categoría",
-        ],
-      );
+      // Incluye el 409 que devuelve el backend cuando el nombre se repite.
+      setErrores(mensajesDeError(error, "No se pudo guardar la categoría"));
     } finally {
       setGuardando(false);
     }

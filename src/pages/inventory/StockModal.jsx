@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axiosAuth from "../../api/axiosAuth.js";
+import { mensajeDeError } from "../../utils/apiError.js";
 
 /** Ajusta el stock de un producto por diferencia (ingreso o descuento). */
 function StockModal({ producto, onClose, onGuardado }) {
@@ -28,9 +29,7 @@ function StockModal({ producto, onClose, onGuardado }) {
     } catch (error) {
       console.error("Error al ajustar el stock:", error);
 
-      setErrorMsg(
-        error.response?.data?.error ?? "No se pudo ajustar el stock",
-      );
+      setErrorMsg(mensajeDeError(error, "No se pudo ajustar el stock"));
     } finally {
       setGuardando(false);
     }
