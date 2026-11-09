@@ -20,6 +20,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage.jsx";
 import SearchPage from "./pages/SearchPage.jsx";
 import InventoryPage from "./pages/InventoryPage.jsx";
 import CategoriesPage from "./pages/CategoriesPage.jsx";
+import PaymentResultPage from "./pages/PaymentResultPage.jsx";
 
 /** Renderiza las rutas y coordina el estado compartido del carrito. */
 function App() {
@@ -136,6 +137,7 @@ function App() {
             element={<CartPage cart={cart} loadCart={loadCart} />}
           />
           <Route path="orders" element={<MyAccountPage />} />
+          <Route path="pago/resultado" element={<PaymentResultPage />} />
         </Route>
 
         {/* Rutas de administración */}

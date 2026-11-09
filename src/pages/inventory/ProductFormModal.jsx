@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axiosAuth from "../../api/axiosAuth.js";
+import { mensajesDeError } from "../../utils/apiError.js";
 
 /** Formulario de alta y edición de productos del catálogo. */
 function ProductFormModal({ producto, categorias, onClose, onGuardado }) {
@@ -56,14 +57,7 @@ function ProductFormModal({ producto, categorias, onClose, onGuardado }) {
     } catch (error) {
       console.error("Error al guardar el producto:", error);
 
-      const respuesta = error.response?.data;
-
-      // El backend devuelve la lista de errores de validación en "detalles".
-      setErrores(
-        respuesta?.detalles ?? [
-          respuesta?.error ?? "No se pudo guardar el producto",
-        ],
-      );
+      setErrores(mensajesDeError(error, "No se pudo guardar el producto"));
     } finally {
       setGuardando(false);
     }

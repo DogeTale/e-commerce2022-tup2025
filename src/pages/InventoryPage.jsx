@@ -4,6 +4,7 @@ import AdminSideBar from "../components/AdminSideBar";
 import axiosAuth from "../api/axiosAuth.js";
 import ProductFormModal from "./inventory/ProductFormModal.jsx";
 import StockModal from "./inventory/StockModal.jsx";
+import { mensajeDeError } from "../utils/apiError.js";
 
 /** Muestra y filtra el inventario de productos para administración. */
 function InventoryPage() {
@@ -110,8 +111,7 @@ function InventoryPage() {
 
       notificar(
         "error",
-        err.response?.data?.error ??
-          "No se pudo cambiar el estado del producto",
+        mensajeDeError(err, "No se pudo cambiar el estado del producto"),
       );
     }
   };
